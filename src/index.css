@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+@import 'tailwindcss';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: #FFFFFF;
+  font-family: 'Inter', -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  color: #12141F;
+}
+
+::selection { background: #DCE8FF; }
+
+a { color: #001A5C; text-decoration: none; }
+a:hover { color: #2A4CB8; }
+
+img { display: block; max-width: 100%; }
+
+input::placeholder { color: #A0A4B8; }
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #DCE8FF; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #b8cef0; }
+
+@keyframes driftA {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(30px, -20px) scale(1.05); }
+}
+@keyframes driftB {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-25px, 25px) scale(1.04); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Responsive grids ── */
+.rg-meta  { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.rg-stats { display: grid; grid-template-columns: repeat(var(--stat-cols, 3), 1fr); gap: 20px; }
+.rg-3     { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.rg-4     { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; background: #EAF1FF; border-radius: 20px; overflow: hidden; }
+.rg-2     { display: grid; grid-template-columns: 1fr 1fr; gap: 16px 24px; }
+.rg-phase { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+.rg-edu   { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.rg-teasers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.rg-mods  { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.rg-outcomes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+/* Carousel 3-col slide grid — collapses to 1 col on mobile */
+.carousel-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+/* Product strategy timeline — horizontal on desktop, vertical on mobile */
+.cs-timeline { position: relative; display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+.cs-timeline > div { flex-direction: column !important; gap: 0 !important; }
+.cs-timeline > div > div:first-child { margin-bottom: 20px; }
+.cs-timeline-line { position: absolute; top: 11px; left: 0; right: 0; height: 2px; background: linear-gradient(90deg,#001A5C,#3D63E0); pointer-events: none; }
+.cs-timeline-line-v { display: none; }
+
+/* Impact panel — 3-col on desktop, stacks on mobile */
+.rg-impact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-radius: 20px; overflow: hidden; }
+
+/* Work page cards grid — prevents overflow on narrow viewports */
+.work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+
+/* Featured card horizontal layout — flips to vertical on mobile */
+.featured-card { display: grid; grid-template-columns: 260px 1fr; align-items: stretch; }
+
+/* Overflow-safe table wrapper */
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
+/* Section padding on mobile */
+@media (max-width: 640px) {
+  .cs-section { padding-left: 20px !important; padding-right: 20px !important; }
+}
+
+/* ── Breakpoints: 900px ── */
+@media (max-width: 900px) {
+  .rg-meta  { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Breakpoints: 640px ── */
+@media (max-width: 640px) {
+  .rg-meta      { grid-template-columns: 1fr; }
+  .rg-stats     { grid-template-columns: 1fr; }
+  .work-grid    { grid-template-columns: 1fr; }
+  .rg-3         { grid-template-columns: 1fr; }
+  .rg-impact    { grid-template-columns: 1fr; border-radius: 0; overflow: visible; gap: 8px; }
+  .rg-impact > div { border-radius: 16px; }
+  .cs-timeline  { grid-template-columns: 1fr; gap: 0; padding-left: 0; }
+  .cs-timeline > div { flex-direction: row !important; gap: 20px !important; }
+  .cs-timeline > div > div:first-child { margin-bottom: 0; }
+  .cs-timeline-line { display: none; }
+  .cs-timeline-line-v { display: block; position: absolute; top: 0; bottom: 0; left: 11px; width: 2px; background: linear-gradient(180deg,#001A5C,#3D63E0); pointer-events: none; }
+  .rg-4         { grid-template-columns: 1fr 1fr; }
+  .rg-2         { grid-template-columns: 1fr; }
+  .rg-edu       { grid-template-columns: 1fr; }
+  .rg-teasers   { grid-template-columns: 1fr; }
+  .rg-mods      { grid-template-columns: 1fr; }
+  .rg-outcomes  { grid-template-columns: 1fr; }
+  .carousel-3   { grid-template-columns: 1fr; gap: 16px; }
+}
+
+/* ── Breakpoints: 480px — all multi-col grids go single column ── */
+@media (max-width: 480px) {
+  .rg-4    { grid-template-columns: 1fr; }
+  .rg-stats { grid-template-columns: 1fr; }
+}
+
+/* ── Nav ── */
+.nav-links { display: flex; gap: 26px; font-size: 14px; font-weight: 500; }
+.nav-burger { display: none; }
+.nav-dropdown { display: none; }
+
+@media (max-width: 560px) {
+  .nav-links { gap: 14px; font-size: 12px; }
+}
+
+@media (max-width: 420px) {
+  .nav-links  { display: none; }
+  .nav-burger { display: flex; }
+  .nav-dropdown {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    padding-top: 14px;
+    margin-top: 12px;
+    border-top: 1px solid rgba(20,30,60,0.1);
+    width: 100%;
+  }
+  .nav-dropdown.open { display: flex; }
+}
+
+/* ── Journey timeline — all rows become single column on mobile ── */
+.timeline-row {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 640px) {
+  .timeline-row {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+  .timeline-eng-row {
+    grid-template-columns: 1fr !important;
+    gap: 4px !important;
+  }
+}
+
+/* ── Featured Work card — horizontal to vertical on mobile ── */
+@media (max-width: 620px) {
+  .featured-card {
+    grid-template-columns: 1fr !important;
+  }
+}

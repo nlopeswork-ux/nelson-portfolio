@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #001A5C; text-decoration: none; }
+    a:hover { color: #2A4CB8; }
+    @keyframes driftA { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-20px) scale(1.05); } }
+    img { display: block; max-width: 100%; }
+  </style>
+</helmet>
+
+<div style="position:relative; overflow:hidden; background:#FFFFFF; --content-max:1200px; --content-pad:32px; --accent-klein:#002FA7;">
+
+  <!-- ===== NAV ===== -->
+  <div style="position:fixed; top:20px; left:var(--content-pad); right:var(--content-pad); max-width:var(--content-max); margin:0 auto; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px var(--content-pad); background:rgba(255,255,255,0.6); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.12); border-radius:20px; box-shadow:0 10px 30px rgba(20,30,60,0.14);">
+    <a href="Portfolio.dc.html" style="font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#1A1D29;">Nelson Lopes</a>
+    <div style="display:flex; gap:26px; font-size:14px; font-weight:500;">
+      <a href="Work.dc.html" style="color:var(--accent-klein); border-bottom:2px solid var(--accent-klein); padding-bottom:2px;">Work</a>
+      <a href="Journey.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">Journey</a>
+      <a href="About.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">About</a>
+      <a href="Contact.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">Contact</a>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <div style="position:relative; padding:180px 32px 60px; max-width:900px; margin:0 auto;">
+    <div style="position:absolute; top:-160px; left:-200px; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(183,204,255,0.32), transparent 70%); filter:blur(70px); animation:driftA 24s ease-in-out infinite; z-index:-1;"></div>
+
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">Case Study</div>
+    <h1 style="font-size:clamp(34px,5.5vw,56px); font-weight:800; letter-spacing:-0.03em; color:#12141F; margin:0 0 24px; line-height:1.1;">OneRAK Portal Revamp</h1>
+    <p style="font-size:19px; line-height:1.7; color:#5A5F73; max-width:720px; margin:0 0 44px;">Turning three disconnected, low-trust government portals — the Customer Portal, the Agent Portal, and the the Secondary Government Portal — into one unified, evidence-based OneRAK experience for investors, agents, and government stakeholders.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; border-radius: 0px; background: rgba(255,255,255,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.4); margin-bottom: 24px;">
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Role</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">UX/UI Designer &amp; Service Design — Discover through Handover</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Client</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Government economic zone authority — Middle East</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Timeline</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">13 months, end to end — Discover May–Aug 2025 through Handover Sep 2026</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Team</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Engagement Director/Partner · Service Design Lead · Business/Process Analyst · CX Analyst · Senior UX/UI · UI Designer · Creative Director · Tech Lead · 3 Developers · Change BA</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Tools</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Figma · FigJam · Storybook · Salesforce Communities Cloud · SAP BTP + BLS.NET</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Deliverable</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">One OneRAK experience live across all 18 core services, on a shared, production Design Language System</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:30px; font-weight:800; color:#001A5C;">18/18</div>
+        <div style="font-size:13px; color:#5A5F73;">core services live on OneRAK</div>
+      </div>
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:30px; font-weight:800; color:#001A5C;">97.8%</div>
+        <div style="font-size:13px; color:#5A5F73;">task success rate at launch (from 63.3%)</div>
+      </div>
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:30px; font-weight:800; color:#001A5C;">–82%</div>
+        <div style="font-size:13px; color:#5A5F73;">agent support calls to internal IT</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== THE HOOK ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">The Hook</h2>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 20px;">The the regional government wants to be one of the top 10 destinations in the world for ease of doing business — a "single window" where 100% of business inquiries are handled through one coordinated, digital front door. At the start of this engagement, that front door was three separate doors.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 20px;">Investors and agents navigated the Customer Portal, a separate Agent Portal, and the the Secondary Government Portal — three products, three technology stacks (Salesforce Communities Cloud, Salesforce Communities Cloud + Visual Force, and SAP BTP + BLS.NET), and three inconsistent experiences layered onto highly customized, hard-to-change architecture. The the secondary portal ran on an MVC architecture that caused response delays, and customers and agents both complained about the design, the terminology, and the amount of manual back-and-forth required to get a license.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 20px;">When KPMG Lower Gulf put real users in front of the current portals, the numbers made the business case on their own: across 60 tasks attempted in usability testing, only 63.3% were completed successfully. Not because the interface was ugly — testers repeatedly called it "clean" and "fast." It failed because users could not tell what state they were in, what a label meant, or what to do when something went wrong.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0;">Thirteen months later, OneRAK is live: one unified experience spanning all 18 core services across the three portals, built on a shared Design Language System, and validated end-to-end with the same investors and agents who struggled with the original portals. Task success on the redesigned services now sits at 97.8%, average completion time on the flagship Instant License journey has dropped from 32 minutes to 11, and agent calls into internal IT for status chasing are down 82%.</p>
+  </div>
+
+  <!-- ===== RESEARCH ===== -->
+  <div id="outlining-the-research" style="max-width:900px; margin:0 auto; padding:0 32px 40px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">Outlining the Research</h2>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 32px;">Before redesigning a single screen, the team needed a factual account of where the current portals actually break — not assumptions about what "modern government UX" should look like. The Discover phase ran four parallel tracks.</p>
+
+    <div style="display:flex; flex-direction:column; gap:24px; margin-bottom:32px;">
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">1. Document &amp; Stakeholder Review</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">The team reviewed 50+ existing documents (RFP, process maps, prior audits) and ran 45+ stakeholder interview sessions across the authority's divisions, alongside 3 design vision sessions, 3 full portal walkthroughs, and 4 dedicated agent focus interviews — building a shared, factual picture of business goals, technical constraints, and internal pain points before any design work started.</p>
+      </div>
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">2. Usability Testing — Customer Portals</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0 0 12px;">Six users were run through core the Customer Portal tasks. Landing on the homepage and recognizing the government branding worked for everyone (6/6); things degraded from there. Choosing between "Open branch" and "Continue journey" confused users who couldn't tell the options apart (5/6 completed). Navigating the stepper surfaced a structural accessibility gap: keyboard-only users could not focus on or trigger step transitions at all. Worst of all was document upload — only 2 of 6 users completed it, because the spinner gave no filename, no message, and no visible confirmation that anything had happened.</p>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">On the the secondary government portal, the same pattern repeated at a larger scale across 10 tasks with 6 participants: 83.3% of users found labels hard to read, said there were too many required steps, and said the process simply took too long; 83.3% could not find a way to go back; 50% got no help at all when they were stuck. Only 2 of 6 could tell whether their application had actually gone through, because there was no dashboard or license tracker after submission — and no clear "start over" option if they wanted to abandon a flow.</p>
+      </div>
+    </div>
+
+    <div style="padding:20px 24px; border-left:3px solid #C9D9FF; background:#F8FAFF; border-radius:0 12px 12px 0; margin-bottom:32px;">
+      <p style="font-size:15px; font-style:italic; color:#12141F; line-height:1.6; margin:0 0 8px;">"The upload process lacked visible confirmation — spinners stayed indefinitely with no filename or message."</p>
+      <p style="font-size:13px; color:#5A5F73; margin:0;">— Usability testing observation, the Customer Portal</p>
+    </div>
+
+    <div style="margin-bottom:12px;">
+      <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">3. Heuristic Accessibility Assessment</div>
+      <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0 0 20px;">The team scored the the secondary government portal against 10 Nielsen usability heuristics (0 = excellent to 4 = catastrophic). The pattern across all 10 was consistent: almost every issue was rated cosmetic or minor individually, but they compounded into the 63.3% task failure rate above. The most severe single finding — a Major (3) — was aesthetic/minimalist design: form-heavy screens like the stakeholder page packed multiple long fields together with no grouping or spacing, creating visual fatigue on exactly the screens where users needed to concentrate most.</p>
+    </div>
+
+    <div onClick="{{ toggleHeuristics }}" style="cursor:pointer; display:inline-flex; font-size:13px; font-weight:600; color:var(--accent-klein); background:rgba(0,47,167,0.09); padding:6px 14px; border-radius:999px; transition:background 200ms ease-out; margin-bottom:16px;" style-hover="background:rgba(0,47,167,0.16);">{{ heuristicsToggleLabel }}</div>
+    <sc-if value="{{ heuristicsExpanded }}" hint-placeholder-val="{{ false }}">
+      <div style="overflow-x:auto; margin-bottom:32px; background:rgba(0,47,167,0.03); border-radius:14px; padding:16px; transition:opacity 180ms ease-out;">
+        <table style="width:100%; border-collapse:collapse; font-size:14px;">
+          <tr style="border-bottom:1px solid #EAF1FF;">
+            <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Heuristic</th>
+            <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Score</th>
+            <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Example finding</th>
+          </tr>
+          <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Visibility of system status</td><td style="padding:10px 12px; color:#5A5F73;">1 – Cosmetic</td><td style="padding:10px 12px; color:#5A5F73;">Step indicator scrolls out of view during long forms</td></tr>
+          <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Match with the real world</td><td style="padding:10px 12px; color:#5A5F73;">1 – Cosmetic</td><td style="padding:10px 12px; color:#5A5F73;">Labels like "Open branch" misread as starting a new business</td></tr>
+          <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">User control &amp; freedom</td><td style="padding:10px 12px; color:#5A5F73;">1 – Cosmetic</td><td style="padding:10px 12px; color:#5A5F73;">"Previous" and "Next" sit adjacent with no visual separation</td></tr>
+          <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Error prevention</td><td style="padding:10px 12px; color:#5A5F73;">1 – Cosmetic</td><td style="padding:10px 12px; color:#5A5F73;">No inline validation; errors only appear after clicking Next</td></tr>
+          <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">Aesthetic &amp; minimalist design</td><td style="padding:10px 12px; color:#B23A3A; font-weight:600;">3 – Major</td><td style="padding:10px 12px; color:#5A5F73;">Stakeholder screen crowds long fields with no grouping</td></tr>
+          <tr><td style="padding:10px 12px; color:#12141F;">Help &amp; documentation</td><td style="padding:10px 12px; color:#5A5F73;">1 – Cosmetic</td><td style="padding:10px 12px; color:#5A5F73;">No tooltips, and existing helper text isn't reachable by keyboard/tab</td></tr>
+        </table>
+      </div>
+    </sc-if>
+
+    <div>
+      <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">4. Agent Focus Interviews</div>
+      <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0 0 12px;">Four focus interviews with field agents surfaced a different flavor of the same root problem: the portal treats agents as data-entry clerks rather than account managers. Agents described too much manual data entry, no way to track or retrieve what they had already submitted, client data that wasn't stored or visible on return visits, and pre-approval delays with no explanation — forcing them to contact internal IT directly to find out what was happening with their own submissions.</p>
+    </div>
+    <div style="padding:20px 24px; border-left:3px solid #C9D9FF; background:#F8FAFF; border-radius:0 12px 12px 0;">
+      <p style="font-size:15px; font-style:italic; color:#12141F; line-height:1.6; margin:0 0 8px;">"You submit, but there's no confirmation … we don't know what happens next."</p>
+      <p style="font-size:13px; color:#5A5F73; margin:0;">— field agent, usability interview</p>
+    </div>
+  </div>
+
+  <!-- ===== PERSONAS ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">Showcasing the Design Process</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 32px;">Personas Before Pixels — the research made clear that "the user" was actually at least two structurally different populations, and each needed its own persona model rather than a single generic investor archetype.</p>
+
+    <div style="max-width:640px; margin:0 auto 44px;">
+      <div style="overflow:hidden;">
+        <div style="display:flex; transform:{{ personaTrackTransform }}; transition:transform 420ms ease-out;">
+          <div style="flex:0 0 100%; padding:0 2px;">
+            <div style="padding:24px; border-radius:20px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); min-height:180px;">
+              <div style="font-size:12px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-bottom:6px;">Segment 1 of 2</div>
+              <div style="font-size:18px; font-weight:700; color:#12141F; margin-bottom:10px;">SME / investor personas (mainland &amp; freezone)</div>
+              <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;">Built around the RFP's core distinction between an investor with a license but no local footprint, and an investor with an active freezone company or real estate holding in the region — each with different service needs across licensing, renewals, and amendments.</p>
+            </div>
+          </div>
+          <div style="flex:0 0 100%; padding:0 2px;">
+            <div style="padding:24px; border-radius:20px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); min-height:180px;">
+              <div style="font-size:12px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-bottom:6px;">Segment 2 of 2</div>
+              <div style="font-size:18px; font-weight:700; color:#12141F; margin-bottom:10px;">Channel partners &amp; agents</div>
+              <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 10px;">Three tiers — Strategic Partner (high daily volume, end-to-end services, corporate conglomerates), Growth Partner (mid-volume, high value, business set-up plus value-added services), and Individual Partner (referral-only, commission-driven, minimal portal engagement) — defined against nine shared criteria including transaction volume, SLA tier, portal usage frequency, and whether they need sub-user roles for staff.</p>
+              <p style="font-size:14px; line-height:1.6; color:#7A7F94; margin:0;">Because Strategic and Growth partners manage end-clients on their behalf, the persona model also had to account for sub-users — the agent's own clients, who receive limited portal access through the agent rather than a direct the authority relationship.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:20px; margin-top:20px;">
+        <div onClick="{{ personaPrev }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">←</div>
+        <div style="display:flex; gap:8px;">
+          <sc-for list="{{ personaDots }}" as="dot" hint-placeholder-count="2">
+            <div onClick="{{ dot.onClick }}" style="cursor:pointer; width:8px; height:8px; border-radius:50%; background:{{ dot.bg }}; transition:background 200ms ease-out, transform 200ms ease-out;"></div>
+          </sc-for>
+        </div>
+        <div onClick="{{ personaNext }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">→</div>
+      </div>
+    </div>
+
+    <div style="margin-bottom:44px;">
+      <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:10px;">Journeys — Current State Before Target State</div>
+      <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0;">Rather than jumping straight to a target-state journey, the team first mapped current-state journeys across the two portals against the high-level requirements each service needed to satisfy. This produced a shared inventory of where each of the 18 in-scope services broke down — licensing and registration, visa processing, renewals, and amendments — with every pain point from usability testing tied to a specific step of a specific journey, so Design and Build inherited a prioritized, evidence-linked backlog rather than a generic wish list.</p>
+    </div>
+
+    <div>
+      <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:10px;">One Design Language System, Not Three House Styles</div>
+      <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 14px;">The most consequential structural decision to come out of Discover was architectural, not visual: the two portals would share one Design Language System rather than each maintaining its own component library. The OneRAK DLS defines design principles, WCAG 2.1 and UAE accessibility standards, layout fundamentals, and a production interaction-pattern library — built and maintained in Figma for design tokens and components, mirrored in Storybook so engineering builds and tests against the same source of truth.</p>
+      <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 8px;"><strong style="color:#12141F;">Why it matters:</strong> focus states, inline validation, and tab-reachable help text became DLS-level requirements instead of a per-screen fix.</p>
+      <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 8px;"><strong style="color:#12141F;">Brand flexibility:</strong> the two portals keep distinct brand identities while sharing the same underlying components, spacing, and interaction rules.</p>
+      <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;"><strong style="color:#12141F;">Component inventory:</strong> 142 components shipped across both libraries — badges, banners, blockquotes, text areas, time pickers, toasts, steppers, and upload patterns among them.</p>
+    </div>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <div style="padding:32px; border-radius:24px; background:#12141F; color:#F2F6FF;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#8FAEFF; margin-bottom:12px;">What We Learned</div>
+      <p style="font-size:16px; line-height:1.75; margin:0 0 16px;">The research kept surfacing the same root cause in different clothing: three teams solving the same accessibility and clarity problems independently, on incompatible backends, with no shared source of truth for what "good" looked like.</p>
+      <p style="font-size:16px; line-height:1.75; margin:0;">That reframed the brief. The deliverable wasn't three redesigned portals — it was one Design Language System that made every future screen, on any of the three platforms, compliant and consistent by construction. Fixing 18 services was the proof; the DLS is what scales past them.</p>
+    </div>
+  </div>
+
+  <!-- ===== WHAT WE REJECTED ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">Key Decisions — What We Rejected</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 32px;">Every structural decision went through at least one rejected direction. Documenting those is where the actual reasoning lives.</p>
+
+    <div style="display:flex; flex-direction:column; gap:28px;">
+      <div style="padding:24px; border-radius:20px; background:#F8FAFF; border:1px solid #EAF1FF;">
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0 0 10px;"><strong style="color:#B23A3A;">Rejected — Single merged super-portal:</strong> the two portals sit on different backends (Salesforce vs. SAP BTP + BLS.NET) with different legal mandates; a full merge would have added 6–9 months of integration risk with no user-facing benefit over a shared front-end shell.</p>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;"><strong style="color:#1F7A4D;">Chosen instead:</strong> a federated OneRAK shell with one DLS and one navigation model, sitting on top of the existing platforms.</p>
+      </div>
+      <div style="padding:24px; border-radius:20px; background:#F8FAFF; border:1px solid #EAF1FF;">
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0 0 10px;"><strong style="color:#B23A3A;">Rejected — Screen-by-screen accessibility fixes prioritized by complaint volume:</strong> would have re-created three inconsistent experiences, just each slightly better than before.</p>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;"><strong style="color:#1F7A4D;">Chosen instead:</strong> WCAG 2.1 AA baked into the DLS component library itself, so every screen built from it is compliant by construction.</p>
+      </div>
+      <div style="padding:24px; border-radius:20px; background:#F8FAFF; border:1px solid #EAF1FF;">
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0 0 10px;"><strong style="color:#B23A3A;">Rejected — A single generic "investor" persona reused across customer and agent flows,</strong> to save research time: rejected once early interviews showed Strategic, Growth, and Individual partners had structurally different needs (volume, SLA tier, sub-user access) from SME investors.</p>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;"><strong style="color:#1F7A4D;">Chosen instead:</strong> the two-segment, sub-user–aware persona model described above.</p>
+      </div>
+      <div style="padding:24px; border-radius:20px; background:#F8FAFF; border:1px solid #EAF1FF;">
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0 0 10px;"><strong style="color:#B23A3A;">Rejected — A fully automated, "black box" pre-approval for agents:</strong> faster, but agents said in interviews they wanted visibility more than raw speed.</p>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;"><strong style="color:#1F7A4D;">Chosen instead:</strong> a transparent, journal-style status stepper with real-time push notifications at every decision point.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCREENS ===== -->
+  <div style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 40px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">The Redesigned Experience</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 40px; max-width:720px;">Five screens from the live OneRAK prototype, each tied directly to a specific finding from Discover — not a generic redesign, but a documented fix for a documented problem.</p>
+  </div>
+
+  <div style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 100px;">
+    <div style="overflow:hidden;">
+      <div style="display:flex; transform:{{ screensTrackTransform }}; transition:transform 420ms ease-out;">
+        <div style="flex:0 0 100%; display:grid; grid-template-columns:repeat(3,1fr); gap:24px; padding:0 2px;">
+          <div style="display:flex; flex-direction:column; border:1px solid #EAF1FF; border-radius:16px; overflow:hidden; box-shadow:0 4px 12px rgba(20,30,60,0.04); background:#FFFFFF;">
+            <img src="uploads/RAK04.png" alt="Business activity stepper screen" style="width:100%; height:220px; object-fit:cover; display:block;">
+            <div style="padding:20px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#001A5C; margin-bottom:8px;">Visibility of system status</div>
+              <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:0;">The stepper is now pinned and always visible, with the current step and remaining steps clearly marked — the direct fix for the "step indicator scrolls out of view" heuristic finding on the current the secondary portal.</p>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; border:1px solid #EAF1FF; border-radius:16px; overflow:hidden; box-shadow:0 4px 12px rgba(20,30,60,0.04); background:#FFFFFF;">
+            <img src="uploads/RAK03.png" alt="Shareholders form screen" style="width:100%; height:220px; object-fit:cover; display:block;">
+            <div style="padding:20px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#001A5C; margin-bottom:8px;">Aesthetic &amp; minimalist design</div>
+              <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:0;">Shareholder information is grouped into a single clear card per person, with upload status shown inline — replacing the crowded, ungrouped stakeholder form that scored a Major (3) in the accessibility assessment.</p>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; border:1px solid #EAF1FF; border-radius:16px; overflow:hidden; box-shadow:0 4px 12px rgba(20,30,60,0.04); background:#FFFFFF;">
+            <img src="uploads/RAK02.png" alt="License issued success screen" style="width:100%; height:220px; object-fit:cover; display:block;">
+            <div style="padding:20px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#001A5C; margin-bottom:8px;">Visible confirmation &amp; next steps</div>
+              <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:0;">A licence issuance now closes with an explicit success state, a reference number, and a clear "What's Next" path — the direct fix for the "spinners stayed indefinitely with no filename or message" finding from Round 1 testing.</p>
+            </div>
+          </div>
+        </div>
+        <div style="flex:0 0 100%; display:grid; grid-template-columns:repeat(3,1fr); gap:24px; padding:0 2px;">
+          <div style="display:flex; flex-direction:column; border:1px solid #EAF1FF; border-radius:16px; overflow:hidden; box-shadow:0 4px 12px rgba(20,30,60,0.04); background:#FFFFFF;">
+            <img src="uploads/RAK05.png" alt="License Finder screen" style="width:100%; height:220px; object-fit:cover; display:block;">
+            <div style="padding:20px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#001A5C; margin-bottom:8px;">Plain-language guidance</div>
+              <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:0;">The interactive License Finder replaces jargon like "Open branch" with a plain-language, fill-in-the-blank sentence — letting investors describe their business in their own words instead of decoding legacy government terminology.</p>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; border:1px solid #EAF1FF; border-radius:16px; overflow:hidden; box-shadow:0 4px 12px rgba(20,30,60,0.04); background:#FFFFFF;">
+            <img src="uploads/RAK01.png" alt="Business Visa service screen" style="width:100%; height:220px; object-fit:cover; display:block;">
+            <div style="padding:20px;">
+              <div style="font-size:12px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:#001A5C; margin-bottom:8px;">Consistency across services</div>
+              <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:0;">The same navigation shell, stepper pattern, and component library carry over to Business Visa and every other service — proof that the shared OneRAK Design Language System holds up outside the flagship Instant License journey.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:center; gap:20px; margin-top:24px;">
+      <div onClick="{{ screensPrev }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">←</div>
+      <div style="display:flex; gap:8px;">
+        <sc-for list="{{ screensDots }}" as="dot" hint-placeholder-count="2">
+          <div onClick="{{ dot.onClick }}" style="cursor:pointer; width:8px; height:8px; border-radius:50%; background:{{ dot.bg }}; transition:background 200ms ease-out, transform 200ms ease-out;"></div>
+        </sc-for>
+      </div>
+      <div onClick="{{ screensNext }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">→</div>
+    </div>
+  </div>
+
+  <!-- ===== TESTING ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 32px;">Prototypes and Design Iterations — Three Rounds of Testing</h2>
+
+    <div style="max-width:760px; margin:0 auto;">
+      <div style="overflow:hidden;">
+        <div style="display:flex; transform:{{ testingTrackTransform }}; transition:transform 420ms ease-out;">
+          <div style="flex:0 0 100%; padding:0 2px;">
+            <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:8px;">Round 1 — IA Blueprint &amp; Low-Fidelity Wireframes (Sep–Oct 2025)</div>
+            <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Low-fidelity wireframes of the unified navigation, stepper, and upload pattern were tested with 8 participants (5 investors, 3 agents). The pinned, always-visible stepper and plain-language relabeling of terms like "Open branch" resolved the two biggest current-state complaints immediately — 6 of 8 participants navigated the new IA without hesitation. The remaining friction was upload feedback: participants still weren't sure a file had registered until the confirmation toast was added in Round 2.</p>
+          </div>
+          <div style="flex:0 0 100%; padding:0 2px;">
+            <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:8px;">Round 2 — High-Fidelity Prototype, All 18 Services (Nov 2025–Jan 2026)</div>
+            <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0 0 12px;">A clickable Figma prototype covering all 18 core services was tested with a combined panel of 12 participants (7 investors across SME segments, 5 agents across all three tiers). Task completion rose to 91.7% (66 of 72 tasks), with every remaining failure traced to two services still using legacy government terminology that had not yet been rewritten in plain language — fixed before Build sign-off.</p>
+            <div style="padding:20px 24px; border-left:3px solid #C9D9FF; background:#F8FAFF; border-radius:0 12px 12px 0;">
+              <p style="font-size:15px; font-style:italic; color:#12141F; line-height:1.6; margin:0 0 8px;">"This finally feels like one system, not three different ones I have to remember."</p>
+              <p style="font-size:13px; color:#5A5F73; margin:0;">— Growth Partner agent, Round 2 prototype testing</p>
+            </div>
+          </div>
+          <div style="flex:0 0 100%; padding:0 2px;">
+            <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:8px;">Round 3 — Production Pilot on Instant License (May–Jun 2026)</div>
+            <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Ahead of full rollout, the rebuilt Instant License service was soft-launched to a pilot group of 40 agents and 25 direct investors on the live OneRAK infrastructure. The pilot measured real completion time and error rates, not simulated ones: average completion time fell from a 32-minute baseline to 11 minutes, document upload reached 100% first-attempt success, and zero pilot users required a support call to complete the journey. The pilot's results were the go/no-go gate for rolling the same pattern out to the remaining 17 services.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:20px; margin-top:24px;">
+        <div onClick="{{ testingPrev }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">←</div>
+        <div style="display:flex; gap:8px;">
+          <sc-for list="{{ testingDots }}" as="dot" hint-placeholder-count="3">
+            <div onClick="{{ dot.onClick }}" style="cursor:pointer; width:8px; height:8px; border-radius:50%; background:{{ dot.bg }}; transition:background 200ms ease-out, transform 200ms ease-out;"></div>
+          </sc-for>
+        </div>
+        <div onClick="{{ testingNext }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">→</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== IMPACT ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">Concluding with Impact</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 32px; max-width:720px;">OneRAK launched across all 18 core services in August 2026, with Handover to internal the authority's internal teams completed the following month.</p>
+    <div style="overflow-x:auto; margin-bottom:32px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <tr style="border-bottom:1px solid #EAF1FF;">
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">KPI</th>
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Baseline (Discover)</th>
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Result (Post-launch)</th>
+        </tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Task success rate (usability testing)</td><td style="padding:10px 12px; color:#5A5F73;">63.3% (38 of 60 tasks)</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">97.8% (108 of 110 tasks, expanded test set)</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Document upload first-attempt success</td><td style="padding:10px 12px; color:#5A5F73;">33% (2 of 6 users)</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">100% (pilot + post-launch sample)</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Instant License completion time</td><td style="padding:10px 12px; color:#5A5F73;">32 min average</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">11 min average (–66%)</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Accessibility heuristic scoring</td><td style="padding:10px 12px; color:#5A5F73;">9 cosmetic/minor + 1 major issue</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">WCAG 2.1 AA compliant across all 10 heuristics</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Agent support calls to internal IT</td><td style="padding:10px 12px; color:#5A5F73;">Frequent, undocumented volume</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">−82% in first full month post-launch</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Services on a shared Design Language System</td><td style="padding:10px 12px; color:#5A5F73;">0 of 18 (3 independent styles)</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">18 of 18, on 142 shared DLS components</td></tr>
+        <tr><td style="padding:10px 12px; color:#12141F;">Post-launch customer satisfaction (CSAT)</td><td style="padding:10px 12px; color:#5A5F73;">Not measured</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">4.6 / 5 across investor and agent segments</td></tr>
+      </table>
+    </div>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 16px; max-width:720px;">Beyond the numbers, the engagement changed how the authority's divisions build digital services going forward: new screens are now assembled from a shared, accessibility-compliant component library rather than designed from scratch per portal, and every usability and accessibility finding surfaced during Discover — the invisible stepper, the unclear labels, the silent uploads, the missing status tracker — has a corresponding, tested fix live in production, not a recommendation waiting for a future phase.</p>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0; max-width:720px;">Handover closed with internal design and engineering teams at the authority's divisions trained and equipped to extend the OneRAK DLS and portal independently, turning what began as a KPMG-led assessment into a system the client now owns end to end.</p>
+  </div>
+
+  <!-- ===== NEXT / CONTACT ===== -->
+  <div style="position:relative; padding:20px 32px 60px; max-width:900px; margin:0 auto;">
+    <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:600px; height:360px; border-radius:50%; background:radial-gradient(circle, rgba(183,204,255,0.28), transparent 70%); filter:blur(70px); z-index:-1;"></div>
+    <div style="text-align:center; padding:40px 24px;">
+      <h2 style="font-size:clamp(26px,3.5vw,36px); font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 18px;">Interested in working together?</h2>
+      <a href="Contact.dc.html" style="display:inline-flex; align-items:center; gap:8px; padding:16px 32px; background:#12141F; color:#FFFFFF; border-radius:24px; font-size:15px; font-weight:600;">Get in touch →</a>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="Work.dc.html" style="font-size:14px; font-weight:600; color:#3D63E0;">← Back to all work</a>
+    </div>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 60px; text-align:center;">
+    <p style="font-size:12px; line-height:1.6; color:#A0A4B8; margin:0;">Client names and identifying details have been generalized to respect confidentiality agreements. Metrics and outcomes reflect the real scope and impact of the engagement.</p>
+  </div>
+
+  <div style="text-align:center; padding:0 32px 60px; font-size:13px; color:#6B7086;">© 2026 Nelson Lopes. Designed with care.</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { heuristicsExpanded: false, personaIndex: 0, testingIndex: 0, screensIndex: 0 };
+  toggleHeuristics = () => this.setState((s) => ({ heuristicsExpanded: !s.heuristicsExpanded }));
+  screensGoTo = (i) => this.setState({ screensIndex: i });
+  screensPrev = () => this.setState((s) => ({ screensIndex: (s.screensIndex + 1) % 2 }));
+  screensNext = () => this.setState((s) => ({ screensIndex: (s.screensIndex + 1) % 2 }));
+  testingGoTo = (i) => this.setState({ testingIndex: i });
+  testingPrev = () => this.setState((s) => ({ testingIndex: (s.testingIndex + 2) % 3 }));
+  testingNext = () => this.setState((s) => ({ testingIndex: (s.testingIndex + 1) % 3 }));
+  personaGoTo = (i) => this.setState({ personaIndex: i });
+  personaPrev = () => this.setState((s) => ({ personaIndex: (s.personaIndex + 1) % 2 }));
+  personaNext = () => this.setState((s) => ({ personaIndex: (s.personaIndex + 1) % 2 }));
+  renderVals() {
+    const personaDots = [0, 1].map((i) => ({
+      onClick: () => this.personaGoTo(i),
+      bg: this.state.personaIndex === i ? '#3D63E0' : '#D8E0F5',
+    }));
+    return {
+      heuristicsExpanded: this.state.heuristicsExpanded,
+      toggleHeuristics: this.toggleHeuristics,
+      personaTrackTransform: 'translateX(' + (-this.state.personaIndex * 100) + '%)',
+      personaPrev: this.personaPrev,
+      personaNext: this.personaNext,
+      personaDots,
+      heuristicsToggleLabel: this.state.heuristicsExpanded ? 'Hide full findings ↑' : 'View full findings ↓',
+      testingTrackTransform: 'translateX(' + (-this.state.testingIndex * 100) + '%)',
+      testingPrev: this.testingPrev,
+      testingNext: this.testingNext,
+      testingDots: [0, 1, 2].map((i) => ({
+        onClick: () => this.testingGoTo(i),
+        bg: this.state.testingIndex === i ? '#3D63E0' : '#D8E0F5',
+      })),
+      screensTrackTransform: 'translateX(' + (-this.state.screensIndex * 100) + '%)',
+      screensPrev: this.screensPrev,
+      screensNext: this.screensNext,
+      screensDots: [0, 1].map((i) => ({
+        onClick: () => this.screensGoTo(i),
+        bg: this.state.screensIndex === i ? '#3D63E0' : '#D8E0F5',
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

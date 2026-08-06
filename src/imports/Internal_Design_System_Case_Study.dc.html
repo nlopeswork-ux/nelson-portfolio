@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #001A5C; text-decoration: none; }
+    a:hover { color: #2A4CB8; }
+    @keyframes driftA { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-20px) scale(1.05); } }
+    img { display: block; max-width: 100%; }
+  </style>
+</helmet>
+
+<div style="position:relative; overflow:hidden; background:#FFFFFF; --content-max:1200px; --content-pad:32px; --accent-klein:#002FA7;">
+
+  <!-- ===== NAV ===== -->
+  <div style="position:fixed; top:20px; left:var(--content-pad); right:var(--content-pad); max-width:var(--content-max); margin:0 auto; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px var(--content-pad); background:rgba(255,255,255,0.6); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.12); border-radius:20px; box-shadow:0 10px 30px rgba(20,30,60,0.14);">
+    <a href="Portfolio.dc.html" style="font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#1A1D29;">Nelson Lopes</a>
+    <div style="display:flex; gap:26px; font-size:14px; font-weight:500;">
+      <a href="Work.dc.html" style="color:var(--accent-klein); border-bottom:2px solid var(--accent-klein); padding-bottom:2px;">Work</a>
+      <a href="Journey.dc.html" style="color:#4A4F63;">Journey</a>
+      <a href="About.dc.html" style="color:#4A4F63;">About</a>
+      <a href="Contact.dc.html" style="color:#4A4F63;">Contact</a>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <div style="position:relative; padding:180px 32px 60px; max-width:900px; margin:0 auto;">
+    <div style="position:absolute; top:-160px; left:-200px; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(183,204,255,0.32), transparent 70%); filter:blur(70px); animation:driftA 24s ease-in-out infinite; z-index:-1;"></div>
+
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">Case Study</div>
+    <h1 style="font-size:clamp(34px,5.5vw,56px); font-weight:800; letter-spacing:-0.03em; color:#12141F; margin:0 0 24px; line-height:1.1;">Internal Design System</h1>
+    <p style="font-size:19px; line-height:1.7; color:#5A5F73; max-width:720px; margin:0 0 44px;">Building an internal design platform that unified structure and components across projects, cutting redundant rebuild work and accelerating delivery for both ambitious and lean engagements.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; border-radius: 0px; background: rgba(255,255,255,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.4); margin-bottom: 24px;">
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Role</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Lead Product Designer</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Timeline</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">2023 — Present</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Platform</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Internal enterprise projects (multiple client domains)</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Team (initial)</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">1 Lead Product Designer · 1 UX/UI Designer · 1 Junior UX/UI Designer · 1 Senior Front-End Engineer · 1 Front-End Engineer</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Team (expanded)</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">+ 1 Senior Back-End Architect · 1 Back-End Engineer (added as the system matured)</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Tools</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Figma (Variables, Auto Layout) · FigJam</div>
+      </div>
+      <div style="grid-column:span 3;">
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Responsibilities</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Design System Strategy · UX Architecture · Component Design · Documentation · Governance · Design Tokens · Cross-team Alignment</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:30px; font-weight:800; color:#001A5C;">15</div>
+        <div style="font-size:13px; color:#5A5F73;">projects audited across 3 years</div>
+      </div>
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:30px; font-weight:800; color:#001A5C;">25%</div>
+        <div style="font-size:13px; color:#5A5F73;">faster delivery on the flagship pilot (4 → 3 months)</div>
+      </div>
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:30px; font-weight:800; color:#001A5C;">7</div>
+        <div style="font-size:13px; color:#5A5F73;">people on the team at current scale</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== THE HOOK ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">The Hook</h2>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 20px;">As the team delivered a growing number of client engagements, a pattern became visible: many projects — despite serving different industries and clients — relied on very similar structures and components. Yet each one was rebuilt from scratch.</p>
+    <p style="font-size:20px; font-weight:700; color:#12141F; margin:0 0 20px;">The root cause wasn't differing needs. It was that no project started from a uniform, autolayout-based foundation.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 20px;">Every engagement inherited whatever ad hoc structure the previous file happened to have, so teams re-created grids, cards, tables and navigation patterns project after project — losing time that could have gone into solving the client's actual problem.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0;">Rather than producing another one-off UI kit, the goal was to build a reusable internal foundation that could flex across two very different modes of work: short, lean projects and longer, more ambitious ones — without forcing either into the wrong mould.</p>
+  </div>
+
+  <!-- ===== BUSINESS CONTEXT ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 30px;">Business Context</h2>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px;">
+      <div style="padding:26px; border-radius:16px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#12141F; margin-bottom:10px;">Business Goals</div>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 8px;">— Eliminate repeated structural rebuilds between projects</p>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 8px;">— Reduce time spent on initial project setup (the "blank canvas" phase)</p>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 8px;">— Create consistency of structure without limiting creative flexibility per project</p>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;">— Enable the design team to scale — from small, short-turnaround projects to large, ambitious ones — using the same foundation</p>
+      </div>
+      <div style="padding:26px; border-radius:16px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#12141F; margin-bottom:10px;">Constraints</div>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 8px;"><strong style="color:#12141F;">Small team, no dedicated time:</strong> the system was built in parallel with live client delivery, never as a separate, fully-resourced initiative.</p>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 8px;"><strong style="color:#12141F;">Two very different project profiles:</strong> short/lean engagements and large/ambitious ones both needed to be served by the same system, ruling out a rigid, one-size-fits-all kit.</p>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;"><strong style="color:#12141F;">Legacy inconsistency:</strong> existing files lacked uniform structure and autolayout, making migration to the new foundation non-trivial.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== THE CHALLENGE ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">The Challenge</h2>
+    <p style="font-size:20px; font-weight:700; color:#12141F; margin:0 0 20px;">The challenge was never designing nicer components.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0;">It was building a structural foundation flexible enough to support a two-week project and a several-month project with the same underlying system — without the team having to choose between speed and structural quality.</p>
+  </div>
+
+  <!-- ===== DISCOVERY ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 40px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">Discovery — Audit Methodology</h2>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 32px;">Rather than starting from new designs, the process began with a structured audit of the existing project ecosystem, combining three methods.</p>
+
+    <div style="display:flex; flex-direction:column; gap:24px; margin-bottom:44px;">
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">1. Design / Interface Audit</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">A systematic inventory of screens, components and layouts across 15 projects delivered over the previous 3 years, gathered into a single visual reference to make repetition immediately visible rather than anecdotal.</p>
+      </div>
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">2. Informal Observation</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Reviewing how designers actually worked file-to-file, to see where time was really being lost — not just what was being rebuilt, but why.</p>
+      </div>
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">3. Interviews</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Conversations with designers and developers who had worked on those projects, to surface the practical frustrations behind the repetition — tight deadlines, inconsistent handoff, absence of autolayout.</p>
+      </div>
+    </div>
+
+    <div style="font-size:15px; font-weight:600; color:#12141F; margin-bottom:16px;">Audit Dimensions</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:44px;">
+      <div style="padding:20px; border-radius:14px; background:#F2F6FF;"><div style="font-size:13px; font-weight:600; color:#001A5C; margin-bottom:8px;">Components</div><p style="font-size:13.5px; line-height:1.6; color:#5A5F73; margin:0;">Buttons, inputs, cards, tables, navigation, modals</p></div>
+      <div style="padding:20px; border-radius:14px; background:#F2F6FF;"><div style="font-size:13px; font-weight:600; color:#001A5C; margin-bottom:8px;">Layouts</div><p style="font-size:13.5px; line-height:1.6; color:#5A5F73; margin:0;">Dashboards, detail views, forms, listing pages, empty states</p></div>
+      <div style="padding:20px; border-radius:14px; background:#F2F6FF;"><div style="font-size:13px; font-weight:600; color:#001A5C; margin-bottom:8px;">Structure</div><p style="font-size:13.5px; line-height:1.6; color:#5A5F73; margin:0;">Grid usage, spacing, autolayout adoption, naming conventions</p></div>
+    </div>
+  </div>
+
+  <!-- ===== KEY INSIGHTS ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 30px;">Key Insights</h2>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px;">
+      <div style="padding:26px 28px; border-radius:18px; background:#FFFFFF; border:1px solid #EAF1FF; box-shadow:0 10px 28px rgba(20,30,60,0.05);"><div style="font-size:28px; font-weight:800; color:#001A5C; margin-bottom:10px;">01</div><p style="font-size:14.5px; line-height:1.7; color:#4A4F63; margin:0;">The majority of the 15 projects audited shared close to the same structural layouts (grids, headers, listings), regardless of client industry.</p></div>
+      <div style="padding:26px 28px; border-radius:18px; background:#FFFFFF; border:1px solid #EAF1FF; box-shadow:0 10px 28px rgba(20,30,60,0.05);"><div style="font-size:28px; font-weight:800; color:#001A5C; margin-bottom:10px;">02</div><p style="font-size:14.5px; line-height:1.7; color:#4A4F63; margin:0;">The main driver of duplicated work was not differing project requirements, but the absence of a consistent technical foundation — specifically, inconsistent or missing autolayout in source files.</p></div>
+      <div style="padding:26px 28px; border-radius:18px; background:#FFFFFF; border:1px solid #EAF1FF; box-shadow:0 10px 28px rgba(20,30,60,0.05);"><div style="font-size:28px; font-weight:800; color:#001A5C; margin-bottom:10px;">03</div><p style="font-size:14.5px; line-height:1.7; color:#4A4F63; margin:0;">Components were frequently rebuilt not because they needed to be different, but because they weren't easily findable or reusable across projects — there was no central library.</p></div>
+      <div style="padding:26px 28px; border-radius:18px; background:#FFFFFF; border:1px solid #EAF1FF; box-shadow:0 10px 28px rgba(20,30,60,0.05);"><div style="font-size:28px; font-weight:800; color:#001A5C; margin-bottom:10px;">04</div><p style="font-size:14.5px; line-height:1.7; color:#4A4F63; margin:0;">A modular, not rigid, system was needed to properly serve both short/lean and large/ambitious projects, without forcing every engagement into the same mould.</p></div>
+    </div>
+  </div>
+
+  <!-- ===== DESIGN SYSTEM STRATEGY ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">Design System Strategy</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 32px;">The system was intentionally split into two layers, so that consistency and flexibility could coexist rather than compete. The core structure never changed — only what sat on top of it did.</p>
+
+    <div style="display:flex; flex-direction:column; gap:20px;">
+      <div style="padding:24px; border-radius:20px; background:#12141F; color:#F2F6FF;">
+        <div style="font-size:12px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#8FAEFF; margin-bottom:10px;">Core Platform (fixed)</div>
+        <p style="font-size:15px; line-height:1.7; margin:0 0 6px;">— Foundations: colour, typography, spacing, grid</p>
+        <p style="font-size:15px; line-height:1.7; margin:0 0 6px;">— Autolayout-first components (buttons, inputs, cards, tables, navigation, modals)</p>
+        <p style="font-size:15px; line-height:1.7; margin:0 0 6px;">— Reusable layout patterns (dashboard, detail view, form, listing, empty state)</p>
+        <p style="font-size:15px; line-height:1.7; margin:0;">— Documentation and lightweight governance</p>
+      </div>
+      <div style="padding:24px; border-radius:20px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:12px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-bottom:10px;">Project Layer (flexible)</div>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 6px;">— Brand identity and visual theme</p>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 6px;">— Business-specific workflows</p>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 6px;">— Domain terminology</p>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;">— Project-specific layout variations for ambitious, larger-scope work</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== DESIGN PRINCIPLES ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 24px;">Design Principles</h2>
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div style="padding:18px 22px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF;"><p style="font-size:15px; line-height:1.6; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">Structure before style</strong> — autolayout and grid consistency come first.</p></div>
+      <div style="padding:18px 22px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF;"><p style="font-size:15px; line-height:1.6; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">Reusable, not rigid</strong> — flexible enough for both short and ambitious projects.</p></div>
+      <div style="padding:18px 22px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF;"><p style="font-size:15px; line-height:1.6; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">Documentation as part of the deliverable</strong>, not an afterthought.</p></div>
+      <div style="padding:18px 22px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF;"><p style="font-size:15px; line-height:1.6; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">Design–Engineering collaboration from day one</strong>, reflected in the cross-functional team.</p></div>
+    </div>
+  </div>
+
+  <!-- ===== ADOPTION & FLAGSHIP EXAMPLE ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">Adoption &amp; Flagship Example</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 28px;">A national cybersecurity reporting and monitoring platform is the clearest proof point for the system's impact.</p>
+    <div style="padding:32px; border-radius:24px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); margin-bottom:24px;">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:20px;">
+        <div style="text-align:center;"><div style="font-size:34px; font-weight:800; color:#5A5F73;">4 months</div><div style="font-size:13px; color:#5A5F73; margin-top:4px;">initial scope</div></div>
+        <div style="text-align:center;"><div style="font-size:34px; font-weight:800; color:#001A5C;">3 months</div><div style="font-size:13px; color:#5A5F73; margin-top:4px;">delivered, on the new foundation</div></div>
+      </div>
+      <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Initially scoped at 4 months, the project was delivered in 3 months once built on the new foundation — a reduction of roughly 25% in delivery time, driven by reusable structure and components rather than by cutting scope. Beyond the timeline, the team reported clearer handoff between design and front-end, and faster alignment on requirements — since design and engineering were already working from the same structural language before the project began.</p>
+    </div>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0;"><strong style="color:#12141F;">Rollout:</strong> the system is currently in pilot phase, adopted across internal projects, with the team validating the core/project-layer split before wider rollout. Each new pilot project feeds learnings back into the core platform, keeping it a living system rather than a one-time deliverable.</p>
+  </div>
+
+  <!-- ===== IMPACT ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 30px;">Impact</h2>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-radius:20px; overflow:hidden; box-shadow:0 20px 50px rgba(20,30,60,0.1);">
+      <div style="padding:32px 28px; background:#12141F;">
+        <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:#8FAEFF; margin-bottom:16px;">Business</div>
+        <p style="font-size:14px; line-height:1.65; color:#F2F6FF; margin:0 0 12px;">Delivery speed: ~25% faster on the flagship pilot (4 months → 3 months), attributable to reuse of validated structure and components.</p>
+        <p style="font-size:14px; line-height:1.65; color:#F2F6FF; margin:0 0 12px;">Reduced duplicated effort: no more rebuilding the same structures project after project.</p>
+        <p style="font-size:14px; line-height:1.65; color:#F2F6FF; margin:0;">Lower project start-up cost: a shared foundation reduces the effort needed to kick off a new engagement, whether short or ambitious.</p>
+      </div>
+      <div style="padding:32px 28px; background:#1E2A4A;">
+        <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:#8FAEFF; margin-bottom:16px;">Teams</div>
+        <p style="font-size:14px; line-height:1.65; color:#F2F6FF; margin:0 0 12px;">Handoff: clearer, faster hand-off between Design and Front-End thanks to native autolayout components.</p>
+        <p style="font-size:14px; line-height:1.65; color:#F2F6FF; margin:0 0 12px;">Alignment: faster requirement definition, since teams share a common structural and visual language from the outset.</p>
+        <p style="font-size:14px; line-height:1.65; color:#F2F6FF; margin:0;">Onboarding: new team members (including junior designers) ramp up faster against a documented, consistent system.</p>
+      </div>
+      <div style="padding:32px 28px; background:#2A4CB8;">
+        <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.06em; color:#DCE8FF; margin-bottom:16px;">Technology</div>
+        <p style="font-size:14px; line-height:1.65; color:#FFFFFF; margin:0 0 12px;">Scalability: a structure proven to work across both short-turnaround and ambitious, larger-scope projects.</p>
+        <p style="font-size:14px; line-height:1.65; color:#FFFFFF; margin:0;">Technical depth: the addition of a Senior Back-End Architect and Back-End Engineer extended the system's foundations beyond design into technical architecture considerations.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== LEADERSHIP ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">Leadership</h2>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0;">Beyond executing the design work itself, this role led the definition of the system's strategy, its adoption path and its governance. This meant facilitating alignment between Design and Engineering as the team grew from 5 to 7 people, setting documentation standards, and establishing the core/project-layer split that let the system stay consistent while remaining flexible enough for very different project profiles — treating it as an evolving product, not a static component library.</p>
+  </div>
+
+  <!-- ===== REFLECTION ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">Reflection</h2>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 16px;">Building this system showed that the biggest obstacle was never visual — it was structural. The audit of 15 projects revealed that engagements across very different clients and industries shared far more than they appeared to: the differences were mostly in branding and business rules, while the underlying structural patterns were remarkably consistent.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0;">That discovery made it possible to build a foundation flexible enough to serve both a two-week project and a multi-month one, without compromising either. The flagship result — a 25% faster delivery with better handoff and clearer definition — is the clearest evidence so far that a shared structural foundation, not just shared components, is what actually moves delivery speed. The next phase is to extend the pilot to more internal projects and start capturing the same before/after metric consistently across the portfolio.</p>
+  </div>
+
+  <!-- ===== NEXT / CONTACT ===== -->
+  <div style="position:relative; padding:20px 32px 60px; max-width:900px; margin:0 auto;">
+    <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:600px; height:360px; border-radius:50%; background:radial-gradient(circle, rgba(183,204,255,0.28), transparent 70%); filter:blur(70px); z-index:-1;"></div>
+    <div style="text-align:center; padding:40px 24px;">
+      <h2 style="font-size:clamp(26px,3.5vw,36px); font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 18px;">Interested in working together?</h2>
+      <a href="Contact.dc.html" style="display:inline-flex; align-items:center; gap:8px; padding:16px 32px; background:#12141F; color:#FFFFFF; border-radius:24px; font-size:15px; font-weight:600;">Email me directly →</a>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="Work.dc.html" style="font-size:14px; font-weight:600; color:#3D63E0;">← Back to all work</a>
+    </div>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 60px; text-align:center;">
+    <p style="font-size:12px; line-height:1.6; color:#A0A4B8; margin:0;">Client names and identifying details have been generalized to respect confidentiality agreements. Metrics and outcomes reflect the real scope and impact of the engagement.</p>
+  </div>
+
+  <div style="text-align:center; padding:0 32px 60px; font-size:13px; color:#6B7086;">© 2026 Nelson Lopes. Designed with care.</div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

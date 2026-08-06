@@ -1,0 +1,129 @@
+import { useState } from 'react'
+import Nav from '../components/Nav'
+
+const kpmgEngagements = [
+  { client: 'Global energy & mobility (U.K.)', industry: 'Financial Services', geo: 'U.K.', period: '2024–2025', scope: 'IntelliForge SR2R — ontology-driven financial close system, 200 franchise dealers' },
+  { client: 'Government econ. zone (UAE)', industry: 'Government', geo: 'Middle East', period: '2025–2026', scope: 'OneRAK Portal Revamp — 3 portals unified, 18/18 services live' },
+  { client: 'Nat. employment fund (Bahrain)', industry: 'Government', geo: 'Bahrain', period: '2023–present', scope: 'NEOT Mobile App — 1,000+ screens, 8 modules' },
+  { client: 'Nat. workforce fund (Bahrain)', industry: 'Government', geo: 'Bahrain', period: '2023–present', scope: 'National Workforce Platform — end-to-end digital funding ecosystem' },
+]
+
+const deloitteEngagements = [
+  { client: 'TAP Air Portugal', industry: 'Aviation', geo: 'Portugal', period: '2022–2023', scope: 'Passenger digital experience redesign' },
+  { client: 'Galp Energia', industry: 'Energy', geo: 'Portugal / Spain', period: '2021–2022', scope: 'B2B customer portal and internal operations platform' },
+  { client: 'Mercedes-Benz', industry: 'Automotive', geo: 'Germany', period: '2020–2021', scope: 'Fleet management and dealer digital tools' },
+  { client: 'Fidelidade', industry: 'Insurance', geo: 'Portugal', period: '2019–2020', scope: 'Claims management and customer-facing portal redesign' },
+  { client: 'EDP', industry: 'Energy', geo: 'Portugal', period: '2019', scope: 'Internal digital workspace' },
+  { client: 'Ageas', industry: 'Insurance', geo: 'Belgium / Portugal', period: '2018–2019', scope: 'Digital product design for broker platform' },
+  { client: 'Volvo Cars', industry: 'Automotive', geo: 'Sweden / Portugal', period: '2018', scope: 'Dealer-facing UX design sprint' },
+  { client: 'Various', industry: 'Multiple', geo: 'Europe', period: '2018–2023', scope: 'Workshop facilitation, design sprints, UX audits' },
+]
+
+const divider = <div style={{ height: 1, background: '#EAF1FF' }} />
+
+function TimelineRow({ period, children }: { period: string; children: React.ReactNode }) {
+  return (
+    <div className="timeline-row" style={{ padding: '32px 0 32px 0', borderRadius: 16 }}>
+      <div style={{ fontSize: 14, fontWeight: 600, color: '#001A5C', paddingTop: 4 }}>{period}</div>
+      <div>{children}</div>
+    </div>
+  )
+}
+
+export default function Journey() {
+  const [kpmgOpen, setKpmgOpen] = useState(false)
+  const [deloitteOpen, setDeloitteOpen] = useState(false)
+
+  return (
+    <div style={{ position: 'relative', overflow: 'hidden', background: '#FFFFFF', minHeight: '100vh' }}>
+      <Nav />
+
+      {/* HEADER */}
+      <div style={{ position: 'relative', padding: 'clamp(100px,15vw,150px) 20px 20px', maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ position: 'absolute', top: 40, right: -220, width: 500, height: 500, borderRadius: '50%', background: 'radial-gradient(circle, rgba(200,216,255,0.28), transparent 70%)', filter: 'blur(75px)', zIndex: -1 }} />
+        <div style={{ maxWidth: 900 }}>
+          <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 12 }}>Professional Journey</div>
+          <h1 style={{ fontSize: 'clamp(30px,4vw,46px)', fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: 0 }}>From graphic design to product leadership</h1>
+        </div>
+      </div>
+
+      {/* TIMELINE */}
+      <div style={{ position: 'relative', padding: '40px 32px 140px', maxWidth: 1200, margin: '0 auto' }}>
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+
+          {/* KPMG */}
+          <TimelineRow period="2023 — Present">
+            <h3 style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 4px' }}>Lead UX/UI Designer</h3>
+            <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Global consultancy</div>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 16px' }}>Took ownership of enterprise product design across Europe, the Middle East and the U.S., leading end-to-end digital products from discovery to delivery while shaping product strategy, design systems and scalable user experiences.</p>
+            <button onClick={() => setKpmgOpen(o => !o)} style={{ cursor: 'pointer', display: 'inline-flex', fontSize: 13, fontWeight: 600, color: '#002FA7', background: 'rgba(0,47,167,0.09)', padding: '6px 14px', borderRadius: 999, border: 'none', fontFamily: "'Inter', sans-serif" }}>
+              {kpmgOpen ? 'Hide engagements ↑' : 'Show engagements ↓'}
+            </button>
+            {kpmgOpen && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 0, marginTop: 16, padding: 20, background: '#F7FAFF', borderRadius: 14 }}>
+                {kpmgEngagements.map((eng, i) => (
+                  <div key={i} className="timeline-eng-row" style={{ display: 'grid', gridTemplateColumns: '160px 1fr', gap: 12, fontSize: 14, padding: '10px 0', borderBottom: i < kpmgEngagements.length - 1 ? '1px solid #EAF1FF' : 'none' }}>
+                    <div style={{ fontWeight: 600, color: '#12141F' }}>{eng.client}</div>
+                    <div style={{ color: '#5A5F73' }}>{eng.industry} · {eng.geo} · {eng.period}<br />{eng.scope}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </TimelineRow>
+
+          {divider}
+
+          {/* Deloitte */}
+          <TimelineRow period="2018 — 2023">
+            <h3 style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 4px' }}>Digital Designer</h3>
+            <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Deloitte Portugal</div>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 16px' }}>Grew from delivering individual screens to owning end-to-end digital experiences for aviation, energy, automotive and insurance clients.</p>
+            <button onClick={() => setDeloitteOpen(o => !o)} style={{ cursor: 'pointer', display: 'inline-flex', fontSize: 13, fontWeight: 600, color: '#002FA7', background: 'rgba(0,47,167,0.09)', padding: '6px 14px', borderRadius: 999, border: 'none', fontFamily: "'Inter', sans-serif" }}>
+              {deloitteOpen ? 'Hide engagements ↑' : 'Show engagements ↓'}
+            </button>
+            {deloitteOpen && (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 0, marginTop: 16, padding: 20, background: '#F7FAFF', borderRadius: 14 }}>
+                {deloitteEngagements.map((eng, i) => (
+                  <div key={i} className="timeline-eng-row" style={{ display: 'grid', gridTemplateColumns: '160px 1fr', gap: 12, fontSize: 14, padding: '10px 0', borderBottom: i < deloitteEngagements.length - 1 ? '1px solid #EAF1FF' : 'none' }}>
+                    <div style={{ fontWeight: 600, color: '#12141F' }}>{eng.client}</div>
+                    <div style={{ color: '#5A5F73' }}>{eng.industry} · {eng.geo} · {eng.period}<br />{eng.scope}</div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </TimelineRow>
+
+          {divider}
+
+          {/* Wingman */}
+          <TimelineRow period="2017 — 2018">
+            <h3 style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 4px' }}>Digital Designer</h3>
+            <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Wingman</div>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>First exposure to product thinking — designing for early-stage products where every decision had to earn its place.</p>
+          </TimelineRow>
+
+          {divider}
+
+          {/* Ogilvy */}
+          <TimelineRow period="Jan–Feb 2016">
+            <h3 style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 4px' }}>Trainee Motion Designer</h3>
+            <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Ogilvy Paris</div>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>Short international placement focused on motion design fundamentals.</p>
+          </TimelineRow>
+
+          {divider}
+
+          {/* Biocol */}
+          <TimelineRow period="2015 — 2016">
+            <h3 style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 4px' }}>Creative Designer</h3>
+            <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Biocol Labs</div>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>Where it started — brand, packaging and editorial work that built the visual instincts everything since has drawn on.</p>
+          </TimelineRow>
+
+        </div>
+      </div>
+
+      <div style={{ textAlign: 'center', padding: '40px 32px', fontSize: 13, color: '#6B7086' }}>© 2026 Nelson Lopes. Designed with care.</div>
+    </div>
+  )
+}

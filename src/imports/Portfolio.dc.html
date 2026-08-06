@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" fill="#FFFFFF"></rect>
+    <text x="100" y="115" font-family="Inter, sans-serif" font-size="72" font-weight="800" fill="#002FA7" text-anchor="middle">NL</text>
+  </svg>
+</template>
+
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <script src="./image-slot.js"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FFFFFF; font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    ::selection { background: #DCE8FF; }
+    a { color: #001A5C; text-decoration: none; }
+    a:hover { color: #2A4CB8; }
+    img { display: block; max-width: 100%; }
+    @keyframes driftA { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-20px) scale(1.05); } }
+    @keyframes driftB { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(-25px,25px) scale(1.04); } }
+  </style>
+</helmet>
+
+<div style="position:relative; overflow:hidden; background:#FFFFFF; --content-max:1200px; --content-pad:32px; --accent-klein:#002FA7;">
+
+  <!-- ===== NAV ===== -->
+  <div style="position:fixed; top:20px; left:var(--content-pad); right:var(--content-pad); max-width:var(--content-max); margin:0 auto; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px var(--content-pad); background:rgba(255,255,255,0.6); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.12); border-radius:20px; box-shadow:0 10px 30px rgba(20,30,60,0.14);">
+    <a href="Portfolio.dc.html" style="font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#1A1D29;">Nelson Lopes</a>
+    <div style="display:flex; gap:26px; font-size:14px; font-weight:500;">
+      <a href="Work.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">Work</a>
+      <a href="Journey.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">Journey</a>
+      <a href="About.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">About</a>
+      <a href="Contact.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">Contact</a>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <div style="position: relative; padding: 150px 32px 0; padding-bottom: 80px">
+    <div style="position:absolute; top:-180px; left:-160px; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle, rgba(168,191,255,0.35), rgba(220,232,255,0.1) 60%, transparent 75%); filter:blur(60px); animation:driftA 22s ease-in-out infinite;"></div>
+    <div style="position:absolute; top:-60px; right:-220px; width:560px; height:560px; border-radius:50%; background:radial-gradient(circle, rgba(200,216,255,0.22), rgba(242,246,255,0.08) 60%, transparent 75%); filter:blur(70px); animation:driftB 26s ease-in-out infinite;"></div>
+
+    <div style="position: relative; max-width: 920px; margin: 0 auto; text-align: center; padding: 0 32px 90px; padding-bottom: 32px">
+      <div style="font-size:14px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:24px;">Lead Product Designer — Lisbon, Portugal</div>
+      <h1 style="font-size:clamp(42px,6.6vw,78px); line-height:1.06; font-weight:900; letter-spacing:-0.04em; color:#12141F; margin:0 0 28px;">Product systems for complex,<br>high-stakes decisions.</h1>
+      <p style="font-size:20px; line-height:1.6; font-weight:400; color:#5A5F73; max-width:600px; margin:0 auto 44px;">I design the decision layer beneath enterprise products — banking, insurance, government — where clarity has to survive real deadlines and real stakes.</p>
+      <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <a href="Work.dc.html" style="display:inline-flex; align-items:center; gap:8px; padding:16px 32px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); border-radius:24px; color:#12141F; font-size:15px; font-weight:600; box-shadow:0 8px 24px rgba(120,150,255,0.12); transition:transform 200ms ease-out, box-shadow 200ms ease-out;" style-hover="box-shadow:0 12px 32px rgba(120,150,255,0.22); transform:translateY(-2px) scale(1.01);">View selected work →</a>
+        <a href="#contact" style="display:inline-flex; align-items:center; gap:8px; padding:16px 32px; color:#4A4F63; font-size:15px; font-weight:600; transition:color 200ms ease-out;" style-hover="color:#12141F;">Get in touch</a>
+      </div>
+    </div>
+
+    <div style="position:relative; max-width:1300px; margin:0 auto; padding:0 32px;">
+      <div style="position: static; height: 360px; overflow: hidden; border-radius: 24px 24px 0 0; border: 1px solid rgba(255,255,255,0.5); border-bottom: none; box-shadow: 0px 0px 0px 0px rgba(20,30,60,0.16); border-width: 0px; border-style: none; border-top-left-radius: 0; border-top-right-radius: 0">
+        <img src="./2-msf8cpdw-2btg.png" alt="" style="width:100%; opacity:0.92;">
+        <div style="position:absolute; inset:0; background:linear-gradient(to bottom, rgba(255,255,255,0) 0%, #FFFFFF 96%);"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FEATURED WORK PREVIEW ===== -->
+  <div ref="{{ refs.preview }}" style="position: relative; padding: 0 var(--content-pad) 40px; max-width: var(--content-max); margin: 0 auto; opacity: {{ fade.preview.opacity }}; transform: {{ fade.preview.transform }}; transition: opacity 600ms ease-out, transform 600ms ease-out; height: 336px">
+    <div style="position:absolute; top:60px; right:-260px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle, rgba(200,216,255,0.25), transparent 70%); filter:blur(80px); z-index:-1;"></div>
+
+    <div style="margin-bottom:40px; max-width:640px;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:12px;">Featured Work</div>
+      <h2 style="font-size:clamp(28px,3.5vw,42px); font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0;">A control layer for a 10× bid.</h2>
+    </div>
+
+    <a href="Work.dc.html" style="display:block; text-decoration:none; border-radius:24px; overflow:hidden; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); box-shadow:0 16px 44px rgba(120,150,255,0.1); transition:transform 200ms ease-out, box-shadow 200ms ease-out;" style-hover="transform:translateY(-3px) scale(1.005); box-shadow:0 22px 54px rgba(120,150,255,0.18);">
+      <div style="display:grid; grid-template-columns:260px 1fr; align-items:stretch;">
+        <div style="padding:12px;">
+          <img src="assets/intelliforge/live-delivery-console.png" alt="IntelliForge SR2R" style="width:100%; height:100%; object-fit:cover; border-radius:16px;">
+        </div>
+        <div style="padding:24px 32px 24px 8px; display:flex; flex-direction:column; justify-content:center;">
+          <div style="font-size:12px; font-weight:600; color:#001A5C; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:8px;">Global energy &amp; mobility company — U.K. market</div>
+          <h3 style="font-size:24px; font-weight:700; letter-spacing:-0.02em; color:#12141F; margin:0 0 10px;">IntelliForge SR2R</h3>
+          <p style="font-size:15px; line-height:1.6; color:#5A5F73; margin:0 0 14px;">Turned 200 manual close cycles into a governed system, proving a 10× bid could scale at near-zero cost.</p>
+          <div style="font-size:12px; font-weight:600; color:#4A4F63; background:#F2F6FF; padding:5px 12px; border-radius:12px; display:inline-block; margin-bottom:14px; width:fit-content;">Financial Services</div>
+          <div style="font-size:15px; font-weight:600; color:#3D63E0;">See all work →</div>
+        </div>
+      </div>
+    </a>
+  </div>
+
+  <!-- ===== AREA TEASERS ===== -->
+  <div ref="{{ refs.teasers }}" style="position:relative; padding:20px var(--content-pad) 32px; max-width:var(--content-max); margin:0 auto; opacity:{{ fade.teasers.opacity }}; transform:{{ fade.teasers.transform }}; transition:opacity 600ms ease-out, transform 600ms ease-out;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;">
+      <a href="Work.dc.html" style="display:block; background:#FFFFFF; padding:32px 28px; border-radius:16px; border:1px solid #E9EBF2; box-shadow:0 1px 2px rgba(18,20,31,0.03); text-decoration:none; transition:box-shadow 180ms ease-out, transform 180ms ease-out;" style-hover="box-shadow:0 12px 28px rgba(18,20,31,0.09); transform:translateY(-2px);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#002FA7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><rect x="3" y="3" width="7" height="7" rx="1"></rect><rect x="14" y="3" width="7" height="7" rx="1"></rect><rect x="3" y="14" width="7" height="7" rx="1"></rect><rect x="14" y="14" width="7" height="7" rx="1"></rect></svg>
+        <div style="font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:12px;">Work</div>
+        <div style="font-size:13px; color:#8A8FA3; margin-bottom:10px;">1 case study live, more in progress</div>
+        <p style="font-size:16px; line-height:1.6; color:#4A4F63; margin:0 0 16px;">Case studies from enterprise systems where the interface is only as good as the decisions underneath it.</p>
+        <div style="font-size:14px; font-weight:600; color:#3D63E0;">See the work →</div>
+      </a>
+      <a href="Journey.dc.html" style="display:block; background:#FFFFFF; padding:32px 28px; border-radius:16px; border:1px solid #E9EBF2; box-shadow:0 1px 2px rgba(18,20,31,0.03); text-decoration:none; transition:box-shadow 180ms ease-out, transform 180ms ease-out;" style-hover="box-shadow:0 12px 28px rgba(18,20,31,0.09); transform:translateY(-2px);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#002FA7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><circle cx="5" cy="6" r="2"></circle><circle cx="12" cy="18" r="2"></circle><circle cx="19" cy="9" r="2"></circle><path d="M5 8v4a3 3 0 0 0 3 3h2"></path><path d="M14 17l3-3a3 3 0 0 0 .9-2.1V10"></path></svg>
+        <div style="font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:12px;">Journey</div>
+        <div style="font-size:13px; color:#8A8FA3; margin-bottom:10px;">11 years, 4 studios, one throughline</div>
+        <p style="font-size:16px; line-height:1.6; color:#4A4F63; margin:0 0 16px;">From graphic design to leading product strategy — eleven years, four studios, one throughline.</p>
+        <div style="font-size:14px; font-weight:600; color:#3D63E0;">See the path →</div>
+      </a>
+      <a href="About.dc.html" style="display:block; background:#FFFFFF; padding:32px 28px; border-radius:16px; border:1px solid #E9EBF2; box-shadow:0 1px 2px rgba(18,20,31,0.03); text-decoration:none; transition:box-shadow 180ms ease-out, transform 180ms ease-out;" style-hover="box-shadow:0 12px 28px rgba(18,20,31,0.09); transform:translateY(-2px);">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#002FA7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:16px;"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="10" r="3"></circle><path d="M6.5 19a5.5 5.5 0 0 1 11 0"></path></svg>
+        <div style="font-size:12px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:12px;">About</div>
+        <div style="font-size:13px; color:#8A8FA3; margin-bottom:10px;">Design philosophy, curiosity, and the person behind it</div>
+        <p style="font-size:16px; line-height:1.6; color:#4A4F63; margin:0 0 16px;">How I think, what I believe about design, and what keeps me curious beyond the screen.</p>
+        <div style="font-size:14px; font-weight:600; color:#3D63E0;">Read more →</div>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== CONTACT ===== -->
+  <div id="contact" ref="{{ refs.contact }}" style="position:relative; padding:40px var(--content-pad) 120px; max-width:var(--content-max); margin:0 auto; scroll-margin-top:110px; opacity:{{ fade.contact.opacity }}; transform:{{ fade.contact.transform }}; transition:opacity 600ms ease-out, transform 600ms ease-out;">
+    <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:600px; height:400px; border-radius:50%; background:radial-gradient(circle, rgba(168,191,255,0.3), transparent 70%); filter:blur(70px); z-index:-1;"></div>
+
+    <div style="max-width:900px; margin:0 auto;">
+      <div style="text-align:center; padding:40px 24px;">
+        <h2 style="font-size:clamp(26px,3.2vw,36px); font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px; line-height:1.2;">Let's build something<br>thoughtful together.</h2>
+        <p style="font-size:17px; color:#5A5F73; margin:0 0 36px;">Based in Lisbon — open to select global opportunities.</p>
+        <a href="mailto:nelson@nelsonlopes.design" style="display:inline-flex; align-items:center; gap:8px; padding:18px 36px; background:var(--accent-klein); color:#FFFFFF; border-radius:24px; font-size:15px; font-weight:600; transition:transform 200ms ease-out, box-shadow 200ms ease-out, background 200ms ease-out;" style-hover="transform:translateY(-2px) scale(1.01); box-shadow:0 12px 32px rgba(0,47,167,0.3); background:#001F73;">Email me directly →</a>
+      </div>
+
+      <div style="text-align:center; margin-top:48px; font-size:13px; color:#6B7086;">© 2026 Nelson Lopes. Designed with care.</div>
+    </div>
+  </div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  keys = ['preview', 'teasers', 'contact'];
+  refs = Object.fromEntries(this.keys.map(k => [k, React.createRef()]));
+  state = { visible: {} };
+
+  componentDidMount() {
+    this._obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const key = entry.target.dataset.fadeKey;
+          this.setState((s) => ({ visible: { ...s.visible, [key]: true } }));
+          this._obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    this.keys.forEach((k) => {
+      const node = this.refs[k].current;
+      if (node) {
+        node.dataset.fadeKey = k;
+        this._obs.observe(node);
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    if (this._obs) this._obs.disconnect();
+  }
+
+  renderVals() {
+    const fade = {};
+    this.keys.forEach((k) => {
+      const visible = !!this.state.visible[k];
+      fade[k] = {
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0px)' : 'translateY(16px)',
+      };
+    });
+    return { refs: this.refs, fade };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FFFFFF; font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    ::selection { background: #DCE8FF; }
+    a { color: #001A5C; text-decoration: none; }
+    a:hover { color: #2A4CB8; }
+    img { display: block; max-width: 100%; }
+  </style>
+</helmet>
+
+<div style="position:relative; overflow:hidden; background:#FFFFFF; --content-max:1200px; --content-pad:32px; --accent-klein:#002FA7;">
+
+  <!-- ===== NAV ===== -->
+  <div style="position:fixed; top:20px; left:var(--content-pad); right:var(--content-pad); max-width:var(--content-max); margin:0 auto; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px var(--content-pad); background:rgba(255,255,255,0.6); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.12); border-radius:20px; box-shadow:0 10px 30px rgba(20,30,60,0.14);">
+    <a href="Portfolio.dc.html" style="font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#1A1D29;">Nelson Lopes</a>
+    <div style="display:flex; gap:26px; font-size:14px; font-weight:500;">
+      <a href="Work.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">Work</a>
+      <a href="Journey.dc.html" style="color:var(--accent-klein); border-bottom:2px solid var(--accent-klein); padding-bottom:2px;">Journey</a>
+      <a href="About.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">About</a>
+      <a href="Contact.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">Contact</a>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <div style="position:relative; padding:150px var(--content-pad) 20px; max-width:var(--content-max); margin:0 auto;">
+    <div style="position:absolute; top:40px; right:-220px; width:500px; height:500px; border-radius:50%; background:radial-gradient(circle, rgba(200,216,255,0.28), transparent 70%); filter:blur(75px); z-index:-1;"></div>
+    <div style="max-width:900px;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:12px;">Professional Journey</div>
+      <h1 style="font-size:clamp(30px,4vw,46px); font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0;">From graphic design to product leadership</h1>
+    </div>
+  </div>
+
+  <!-- ===== TIMELINE ===== -->
+  <div ref="{{ refs.timeline }}" style="position:relative; padding:40px var(--content-pad) 140px; max-width:var(--content-max); margin:0 auto; opacity:{{ fade.timeline.opacity }}; transform:{{ fade.timeline.transform }}; transition:opacity 600ms ease-out, transform 600ms ease-out;">
+    <div ref="{{ refs.track }}" style="position:relative; padding-right:24px;">
+      <div style="position:absolute; right:8px; top:6px; bottom:6px; width:2px; background:#EAF1FF; border-radius:2px;">
+        <div style="width:100%; background:var(--accent-klein); border-radius:2px; height:{{ progressHeight }}; transition:height 100ms linear;"></div>
+      </div>
+      <div style="display:flex; flex-direction:column;">
+        <div style="display:grid; grid-template-columns:140px 1fr; gap:32px; padding:32px 0px 32px 16px; margin:0 0 0 -16px; border-radius:16px; transition:background 200ms ease-out;" style-hover="background:#F7FAFF;">
+          <div style="font-size:14px; font-weight:600; color:#001A5C;">2023 — Present</div>
+          <div>
+            <h3 style="font-size:20px; font-weight:700; color:#12141F; margin:0 0 6px;">Lead UX/UI Designer</h3>
+            <div style="font-size:15px; font-weight:500; color:#5A5F73; margin-bottom:12px;">KPMG Portugal</div>
+            <p style="font-size:16px; line-height:1.7; color:#5A5F73; margin:0 0 16px;">Took ownership of enterprise product design across Europe, the Middle East and the U.S., leading end-to-end digital products from discovery to delivery while shaping product strategy, design systems and scalable user experiences.</p>
+            <div onClick="{{ toggleKpmg }}" style="cursor:pointer; display:inline-flex; font-size:13px; font-weight:600; color:var(--accent-klein); background:rgba(0,47,167,0.09); padding:6px 14px; border-radius:999px; transition:background 200ms ease-out;" style-hover="background:rgba(0,47,167,0.16);">{{ kpmgToggleLabel }}</div>
+            <sc-if value="{{ expanded.kpmg }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex; flex-direction:column; gap:14px; margin-top:16px; padding:20px; background:#F7FAFF; border-radius:14px;">
+                <sc-for list="{{ kpmgEngagements }}" as="eng" hint-placeholder-count="2">
+                  <div style="display:grid; grid-template-columns:170px 1fr; gap:16px; font-size:14px;">
+                    <div style="font-weight:600; color:#12141F;">{{ eng.client }}</div>
+                    <div style="color:#5A5F73;">{{ eng.industry }} · {{ eng.geo }} · {{ eng.period }}<br/>{{ eng.scope }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:140px 1fr; gap:32px; padding:32px 0px 32px 16px; margin:0 0 0 -16px; border-radius:16px; transition:background 200ms ease-out;" style-hover="background:#F7FAFF;">
+          <div style="font-size:14px; font-weight:600; color:#001A5C;">2018 — 2023</div>
+          <div>
+            <h3 style="font-size:20px; font-weight:700; color:#12141F; margin:0 0 6px;">Digital Designer</h3>
+            <div style="font-size:15px; font-weight:500; color:#5A5F73; margin-bottom:12px;">Deloitte Portugal</div>
+            <p style="font-size:16px; line-height:1.7; color:#5A5F73; margin:0 0 16px;">Grew from delivering individual screens to owning end-to-end digital experiences for aviation, energy, automotive and insurance clients.</p>
+            <div onClick="{{ toggleDeloitte }}" style="cursor:pointer; display:inline-flex; font-size:13px; font-weight:600; color:var(--accent-klein); background:rgba(0,47,167,0.09); padding:6px 14px; border-radius:999px; transition:background 200ms ease-out;" style-hover="background:rgba(0,47,167,0.16);">{{ deloitteToggleLabel }}</div>
+            <sc-if value="{{ expanded.deloitte }}" hint-placeholder-val="{{ false }}">
+              <div style="display:flex; flex-direction:column; gap:14px; margin-top:16px; padding:20px; background:#F7FAFF; border-radius:14px;">
+                <sc-for list="{{ deloitteEngagements }}" as="eng" hint-placeholder-count="8">
+                  <div style="display:grid; grid-template-columns:170px 1fr; gap:16px; font-size:14px;">
+                    <div style="font-weight:600; color:#12141F;">{{ eng.client }}</div>
+                    <div style="color:#5A5F73;">{{ eng.industry }} · {{ eng.geo }} · {{ eng.period }}<br/>{{ eng.scope }}</div>
+                  </div>
+                </sc-for>
+              </div>
+            </sc-if>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:140px 1fr; gap:32px; padding:32px 0px 32px 16px; margin:0 0 0 -16px; border-radius:16px; transition:background 200ms ease-out;" style-hover="background:#F7FAFF;">
+          <div style="font-size:14px; font-weight:600; color:#001A5C;">2017 — 2018</div>
+          <div>
+            <h3 style="font-size:20px; font-weight:700; color:#12141F; margin:0 0 6px;">Digital Designer</h3>
+            <div style="font-size:15px; font-weight:500; color:#5A5F73; margin-bottom:12px;">Wingman</div>
+            <p style="font-size:16px; line-height:1.7; color:#5A5F73; margin:0;">First exposure to product thinking — designing for early-stage products where every decision had to earn its place.</p>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:140px 1fr; gap:32px; padding:32px 0px 32px 16px; margin:0 0 0 -16px; border-radius:16px; transition:background 200ms ease-out;" style-hover="background:#F7FAFF;">
+          <div style="font-size:14px; font-weight:600; color:#001A5C;">Jan 2016 — Feb 2016</div>
+          <div>
+            <h3 style="font-size:20px; font-weight:700; color:#12141F; margin:0 0 6px;">Trainee Motion Designer</h3>
+            <div style="font-size:15px; font-weight:500; color:#5A5F73; margin-bottom:12px;">Ogilvy Paris</div>
+            <p style="font-size:16px; line-height:1.7; color:#5A5F73; margin:0;">Short international placement focused on motion design fundamentals.</p>
+          </div>
+        </div>
+        <div style="display:grid; grid-template-columns:140px 1fr; gap:32px; padding:32px 0px 32px 16px; margin:0 0 0 -16px; border-radius:16px; transition:background 200ms ease-out;" style-hover="background:#F7FAFF;">
+          <div style="font-size:14px; font-weight:600; color:#001A5C;">2015 — 2016</div>
+          <div>
+            <h3 style="font-size:20px; font-weight:700; color:#12141F; margin:0 0 6px;">Creative Designer</h3>
+            <div style="font-size:15px; font-weight:500; color:#5A5F73; margin-bottom:12px;">Biocol Labs</div>
+            <p style="font-size:16px; line-height:1.7; color:#5A5F73; margin:0;">Where it started — brand, packaging and editorial work that built the visual instincts everything since has drawn on.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:40px 32px; font-size:13px; color:#6B7086;">© 2026 Nelson Lopes. Designed with care.</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  keys = ['timeline'];
+  refs = Object.fromEntries(this.keys.map(k => [k, React.createRef()]));
+  trackRef = React.createRef();
+  state = { visible: {}, expanded: {}, progressPercent: 0 };
+
+  deloitteEngagements = [
+    { client: 'Vehicle Concierge', industry: 'Automotive', geo: 'Germany', period: 'Oct 2021 – Jan 2022', scope: 'A scheduling tool that coordinates new-vehicle delivery between dealers and buyers.' },
+    { client: 'Property Manager', industry: 'Real Estate', geo: 'Portugal', period: 'Aug 2021 – Mar 2022', scope: 'A listings tool that lets agents track properties, buyers and viewings in one place.' },
+    { client: 'Wealth Marketplace', industry: 'Financial Services', geo: 'Portugal', period: 'Sep 2020 – Mar 2021', scope: 'A marketplace where customers compare and apply for savings and investment products.' },
+    { client: 'Energy Channels', industry: 'Energy', geo: 'Portugal', period: 'Feb 2020 – Jun 2021', scope: 'A set of customer channels for managing energy contracts, billing and consumption.' },
+    { client: 'Flight Companion', industry: 'Aviation', geo: 'Portugal', period: 'Sep 2018 – Feb 2022', scope: 'A booking and travel companion covering flights, check-in and loyalty for passengers.' },
+    { client: 'Care Directory', industry: 'Healthcare', geo: 'Portugal', period: 'Mar – Sep 2018', scope: 'A clinic directory that helps patients find specialists and book appointments.' },
+    { client: 'Toll Companion', industry: 'Mobility & Infrastructure', geo: 'Portugal', period: 'Dec 2017 – Mar 2019', scope: 'A tolling and mobility account that drivers use to manage tags, tariffs and trips.' },
+    { client: 'Fuel Rewards', industry: 'Energy', geo: 'Portugal', period: 'Sep 2017 – Feb 2018', scope: 'A loyalty and fuel-station app connecting a retail energy brand with its drivers.' },
+  ];
+
+  kpmgEngagements = [
+    { client: 'Proposal Studio', industry: 'Internal Platforms', geo: 'Global', period: 'Jan 2023 – Present', scope: 'An internal toolset that consulting teams use to build and price client proposals.' },
+    { client: 'Threat Registry', industry: 'Government', geo: 'Portugal', period: 'Jan 2026 – Apr 2026', scope: 'A reporting tool that lets organisations log and track cybersecurity incidents.' },
+    { client: 'Retail Bank App', industry: 'Financial Services', geo: 'Portugal', period: 'Mar 2026 – Aug 2026', scope: 'A banking app that lets customers manage accounts, cards and transfers.' },
+    { client: 'Volunteer Roster', industry: 'Government', geo: 'Portugal', period: 'Jan 2025 – May 2025', scope: 'A scheduling tool that coordinates volunteers across a large public event.' },
+    { client: 'Retail Banking App', industry: 'Financial Services', geo: 'Bahrain', period: 'Aug 2024 – Aug 2025', scope: 'A mobile banking app serving retail customers, businesses and internal banking teams.' },
+    { client: 'Workforce Fund', industry: 'Government', geo: 'Bahrain', period: 'Sep 2023 – Dec 2024', scope: 'A funding programme that connects citizens, employers and government caseworkers.' },
+  ];
+
+  toggleExpand = (key) => {
+    this.setState((s) => ({ expanded: { ...s.expanded, [key]: !s.expanded[key] } }));
+  };
+
+  onScroll = () => {
+    const node = this.trackRef.current;
+    if (!node) return;
+    const rect = node.getBoundingClientRect();
+    const vh = window.innerHeight;
+    const total = rect.height;
+    const passed = vh * 0.6 - rect.top;
+    const pct = Math.max(0, Math.min(100, (passed / total) * 100));
+    this.setState({ progressPercent: pct });
+  };
+
+  componentDidMount() {
+    this._obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const key = entry.target.dataset.fadeKey;
+          this.setState((s) => ({ visible: { ...s.visible, [key]: true } }));
+          this._obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    this.keys.forEach((k) => {
+      const node = this.refs[k].current;
+      if (node) {
+        node.dataset.fadeKey = k;
+        this._obs.observe(node);
+      }
+    });
+
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+
+  componentWillUnmount() {
+    if (this._obs) this._obs.disconnect();
+    window.removeEventListener('scroll', this.onScroll);
+  }
+
+  renderVals() {
+    const fade = {};
+    this.keys.forEach((k) => {
+      const visible = !!this.state.visible[k];
+      fade[k] = {
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0px)' : 'translateY(16px)',
+      };
+    });
+    return {
+      refs: { ...this.refs, track: this.trackRef },
+      fade,
+      progressHeight: this.state.progressPercent + '%',
+      expanded: this.state.expanded,
+      toggleDeloitte: () => this.toggleExpand('deloitte'),
+      toggleKpmg: () => this.toggleExpand('kpmg'),
+      deloitteEngagements: this.deloitteEngagements,
+      kpmgEngagements: this.kpmgEngagements,
+      deloitteToggleLabel: this.state.expanded.deloitte ? 'Hide client engagements ↑' : '8 client engagements ↓',
+      kpmgToggleLabel: this.state.expanded.kpmg ? 'Hide client engagements ↑' : '6 client engagements ↓',
+    };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; background: #FFFFFF; font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #001A5C; text-decoration: none; }
+    a:hover { color: #2A4CB8; }
+    @keyframes driftA { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-20px) scale(1.05); } }
+    img { display: block; max-width: 100%; }
+  </style>
+</helmet>
+
+<div style="position:relative; overflow:hidden; background:#FFFFFF; --content-max:1200px; --content-pad:32px; --accent-klein:#002FA7;">
+
+  <!-- ===== NAV ===== -->
+  <div style="position:fixed; top:20px; left:var(--content-pad); right:var(--content-pad); max-width:var(--content-max); margin:0 auto; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px var(--content-pad); background:rgba(255,255,255,0.6); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.12); border-radius:20px; box-shadow:0 10px 30px rgba(20,30,60,0.14);">
+    <a href="Portfolio.dc.html" style="font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#1A1D29;">Nelson Lopes</a>
+    <div style="display:flex; gap:26px; font-size:14px; font-weight:500;">
+      <a href="Work.dc.html" style="color:var(--accent-klein); border-bottom:2px solid var(--accent-klein); padding-bottom:2px;">Work</a>
+      <a href="Journey.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">Journey</a>
+      <a href="About.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">About</a>
+      <a href="Contact.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">Contact</a>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <div style="position:relative; padding:180px 32px 60px; max-width:900px; margin:0 auto;">
+    <div style="position:absolute; top:-160px; left:-200px; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(183,204,255,0.32), transparent 70%); filter:blur(70px); animation:driftA 24s ease-in-out infinite; z-index:-1;"></div>
+
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">Case Study</div>
+    <h1 style="font-size:clamp(34px,5.5vw,56px); font-weight:800; letter-spacing:-0.03em; color:#12141F; margin:0 0 24px; line-height:1.1;">IntelliForge SR2R</h1>
+    <p style="font-size:19px; line-height:1.7; color:#5A5F73; max-width:720px; margin:0 0 44px;">Designing a governed, ontology-driven Intelligent Financial Close system that transforms 200 manual month-end close cycles into a scalable, auditable decision engine — and builds the evidence base for a 10× volume bid.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; border-radius: 0px; background: rgba(255,255,255,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.4); margin-bottom: 24px;">
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Role</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Product Designer (UX/UI)</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Client</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Global energy &amp; mobility company — U.K. market</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Timeline</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">14 weeks — Phase 1 prototype</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Team</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">1 Designer · Architect · Data Engineer · 2 Engineers · Partner · PM</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Tools</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Figma · FigJam · Python (FastAPI) · RDFLib · YAML</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Deliverable</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">7-screen control plane · 5 decision engines · 20 API endpoints</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px;">
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:30px; font-weight:800; color:#001A5C;">200</div>
+        <div style="font-size:13px; color:#5A5F73;">franchise dealers in monthly scope</div>
+      </div>
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:30px; font-weight:800; color:#001A5C;">60–90 min</div>
+        <div style="font-size:13px; color:#5A5F73;">analyst time per franchise, per cycle</div>
+      </div>
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:30px; font-weight:800; color:#001A5C;">8</div>
+        <div style="font-size:13px; color:#5A5F73;">decision capabilities designed and shipped</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== THE HOOK ===== -->
+  <div style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 90px;">
+  <div style="max-width:760px; margin:0 auto;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">The Hook</h2>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 20px;">Every month, 200 third-party retail franchise dealers submit financial data to KPMG's Record-to-Report managed service — trial balances, account schedules, and supporting documents loaded into Microsoft Business Central. Every month, KPMG analysts manually ingest every file, map every local dealer account code to the client's corporate Chart of Accounts, reconcile discrepancies, investigate anomalies, propose journal entries, and govern what gets posted — against a hard month-end close deadline that waits for no one.</p>
+    <p style="font-size:20px; font-weight:700; color:#12141F; margin:0 0 20px;">The process works. The economics don't.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 20px;">At 60–90 minutes of analyst time per franchise per cycle, the U.K. engagement consumes up to 300 analyst-hours every single month. The cost of the 200th franchise equals the cost of the first. Nothing compounds. When the client's U.S. Mobility division — roughly 10× the U.K. in scale — issued a bid invitation, the engagement team faced a structural problem: winning that contract and delivering it manually would require 10× the headcount. Winning it on a cost basis was not commercially viable.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0;">IntelliForge SR2R is an ontology-driven Decision Twin — a governed control layer sitting on top of Business Central — that ingests submissions, maps accounts with confidence scoring, scores close readiness, predicts risk, estimates the cost of inaction, generates intervention plans, automates governed journal entries, and maintains a complete, reproducible audit trail. Eight decision capabilities. One system. Near-zero marginal cost of scale.</p>
+  </div>
+  </div>
+
+  <!-- ===== RESEARCH ===== -->
+  <div id="outlining-the-research" style="position:relative; max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 60px;">
+    <div style="position:absolute; top:40px; right:-180px; width:460px; height:460px; border-radius:50%; background:radial-gradient(circle, rgba(183,204,255,0.22), transparent 70%); filter:blur(70px); z-index:-1;"></div>
+    <div style="max-width:760px; margin:0 auto;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">Outlining the Research</h2>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 40px;">Discovery ran five parallel tracks across the first three weeks — starting with an independent audit of the system IntelliForge would sit on top of.</p>
+
+    <div style="padding: 36px; border-radius: 0px; background: rgba(255,255,255,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.4); margin-bottom: 36px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px">
+      <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:10px;">0. Baseline UX Audit — The Legacy Business Central Portal</div>
+      <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0 0 20px;">An independent UX audit of the existing Microsoft Dynamics 365 Business Central portal, deliberately conducted by someone with no day-to-day operational familiarity — unfamiliarity treated as a methodological asset, since experienced users stop perceiving friction that has become routine.</p>
+      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:28px;">
+        <div style="text-align:center;"><div style="font-size:24px; font-weight:800; color:#12141F;">26</div><div style="font-size:12px; color:#5A5F73;">usability findings logged</div></div>
+        <div style="text-align:center;"><div style="font-size:24px; font-weight:800; color:#12141F;">13</div><div style="font-size:12px; color:#5A5F73;">rated critical severity</div></div>
+        <div style="text-align:center;"><div style="font-size:24px; font-weight:800; color:#12141F;">5</div><div style="font-size:12px; color:#5A5F73;">structural root causes identified</div></div>
+      </div>
+      <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;">Five structural root causes emerged — properties of Business Central's architecture, not surface bugs: <strong style="color:#12141F;">RC1</strong> mono-entity by design, no consolidated view across 200 franchises; <strong style="color:#12141F;">RC2</strong> no concept of a closing cycle with stages, owners, deadlines; <strong style="color:#12141F;">RC3</strong> bolted-on extensions with no unified design system; <strong style="color:#12141F;">RC4</strong> no managed integration layer; <strong style="color:#12141F;">RC5</strong> configured as a ledger, not a process-control system.</p>
+    </div>
+
+    <div style="overflow-x: auto; margin-bottom: 40px; padding: 24px; border-radius: 20px; border: 1px solid #EAF1FF; background-color: #F8FAFF">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <tr style="border-bottom:1px solid #EAF1FF;">
+          <th style="text-align:left; padding:14px 16px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Finding</th>
+          <th style="text-align:left; padding:14px 16px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Severity</th>
+          <th style="text-align:left; padding:14px 16px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Operational Impact</th>
+        </tr>
+        <tr style="border-bottom:1px solid #EAF1FF;"><td style="padding:14px 16px; color:#12141F;">KPIs carry no anomaly alerting</td><td style="padding:14px 16px; color:#B23A3A;">Critical</td><td style="padding:14px 16px; color:#5A5F73;">A £192M figure read with the same visual weight as £0</td></tr>
+        <tr style="border-bottom:1px solid #EAF1FF;"><td style="padding:14px 16px; color:#12141F;">No consolidated, role-aware dashboard</td><td style="padding:14px 16px; color:#B23A3A;">Critical</td><td style="padding:14px 16px; color:#5A5F73;">Analysts "chase" retailers site by site for status</td></tr>
+        <tr style="border-bottom:1px solid #EAF1FF;"><td style="padding:14px 16px; color:#12141F;">Search doesn't recognise R2R vocabulary</td><td style="padding:14px 16px; color:#B23A3A;">Critical</td><td style="padding:14px 16px; color:#5A5F73;">Zero results for a core term, day before deadline</td></tr>
+        <tr style="border-bottom:1px solid #EAF1FF;"><td style="padding:14px 16px; color:#12141F;">Integration log fails silently</td><td style="padding:14px 16px; color:#B23A3A;">Critical</td><td style="padding:14px 16px; color:#5A5F73;">11 errors sat undetected until the day before deadline</td></tr>
+        <tr><td style="padding:14px 16px; color:#12141F;">Filters carry no persistent state</td><td style="padding:14px 16px; color:#B23A3A;">Critical</td><td style="padding:14px 16px; color:#5A5F73;">2–3 hours of redundant reconfiguration, every cycle</td></tr>
+      </table>
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:32px;">
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">1. Process Archaeology — Three Consecutive Close Cycles</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Shadowed KPMG R2R analysts through three consecutive month-end closes, documenting every manual decision. The output: a catalogue of <strong style="color:#12141F;">34 distinct decision points</strong> — not a process map, a decision inventory. Every point became a candidate for the system's decision engine.</p>
+      </div>
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">2. Data Structure Analysis — 200 Submission Formats</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Catalogued all 200 franchise submission formats and identified <strong style="color:#12141F;">12 structurally distinct variants</strong> — different account code conventions, granularities, and intercompany handling — directly scoping the ontology.</p>
+      </div>
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">3. Stakeholder Interviews — Three Persona Tiers</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Structured interviews across analysts, the Account Partner, and the client's Regional Finance Manager — three tiers, three entirely different definitions of success, each directly driving a screen.</p>
+      </div>
+      <div>
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">4. Competitive Benchmarking — R2R Automation Tools</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Evaluated six market tools; all treated the problem as data transformation, none offered governed decision-making or reproducible audit trails. The market had ETL tools. KPMG needed a Decision Twin.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 90px;">
+  <div style="max-width:760px; margin:0 auto;">
+    <div style="padding:32px; border-radius:24px; background:#12141F; color:#F2F6FF;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#8FAEFF; margin-bottom:12px;">What We Learned</div>
+      <p style="font-size:16px; line-height:1.75; margin:0 0 16px;">The root problem wasn't the volume of work — it was that all mapping knowledge, validation rules, and escalation logic lived in analyst memory and spreadsheets. Nothing accumulated into institutional knowledge.</p>
+      <p style="font-size:16px; line-height:1.75; margin:0;">The secondary finding reshaped the product's commercial framing: the Account Partner's real audience wasn't the U.K. team — it was the the client U.S. bid committee. The hero screen wasn't the analyst workbench; it was a Simulation Mode proving the model could scale to 2,000 franchises at near-zero marginal cost.</p>
+    </div>
+  </div>
+  </div>
+
+  <!-- ===== PERSONAS ===== -->
+  <div style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 90px;">
+  <div style="max-width:760px; margin:0 auto;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">Define — Personas and Decision Maps</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 32px;">Three personas drove every design decision. Designing a screen without asking "which persona is sitting in front of this?" was treated as a process failure.</p>
+
+    <div style="position:relative;">
+      <div style="overflow:hidden;">
+        <div style="display:flex; transform:{{ personaTrackTransform }}; transition:transform 420ms ease-out;">
+          <div style="flex:0 0 100%; padding:0 2px;">
+            <div style="padding:28px; border-radius:20px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); min-height:180px;">
+              <div style="font-size:12px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-bottom:6px;">Persona 1 of 3</div>
+              <div style="font-size:18px; font-weight:700; color:#12141F; margin-bottom:10px;">The KPMG R2R Accountant</div>
+              <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 10px;">The daily operator. Success: completing close on time with zero unresolved exceptions and a full audit trail. Frustration: discovering a close-blocking anomaly in the final hour, with no time to investigate.</p>
+              <p style="font-size:14px; line-height:1.6; color:#7A7F94; margin:0;">Design implication: a prioritised exception queue with enough context to act immediately — never a data dump.</p>
+            </div>
+          </div>
+          <div style="flex:0 0 100%; padding:0 2px;">
+            <div style="padding:28px; border-radius:20px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); min-height:180px;">
+              <div style="font-size:12px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-bottom:6px;">Persona 2 of 3</div>
+              <div style="font-size:18px; font-weight:700; color:#12141F; margin-bottom:10px;">The KPMG Account Partner</div>
+              <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 10px;">The commercial lead for the U.S. bid. Success: walking out with a signed letter of intent. Frustration: no visual, interactive proof point — only a spreadsheet projection any skeptic can dismiss.</p>
+              <p style="font-size:14px; line-height:1.6; color:#7A7F94; margin:0;">Design implication: operable by a non-technical partner, unassisted, in under three minutes, live in the room.</p>
+            </div>
+          </div>
+          <div style="flex:0 0 100%; padding:0 2px;">
+            <div style="padding:28px; border-radius:20px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); min-height:180px;">
+              <div style="font-size:12px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-bottom:6px;">Persona 3 of 3</div>
+              <div style="font-size:18px; font-weight:700; color:#12141F; margin-bottom:10px;">The Client Regional Finance Manager</div>
+              <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0 0 10px;">Accountable for audit defensibility. Success: reproducing any posted journal back to its source in under three minutes. Frustration: today's paper trail spans three spreadsheets and two email threads.</p>
+              <p style="font-size:14px; line-height:1.6; color:#7A7F94; margin:0;">Design implication: a journal-anchored navigator, with every governing rule shown inline as a human-readable citation.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; justify-content:center; gap:20px; margin-top:20px;">
+        <div onClick="{{ personaPrev }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">←</div>
+        <div style="display:flex; gap:8px;">
+          <sc-for list="{{ personaDots }}" as="dot" hint-placeholder-count="3">
+            <div onClick="{{ dot.onClick }}" style="cursor:pointer; width:8px; height:8px; border-radius:50%; background:{{ dot.bg }}; transition:background 200ms ease-out, transform 200ms ease-out;"></div>
+          </sc-for>
+        </div>
+        <div onClick="{{ personaNext }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">→</div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <!-- ===== IA ===== -->
+  <div style="position:relative; max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 90px;">
+    <div style="position:absolute; top:20px; left:-200px; width:440px; height:440px; border-radius:50%; background:radial-gradient(circle, rgba(200,216,255,0.22), transparent 70%); filter:blur(70px); z-index:-1;"></div>
+    <div style="max-width:760px; margin:0 auto;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">Information Architecture — The 7-Tab Control Plane</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 32px;">Rather than one monolithic dashboard, the control plane was organised around the persona-decision matrix — which decisions belong to whom, at which stage of the cycle.</p>
+    <div style="overflow-x: auto; padding: 28px; border-radius: 24px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.4); background-color: #F8FAFF8C; border-color: #EAF1FF; padding-top: 24px; padding-right: 24px; padding-bottom: 24px; padding-left: 24px">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <tr style="border-bottom:1px solid #EAF1FF;">
+          <th style="text-align:left; padding:14px 16px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Tab</th>
+          <th style="text-align:left; padding:14px 16px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Persona</th>
+          <th style="text-align:left; padding:14px 16px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Core Decision Served</th>
+        </tr>
+        <tr style="border-bottom:1px solid #EAF1FF;"><td style="padding:14px 16px; color:#12141F; font-weight:600;">Command Center</td><td style="padding:14px 16px; color:#5A5F73;">R2R Accountant</td><td style="padding:14px 16px; color:#5A5F73;">Is the close on track?</td></tr>
+        <tr style="border-bottom:1px solid #EAF1FF;"><td style="padding:14px 16px; color:#12141F; font-weight:600;">Submission Ingestion</td><td style="padding:14px 16px; color:#5A5F73;">R2R Accountant</td><td style="padding:14px 16px; color:#5A5F73;">Have all 200 franchises submitted valid files?</td></tr>
+        <tr style="border-bottom:1px solid #EAF1FF;"><td style="padding:14px 16px; color:#12141F; font-weight:600;">GL Mapping Workbench</td><td style="padding:14px 16px; color:#5A5F73;">R2R Accountant</td><td style="padding:14px 16px; color:#5A5F73;">Which mapped accounts need human review?</td></tr>
+        <tr style="border-bottom:1px solid #EAF1FF;"><td style="padding:14px 16px; color:#12141F; font-weight:600;">Exception Workbench</td><td style="padding:14px 16px; color:#5A5F73;">R2R Accountant</td><td style="padding:14px 16px; color:#5A5F73;">Which anomalies will delay close?</td></tr>
+        <tr style="border-bottom:1px solid #EAF1FF;"><td style="padding:14px 16px; color:#12141F; font-weight:600;">Journal Review</td><td style="padding:14px 16px; color:#5A5F73;">R2R Accountant</td><td style="padding:14px 16px; color:#5A5F73;">Which proposed journals are ready to approve?</td></tr>
+        <tr style="border-bottom:1px solid #EAF1FF;"><td style="padding:14px 16px; color:#12141F; font-weight:600;">Simulation Mode</td><td style="padding:14px 16px; color:#5A5F73;">Account Partner</td><td style="padding:14px 16px; color:#5A5F73;">What does cost look like at 2,000 franchises?</td></tr>
+        <tr><td style="padding:14px 16px; color:#12141F; font-weight:600;">Audit &amp; Trace</td><td style="padding:14px 16px; color:#5A5F73;">Client Finance Manager</td><td style="padding:14px 16px; color:#5A5F73;">Where did this journal entry come from?</td></tr>
+      </table>
+    </div>
+    </div>
+  </div>
+
+  <!-- ===== SCREENS ===== -->
+  <div style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 40px;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">The Product in Practice — Screens by Persona</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 40px; max-width:720px;">Taken directly from the working prototype — each screen built for the one decision its persona is accountable for.</p>
+  </div>
+
+  <div style="max-width:var(--content-max); margin:0 auto; padding:0 32px 90px;">
+    <div style="overflow:hidden;">
+      <div style="display:flex; transform:{{ screensTrackTransform }}; transition:transform 420ms ease-out;">
+        <div style="flex:0 0 100%; display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding:0 2px;">
+          <div>
+            <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.5); box-shadow:0 20px 50px rgba(120,150,255,0.12);"><img src="assets/intelliforge/live-delivery-console.png" alt="Live Delivery Console" style="width:100%;"></div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-top:14px;">Sarah Mitchell — Analyst Console</div>
+            <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:6px 0 0;"><strong style="color:#12141F;">Live Delivery Console</strong> — portfolio-wide lockdown tracker, integration health, and inaction-cost exposure at a glance.</p>
+          </div>
+          <div>
+            <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.5); box-shadow:0 20px 50px rgba(120,150,255,0.12);"><img src="assets/intelliforge/reviewer-workbench.png" alt="Reviewer Workbench" style="width:100%;"></div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-top:14px;">Sarah Mitchell — Analyst Console</div>
+            <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:6px 0 0;"><strong style="color:#12141F;">Reviewer Workbench</strong> — P&amp;L variance analysis and AI-proposed journal entries staged for review, each tagged with its confidence tier.</p>
+          </div>
+          <div>
+            <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.5); box-shadow:0 20px 50px rgba(120,150,255,0.12);"><img src="assets/intelliforge/pre-close-checkpoint.png" alt="Pre-Close Checkpoint" style="width:100%;"></div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-top:14px;">Sarah Mitchell — Analyst Console</div>
+            <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:6px 0 0;"><strong style="color:#12141F;">Pre-Close Checkpoint</strong> — deterministic validation on the left, a read-only AI readiness score on the right, and a single approval action.</p>
+          </div>
+        </div>
+        <div style="flex:0 0 100%; display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding:0 2px;">
+          <div>
+            <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.5); box-shadow:0 20px 50px rgba(120,150,255,0.12);"><img src="assets/intelliforge/persona-switcher.png" alt="Persona switcher" style="width:100%;"></div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-top:14px;">All Personas</div>
+            <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:6px 0 0;"><strong style="color:#12141F;">The persona switcher</strong> — every screen viewable through any stakeholder's eyes, without five separate logins.</p>
+          </div>
+          <div>
+            <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.5); box-shadow:0 20px 50px rgba(120,150,255,0.12);"><img src="assets/intelliforge/governance-trail.png" alt="Governance Trail" style="width:100%;"></div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-top:14px;">Sarah Mitchell — Analyst Console</div>
+            <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:6px 0 0;"><strong style="color:#12141F;">Governance Trail</strong> — every agent action, human approval, and auto-posted journal logged immutably, in plain language.</p>
+          </div>
+          <div>
+            <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.5); box-shadow:0 20px 50px rgba(120,150,255,0.12);"><img src="assets/intelliforge/process-health-overview.png" alt="Process Health Overview" style="width:100%;"></div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-top:14px;">James &amp; Emma — Leadership View</div>
+            <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:6px 0 0;"><strong style="color:#12141F;">Process Health Overview</strong> — completion rate and portfolio risk trends over six months, client-ready.</p>
+          </div>
+        </div>
+        <div style="flex:0 0 100%; display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding:0 2px;">
+          <div>
+            <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.5); box-shadow:0 20px 50px rgba(120,150,255,0.12);"><img src="assets/intelliforge/executive-service-overview.png" alt="Executive Service Overview" style="width:100%;"></div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-top:14px;">James &amp; Emma — Leadership View</div>
+            <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:6px 0 0;"><strong style="color:#12141F;">Executive Service Overview</strong> — close progress, cluster risk heatmap, and SLA performance framed for an operations stakeholder.</p>
+          </div>
+          <div>
+            <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.5); box-shadow:0 20px 50px rgba(120,150,255,0.12);"><img src="assets/intelliforge/reporting-analytics-hub.png" alt="Reporting &amp; Analytics Hub" style="width:100%;"></div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-top:14px;">James &amp; Emma — Leadership View</div>
+            <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:6px 0 0;"><strong style="color:#12141F;">Reporting &amp; Analytics Hub</strong> — consolidated revenue, GP margin, and contractor performance across all clusters.</p>
+          </div>
+          <div>
+            <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.5); box-shadow:0 20px 50px rgba(120,150,255,0.12);"><img src="assets/intelliforge/month-end-submission-portal.png" alt="Month End Submission Portal" style="width:100%;"></div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-top:14px;">Ahmed Al-Rashid — Franchisee Experience</div>
+            <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:6px 0 0;"><strong style="color:#12141F;">Month End Submission Portal</strong> — Ahmed's monthly obligation reduced to a five-item checklist and a drag-and-drop invoice dropzone.</p>
+          </div>
+        </div>
+        <div style="flex:0 0 100%; display:grid; grid-template-columns:repeat(3,1fr); gap:28px; padding:0 2px;">
+          <div>
+            <div style="border-radius:20px; overflow:hidden; border:1px solid rgba(255,255,255,0.5); box-shadow:0 20px 50px rgba(120,150,255,0.12);"><img src="assets/intelliforge/in-month-assistance.png" alt="In-Month Assistance" style="width:100%;"></div>
+            <div style="font-size:11px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-top:14px;">Ahmed Al-Rashid — Franchisee Experience</div>
+            <p style="font-size:14px; line-height:1.6; color:#5A5F73; margin:6px 0 0;"><strong style="color:#12141F;">In-Month Assistance</strong> — a running task list, a progress ring, and a direct escalation line to his KPMG analyst.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:center; gap:20px; margin-top:24px;">
+      <div onClick="{{ screensPrev }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">←</div>
+      <div style="display:flex; gap:8px;">
+        <sc-for list="{{ screensDots }}" as="dot" hint-placeholder-count="4">
+          <div onClick="{{ dot.onClick }}" style="cursor:pointer; width:8px; height:8px; border-radius:50%; background:{{ dot.bg }}; transition:background 200ms ease-out, transform 200ms ease-out;"></div>
+        </sc-for>
+      </div>
+      <div onClick="{{ screensNext }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">→</div>
+    </div>
+    <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:32px 0 0;">Underneath every screen sits the same conversational layer — the IntelliForge Assistant, scoped to the persona's own data, answering questions without ever being able to post a journal or override a rule itself.</p>
+  </div>
+
+  <!-- ===== KEY DECISIONS ===== -->
+  <div id="key-feature-decisions" style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 90px;">
+  <div style="max-width:760px; margin:0 auto;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">Key Feature Decisions — and What We Rejected</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 32px;">Every significant feature went through rejected directions before landing — that's where the actual design thinking lives.</p>
+
+    <div style="display:flex; flex-direction:column; gap:28px;">
+      <div style="padding:24px; border-radius:20px; background:#F8FAFF; border:1px solid #EAF1FF;">
+        <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:12px;">GL Mapping Confidence Score</div>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0 0 10px;"><strong style="color:#B23A3A;">Rejected — Binary Match/No-Match:</strong> told analysts a mapping existed, not whether to trust it. Analysts verified every account regardless — an incorrect high-confidence mapping is worse than a flagged low-confidence one.</p>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0 0 10px;"><strong style="color:#1F7A4D;">Shipped:</strong> a three-tier confidence score (High/Medium/Low) from SHACL shape validation and semantic similarity. Only Low-confidence mappings enter the review queue.</p>
+        <p style="font-size:14px; line-height:1.7; color:#12141F; margin:0; font-weight:600;">Result: manual review queue fell from 100% to ~18% of mapped accounts.</p>
+      </div>
+      <div style="padding:24px; border-radius:20px; background:#F8FAFF; border:1px solid #EAF1FF;">
+        <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:12px;">Exception Workbench Sort Order</div>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0 0 10px;"><strong style="color:#B23A3A;">Rejected — Chronological Detection:</strong> oldest flag first carried no triage signal — analysts spent the first 45 minutes on items with no bearing on close readiness.</p>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;"><strong style="color:#1F7A4D;">Shipped:</strong> sorted by pre-close risk score — P(delay) from 8 weighted features. The LLM generates the narrative intervention plan; the deterministic engine provides the facts.</p>
+      </div>
+      <div style="padding:24px; border-radius:20px; background:#F8FAFF; border:1px solid #EAF1FF;">
+        <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:12px;">Inaction Cost Estimator — Not in the Original Brief</div>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0 0 10px;">Emerged from Account Partner interviews: partners needed to explain not just what a journal was, but the financial cost of not posting it — today, not eventually.</p>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;">A deterministic, auditable calculator — journal amount, delay in days, cost of capital — became the system's eighth decision capability, now a reusable platform primitive.</p>
+      </div>
+      <div style="padding:24px; border-radius:20px; background:#F8FAFF; border:1px solid #EAF1FF;">
+        <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:12px;">Policy Configuration</div>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0 0 10px;"><strong style="color:#B23A3A;">Rejected — Hardcoded Engineering Parameters:</strong> changing a threshold meant a pull request, a review, and downtime. Engagement parameters change too often for that.</p>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;"><strong style="color:#1F7A4D;">Shipped:</strong> every threshold and policy lives in versioned, human-readable YAML, editable by a partner through an admin form — no deployment required, every journal citing the exact rule version that governed it.</p>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 90px;">
+  <div style="max-width:760px; margin:0 auto;">
+    <div style="padding:32px; border-radius:24px; background:#001A5C; color:#F2F6FF;">
+      <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#8FAEFF; margin-bottom:12px;">Architecture Principle</div>
+      <div style="font-size:18px; font-weight:700; color:#F2F6FF; margin-bottom:14px;">Deterministic-First / LLM-Second</div>
+      <p style="font-size:15px; line-height:1.75; margin:0;">Every score, flag, and decision is computed from defined formulas with inspectable inputs. The LLM only generates the text of intervention plans and powers the agent chat — it cannot modify a number, post a journal, or override a rule. Every LLM output is labelled "Suggested plan — review before actioning." The system assists; humans govern.</p>
+    </div>
+  </div>
+  </div>
+
+  <!-- ===== TESTING ===== -->
+  <div style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 90px;">
+  <div style="max-width:760px; margin:0 auto;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 32px;">Prototypes and Design Iterations — Three Rounds of Testing</h2>
+
+    <div style="overflow:hidden;">
+      <div style="display:flex; transform:{{ testingTrackTransform }}; transition:transform 420ms ease-out;">
+        <div style="flex:0 0 100%; padding:0 2px;">
+          <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:8px;">Round 1 — Internal Analyst Testing</div>
+          <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0 0 12px;">5 KPMG analysts, 12 task scenarios. The readiness score as a single "73%" prompted the same question every time: "73% of what?"</p>
+          <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0 0 12px;">Redesigned as a four-zone gauge (Not Started / In Progress / At Risk / Close Ready) with a 6-component breakdown.</p>
+          <p style="font-size:15px; font-weight:600; color:#12141F; margin:0;">Result: analysts correctly identified the close-blocking item in 100% of scenarios, up from 40%.</p>
+        </div>
+        <div style="flex:0 0 100%; padding:0 2px;">
+          <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:8px;">Round 2 — Partner Simulation Mode Testing</div>
+          <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0 0 12px;">2 Account Partners stalled at manual parameter entry mid-demo.</p>
+          <div style="padding:20px 24px; border-left:3px solid #C9D9FF; background:#F8FAFF; border-radius:0 12px 12px 0; margin-bottom:12px;">
+            <p style="font-size:15px; font-style:italic; color:#12141F; line-height:1.6; margin:0 0 8px;">"I would never open this in a room without a script. I need it to open ready."</p>
+            <p style="font-size:13px; color:#5A5F73; margin:0;">— KPMG Account Partner, Round 2 testing</p>
+          </div>
+          <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0 0 12px;">Redesigned to a single input — a franchise volume slider — with all baseline parameters pre-seeded from live engagement data.</p>
+          <p style="font-size:15px; font-weight:600; color:#12141F; margin:0;">Result: both partners completed the demo unassisted, averaging 2 minutes 40 seconds.</p>
+        </div>
+        <div style="flex:0 0 100%; padding:0 2px;">
+          <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:8px;">Round 3 — Client Finance Manager Audit Testing</div>
+          <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0 0 12px;">The original reverse-chronological log read "like a system log, not an audit explanation."</p>
+          <div style="padding:20px 24px; border-left:3px solid #C9D9FF; background:#F8FAFF; border-radius:0 12px 12px 0; margin-bottom:12px;">
+            <p style="font-size:15px; font-style:italic; color:#12141F; line-height:1.6; margin:0 0 8px;">"I need to tell the story forwards, from the submission to the posting."</p>
+            <p style="font-size:13px; color:#5A5F73; margin:0;">— Client Regional Finance Manager, Round 3 testing</p>
+          </div>
+          <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0 0 12px;">Redesigned as a forward step-by-step timeline: Submission → Parsed &amp; Validated → GL Mapped → Exception Reviewed → Journal Proposed → Governing Rule Applied → Analyst Approved → Posted.</p>
+          <p style="font-size:15px; font-weight:600; color:#12141F; margin:0;">Result: reproduced a test journal in 2 minutes 11 seconds — within the 3-minute requirement.</p>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex; align-items:center; justify-content:center; gap:20px; margin-top:24px;">
+      <div onClick="{{ testingPrev }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">←</div>
+      <div style="display:flex; gap:8px;">
+        <sc-for list="{{ testingDots }}" as="dot" hint-placeholder-count="3">
+          <div onClick="{{ dot.onClick }}" style="cursor:pointer; width:8px; height:8px; border-radius:50%; background:{{ dot.bg }}; transition:background 200ms ease-out, transform 200ms ease-out;"></div>
+        </sc-for>
+      </div>
+      <div onClick="{{ testingNext }}" style="cursor:pointer; width:36px; height:36px; border-radius:50%; display:flex; align-items:center; justify-content:center; background:#F2F6FF; color:#3D63E0; font-size:16px; font-weight:700; transition:background 200ms ease-out, transform 200ms ease-out;" style-hover="background:#DCE8FF; transform:scale(1.06);">→</div>
+    </div>
+    </div>
+  </div>
+
+  <!-- ===== IMPACT ===== -->
+  <div id="concluding-with-impact" style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 90px;">
+  <div style="max-width:760px; margin:0 auto;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">Concluding with Impact</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 32px; max-width:720px;">Delivered as a fully validated, development-ready prototype at the end of 14 weeks: a 7-tab control plane, 5 decision engines, 20 FastAPI endpoints, 195 automated tests, and 600 synthetic artifact files covering 12 franchises × 12 months.</p>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <tr style="border-bottom:1px solid #EAF1FF;">
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">KPI</th>
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Baseline</th>
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Result / Target</th>
+        </tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Analyst time per franchise</td><td style="padding:10px 12px; color:#5A5F73;">60–90 min</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">8–12 min (est., Phase 2 validation)</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">GL mapping manual review queue</td><td style="padding:10px 12px; color:#5A5F73;">100% of accounts</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">~18% (low-confidence only)</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Audit trail reproduction time</td><td style="padding:10px 12px; color:#5A5F73;">30+ min, 3 spreadsheets</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">2 min 11 sec</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Exception triage accuracy</td><td style="padding:10px 12px; color:#5A5F73;">40% (Round 1)</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">100% post-iteration</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Submission format variants handled</td><td style="padding:10px 12px; color:#5A5F73;">0 (all manual)</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">12 variants</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Partner demo (U.S. bid scenario)</td><td style="padding:10px 12px; color:#5A5F73;">Spreadsheet estimate only</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">2 min 40 sec uncoached</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Policy change turnaround</td><td style="padding:10px 12px; color:#5A5F73;">Engineering deployment</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">Partner-editable YAML, no deployment</td></tr>
+        <tr><td style="padding:10px 12px; color:#12141F;">Marginal cost of 1,800 new franchises</td><td style="padding:10px 12px; color:#5A5F73;">≈ 10× headcount</td><td style="padding:10px 12px; color:#1F7A4D; font-weight:600;">Near-zero — same system, new config</td></tr>
+      </table>
+    </div>
+    </div>
+  </div>
+
+  <!-- ===== WHAT'S NEXT ===== -->
+  <div style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 90px;">
+  <div style="max-width:760px; margin:0 auto;">
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">What's Next</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 16px;">Phase 2 replaces the synthetic dataset with a live Business Central connection and adds persistent storage, authentication, and role-based access control — the test architecture was written to be data-source-agnostic, making this a configuration change, not a rewrite.</p>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 16px;">Phase 3 brings U.S. Mobility onboarding: a gain-share commercial module converting Simulation Mode from a demo tool into a live dashboard tracking actual versus projected margin differential.</p>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0;">If the client's U.S. Mobility contract is won and delivered manually, delivery cost scales 10×. With IntelliForge SR2R as the control layer, delivery cost scales near-zero — and the margin differential funds the full platform investment. The prototype doesn't just improve the U.K. engagement. It proves the model that wins the bid.</p>
+  </div>
+  </div>
+
+  <!-- ===== NEXT / CONTACT ===== -->
+  <div style="position:relative; padding:20px var(--content-pad) 60px; max-width:var(--content-max); margin:0 auto;">
+    <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:600px; height:360px; border-radius:50%; background:radial-gradient(circle, rgba(183,204,255,0.28), transparent 70%); filter:blur(70px); z-index:-1;"></div>
+    <div style="max-width:760px; margin:0 auto;">
+    <div style="text-align:center; padding:40px 24px;">
+      <h2 style="font-size:clamp(26px,3.5vw,36px); font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 18px;">Interested in working together?</h2>
+      <a href="Portfolio.dc.html#contact" style="display:inline-flex; align-items:center; gap:8px; padding:16px 32px; background:#12141F; color:#FFFFFF; border-radius:24px; font-size:15px; font-weight:600;">Get in touch →</a>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="Portfolio.dc.html" style="font-size:14px; font-weight:600; color:#3D63E0;">← Back to all work</a>
+    </div>
+    </div>
+  </div>
+
+  <div style="max-width:var(--content-max); margin:0 auto; padding:0 var(--content-pad) 60px; text-align:center;">
+  <div style="max-width:760px; margin:0 auto;">
+    <p style="font-size:12px; line-height:1.6; color:#A0A4B8; margin:0;">Client names and identifying details have been generalized to respect confidentiality agreements. Metrics and outcomes reflect the real scope and impact of the engagement.</p>
+  </div>
+  </div>
+
+  <div style="text-align:center; padding:0 var(--content-pad) 60px; font-size:13px; color:#6B7086;">© 2026 Nelson Lopes. Designed with care.</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { personaIndex: 0, screensIndex: 0, testingIndex: 0 };
+
+  testingGoTo = (i) => this.setState({ testingIndex: i });
+  testingPrev = () => this.setState((s) => ({ testingIndex: (s.testingIndex + 2) % 3 }));
+  testingNext = () => this.setState((s) => ({ testingIndex: (s.testingIndex + 1) % 3 }));
+
+  personaGoTo = (i) => this.setState({ personaIndex: i });
+  personaPrev = () => this.setState((s) => ({ personaIndex: (s.personaIndex + 2) % 3 }));
+  personaNext = () => this.setState((s) => ({ personaIndex: (s.personaIndex + 1) % 3 }));
+
+  screensGoTo = (i) => this.setState({ screensIndex: i });
+  screensPrev = () => this.setState((s) => ({ screensIndex: (s.screensIndex + 3) % 4 }));
+  screensNext = () => this.setState((s) => ({ screensIndex: (s.screensIndex + 1) % 4 }));
+
+  renderVals() {
+    const personaDots = [0, 1, 2].map((i) => ({
+      onClick: () => this.personaGoTo(i),
+      bg: this.state.personaIndex === i ? '#3D63E0' : '#D8E0F5',
+    }));
+    const screensDots = [0, 1, 2, 3].map((i) => ({
+      onClick: () => this.screensGoTo(i),
+      bg: this.state.screensIndex === i ? '#3D63E0' : '#D8E0F5',
+    }));
+    return {
+      personaTrackTransform: 'translateX(' + (-this.state.personaIndex * 100) + '%)',
+      personaPrev: this.personaPrev,
+      personaNext: this.personaNext,
+      personaDots,
+      screensTrackTransform: 'translateX(' + (-this.state.screensIndex * 100) + '%)',
+      screensPrev: this.screensPrev,
+      screensNext: this.screensNext,
+      screensDots,
+      testingTrackTransform: 'translateX(' + (-this.state.testingIndex * 100) + '%)',
+      testingPrev: this.testingPrev,
+      testingNext: this.testingNext,
+      testingDots: [0, 1, 2].map((i) => ({
+        onClick: () => this.testingGoTo(i),
+        bg: this.state.testingIndex === i ? '#3D63E0' : '#D8E0F5',
+      })),
+    };
+  }
+}
+</script>
+</body>
+</html>

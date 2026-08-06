@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { margin: 0; background: #FFFFFF; font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    a { color: #001A5C; text-decoration: none; }
+    a:hover { color: #2A4CB8; }
+    @keyframes driftA { 0%,100% { transform: translate(0,0) scale(1); } 50% { transform: translate(30px,-20px) scale(1.05); } }
+    img { display: block; max-width: 100%; }
+  </style>
+</helmet>
+
+<div style="position:relative; overflow:hidden; background:#FFFFFF; --content-max:1200px; --content-pad:32px; --accent-klein:#002FA7;">
+
+  <!-- ===== NAV ===== -->
+  <div style="position:fixed; top:20px; left:var(--content-pad); right:var(--content-pad); max-width:var(--content-max); margin:0 auto; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px var(--content-pad); background:rgba(255,255,255,0.6); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.12); border-radius:20px; box-shadow:0 10px 30px rgba(20,30,60,0.14);">
+    <a href="Portfolio.dc.html" style="font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#1A1D29;">Nelson Lopes</a>
+    <div style="display:flex; gap:26px; font-size:14px; font-weight:500;">
+      <a href="Work.dc.html" style="color:var(--accent-klein); border-bottom:2px solid var(--accent-klein); padding-bottom:2px;">Work</a>
+      <a href="Journey.dc.html" style="color:#4A4F63;">Journey</a>
+      <a href="About.dc.html" style="color:#4A4F63;">About</a>
+      <a href="Contact.dc.html" style="color:#4A4F63;">Contact</a>
+    </div>
+  </div>
+
+  <!-- ===== 01. OVERVIEW ===== -->
+  <div style="position:relative; padding:180px 32px 60px; max-width:900px; margin:0 auto;">
+    <div style="position:absolute; top:-160px; left:-200px; width:600px; height:600px; border-radius:50%; background:radial-gradient(circle, rgba(0,47,167,0.16), transparent 70%); filter:blur(70px); animation:driftA 24s ease-in-out infinite; z-index:-1;"></div>
+
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">Case Study · 01 Overview</div>
+    <h1 style="font-size:clamp(34px,5.5vw,56px); font-weight:800; letter-spacing:-0.03em; color:#12141F; margin:0 0 24px; line-height:1.1;">National Workforce Digital Platform</h1>
+    <p style="font-size:19px; line-height:1.7; color:#5A5F73; max-width:760px; margin:0 0 20px;">Designing Bahrain's national workforce development ecosystem — from a manual, email-and-in-person process to a unified digital platform for citizens, businesses and government, across four years of continuous evolution.</p>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; max-width:760px; margin:0 0 44px;">Led the design of a unified digital platform that replaced the Fund's entirely manual funding process with a connected ecosystem serving 5 external and 15 internal user roles across four annual delivery phases.</p>
+
+    <div style="display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; border-radius: 0px; background: rgba(255,255,255,0.55); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.4); padding: 28px; margin-bottom: 24px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px">
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Role</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">UX/UI Designer (2023, on kickoff) → Senior UX/UI Designer &amp; Design Lead (2024–present)</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Client</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">National workforce development fund — Bahrain (Government / Employment &amp; Economic Development)</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Timeline</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">January 2023 – Present (3.5+ years), across 4 annual phases: 2023 Foundation, 2024 Platform Expansion, 2025 Omnichannel, 2026 Intelligence &amp; Personalisation (current)</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Platform</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">OutSystems (low-code) — External Platform + Internal Operations Platform, plus a native mobile companion (NEOT) introduced in the 2025 phase</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Languages</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">English &amp; Arabic (RTL), light &amp; dark mode</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Team</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Product Owner · Business Analysts · UX/UI Designers · Solution Architects · OutSystems Developers · QA</div>
+      </div>
+      <div>
+        <div style="font-size:12px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:8px;">Tools</div>
+        <div style="font-size:15px; font-weight:600; color:#12141F;">Figma · FigJam · OutSystems</div>
+      </div>
+    </div>
+
+    <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px;">
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:28px; font-weight:800; color:#001A5C;">5</div>
+        <div style="font-size:13px; color:#5A5F73;">external personas</div>
+      </div>
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:28px; font-weight:800; color:#001A5C;">15</div>
+        <div style="font-size:13px; color:#5A5F73;">internal roles</div>
+      </div>
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:28px; font-weight:800; color:#001A5C;">7</div>
+        <div style="font-size:13px; color:#5A5F73;">IA sections</div>
+      </div>
+      <div style="text-align:center; padding:20px; border-radius:18px; background:#F2F6FF;">
+        <div style="font-size:28px; font-weight:800; color:#001A5C;">4</div>
+        <div style="font-size:13px; color:#5A5F73;">delivery phases</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 02. CONTEXT ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">02 Context</div>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 20px;">The Fund is Bahrain's national labour fund, funding skills, employment and enterprise-growth programmes for Bahraini individuals and private-sector companies. Before 2023, none of that ran through a portal — applications, documents, approvals, payment claims and status updates were handled entirely through email correspondence and in-person visits. There was no self-service channel and no shared case record between an applicant and Tamkeen.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 32px;">Bahrain's Digital Government Strategy 2022 and the Telecommunications, ICT and Digital Economy Sector Strategy 2022–26 set a national "digital-first" mandate to rebuild public and semi-governmental services around digital delivery, as part of the Kingdom's Economic Recovery Plan and Economic Vision 2030. This platform is Tamkeen's answer to that mandate: not a single portal, but a scalable digital product built and grown across four annual phases.</p>
+
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px;">
+      <div style="padding:26px; border-radius:16px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#12141F; margin-bottom:10px;">Business Goals</div>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;">Replace a fully manual funding process with a unified digital lifecycle; support Bahrain's national digital-first mandate; build a platform capable of absorbing new programmes without rebuilding it each time.</p>
+      </div>
+      <div style="padding:26px; border-radius:16px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#12141F; margin-bottom:10px;">Users</div>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;">5 external personas (Individual, Enterprise, Vendor, Training Provider, Bank) and 15 internal roles across 5 functional groups (Assessment, Customer Service, Disbursement, Monitoring, Data Monitoring).</p>
+      </div>
+      <div style="padding:26px; border-radius:16px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#12141F; margin-bottom:10px;">Stakeholders</div>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;">Internal Fund departments, banking partners, training providers, vendors.</p>
+      </div>
+      <div style="padding:26px; border-radius:16px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#12141F; margin-bottom:10px;">Constraints</div>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;">Built on OutSystems (low-code); bilingual English/Arabic with RTL layout, light/dark mode; three distinct support types (P&amp;S, Training, Wages), each with its own eligibility, claim and amendment rules.</p>
+      </div>
+      <div style="grid-column:1 / -1; padding:26px; border-radius:16px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#12141F; margin-bottom:10px;">Risks</div>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;">Compliance and financial-data handling across banking integrations; fraud — the platform's IA includes a dedicated Violations and Frauds flow for this reason.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 03. THE CHALLENGE ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">03 The Challenge</div>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 20px;">There was no existing portal to learn from or migrate off — the challenge was designing a self-service digital case lifecycle to replace a process that had only ever existed as email threads and in-person conversations, without losing the flexibility a human caseworker had offered informally.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 32px;">The scale of what had to be built from scratch: one External Platform spanning 7 top-level sections and 5 distinct applicant/partner personas, feeding into one Internal Platform of 15 named roles spread across 5 functional groups.</p>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;">A single application had to support three different support types — <strong style="color:#12141F;">P&amp;S, Training and Wages</strong> — each with its own claim, payment and amendment rules, inside one Application Detail (360) record.</p></div>
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;">Money moved through three distinct actors — <strong style="color:#12141F;">applicant, vendor and bank</strong> — so Payment &amp; Claims had to model Claim a Payment, Pay to a Vendor and Delivery Confirmation as separate but connected flows, not one generic "payment" screen.</p></div>
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;">Internal review wasn't a single approval chain: <strong style="color:#12141F;">five functional groups</strong> each needed a different working view of the same case (eligibility for Assessment, disbursement for Disbursement, ongoing compliance for Monitoring and Data Monitoring, applicant queries for Customer Service).</p></div>
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;">Many users held <strong style="color:#12141F;">multiple identities at once</strong> — a single person could apply as an Individual while also managing funding applications for one or more companies.</p></div>
+    </div>
+  </div>
+
+  <!-- ===== 04. DISCOVERY & RESEARCH ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 40px;">
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">04 Discovery &amp; Research</div>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 32px;">Before designing a single interface, the goal was to understand how funding programmes actually operated end to end — across applicants, internal teams and partner organisations — since no digital version of that process existed to audit.</p>
+
+    <div style="display:flex; flex-direction:column; gap:24px; margin-bottom:36px;">
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:36px;">
+      <div style="padding:26px; border-radius:16px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">1. Year 1 (2023) Foundational Discovery</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Mapping the email-and-in-person lifecycle end to end, then defining personas by profile type (external) and case-handling responsibility (internal) rather than by department.</p>
+      </div>
+      <div style="padding:26px; border-radius:16px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">2. End-of-Year Scoping Interviews</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Internal (Fund staff) and external (applicants and partners), run near the close of each year to surface what to improve or add before the next year's project is scoped.</p>
+      </div>
+      <div style="padding:26px; border-radius:16px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:15px; font-weight:700; color:#12141F; margin-bottom:8px;">3. Intra-Year Retrospective Workshops</div>
+        <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">A structured 6-step method (define flow, walkthrough, identify pain points, group, vote, convert to action points) run per flow, with ~20 cross-functional participants — one full cycle documented on 20 May 2024 (see Validation).</p>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <tr style="border-bottom:1px solid #EAF1FF;">
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Finding</th>
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Design decision it drove</th>
+        </tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-style:italic;">"Assigning applications is inefficient due to the lack of a direct assignment option to specific internal users" (top-voted, 2024)</td><td style="padding:10px 12px; color:#5A5F73;">Reconstructed the internal model around a Relationship Manager role responsible for case assignment, distinct from Assessor and Approver.</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-style:italic;">"Hard for the customer to know what other stages the application will go through" (6/7 votes, 2024)</td><td style="padding:10px 12px; color:#5A5F73;">Application Detail (360) design principle: one always-visible status tracker per application, plus a first-login guided tutorial.</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-style:italic;">"Unclear error messages" / "system doesn't direct the customer back to the specific incomplete field" (2024)</td><td style="padding:10px 12px; color:#5A5F73;">Design principle: define clear, specific validation messages on Application forms instead of generic ones.</td></tr>
+        <tr><td style="padding:10px 12px; color:#12141F;">No digital channel existed at all pre-2023</td><td style="padding:10px 12px; color:#5A5F73;">Core IA decision to unify Application, Payment &amp; Claims, Approved Support and Processes under a single Application Detail (360) record shared by applicant and reviewer.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== 05. KEY INSIGHTS ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:24px;">05 Key Insights</div>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:20px;">
+      <div style="padding:26px 28px; border-radius:18px; background:#FFFFFF; border:1px solid #EAF1FF; box-shadow:0 10px 28px rgba(20,30,60,0.05);">
+        <div style="font-size:28px; font-weight:800; color:#001A5C; margin-bottom:10px;">01</div>
+        <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:8px;">Visibility mattered more than speed</div>
+        <p style="font-size:14.5px; line-height:1.7; color:#4A4F63; margin:0;">Applicants didn't primarily need a faster process; they needed to stop being in the dark. The single highest-voted Guidance pain point in 2024 (6/7 votes) was that customers couldn't tell what stage their application would go through next. This is why the status tracker and first-login guided tutorial became core design principles, not optional polish.</p>
+      </div>
+      <div style="padding:26px 28px; border-radius:18px; background:#FFFFFF; border:1px solid #EAF1FF; box-shadow:0 10px 28px rgba(20,30,60,0.05);">
+        <div style="font-size:28px; font-weight:800; color:#001A5C; margin-bottom:10px;">02</div>
+        <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:8px;">Assigning work needs to be explicit</div>
+        <p style="font-size:14.5px; line-height:1.7; color:#4A4F63; margin:0;">The single highest-voted pain point across the entire 2024 review (7/7 votes) was that applications had no direct assignment option to a specific internal user. This is the clearest evidence in the whole engagement that operational efficiency and customer experience are the same problem: an unassigned application is a delayed applicant.</p>
+      </div>
+      <div style="grid-column:1 / -1; padding:26px 28px; border-radius:18px; background:#FFFFFF; border:1px solid #EAF1FF; box-shadow:0 10px 28px rgba(20,30,60,0.05);">
+        <div style="font-size:28px; font-weight:800; color:#001A5C; margin-bottom:10px;">03</div>
+        <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:8px;">Internal review isn't one queue, it's five different lenses on the same case</div>
+        <p style="font-size:14.5px; line-height:1.7; color:#4A4F63; margin:0;">Assessment, Disbursement, Customer Service, Monitoring and Data Monitoring each needed a different working view of an identical Application Detail (360) record. That's the direct reason the internal model ended up as 5 functional groups and 15 named roles instead of one generic "back office" team.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== 06. WORKSHOP & PRIORITISATION ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">06 Workshop &amp; Prioritisation</div>
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">Aligning teams around the highest-impact opportunities</h2>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 20px; max-width:760px;">Following the discovery phase, we facilitated a round of client retrospective workshops with Product Owners, BA leads, QA leads and UX/UI leads to translate research into a prioritised action plan — one workshop per flow, run across Customer Application, Assessment &amp; Approval, and Fawateer Payments (Bahrain's national e-payment system), with roughly 20 cross-functional participants per session.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 32px; max-width:760px;">Rather than redesigning the experience immediately, the objective was to build shared understanding, align priorities across teams, and identify improvements capable of delivering measurable value in the shortest time.</p>
+
+    <div style="padding:24px; border-radius:18px; background:#F2F6FF; margin-bottom:32px; max-width:760px;">
+      <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:#001A5C; margin-bottom:8px;">Process</div>
+      <p style="font-size:15px; line-height:1.7; color:#3A3F4C; margin:0;">Each session ran the same six-step method: check in on the flow to analyse → walk through it as a group → identify pain points individually → group them into categories → vote (6 votes per participant) → convert the top-voted pain points into action points.</p>
+    </div>
+
+    <div style="font-size:16px; font-weight:700; color:#12141F; margin-bottom:16px;">Quick Wins Identified — nine action points prioritised for early delivery</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-bottom:36px;">
+      <div style="padding:16px 18px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; line-height:1.55; color:#3A3F4C;">Showing an individual's own programmes before enterprise ones</div>
+      <div style="padding:16px 18px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; line-height:1.55; color:#3A3F4C;">A first-login guided tutorial and visual timeline for payments/IBAN</div>
+      <div style="padding:16px 18px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; line-height:1.55; color:#3A3F4C;">Clear, specific form validation messages instead of generic errors</div>
+      <div style="padding:16px 18px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; line-height:1.55; color:#3A3F4C;">A dashboard for quick review of pending rejections and approvals</div>
+      <div style="padding:16px 18px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; line-height:1.55; color:#3A3F4C;">Accepting an application directly from a notification hyperlink</div>
+      <div style="padding:16px 18px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; line-height:1.55; color:#3A3F4C;">A required reason whenever an application is sent back</div>
+      <div style="padding:16px 18px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; line-height:1.55; color:#3A3F4C;">A tutorial for creating a Fawateer vs. non-Fawateer payment</div>
+      <div style="padding:16px 18px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; line-height:1.55; color:#3A3F4C;">Cancelling a pending Fawateer code and generating a new one</div>
+      <div style="padding:16px 18px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; line-height:1.55; color:#3A3F4C;">Paying multiple vendors within a single Fawateer transaction</div>
+    </div>
+
+    <div style="max-width:760px; margin-bottom:32px;">
+      <div style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.04em; color:#001A5C; margin-bottom:6px;">My Role — Senior UX/UI Designer &amp; Design Lead (from 2024)</div>
+      <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;">Planned and facilitated the workshops, synthesised pain points into prioritised categories, guided the voting-based prioritisation, and translated the output into the following year's roadmap.</p>
+    </div>
+
+    <div style="text-align:center; max-width:760px; margin:0 auto; padding:24px 0;">
+      <div style="font-family:Georgia,'Times New Roman',serif; font-size:44px; line-height:1; color:#001A5C; opacity:0.35; margin-bottom:8px;">"</div>
+      <p style="font-family:Georgia,'Times New Roman',serif; font-style:italic; font-size:26px; line-height:1.45; color:#2A2F3A; margin:0;">Research uncovered the problems. The workshop created alignment. Prioritisation transformed insights into an actionable roadmap that guided both immediate improvements and the long-term evolution of the product.</p>
+    </div>
+  </div>
+
+  <!-- ===== 07. DESIGN PRINCIPLES ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">07 Design Principles</div>
+    <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:16px;">
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">Guide instead of instruct</strong> — surface eligibility rules inside the form itself, not in a separate document.</p></div>
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">Design for transparency</strong> — one always-visible status tracker per application, replacing silence with a specific stage.</p></div>
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">One 360 application record</strong> shared by applicant and reviewer, so status, documents and history never diverge between the two platforms.</p></div>
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">Payment and claims unified</strong> into a single area instead of separate menus for claiming, paying a vendor, and confirming delivery.</p></div>
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">Amendments handled</strong> against the existing Approved Support item rather than as a new application.</p></div>
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">Profile type as the single mechanism</strong> that scopes what a user sees, instead of separate portals per profile.</p></div>
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">Internal roles grouped by function</strong> rather than by a single generic approval hierarchy.</p></div>
+      <div style="padding:20px 24px; border-radius:16px; background:#F2F6FF;"><p style="font-size:14px; line-height:1.65; color:#3A3F4C; margin:0;"><strong style="color:#12141F;">Design one ecosystem</strong> — every persona has a distinct workflow, but the product should feel like a single coherent platform.</p></div>
+    </div>
+  </div>
+
+  <!-- ===== 08. SOLUTION ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 20px;">
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">08 Solution</div>
+    <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">Product Strategy — Four Annual Phases</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 48px; max-width:720px;">The platform evolved through four strategic phases, each a separately scoped annual project.</p>
+
+    <div style="position:relative;">
+      <div style="position:absolute; top:11px; left:0; right:0; height:2px; background:linear-gradient(90deg, var(--accent-klein), #3D63E0);"></div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:24px; position:relative;">
+        <div>
+          <div style="width:24px; height:24px; border-radius:50%; background:var(--accent-klein); border:4px solid #FFFFFF; box-shadow:0 0 0 2px var(--accent-klein); margin-bottom:20px;"></div>
+          <div style="font-size:26px; font-weight:800; color:#12141F; margin-bottom:4px;">2023</div>
+          <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:14px;">Foundation</div>
+          <p style="font-size:14px; line-height:1.65; color:#5A5F73; margin:0;">Replace manual processes with a unified digital platform. Delivered the full External Platform (Individual, Enterprise, Vendor, Training Provider, Bank), eligibility assessment, funding applications, internal assessment and approval workflows, payment requests, reimbursements, IBAN management, and the Internal Operations Platform.</p>
+        </div>
+        <div>
+          <div style="width:24px; height:24px; border-radius:50%; background:var(--accent-klein); border:4px solid #FFFFFF; box-shadow:0 0 0 2px var(--accent-klein); margin-bottom:20px;"></div>
+          <div style="font-size:26px; font-weight:800; color:#12141F; margin-bottom:4px;">2024</div>
+          <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:14px;">Platform Expansion</div>
+          <p style="font-size:14px; line-height:1.65; color:#5A5F73; margin:0;">Grow the ecosystem and reduce operational complexity. Delivered the Job Centre persona, a Customer 360 view, multi-persona profiles, a Programme Recommendation experience, an Applications Dashboard, site-visit management, and early AI-assisted document/compliance checks. Also the quick-wins cycle documented in Validation.</p>
+        </div>
+        <div>
+          <div style="width:24px; height:24px; border-radius:50%; background:#3D63E0; border:4px solid #FFFFFF; box-shadow:0 0 0 2px #3D63E0; margin-bottom:20px;"></div>
+          <div style="font-size:26px; font-weight:800; color:#12141F; margin-bottom:4px;">2025</div>
+          <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:14px;">Omnichannel Experience</div>
+          <p style="font-size:14px; line-height:1.65; color:#5A5F73; margin:0 0 10px;">Increase engagement through mobile. Delivered NEOT — a native mobile companion app covering application tracking, notifications, reimbursement status, monitoring requests and profile management.</p>
+          <p style="font-size:13px; line-height:1.6; color:#5A5F73; margin:0; padding:12px; border-radius:10px; background:#F2F6FF;">This phase shipped as NEOT — a dedicated mobile app covering onboarding, home, support, and 5 more product areas. See the full <a href="NEOT Mobile App Case Study.dc.html" style="color:var(--accent-klein); font-weight:600; text-decoration:underline;">NEOT Mobile App case study ↗</a>.</p>
+        </div>
+        <div>
+          <div style="width:24px; height:24px; border-radius:50%; background:#3D63E0; border:4px solid #FFFFFF; box-shadow:0 0 0 2px #3D63E0; margin-bottom:20px;"></div>
+          <div style="font-size:26px; font-weight:800; color:#12141F; margin-bottom:4px;">2026</div>
+          <div style="font-size:13px; font-weight:600; text-transform:uppercase; letter-spacing:0.05em; color:#001A5C; margin-bottom:14px;">Intelligence &amp; Personalisation (current)</div>
+          <p style="font-size:14px; line-height:1.65; color:#5A5F73; margin:0;">Personalised onboarding, dynamic profile completion, an AI operational agent, AI-assisted monitoring and compliance intelligence, and executive business-intelligence dashboards.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:80px 32px 40px;">
+    <h2 style="font-size:24px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">Information Architecture — External Platform (7 Sections)</h2>
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <tr style="border-bottom:1px solid #EAF1FF;">
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Section</th>
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">What it contains</th>
+        </tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">0. Access</td><td style="padding:10px 12px; color:#5A5F73;">Registration, Login, Forgot password, Account recovery (manual, Face ID, e-Key)</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">1. Homepage → Application Detail (360)</td><td style="padding:10px 12px; color:#5A5F73;">Applications List → Application Detail (360), branching into Application Details, Approval Letter, Notifications, Payment &amp; Claims, Approved Support, Processes, Manage my Application, Special Conditions</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">2. Programs</td><td style="padding:10px 12px; color:#5A5F73;">Programs List → Program Detail → Customer Application flow</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">3. Management</td><td style="padding:10px 12px; color:#5A5F73;">IBAN Management, User Management</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">4. My Documents</td><td style="padding:10px 12px; color:#5A5F73;">Document repository for the profile</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">5. Profile</td><td style="padding:10px 12px; color:#5A5F73;">Profile Type (Individual, Enterprise, Vendor, Training Provider, Bank), My Account</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">6. Add CR / License</td><td style="padding:10px 12px; color:#5A5F73;">Associate Profile</td></tr>
+        <tr><td style="padding:10px 12px; color:#12141F; font-weight:600;">7. Notifications</td><td style="padding:10px 12px; color:#5A5F73;">Platform-wide notification center</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 40px;">
+    <h2 style="font-size:24px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">External Personas &amp; Internal Roles</h2>
+    <div style="display:flex; flex-direction:column; gap:20px; margin-top:20px;">
+      <div style="padding:24px; border-radius:20px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:12px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-bottom:6px;">External · 5 personas</div>
+        <div style="font-size:18px; font-weight:700; color:#12141F; margin-bottom:10px;">Individual, Enterprise, Vendor, Training Provider, Bank</div>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;">Bank: a banking partner mapping its own financial-credit customers against applications where the Fund acts as sponsor.</p>
+      </div>
+      <div style="padding:24px; border-radius:20px; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.1);">
+        <div style="font-size:12px; font-weight:600; letter-spacing:0.05em; text-transform:uppercase; color:#001A5C; margin-bottom:6px;">Internal · 15 roles, 5 functional groups</div>
+        <div style="font-size:18px; font-weight:700; color:#12141F; margin-bottom:10px;">Assessment, Customer Service, Disbursement, Monitoring, Data Monitoring</div>
+        <p style="font-size:15px; line-height:1.7; color:#5A5F73; margin:0;">Assessment (Relationship Manager, Assessor, Approver), Customer Service (Customer Service Agent), Disbursement (Disbursement Agent ×5), Monitoring (Monitoring Agent ×3), Data Monitoring (Data Monitoring Agent ×3).</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 40px;">
+    <h2 style="font-size:24px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">User Flows</h2>
+    <div style="display:flex; flex-direction:column; gap:36px;">
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+          <div style="padding:11px 16px; border-radius:10px; background:#5C7AAE; color:#FFFFFF; font-size:13px; font-weight:600;">Eligibility</div><span style="color:#3D63E0; font-size:16px;">→</span>
+          <div style="padding:11px 16px; border-radius:10px; background:#5C7AAE; color:#FFFFFF; font-size:13px; font-weight:600;">Application</div><span style="color:#3D63E0; font-size:16px;">→</span>
+          <div style="padding:11px 16px; border-radius:10px; background:#5C7AAE; color:#FFFFFF; font-size:13px; font-weight:600;">Internal Review</div><span style="color:#3D63E0; font-size:16px;">→</span>
+          <div style="padding:11px 16px; border-radius:10px; background:#5C7AAE; color:#FFFFFF; font-size:13px; font-weight:600;">Approval</div><span style="color:#3D63E0; font-size:16px;">→</span>
+          <div style="padding:11px 16px; border-radius:10px; background:#5C7AAE; color:#FFFFFF; font-size:13px; font-weight:600;">Reimbursement</div><span style="color:#3D63E0; font-size:16px;">→</span>
+          <div style="padding:11px 16px; border-radius:10px; background:#3E5C8A; color:#FFFFFF; font-size:13px; font-weight:600;">Monitoring</div>
+        </div>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;">The core end-to-end journey, now living as one Application Detail (360) both applicant and reviewer share.</p>
+      </div>
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+          <div style="padding:11px 16px; border-radius:10px; background:#5C7AAE; color:#FFFFFF; font-size:13px; font-weight:600;">Claim a Payment</div><span style="color:#3D63E0; font-size:16px;">→</span>
+          <div style="padding:11px 16px; border-radius:10px; background:#5C7AAE; color:#FFFFFF; font-size:13px; font-weight:600;">Pay to a Vendor</div><span style="color:#3D63E0; font-size:16px;">→</span>
+          <div style="padding:11px 16px; border-radius:10px; background:#3E5C8A; color:#FFFFFF; font-size:13px; font-weight:600;">Delivery Confirmation</div>
+        </div>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;">Three connected flows because money moves through three actors, closing the loop before funds move.</p>
+      </div>
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+          <div style="padding:11px 16px; border-radius:10px; background:#5C7AAE; color:#FFFFFF; font-size:13px; font-weight:600;">Vendor Purchase</div><span style="color:#3D63E0; font-size:16px;">→</span>
+          <div style="padding:11px 16px; border-radius:10px; background:#5C7AAE; color:#FFFFFF; font-size:13px; font-weight:600;">Invoice Submission</div><span style="color:#3D63E0; font-size:16px;">→</span>
+          <div style="padding:11px 16px; border-radius:10px; background:#3E5C8A; color:#FFFFFF; font-size:13px; font-weight:600;">Payment Request</div>
+        </div>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;">Gives Vendor persona users a direct channel into the process.</p>
+      </div>
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:14px;">
+          <div style="padding:11px 16px; border-radius:10px; background:#5C7AAE; color:#FFFFFF; font-size:13px; font-weight:600;">Job Centre</div><span style="color:#3D63E0; font-size:16px;">→</span>
+          <div style="padding:11px 16px; border-radius:10px; background:#5C7AAE; color:#FFFFFF; font-size:13px; font-weight:600;">Candidate Referral</div><span style="color:#3D63E0; font-size:16px;">→</span>
+          <div style="padding:11px 16px; border-radius:10px; background:#3E5C8A; color:#FFFFFF; font-size:13px; font-weight:600;">Enterprise Placement</div><span style="font-size:12px; color:#A0A4B8; margin-left:4px;">(2024)</span>
+        </div>
+        <p style="font-size:14px; line-height:1.7; color:#5A5F73; margin:0;">Connects candidate referrals to Fund-funded roles.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 40px;">
+    <h2 style="font-size:24px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">Design System</h2>
+    <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0;">Shared components, form patterns, status indicators, tables and dashboards reused across all 5 external and 15 internal experiences; accessibility standards, interaction patterns and responsive behaviours defined once; bilingual EN/AR (RTL) and light/dark mode throughout.</p>
+  </div>
+
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 100px;">
+    <h2 style="font-size:24px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 20px;">Final Solution — Today's Ecosystem</h2>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:14px;">
+      <div style="padding:18px 20px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; font-weight:600; color:#12141F;">Individual Portal</div>
+      <div style="padding:18px 20px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; font-weight:600; color:#12141F;">Enterprise Portal</div>
+      <div style="padding:18px 20px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; font-weight:600; color:#12141F;">Training Provider Portal</div>
+      <div style="padding:18px 20px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; font-weight:600; color:#12141F;">Vendor Portal</div>
+      <div style="padding:18px 20px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; font-weight:600; color:#12141F;">Banking Portal</div>
+      <div style="padding:18px 20px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; font-weight:600; color:#12141F;">Job Centre Portal</div>
+      <div style="padding:18px 20px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; font-weight:600; color:#12141F;">Internal Operations Platform</div>
+      <div style="padding:18px 20px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; font-weight:600; color:#12141F;">NEOT Mobile Application (2025)</div>
+      <div style="padding:18px 20px; border-radius:14px; background:#F8FAFF; border:1px solid #EAF1FF; font-size:13.5px; font-weight:600; color:#12141F;">AI-Assisted Operational Services (2026, current)</div>
+    </div>
+    <div style="margin-top:32px; width:100%; height:220px; border-radius:18px; background:repeating-linear-gradient(135deg, #F2F4F8, #F2F4F8 10px, #EAEDF3 10px, #EAEDF3 20px); border:1px solid #E2E6ED; position:relative; display:flex; align-items:center; justify-content:center;">
+      <div style="font-size:12px; font-weight:600; color:#8A8FA3; letter-spacing:0.02em; background:rgba(255,255,255,0.9); padding:4px 10px; border-radius:6px;">Conceptual illustration</div>
+    </div>
+  </div>
+
+  <!-- ===== 09. VALIDATION ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">09 Validation &amp; Continuous Product Iteration</div>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 32px;">Validation ran as a continuous activity, not a single usability-testing pass. Every year has included a recurring cycle of client retrospective workshops, run specifically to identify and implement quick wins. One full cycle is documented in a dated internal deliverable ("UX Monitoring," Tamkeen, 20 May 2024) reviewing three flows: Customer Application, Assessment &amp; Approval, and Fawateer Payments.</p>
+
+    <div style="overflow-x:auto; margin-bottom:24px;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <tr style="border-bottom:1px solid #EAF1FF;">
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Flow</th>
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Category</th>
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Quick win</th>
+        </tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">Customer Application</td><td style="padding:10px 12px; color:#5A5F73;">User type &amp; permissions</td><td style="padding:10px 12px; color:#5A5F73;">Show an individual's own programmes first; surface enterprise programmes only after switching profile</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">Customer Application</td><td style="padding:10px 12px; color:#5A5F73;">Guidance</td><td style="padding:10px 12px; color:#5A5F73;">First-login animated tutorial + visual timeline for payments/IBAN/withdrawals</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">Customer Application</td><td style="padding:10px 12px; color:#5A5F73;">Application forms</td><td style="padding:10px 12px; color:#5A5F73;">Replace unclear validation messages with defined, specific error messages</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">Assessment &amp; Approval</td><td style="padding:10px 12px; color:#5A5F73;">Dashboard</td><td style="padding:10px 12px; color:#5A5F73;">Quick review of pending rejections, approvals, or a specific certificate type</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">Assessment &amp; Approval</td><td style="padding:10px 12px; color:#5A5F73;">Customer view</td><td style="padding:10px 12px; color:#5A5F73;">Accept an approved application directly from a notification hyperlink</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">Assessment &amp; Approval</td><td style="padding:10px 12px; color:#5A5F73;">Remarks &amp; send back</td><td style="padding:10px 12px; color:#5A5F73;">Require a specific reason whenever an application is sent back</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">Fawateer Payments</td><td style="padding:10px 12px; color:#5A5F73;">Guidance</td><td style="padding:10px 12px; color:#5A5F73;">Short tutorial on Fawateer vs. non-Fawateer payment</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F; font-weight:600;">Fawateer Payments</td><td style="padding:10px 12px; color:#5A5F73;">Cancel Fawateer code</td><td style="padding:10px 12px; color:#5A5F73;">Cancel a pending code and generate a new one</td></tr>
+        <tr><td style="padding:10px 12px; color:#12141F; font-weight:600;">Fawateer Payments</td><td style="padding:10px 12px; color:#5A5F73;">Multiple vendors payment</td><td style="padding:10px 12px; color:#5A5F73;">Pay multiple vendors within a single transaction</td></tr>
+      </table>
+    </div>
+    <p style="font-size:15px; line-height:1.75; color:#5A5F73; margin:0;">Beyond this documented cycle: across the 3.5-year engagement, most of these nine quick wins shipped, along with a larger set of further quick wins from other workshop cycles.</p>
+  </div>
+
+  <!-- ===== 10. IMPACT ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">10 Impact</div>
+
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:0; border-radius:20px; overflow:hidden; margin-bottom:40px;">
+      <div style="padding:28px; background:#12141F;">
+        <div style="font-size:13px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:#8FAEFF; margin-bottom:14px;">Business Impact</div>
+        <p style="font-size:13.5px; line-height:1.6; color:#F4F1EA; margin:0 0 10px;">Created Bahrain's unified digital platform for workforce development, replacing a fully manual, email-and-in-person process.</p>
+        <p style="font-size:13.5px; line-height:1.6; color:#F4F1EA; margin:0 0 10px;">Established a scalable product architecture that absorbed 4 major expansions (Job Centre, NEOT mobile, AI services, BI dashboards) without a ground-up rebuild.</p>
+        <p style="font-size:13.5px; line-height:1.6; color:#F4F1EA; margin:0;">Reduced dependency on manual operational processes across Assessment, Disbursement and Monitoring.</p>
+      </div>
+      <div style="padding:28px; background:#3A5A99;">
+        <div style="font-size:13px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:#8FAEFF; margin-bottom:14px;">User Impact</div>
+        <p style="font-size:13.5px; line-height:1.6; color:#F4F1EA; margin:0 0 10px;">Simplified funding journeys for 5 external personas through one shared Application Detail (360) record.</p>
+        <p style="font-size:13.5px; line-height:1.6; color:#F4F1EA; margin:0 0 10px;">Improved transparency at every application stage via the status-tracker design principle.</p>
+        <p style="font-size:13.5px; line-height:1.6; color:#F4F1EA; margin:0 0 10px;">Reduced administrative effort through integrated, unified reimbursement workflows.</p>
+        <p style="font-size:13.5px; line-height:1.6; color:#F4F1EA; margin:0;">Extended access through NEOT, a dedicated mobile experience (2025).</p>
+      </div>
+      <div style="padding:28px; background:#2A4CB8;">
+        <div style="font-size:13px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:#8FAEFF; margin-bottom:14px;">Team Impact</div>
+        <p style="font-size:13.5px; line-height:1.6; color:#F4F1EA; margin:0 0 10px;">A shared design system reduced implementation effort and kept 5 external and 15 internal experiences visually and behaviourally consistent across 4 annual releases.</p>
+        <p style="font-size:13.5px; line-height:1.6; color:#F4F1EA; margin:0;">A repeatable annual delivery model let the team plan a year at a time instead of one continuous, undifferentiated backlog.</p>
+      </div>
+    </div>
+
+    <div style="overflow-x:auto;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <tr style="border-bottom:1px solid #EAF1FF;">
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Metric</th>
+          <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Status</th>
+        </tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Volume</td><td style="padding:10px 12px; color:#001A5C; font-weight:600;">To be measured</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Cycle time</td><td style="padding:10px 12px; color:#001A5C; font-weight:600;">To be measured</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Adoption</td><td style="padding:10px 12px; color:#001A5C; font-weight:600;">To be measured</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Support load</td><td style="padding:10px 12px; color:#001A5C; font-weight:600;">To be measured</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Quick-win impact</td><td style="padding:10px 12px; color:#001A5C; font-weight:600;">To be measured</td></tr>
+        <tr style="border-bottom:1px solid #F2F6FF;"><td style="padding:10px 12px; color:#12141F;">Mobile adoption</td><td style="padding:10px 12px; color:#001A5C; font-weight:600;">To be measured</td></tr>
+        <tr><td style="padding:10px 12px; color:#12141F;">Satisfaction</td><td style="padding:10px 12px; color:#001A5C; font-weight:600;">To be measured</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- ===== 11. REFLECTION ===== -->
+  <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:16px;">11 Reflection</div>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 16px;"><strong style="color:#12141F;">What worked:</strong> treating funding programmes as connected service ecosystems, not isolated forms, meant every design decision considered the applicant, the internal reviewer, and the partner organisations sharing the same journey.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0 0 16px;"><strong style="color:#12141F;">What I'd improve:</strong> Year 1's original 2023 research isn't documented with the same granularity as the 2024 workshop cycle — a consistent research-logging practice from day one would make every later case-study retelling stronger.</p>
+    <p style="font-size:17px; line-height:1.8; color:#4A4F63; margin:0;"><strong style="color:#12141F;">What I learned:</strong> government platforms succeed as service ecosystems, not collections of digital forms. Designing for evolution — building each release so the next one extends it rather than replacing it — mattered more over a 4-year engagement than getting any single release perfect. Leading the product across multiple phases also reinforced that operational efficiency and customer experience are frequently the same problem seen from two sides, not competing priorities to trade off.</p>
+  </div>
+
+  <!-- ===== CONTACT ===== -->
+  <div style="position:relative; padding:20px 32px 60px; max-width:900px; margin:0 auto;">
+    <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:600px; height:360px; border-radius:50%; background:radial-gradient(circle, rgba(0,47,167,0.14), transparent 70%); filter:blur(70px); z-index:-1;"></div>
+    <div style="text-align:center; padding:40px 24px;">
+      <h2 style="font-size:clamp(26px,3.5vw,36px); font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 18px;">Interested in working together?</h2>
+      <a href="Contact.dc.html" style="display:inline-flex; align-items:center; gap:8px; padding:16px 32px; background:#12141F; color:#FFFFFF; border-radius:24px; font-size:15px; font-weight:600;">Email me directly →</a>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="Work.dc.html" style="font-size:14px; font-weight:600; color:var(--accent-klein);">← Back to all work</a>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:0 32px 60px; font-size:13px; color:#6B7086;">© 2026 Nelson Lopes. Designed with care.</div>
+
+</div>
+
+</x-dc>
+</body>
+</html>

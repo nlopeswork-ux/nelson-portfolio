@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+
+<template id="__bundler_thumbnail" data-bg-color="#FFFFFF">
+  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="200" height="200" fill="#FFFFFF"/>
+    <text x="100" y="115" font-family="Inter, sans-serif" font-size="72" font-weight="800" fill="#002FA7" text-anchor="middle">NL</text>
+  </svg>
+</template>
+
+<helmet>
+  <meta name="ext-resource-dependency" content="assets/intelliforge/live-delivery-console.png" data-resource-id="img-intelliforge" />
+  <meta name="ext-resource-dependency" content="uploads/RAK04.png" data-resource-id="img-onerak" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #FFFFFF; font-family: 'Inter', -apple-system, sans-serif; -webkit-font-smoothing: antialiased; }
+    ::selection { background: #DCE8FF; }
+    a { color: #001A5C; text-decoration: none; }
+    a:hover { color: #2A4CB8; }
+    img { display: block; max-width: 100%; }
+    input::placeholder { color: #A0A4B8; }
+  </style>
+</helmet>
+
+<div style="position:relative; overflow:hidden; background:#FFFFFF; --content-max:1200px; --content-pad:32px; --accent-klein:#002FA7;">
+
+  <!-- ===== NAV ===== -->
+  <div style="position:fixed; top:20px; left:var(--content-pad); right:var(--content-pad); max-width:var(--content-max); margin:0 auto; z-index:100; display:flex; align-items:center; justify-content:space-between; padding:16px var(--content-pad); background:rgba(255,255,255,0.6); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(20,30,60,0.12); border-radius:20px; box-shadow:0 10px 30px rgba(20,30,60,0.14);">
+    <a href="Portfolio.dc.html" style="font-size:16px; font-weight:700; letter-spacing:-0.01em; color:#1A1D29;">Nelson Lopes</a>
+    <div style="display:flex; gap:26px; font-size:14px; font-weight:500;">
+      <a href="Work.dc.html" style="color:var(--accent-klein); border-bottom:2px solid var(--accent-klein); padding-bottom:2px;">Work</a>
+      <a href="Journey.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">Journey</a>
+      <a href="About.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">About</a>
+      <a href="Contact.dc.html" style="color:#4A4F63; transition:color 200ms ease-out;" style-hover="color:#3D63E0;">Contact</a>
+    </div>
+  </div>
+
+  <!-- ===== HEADER ===== -->
+  <div style="position:relative; padding:150px var(--content-pad) 20px; max-width:var(--content-max); margin:0 auto;">
+    <div style="font-size:13px; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:#001A5C; margin-bottom:12px;">Work</div>
+    <h1 style="font-size:clamp(30px,4vw,46px); font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 16px; max-width:700px;">Case studies from the decision layer.</h1>
+    <p style="font-size:17px; line-height:1.6; color:#5A5F73; max-width:600px; margin:0;">Selected engagements where the interface was only as good as the decisions built underneath it.</p>
+  </div>
+
+  <!-- ===== SEARCH + FILTERS ===== -->
+  <div style="position:relative; padding:36px var(--content-pad) 8px; max-width:var(--content-max); margin:0 auto; display:flex; flex-wrap:wrap; gap:14px; align-items:center;">
+    <div style="position:relative; flex:1; min-width:220px; max-width:340px;">
+      <input type="text" value="{{ query }}" onChange="{{ onQueryChange }}" placeholder="Search case studies…" style="width:100%; box-sizing:border-box; padding:12px 16px 12px 40px; font-size:14px; font-family:'Inter',sans-serif; color:#12141F; background:#F5F7FC; border:1px solid rgba(27,42,74,0.08); border-radius:14px; outline:none; transition:border-color 200ms ease-out, background 200ms ease-out;" style-focus="border-color:#001A5C; background:#FFFFFF;" />
+      <div style="position:absolute; left:14px; top:50%; transform:translateY(-50%); font-size:14px; color:#A0A4B8;">⌕</div>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <sc-for list="{{ filters }}" as="f" hint-placeholder-count="4">
+        <div onClick="{{ f.onClick }}" style="cursor:pointer; padding:9px 18px; font-size:13px; font-weight:600; border-radius:20px; background:{{ f.bg }}; color:{{ f.color }}; border:1px solid {{ f.border }}; transition:background 200ms ease-out, color 200ms ease-out, border-color 200ms ease-out;">{{ f.label }}</div>
+      </sc-for>
+    </div>
+  </div>
+
+  <!-- ===== RESULTS LIST ===== -->
+  <div ref="{{ refs.list }}" style="position:relative; padding:24px var(--content-pad) 24px; max-width:var(--content-max); margin:0 auto; opacity:{{ fade.list.opacity }}; transform:{{ fade.list.transform }}; transition:opacity 600ms ease-out, transform 600ms ease-out;">
+    <div style="position:absolute; top:60px; right:-260px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle, rgba(200,216,255,0.25), transparent 70%); filter:blur(80px); z-index:-1;"></div>
+
+    <div style="font-size:13px; color:#A0A4B8; margin-bottom:20px;">{{ resultsLabel }}</div>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(480px,1fr)); gap:24px;">
+      <sc-for list="{{ visibleStudies }}" as="study" hint-placeholder-count="2">
+        <a href="{{ study.href }}" style="display:block; text-decoration:none; border-radius:20px; overflow:hidden; background:rgba(255,255,255,0.55); backdrop-filter:blur(20px); -webkit-backdrop-filter:blur(20px); border:1px solid rgba(255,255,255,0.4); box-shadow:0 12px 32px rgba(120,150,255,0.1); transition:transform 200ms ease-out, box-shadow 200ms ease-out;" style-hover="transform:translateY(-3px) scale(1.005); box-shadow:0 18px 42px rgba(120,150,255,0.18);">
+          <div style="padding:12px;">
+            <img src="{{ study.image }}" alt="{{ study.title }}" style="width:100%; height:180px; object-fit:cover; object-position:center top; border-radius:14px;" />
+          </div>
+          <div style="padding:8px 24px 24px;">
+            <div style="font-size:11px; font-weight:600; color:#4A4F63; background:#F2F6FF; display:inline-block; padding:4px 11px; border-radius:11px; margin-bottom:10px;">{{ study.industry }}</div>
+            <h3 style="font-size:20px; font-weight:700; letter-spacing:-0.02em; color:#12141F; margin:0 0 6px;">{{ study.title }}</h3>
+            <p style="font-size:14px; line-height:1.5; color:#5A5F73; margin:0 0 12px;">{{ study.summary }}</p>
+            <sc-if value="{{ study.quote }}" hint-placeholder-val="{{ false }}">
+              <div style="padding:14px 16px; border-radius:12px; background:rgba(20,30,60,0.03); margin-bottom:14px;">
+                <p style="font-size:13.5px; font-style:italic; line-height:1.55; color:#3A3F4C; margin:0 0 6px;">"{{ study.quote }}"</p>
+                <div style="font-size:12px; font-weight:600; color:#001A5C;">— {{ study.quoteAttribution }}</div>
+              </div>
+            </sc-if>
+            <div style="font-size:14px; font-weight:600; color:var(--accent-klein);">Read the full case study →</div>
+          </div>
+        </a>
+      </sc-for>
+    </div>
+
+    <sc-if value="{{ noResults }}" hint-placeholder-val="{{ false }}">
+      <div style="text-align:center; padding:60px 20px; color:#A0A4B8; font-size:15px;">No case studies match "{{ query }}".</div>
+    </sc-if>
+  </div>
+
+  <!-- ===== MORE CASE STUDIES (placeholder card) ===== -->
+  <div ref="{{ refs.placeholders }}" style="position:relative; padding:8px var(--content-pad) 140px; max-width:var(--content-max); margin:0 auto; opacity:{{ fade.placeholders.opacity }}; transform:{{ fade.placeholders.transform }}; transition:opacity 600ms ease-out, transform 600ms ease-out;">
+    <div style="padding:40px 32px; border-radius:20px; border:1.5px dashed rgba(61,99,224,0.3); background:repeating-linear-gradient(135deg, #FAFBFF, #FAFBFF 12px, #F2F6FF 12px, #F2F6FF 24px); display:flex; align-items:center; gap:16px; justify-content:center;">
+      <div style="display:flex; gap:5px;"><div style="width:7px; height:7px; border-radius:50%; background:#3D63E0; opacity:0.5;"></div><div style="width:7px; height:7px; border-radius:50%; background:#3D63E0; opacity:0.7;"></div><div style="width:7px; height:7px; border-radius:50%; background:#3D63E0;"></div></div>
+      <span style="font-size:14px; color:#5A5F73; font-weight:600;">More case studies in progress — new work added regularly</span>
+    </div>
+  </div>
+
+  <div style="text-align:center; padding:40px 32px; font-size:13px; color:#6B7086;">© 2026 Nelson Lopes. Designed with care.</div>
+
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  keys = ['list', 'placeholders'];
+  refs = Object.fromEntries(this.keys.map(k => [k, React.createRef()]));
+
+  studies = [
+    {
+      id: 'intelliforge',
+      href: 'Case Study.dc.html',
+      client: 'Global energy & mobility company — U.K. market',
+      title: 'IntelliForge SR2R',
+      summary: 'Turned 200 manual close cycles into a governed, auditable system.',
+      image: 'uploads/IntelliForge SR2R-7d50918c.png',
+      industry: 'Financial Services',
+      tags: ['Financial Services'],
+      quote: 'The confidence scoring changed how fast the team could move — cases that sat in review for a day now clear in minutes.',
+      quoteAttribution: 'Head of Delivery, Shell Mobility & Convenience',
+    },
+    {
+      id: 'onerak',
+      href: 'OneRAK Case Study.dc.html',
+      client: 'KPMG Lower Gulf × government economic zone authority — Middle East',
+      title: 'OneRAK Portal Revamp',
+      summary: '18/18 services unified, 97.8% task success, 82% fewer support calls.',
+      image: 'uploads/OneRAK Portal Revamp-0526efec.png',
+      industry: 'Government',
+      tags: ['Government'],
+      quote: 'What used to take a full audit cycle to trace, we can now walk through in one meeting.',
+      quoteAttribution: 'Engagement Lead, KPMG',
+    },
+    {
+      id: 'tamkeen',
+      href: 'Tamkeen Case Study.dc.html',
+      client: 'National workforce development fund — Bahrain',
+      title: 'National Workforce Digital Platform',
+      summary: 'Replaced a fully manual funding process with one unified ecosystem.',
+      image: 'uploads/National Workforce Digital Platform-68242222.png',
+      industry: 'Government',
+      tags: ['Government'],
+    },
+    {
+      id: 'design-system',
+      href: 'Internal Design System Case Study.dc.html',
+      client: 'Internal — multiple client domains',
+      title: 'Internal Design System',
+      summary: 'A shared foundation across 15 projects, delivering the flagship pilot 25% faster.',
+      image: 'assets/ids/cover.png',
+      industry: 'Internal Platform',
+      tags: ['Internal Platform'],
+    },
+    {
+      id: 'neot',
+      href: 'NEOT Mobile App Case Study.dc.html',
+      client: 'National Labour Fund — Bahrain',
+      title: 'NEOT Mobile App',
+      summary: '1,000+ screens across 8 modules unifying employment, training and financial support for citizens.',
+      image: 'uploads/NEOT Mobile App-5c278975.png',
+      industry: 'Government',
+      tags: ['Government'],
+    },
+  ];
+
+  filterOptions = ['All', 'Financial Services', 'Government', 'Internal Platform'];
+
+  state = { query: '', activeFilter: 'All', visible: {} };
+
+  componentDidMount() {
+    this._obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const key = entry.target.dataset.fadeKey;
+          this.setState((s) => ({ visible: { ...s.visible, [key]: true } }));
+          this._obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    this.keys.forEach((k) => {
+      const node = this.refs[k].current;
+      if (node) {
+        node.dataset.fadeKey = k;
+        this._obs.observe(node);
+      }
+    });
+  }
+
+  componentWillUnmount() {
+    if (this._obs) this._obs.disconnect();
+  }
+
+  onQueryChange = (e) => this.setState({ query: e.target.value });
+  setFilter = (f) => this.setState({ activeFilter: f });
+
+  renderVals() {
+    const fade = {};
+    this.keys.forEach((k) => {
+      const visible = !!this.state.visible[k];
+      fade[k] = {
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0px)' : 'translateY(16px)',
+      };
+    });
+
+    const q = this.state.query.trim().toLowerCase();
+    const visibleStudies = this.studies.filter((s) => {
+      const matchesFilter = this.state.activeFilter === 'All' || s.tags.includes(this.state.activeFilter);
+      const matchesQuery = !q || (s.title + ' ' + s.client + ' ' + s.summary + ' ' + s.tags.join(' ')).toLowerCase().includes(q);
+      return matchesFilter && matchesQuery;
+    });
+
+    const filters = this.filterOptions.map((f) => ({
+      label: f,
+      onClick: () => this.setFilter(f),
+      bg: this.state.activeFilter === f ? '#002FA7' : '#F5F7FC',
+      color: this.state.activeFilter === f ? '#FFFFFF' : '#4A4F63',
+      border: this.state.activeFilter === f ? '#002FA7' : 'rgba(27,42,74,0.08)',
+    }));
+
+    return {
+      refs: this.refs,
+      fade,
+      query: this.state.query,
+      onQueryChange: this.onQueryChange,
+      filters,
+      visibleStudies,
+      noResults: visibleStudies.length === 0,
+      resultsLabel: visibleStudies.length + ' case ' + (visibleStudies.length === 1 ? 'study' : 'studies'),
+    };
+  }
+}
+</script>
+</body>
+</html>
