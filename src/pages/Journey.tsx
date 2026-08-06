@@ -9,14 +9,14 @@ const kpmgEngagements = [
 ]
 
 const deloitteEngagements = [
-  { client: 'TAP Air Portugal', industry: 'Aviation', geo: 'Portugal', period: '2022–2023', scope: 'Passenger digital experience redesign' },
-  { client: 'Galp Energia', industry: 'Energy', geo: 'Portugal / Spain', period: '2021–2022', scope: 'B2B customer portal and internal operations platform' },
-  { client: 'Mercedes-Benz', industry: 'Automotive', geo: 'Germany', period: '2020–2021', scope: 'Fleet management and dealer digital tools' },
-  { client: 'Fidelidade', industry: 'Insurance', geo: 'Portugal', period: '2019–2020', scope: 'Claims management and customer-facing portal redesign' },
-  { client: 'EDP', industry: 'Energy', geo: 'Portugal', period: '2019', scope: 'Internal digital workspace' },
-  { client: 'Ageas', industry: 'Insurance', geo: 'Belgium / Portugal', period: '2018–2019', scope: 'Digital product design for broker platform' },
-  { client: 'Volvo Cars', industry: 'Automotive', geo: 'Sweden / Portugal', period: '2018', scope: 'Dealer-facing UX design sprint' },
-  { client: 'Various', industry: 'Multiple', geo: 'Europe', period: '2018–2023', scope: 'Workshop facilitation, design sprints, UX audits' },
+  { client: 'Major airline', industry: 'Aviation', geo: 'Portugal', period: '2022–2023', scope: 'Passenger digital experience redesign' },
+  { client: 'Energy group', industry: 'Energy', geo: 'Portugal / Spain', period: '2021–2022', scope: 'B2B customer portal and internal operations platform' },
+  { client: 'Automotive manufacturer', industry: 'Automotive', geo: 'Germany', period: '2020–2021', scope: 'Fleet management and dealer digital tools' },
+  { client: 'Insurance provider', industry: 'Insurance', geo: 'Portugal', period: '2019–2020', scope: 'Claims management and customer-facing portal redesign' },
+  { client: 'Energy operator', industry: 'Energy', geo: 'Portugal', period: '2019', scope: 'Internal digital workspace' },
+  { client: 'Insurance group', industry: 'Insurance', geo: 'Belgium / Portugal', period: '2018–2019', scope: 'Digital product design for broker platform' },
+  { client: 'Automotive brand', industry: 'Automotive', geo: 'Sweden / Portugal', period: '2018', scope: 'Dealer-facing UX design sprint' },
+  { client: 'Various clients', industry: 'Multiple', geo: 'Europe', period: '2018–2023', scope: 'Workshop facilitation, design sprints, UX audits' },
 ]
 
 const divider = <div style={{ height: 1, background: '#EAF1FF' }} />
