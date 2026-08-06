@@ -123,7 +123,7 @@
 
     <div onClick="{{ toggleHeuristics }}" style="cursor:pointer; display:inline-flex; font-size:13px; font-weight:600; color:var(--accent-klein); background:rgba(0,47,167,0.09); padding:6px 14px; border-radius:999px; transition:background 200ms ease-out; margin-bottom:16px;" style-hover="background:rgba(0,47,167,0.16);">{{ heuristicsToggleLabel }}</div>
     <sc-if value="{{ heuristicsExpanded }}" hint-placeholder-val="{{ false }}">
-      <div style="overflow-x:auto; margin-bottom:32px; background:rgba(0,47,167,0.03); border-radius:14px; padding:16px; transition:opacity 180ms ease-out;">
+      <div class="table-scroll responsive-table" style="overflow-x:auto; margin-bottom:32px; background:rgba(0,47,167,0.03); border-radius:14px; padding:16px; transition:opacity 180ms ease-out;">
         <table style="width:100%; border-collapse:collapse; font-size:14px;">
           <tr style="border-bottom:1px solid #EAF1FF;">
             <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">Heuristic</th>
@@ -335,7 +335,7 @@
   <div style="max-width:900px; margin:0 auto; padding:0 32px 90px;">
     <h2 style="font-size:26px; font-weight:800; letter-spacing:-0.02em; color:#12141F; margin:0 0 12px;">Concluding with Impact</h2>
     <p style="font-size:16px; line-height:1.75; color:#5A5F73; margin:0 0 32px; max-width:720px;">OneRAK launched across all 18 core services in August 2026, with Handover to internal the authority's internal teams completed the following month.</p>
-    <div style="overflow-x:auto; margin-bottom:32px;">
+    <div class="table-scroll responsive-table" style="overflow-x:auto; margin-bottom:32px;">
       <table style="width:100%; border-collapse:collapse; font-size:14px;">
         <tr style="border-bottom:1px solid #EAF1FF;">
           <th style="text-align:left; padding:10px 12px; color:#001A5C; font-weight:600; font-size:12px; text-transform:uppercase; letter-spacing:0.04em;">KPI</th>

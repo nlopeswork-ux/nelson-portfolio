@@ -73,6 +73,7 @@ input::placeholder { color: #A0A4B8; }
 
 /* Overflow-safe table wrapper */
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.responsive-table { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
 /* Section padding on mobile */
 @media (max-width: 640px) {
@@ -104,6 +105,48 @@ input::placeholder { color: #A0A4B8; }
   .rg-mods      { grid-template-columns: 1fr; }
   .rg-outcomes  { grid-template-columns: 1fr; }
   .carousel-3   { grid-template-columns: 1fr; gap: 16px; }
+
+  .table-scroll.responsive-table table {
+    border-collapse: separate;
+    border-spacing: 0;
+  }
+  .table-scroll.responsive-table thead {
+    display: none;
+  }
+  .table-scroll.responsive-table tbody,
+  .table-scroll.responsive-table tr {
+    display: block;
+  }
+  .table-scroll.responsive-table tr {
+    margin-bottom: 16px;
+    padding: 18px 20px;
+    border-radius: 20px;
+    background: #F8FAFF;
+    border: 1px solid #EAF1FF;
+  }
+  .table-scroll.responsive-table tr:last-child {
+    margin-bottom: 0;
+  }
+  .table-scroll.responsive-table td,
+  .table-scroll.responsive-table th {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: none;
+  }
+  .table-scroll.responsive-table td + td,
+  .table-scroll.responsive-table th + th {
+    margin-top: 10px;
+  }
+  .table-scroll.responsive-table td:first-child,
+  .table-scroll.responsive-table th:first-child {
+    font-weight: 700;
+    color: #12141F;
+  }
+  .table-scroll.responsive-table td:not(:first-child),
+  .table-scroll.responsive-table th:not(:first-child) {
+    color: #5A5F73;
+  }
 }
 
 /* ── Breakpoints: 480px — all multi-col grids go single column ── */
