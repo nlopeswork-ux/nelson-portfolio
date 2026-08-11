@@ -48,7 +48,7 @@ export default function Nav() {
     }}>
       {/* Top row: logo + desktop links + burger */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Link to="/" style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.01em', color: '#1A1D29', textDecoration: 'none', flexShrink: 0 }}>
+        <Link to="/" className="logo-link" style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.01em', color: '#1A1D29', textDecoration: 'none', flexShrink: 0 }}>
           Nelson Lopes
         </Link>
 
