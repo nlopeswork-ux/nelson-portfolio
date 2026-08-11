@@ -63,8 +63,8 @@ export default function Portfolio() {
 
         <Link to="/work/intelliforge" className="featured-card-link interactive-card" style={{ display: 'block', textDecoration: 'none', borderRadius: 24, overflow: 'hidden', background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.4)', boxShadow: '0 16px 44px rgba(120,150,255,0.1)', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
           <div className="featured-card">
-            <div style={{ overflow: 'hidden', borderRadius: '20px 0 0 20px', background: '#F5F7FC' }}>
-              <img src={intelliforgeImg} alt="IntelliForge SR2R" style={{ width: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center center', display: 'block' }} />
+            <div className="featured-card-media" style={{ overflow: 'hidden', borderRadius: '20px 0 0 20px', background: '#F5F7FC' }}>
+              <img src={intelliforgeImg} alt="IntelliForge SR2R" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', display: 'block' }} />
             </div>
             <div style={{ padding: '24px 32px 24px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <div style={{ fontSize: 12, fontWeight: 600, color: '#001A5C', letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 8 }}>Global energy &amp; mobility company — U.K. market</div>
