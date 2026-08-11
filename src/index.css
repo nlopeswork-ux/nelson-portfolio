@@ -49,13 +49,17 @@ a { color: #001A5C; text-decoration: none; }
   cursor: pointer;
 }
 
+.nav-link {
+  border-radius: 999px 999px 0 0;
+}
+
 a:hover { color: var(--color-primary-hover); }
 
 .nav-link:hover,
 .nav-link:focus-visible {
   color: var(--color-primary-hover) !important;
   background: rgba(42, 76, 184, 0.08);
-  border-radius: 10px;
+  border-radius: 999px 999px 0 0;
 }
 
 .nav-link:active {
@@ -224,6 +228,40 @@ button:focus-visible,
   box-shadow: 0 0 0 4px var(--color-primary-halo);
 }
 
+.featured-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: stretch;
+  min-height: 280px;
+}
+
+.featured-card-media {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: unset;
+  max-height: none;
+  overflow: hidden;
+  background: #F5F7FC;
+}
+
+.featured-card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .featured-card {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-card-media {
+    min-height: 220px;
+  }
+}
+
 img { display: block; max-width: 100%; }
 
 input::placeholder { color: #A0A4B8; }
@@ -273,30 +311,6 @@ input::placeholder { color: #A0A4B8; }
 
 /* Work page cards grid — prevents overflow on narrow viewports */
 .work-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-
-/* Featured card horizontal layout — flips to vertical on mobile */
-.featured-card { display: grid; grid-template-columns: 260px 1fr; align-items: stretch; }
-.featured-card-media {
-  position: relative;
-  overflow: hidden;
-  background: #F5F7FC;
-  aspect-ratio: 4 / 3;
-  max-height: 260px;
-}
-.featured-card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  display: block;
-}
-
-@media (min-width: 1024px) {
-  .featured-card-media {
-    aspect-ratio: 16 / 7;
-    max-height: 260px;
-  }
-}
 
 /* Overflow-safe table wrapper */
 .table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -386,7 +400,7 @@ input::placeholder { color: #A0A4B8; }
 .nav-links { display: flex; gap: 12px; font-size: 14px; font-weight: 500; }
 .nav-link {
   padding: 8px 16px;
-  border-radius: 999px;
+  border-radius: 999px 999px 0 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;

@@ -56,7 +56,7 @@ export default function Journey() {
             <h3 style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 4px' }}>Lead UX/UI Designer</h3>
             <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Global consultancy</div>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 16px' }}>Took ownership of enterprise product design across Europe, the Middle East and the U.S., leading end-to-end digital products from discovery to delivery while shaping product strategy, design systems and scalable user experiences.</p>
-            <button aria-expanded={kpmgOpen} className="engagement-toggle" onClick={() => setKpmgOpen(o => !o)} style={{ cursor: 'pointer', display: 'inline-flex', fontSize: 13, fontWeight: 600, color: '#002FA7', background: 'rgba(0,47,167,0.09)', padding: '6px 14px', borderRadius: 999, border: 'none', fontFamily: "'Inter', sans-serif" }}>
+            <button type="button" aria-expanded={kpmgOpen} className="engagement-toggle" onClick={() => setKpmgOpen(o => !o)}>
               {kpmgOpen ? 'Hide engagements ↑' : 'Show engagements ↓'}
             </button>
             {kpmgOpen && (
@@ -78,7 +78,7 @@ export default function Journey() {
             <h3 style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 4px' }}>Digital Designer</h3>
             <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Deloitte Portugal</div>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 16px' }}>Grew from delivering individual screens to owning end-to-end digital experiences for aviation, energy, automotive and insurance clients.</p>
-            <button aria-expanded={deloitteOpen} className="engagement-toggle" onClick={() => setDeloitteOpen(o => !o)} style={{ cursor: 'pointer', display: 'inline-flex', fontSize: 13, fontWeight: 600, color: '#002FA7', background: 'rgba(0,47,167,0.09)', padding: '6px 14px', borderRadius: 999, border: 'none', fontFamily: "'Inter', sans-serif" }}>
+            <button type="button" aria-expanded={deloitteOpen} className="engagement-toggle" onClick={() => setDeloitteOpen(o => !o)}>
               {deloitteOpen ? 'Hide engagements ↑' : 'Show engagements ↓'}
             </button>
             {deloitteOpen && (
