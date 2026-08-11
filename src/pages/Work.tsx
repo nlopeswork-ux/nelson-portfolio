@@ -128,6 +128,8 @@ export default function Work() {
         {filterOptions.map(f => (
           <button
             key={f}
+            type="button"
+            className="filter-chip"
             onClick={() => setActiveFilter(f)}
             style={{
               cursor: 'pointer', padding: '9px 18px', fontSize: 13, fontWeight: 600, borderRadius: 20,
@@ -145,7 +147,7 @@ export default function Work() {
       <div ref={list.ref} style={{ position: 'relative', padding: '24px 32px', maxWidth: 1200, margin: '0 auto', ...list.style }}>
         <div className="work-grid">
           {filtered.map(s => (
-            <Link key={s.id} to={s.to} style={{ display: 'block', textDecoration: 'none', borderRadius: 20, overflow: 'hidden', background: '#FFFFFF', border: '1px solid rgba(20,30,60,0.08)', boxShadow: '0 12px 32px rgba(120,150,255,0.08)', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
+            <Link key={s.id} to={s.to} className="case-card interactive-card" style={{ display: 'block', textDecoration: 'none', borderRadius: 20, overflow: 'hidden', background: '#FFFFFF', border: '1px solid rgba(20,30,60,0.08)', boxShadow: '0 12px 32px rgba(120,150,255,0.08)', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
               <div style={{ padding: 12 }}>
                 <div style={{ position: 'relative', width: '100%', borderRadius: 14, overflow: 'hidden', background: '#F5F7FC' }}>
                   <img src={s.image} alt={s.title} style={{ width: '100%', height: 'auto', display: 'block' }} />

@@ -54,13 +54,15 @@ export default function Nav() {
 
         <nav className="nav-links" style={{ alignItems: 'center' }}>
           {links.map(({ to, label }) => (
-            <Link key={to} to={to} style={linkStyle(to)}>{label}</Link>
+            <Link key={to} to={to} className="nav-link" style={linkStyle(to)}>{label}</Link>
           ))}
         </nav>
 
         <button
+          type="button"
           onClick={() => setOpen(o => !o)}
           aria-label="Toggle menu"
+          aria-expanded={open}
           className="nav-burger"
           style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 6, color: '#1A1D29', alignItems: 'center', justifyContent: 'center' }}
         >

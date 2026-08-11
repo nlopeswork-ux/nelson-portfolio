@@ -42,10 +42,10 @@ export default function Portfolio() {
             I design the decision layer beneath enterprise products — banking, insurance, government — where clarity has to survive real deadlines and real stakes.
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/work" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '16px 32px', background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.4)', borderRadius: 24, color: '#002FA7', fontSize: 15, fontWeight: 600, boxShadow: '0 8px 24px rgba(120,150,255,0.12)', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
+            <Link to="/work" className="primary-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '16px 32px', background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.4)', borderRadius: 24, color: '#002FA7', fontSize: 15, fontWeight: 600, boxShadow: '0 8px 24px rgba(120,150,255,0.12)', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
               View selected work →
             </Link>
-            <Link to="/contact" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '16px 32px', color: '#002FA7', fontSize: 15, fontWeight: 600 }}>
+            <Link to="/contact" className="secondary-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '16px 32px', color: '#002FA7', fontSize: 15, fontWeight: 600 }}>
               Get in touch
             </Link>
           </div>
@@ -61,7 +61,7 @@ export default function Portfolio() {
           <h2 style={{ fontSize: 'clamp(28px,3.5vw,42px)', fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: 0 }}>A control layer for a 10× bid.</h2>
         </div>
 
-        <Link to="/work/intelliforge" style={{ display: 'block', textDecoration: 'none', borderRadius: 24, overflow: 'hidden', background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.4)', boxShadow: '0 16px 44px rgba(120,150,255,0.1)', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
+        <Link to="/work/intelliforge" className="featured-card-link interactive-card" style={{ display: 'block', textDecoration: 'none', borderRadius: 24, overflow: 'hidden', background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.4)', boxShadow: '0 16px 44px rgba(120,150,255,0.1)', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
           <div className="featured-card">
             <div style={{ overflow: 'hidden', borderRadius: '20px 0 0 20px', background: '#F5F7FC' }}>
               <img src={intelliforgeImg} alt="IntelliForge SR2R" style={{ width: '100%', height: 'auto', objectFit: 'cover', objectPosition: 'center center', display: 'block' }} />
@@ -103,7 +103,7 @@ export default function Portfolio() {
               cta: 'Read more →',
             },
           ].map(({ to, icon, label, sub, desc, cta }) => (
-            <Link key={to} to={to} style={{ display: 'block', background: '#FFFFFF', padding: '32px 28px', borderRadius: 16, border: '1px solid #E9EBF2', boxShadow: '0 1px 2px rgba(18,20,31,0.03)', textDecoration: 'none', transition: 'box-shadow 180ms ease-out, transform 180ms ease-out' }}>
+            <Link key={to} to={to} className="teaser-card interactive-card" style={{ display: 'block', background: '#FFFFFF', padding: '32px 28px', borderRadius: 16, border: '1px solid #E9EBF2', boxShadow: '0 1px 2px rgba(18,20,31,0.03)', textDecoration: 'none', transition: 'box-shadow 180ms ease-out, transform 180ms ease-out' }}>
               <div style={{ marginBottom: 16 }}>{icon}</div>
               <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 12 }}>{label}</div>
               <div style={{ fontSize: 13, color: '#8A8FA3', marginBottom: 10 }}>{sub}</div>
@@ -123,7 +123,7 @@ export default function Portfolio() {
               Let's build something<br />thoughtful together.
             </h2>
             <p style={{ fontSize: 17, color: '#5A5F73', margin: '0 0 36px' }}>Based in Lisbon — open to select global opportunities.</p>
-            <a href="mailto:nlopes.nl@gmail.com" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '18px 36px', background: '#002FA7', color: '#FFFFFF', borderRadius: 24, fontSize: 15, fontWeight: 600, transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
+            <a href="mailto:nlopes.nl@gmail.com" className="primary-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '18px 36px', background: '#002FA7', color: '#FFFFFF', borderRadius: 24, fontSize: 15, fontWeight: 600, transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
               Email me directly →
             </a>
           </div>

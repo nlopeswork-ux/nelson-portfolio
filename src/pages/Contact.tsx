@@ -32,7 +32,7 @@ export default function Contact() {
         </div>
 
         <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap', maxWidth: 820, margin: '0 auto' }}>
-          <a href="mailto:nlopes.nl@gmail.com" style={{ flex: 1, minWidth: 280, display: 'flex', flexDirection: 'column', gap: 16, padding: '40px 36px', borderRadius: 28, background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.4)', boxShadow: '0 20px 50px rgba(120,150,255,0.12)', textDecoration: 'none', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
+          <a href="mailto:nlopes.nl@gmail.com" className="contact-card interactive-card" style={{ flex: 1, minWidth: 280, display: 'flex', flexDirection: 'column', gap: 16, padding: '40px 36px', borderRadius: 28, background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.4)', boxShadow: '0 20px 50px rgba(120,150,255,0.12)', textDecoration: 'none', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
             <div style={{ fontSize: 34 }}>✉️</div>
             <div>
               <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 8 }}>Email</div>
@@ -41,7 +41,7 @@ export default function Contact() {
             <div style={{ fontSize: 14, color: '#A0A4B8' }}>Best for project briefs &amp; coffee-shaped questions.</div>
           </a>
 
-          <a href="https://www.linkedin.com/in/nelsonnlopes" target="_blank" rel="noopener noreferrer" style={{ flex: 1, minWidth: 280, display: 'flex', flexDirection: 'column', gap: 16, padding: '40px 36px', borderRadius: 28, background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.4)', boxShadow: '0 20px 50px rgba(120,150,255,0.12)', textDecoration: 'none', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
+          <a href="https://www.linkedin.com/in/nelsonnlopes" target="_blank" rel="noopener noreferrer" className="contact-card interactive-card" style={{ flex: 1, minWidth: 280, display: 'flex', flexDirection: 'column', gap: 16, padding: '40px 36px', borderRadius: 28, background: 'rgba(255,255,255,0.6)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.4)', boxShadow: '0 20px 50px rgba(120,150,255,0.12)', textDecoration: 'none', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
             <div style={{ fontSize: 34 }}>🔗</div>
             <div>
               <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 8 }}>LinkedIn</div>
