@@ -52,7 +52,7 @@ export default function Nav() {
           Nelson Lopes
         </Link>
 
-        <nav className="nav-links" style={{ alignItems: 'center' }}>
+        <nav className="nav-links" style={{ alignItems: 'center', gap: 12 }}>
           {links.map(({ to, label }) => (
             <Link key={to} to={to} className="nav-link" style={linkStyle(to)}>{label}</Link>
           ))}

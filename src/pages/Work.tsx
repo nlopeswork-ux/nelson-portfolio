@@ -149,8 +149,26 @@ export default function Work() {
           {filtered.map(s => (
             <Link key={s.id} to={s.to} className="case-card interactive-card" style={{ display: 'block', textDecoration: 'none', borderRadius: 20, overflow: 'hidden', background: '#FFFFFF', border: '1px solid rgba(20,30,60,0.08)', boxShadow: '0 12px 32px rgba(120,150,255,0.08)', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
               <div style={{ padding: 12 }}>
-                <div style={{ position: 'relative', width: '100%', borderRadius: 14, overflow: 'hidden', background: '#F5F7FC' }}>
-                  <img src={s.image} alt={s.title} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                <div style={{
+                  position: 'relative',
+                  width: '100%',
+                  borderRadius: 14,
+                  overflow: 'hidden',
+                  background: '#F5F7FC',
+                  aspectRatio: '4 / 3',
+                  maxHeight: 280,
+                }}>
+                  <img
+                    src={s.image}
+                    alt={s.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      display: 'block',
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                    }}
+                  />
                   <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '40%', background: 'linear-gradient(to bottom, transparent, #ffffff)', pointerEvents: 'none' }} />
                 </div>
               </div>

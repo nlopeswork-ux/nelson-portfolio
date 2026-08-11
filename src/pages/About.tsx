@@ -244,13 +244,13 @@ export default function About() {
             </div>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 20, marginTop: 20 }}>
-            <button onClick={certPrev} style={{ cursor: 'pointer', width: 36, height: 36, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F2F6FF', color: '#3D63E0', fontSize: 16, fontWeight: 700, border: 'none', fontFamily: "'Inter', sans-serif" }}>←</button>
+            <button aria-label="Previous" className="carousel-arrow" onClick={certPrev} style={{ width: 36, height: 36, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F2F6FF', color: '#3D63E0', fontSize: 16, fontWeight: 700, border: 'none', fontFamily: "'Inter', sans-serif" }}><span aria-hidden="true">←</span></button>
             <div style={{ display: 'flex', gap: 8 }}>
               {certSlides.map((_, i) => (
                 <button key={i} onClick={() => setCertIdx(i)} style={{ cursor: 'pointer', width: 8, height: 8, borderRadius: '50%', background: i === certIdx ? '#3D63E0' : '#D8E0F5', border: 'none', padding: 0 }} />
               ))}
             </div>
-            <button onClick={certNext} style={{ cursor: 'pointer', width: 36, height: 36, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F2F6FF', color: '#3D63E0', fontSize: 16, fontWeight: 700, border: 'none', fontFamily: "'Inter', sans-serif" }}>→</button>
+            <button aria-label="Next" className="carousel-arrow" onClick={certNext} style={{ width: 36, height: 36, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F2F6FF', color: '#3D63E0', fontSize: 16, fontWeight: 700, border: 'none', fontFamily: "'Inter', sans-serif" }}><span aria-hidden="true">→</span></button>
           </div>
         </div>
 
