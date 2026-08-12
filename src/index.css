@@ -347,6 +347,13 @@ input::placeholder { color: #A0A4B8; }
   .rg-outcomes  { grid-template-columns: 1fr; }
   .carousel-3   { grid-template-columns: 1fr; gap: 16px; }
 
+  .table-scroll {
+    padding: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+  }
+
   .table-scroll table,
   .table-scroll thead,
   .table-scroll tbody,
