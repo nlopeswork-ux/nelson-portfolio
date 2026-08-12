@@ -426,11 +426,7 @@ input::placeholder { color: #A0A4B8; }
 .nav-burger { display: none; }
 .nav-dropdown { display: none; }
 
-@media (max-width: 560px) {
-  .nav-links { gap: 14px; font-size: 12px; }
-}
-
-@media (max-width: 420px) {
+@media (max-width: 640px) {
   .nav-links  { display: none; }
   .nav-burger { display: flex; }
   .nav-dropdown {
