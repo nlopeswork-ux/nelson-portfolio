@@ -1,8 +1,12 @@
 import { useState } from 'react'
-import CaseStudyShell, { Body, DarkBox } from '../components/CaseStudyShell'
+import CaseStudyShell, { Body, DarkBox, SeverityChip } from '../components/CaseStudyShell'
 
 const S = { padding: '0 20px 64px', maxWidth: 760, margin: '0 auto' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
+
+const auditColumns = ['Finding', 'Severity', 'Operational Impact']
+const tabsColumns = ['Tab', 'Persona', 'Core Decision Served']
+const kpiColumns = ['KPI', 'Baseline', 'Result / Target']
 
 const personas = [
   {
@@ -160,7 +164,7 @@ export default function CaseStudyIntelliForge() {
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
               <tr style={{ borderBottom: '1px solid #EAF1FF' }}>
-                {['Finding', 'Severity', 'Operational Impact'].map(h => (
+                {auditColumns.map(h => (
                   <th key={h} style={{ textAlign: 'left', padding: '14px 16px', color: '#001A5C', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{h}</th>
                 ))}
               </tr>
@@ -168,9 +172,9 @@ export default function CaseStudyIntelliForge() {
             <tbody>
               {auditFindings.map((row, i) => (
                 <tr key={i} style={{ borderBottom: i < auditFindings.length - 1 ? '1px solid #EAF1FF' : undefined }}>
-                  <td style={{ padding: '14px 16px', color: '#12141F' }}>{row.finding}</td>
-                  <td style={{ padding: '14px 16px', color: '#B23A3A' }}>{row.severity}</td>
-                  <td style={{ padding: '14px 16px', color: '#5A5F73' }}>{row.impact}</td>
+                  <td data-label={auditColumns[0]} style={{ padding: '14px 16px', color: '#12141F' }}>{row.finding}</td>
+                  <td data-label={auditColumns[1]} style={{ padding: '14px 16px' }}><SeverityChip>{row.severity}</SeverityChip></td>
+                  <td data-label={auditColumns[2]} style={{ padding: '14px 16px', color: '#5A5F73' }}>{row.impact}</td>
                 </tr>
               ))}
             </tbody>
@@ -231,7 +235,7 @@ export default function CaseStudyIntelliForge() {
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
               <tr style={{ borderBottom: '1px solid #EAF1FF' }}>
-                {['Tab', 'Persona', 'Core Decision Served'].map(h => (
+                {tabsColumns.map(h => (
                   <th key={h} style={{ textAlign: 'left', padding: '14px 16px', color: '#001A5C', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{h}</th>
                 ))}
               </tr>
@@ -239,9 +243,9 @@ export default function CaseStudyIntelliForge() {
             <tbody>
               {tabs.map((row, i) => (
                 <tr key={i} style={{ borderBottom: i < tabs.length - 1 ? '1px solid #EAF1FF' : undefined }}>
-                  <td style={{ padding: '14px 16px', color: '#12141F', fontWeight: 600 }}>{row.tab}</td>
-                  <td style={{ padding: '14px 16px', color: '#5A5F73' }}>{row.persona}</td>
-                  <td style={{ padding: '14px 16px', color: '#5A5F73' }}>{row.decision}</td>
+                  <td data-label={tabsColumns[0]} style={{ padding: '14px 16px', color: '#12141F', fontWeight: 600 }}>{row.tab}</td>
+                  <td data-label={tabsColumns[1]} style={{ padding: '14px 16px', color: '#5A5F73' }}>{row.persona}</td>
+                  <td data-label={tabsColumns[2]} style={{ padding: '14px 16px', color: '#5A5F73' }}>{row.decision}</td>
                 </tr>
               ))}
             </tbody>
@@ -322,7 +326,7 @@ export default function CaseStudyIntelliForge() {
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
               <tr style={{ borderBottom: '1px solid #EAF1FF' }}>
-                {['KPI', 'Baseline', 'Result / Target'].map(h => (
+                {kpiColumns.map(h => (
                   <th key={h} style={{ textAlign: 'left', padding: '10px 12px', color: '#001A5C', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{h}</th>
                 ))}
               </tr>
@@ -330,9 +334,9 @@ export default function CaseStudyIntelliForge() {
             <tbody>
               {kpiRows.map((row, i) => (
                 <tr key={i} style={{ borderBottom: i < kpiRows.length - 1 ? '1px solid #F2F6FF' : undefined }}>
-                  <td style={{ padding: '10px 12px', color: '#12141F' }}>{row.kpi}</td>
-                  <td style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.baseline}</td>
-                  <td style={{ padding: '10px 12px', color: '#1F7A4D', fontWeight: 600 }}>{row.result}</td>
+                  <td data-label={kpiColumns[0]} style={{ padding: '10px 12px', color: '#12141F' }}>{row.kpi}</td>
+                  <td data-label={kpiColumns[1]} style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.baseline}</td>
+                  <td data-label={kpiColumns[2]} style={{ padding: '10px 12px', color: '#1F7A4D', fontWeight: 600 }}>{row.result}</td>
                 </tr>
               ))}
             </tbody>

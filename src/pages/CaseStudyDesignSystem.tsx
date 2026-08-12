@@ -3,6 +3,8 @@ import CaseStudyShell, { Body, DarkBox } from '../components/CaseStudyShell'
 const S = { padding: '0 20px 64px', maxWidth: 760, margin: '0 auto' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
 
+const auditColumns = ['Tier', 'Components', 'Criteria']
+
 const principles = [
   { n: '01', name: 'Platform-agnostic tokens', desc: 'Design tokens stored as Figma Variables and exported as JSON — consumable by OutSystems, React, and any future platform without a design rework.' },
   { n: '02', name: 'Composition over configuration', desc: 'Components expose a small surface area of props. Complexity lives in composition — combining atoms into molecules — rather than in a single component trying to handle 40 variants.' },
@@ -45,7 +47,7 @@ export default function CaseStudyDesignSystem() {
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
               <tr style={{ borderBottom: '1px solid #EAF1FF' }}>
-                {['Tier', 'Components', 'Criteria'].map(h => (
+                {auditColumns.map(h => (
                   <th key={h} style={{ textAlign: 'left', padding: '14px 16px', color: '#001A5C', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{h}</th>
                 ))}
               </tr>
@@ -57,9 +59,9 @@ export default function CaseStudyDesignSystem() {
                 { tier: 'Extended', n: '40', criteria: 'Domain-specific but reusable with theming' },
               ].map((row, i, arr) => (
                 <tr key={row.tier} style={{ borderBottom: i < arr.length - 1 ? '1px solid #EAF1FF' : undefined }}>
-                  <td style={{ padding: '14px 16px', color: '#12141F', fontWeight: 600 }}>{row.tier}</td>
-                  <td style={{ padding: '14px 16px', color: '#002FA7', fontWeight: 700 }}>{row.n}</td>
-                  <td style={{ padding: '14px 16px', color: '#5A5F73' }}>{row.criteria}</td>
+                  <td data-label={auditColumns[0]} style={{ padding: '14px 16px', color: '#12141F', fontWeight: 600 }}>{row.tier}</td>
+                  <td data-label={auditColumns[1]} style={{ padding: '14px 16px', color: '#002FA7', fontWeight: 700 }}>{row.n}</td>
+                  <td data-label={auditColumns[2]} style={{ padding: '14px 16px', color: '#5A5F73' }}>{row.criteria}</td>
                 </tr>
               ))}
             </tbody>

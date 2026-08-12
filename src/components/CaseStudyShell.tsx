@@ -75,6 +75,15 @@ export function Body({ children }: { children: React.ReactNode }) {
   return <p style={{ fontSize: 17, lineHeight: 1.8, color: '#4A4F63', margin: '0 0 20px' }}>{children}</p>
 }
 
+export function SeverityChip({ children, tone = 'critical' }: { children: React.ReactNode; tone?: 'critical' | 'neutral' }) {
+  const colors = tone === 'critical' ? { color: '#B23A3A', background: 'rgba(178,58,58,0.1)' } : { color: '#5A5F73', background: '#F2F6FF' }
+  return (
+    <span style={{ display: 'inline-block', fontSize: 11, fontWeight: 700, letterSpacing: '0.02em', textTransform: 'uppercase', padding: '3px 10px', borderRadius: 999, ...colors }}>
+      {children}
+    </span>
+  )
+}
+
 export function DarkBox({ label, children }: { label?: string; children: React.ReactNode }) {
   return (
     <div style={{ padding: 28, borderRadius: 24, background: '#12141F', color: '#F2F6FF', marginBottom: 24 }}>

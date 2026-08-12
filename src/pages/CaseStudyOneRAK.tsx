@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import CaseStudyShell, { Body, DarkBox } from '../components/CaseStudyShell'
+import CaseStudyShell, { Body, DarkBox, SeverityChip } from '../components/CaseStudyShell'
 import imgStepper from '../imports/stepper-activity.png'
 import imgShareholders from '../imports/shareholders-form.png'
 import imgLicenseSuccess from '../imports/license-success.png'
@@ -8,6 +8,8 @@ import imgBusinessVisa from '../imports/business-visa.png'
 
 const S = { padding: '0 20px 64px', maxWidth: 760, margin: '0 auto' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
+
+const heuristicColumns = ['Heuristic', 'Score', 'Example finding']
 
 const prototypeScreens = [
   { image: imgStepper, title: 'Status stepper — application activity', caption: 'Journal-style status tracker with real-time push notification states. Directly addresses the #1 agent pain point: "you submit, but there\'s no confirmation — we don\'t know what happens next."' },
@@ -137,7 +139,7 @@ export default function CaseStudyOneRAK() {
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
                 <thead>
                   <tr style={{ borderBottom: '1px solid #EAF1FF' }}>
-                    {['Heuristic', 'Score', 'Example finding'].map(h => (
+                    {heuristicColumns.map(h => (
                       <th key={h} style={{ textAlign: 'left', padding: '10px 12px', color: '#001A5C', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{h}</th>
                     ))}
                   </tr>
@@ -145,9 +147,9 @@ export default function CaseStudyOneRAK() {
                 <tbody>
                   {heuristicRows.map((row, i) => (
                     <tr key={i} style={{ borderBottom: i < heuristicRows.length - 1 ? '1px solid #F2F6FF' : undefined }}>
-                      <td style={{ padding: '10px 12px', color: '#12141F', fontWeight: row.major ? 600 : undefined }}>{row.h}</td>
-                      <td style={{ padding: '10px 12px', color: row.major ? '#B23A3A' : '#5A5F73', fontWeight: row.major ? 600 : undefined }}>{row.score}</td>
-                      <td style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.finding}</td>
+                      <td data-label={heuristicColumns[0]} style={{ padding: '10px 12px', color: '#12141F', fontWeight: row.major ? 600 : undefined }}>{row.h}</td>
+                      <td data-label={heuristicColumns[1]} style={{ padding: '10px 12px' }}>{row.major ? <SeverityChip>{row.score}</SeverityChip> : <span style={{ color: '#5A5F73' }}>{row.score}</span>}</td>
+                      <td data-label={heuristicColumns[2]} style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.finding}</td>
                     </tr>
                   ))}
                 </tbody>

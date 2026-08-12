@@ -5,6 +5,10 @@ const S = { padding: '0 20px 64px', maxWidth: 760, margin: '0 auto' } as const
 const SW = { padding: '0 20px 64px', maxWidth: 900, margin: '0 auto' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
 
+const researchColumns = ['Finding', 'Design decision it drove']
+const iaColumns = ['Section', 'What it contains']
+const validationColumns = ['Flow', 'Category', 'Quick win']
+
 const contextCards = [
   { title: 'Business Goals', body: 'Replace a fully manual funding process with a unified digital lifecycle; support Bahrain\'s national digital-first mandate; build a platform capable of absorbing new programmes without rebuilding it each time.' },
   { title: 'Users', body: '5 external personas (Individual, Enterprise, Vendor, Training Provider, Bank) and 15 internal roles across 5 functional groups (Assessment, Customer Service, Disbursement, Monitoring, Data Monitoring).' },
@@ -181,7 +185,7 @@ export default function CaseStudyTamkeen() {
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
               <tr style={{ borderBottom: '1px solid #EAF1FF' }}>
-                {['Finding', 'Design decision it drove'].map(h => (
+                {researchColumns.map(h => (
                   <th key={h} style={{ textAlign: 'left', padding: '10px 12px', color: '#001A5C', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{h}</th>
                 ))}
               </tr>
@@ -189,8 +193,8 @@ export default function CaseStudyTamkeen() {
             <tbody>
               {researchFindings.map((row, i) => (
                 <tr key={i} style={{ borderBottom: i < researchFindings.length - 1 ? '1px solid #F2F6FF' : undefined }}>
-                  <td style={{ padding: '10px 12px', color: '#12141F', fontStyle: 'italic' }}>{row.finding}</td>
-                  <td style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.decision}</td>
+                  <td data-label={researchColumns[0]} style={{ padding: '10px 12px', color: '#12141F', fontStyle: 'italic' }}>{row.finding}</td>
+                  <td data-label={researchColumns[1]} style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.decision}</td>
                 </tr>
               ))}
             </tbody>
@@ -294,7 +298,7 @@ export default function CaseStudyTamkeen() {
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
               <tr style={{ borderBottom: '1px solid #EAF1FF' }}>
-                {['Section', 'What it contains'].map(h => (
+                {iaColumns.map(h => (
                   <th key={h} style={{ textAlign: 'left', padding: '10px 12px', color: '#001A5C', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{h}</th>
                 ))}
               </tr>
@@ -302,8 +306,8 @@ export default function CaseStudyTamkeen() {
             <tbody>
               {iaSections.map((row, i) => (
                 <tr key={i} style={{ borderBottom: i < iaSections.length - 1 ? '1px solid #F2F6FF' : undefined }}>
-                  <td style={{ padding: '10px 12px', color: '#12141F', fontWeight: 600 }}>{row.section}</td>
-                  <td style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.contents}</td>
+                  <td data-label={iaColumns[0]} style={{ padding: '10px 12px', color: '#12141F', fontWeight: 600 }}>{row.section}</td>
+                  <td data-label={iaColumns[1]} style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.contents}</td>
                 </tr>
               ))}
             </tbody>
@@ -376,7 +380,7 @@ export default function CaseStudyTamkeen() {
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
             <thead>
               <tr style={{ borderBottom: '1px solid #EAF1FF' }}>
-                {['Flow', 'Category', 'Quick win'].map(h => (
+                {validationColumns.map(h => (
                   <th key={h} style={{ textAlign: 'left', padding: '10px 12px', color: '#001A5C', fontWeight: 600, fontSize: 12, textTransform: 'uppercase', letterSpacing: '0.04em' }}>{h}</th>
                 ))}
               </tr>
@@ -384,9 +388,9 @@ export default function CaseStudyTamkeen() {
             <tbody>
               {validationRows.map((row, i) => (
                 <tr key={i} style={{ borderBottom: i < validationRows.length - 1 ? '1px solid #F2F6FF' : undefined }}>
-                  <td style={{ padding: '10px 12px', color: '#12141F', fontWeight: 600 }}>{row.flow}</td>
-                  <td style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.category}</td>
-                  <td style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.win}</td>
+                  <td data-label={validationColumns[0]} style={{ padding: '10px 12px', color: '#12141F', fontWeight: 600 }}>{row.flow}</td>
+                  <td data-label={validationColumns[1]} style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.category}</td>
+                  <td data-label={validationColumns[2]} style={{ padding: '10px 12px', color: '#5A5F73' }}>{row.win}</td>
                 </tr>
               ))}
             </tbody>
