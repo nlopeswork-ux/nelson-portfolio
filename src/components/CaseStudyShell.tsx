@@ -66,6 +66,10 @@ export default function CaseStudyShell({ eyebrow, title, description, meta, stat
         </Link>
       </div>
 
+      <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 20px 40px', textAlign: 'center' }}>
+        <p style={{ fontSize: 12, lineHeight: 1.6, color: '#A0A4B8', margin: 0 }}>Client names and identifying details have been generalized to respect confidentiality agreements. Metrics and outcomes reflect the real scope and impact of the engagement.</p>
+      </div>
+
       <div style={{ textAlign: 'center', padding: '0 20px 40px', fontSize: 13, color: '#6B7086' }}>© 2026 Nelson Lopes. Designed with care.</div>
     </div>
   )
