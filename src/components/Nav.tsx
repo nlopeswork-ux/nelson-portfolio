@@ -17,11 +17,12 @@ export default function Nav() {
     return pathname === to
   }
 
+  // `.nav-link` in index.css reserves a transparent 2px bottom border at
+  // rest, so only the color needs to change here — hover/focus swap that
+  // same border to an underline via CSS, with no layout shift either way.
   const linkStyle = (to: string): React.CSSProperties => ({
     color: isActive(to) ? '#002FA7' : '#4A4F63',
-    borderBottom: isActive(to) ? '2px solid #002FA7' : 'none',
-    paddingBottom: isActive(to) ? 2 : 0,
-    transition: 'color 200ms ease-out',
+    borderBottomColor: isActive(to) ? '#002FA7' : 'transparent',
     textDecoration: 'none',
     fontWeight: isActive(to) ? 600 : 500,
   })

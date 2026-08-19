@@ -49,23 +49,27 @@ a { color: #001A5C; text-decoration: none; }
   cursor: pointer;
 }
 
-.nav-link {
-  border-radius: 999px 999px 0 0;
-}
-
 a:hover { color: var(--color-primary-hover); }
 
+/*
+ * Underline indicator, not a pill/half-circle fill: `.nav-link` reserves
+ * a transparent 2px bottom border at rest so hover/active never shifts
+ * layout (only the border-color animates, via the global `border-color`
+ * transition on `a`/`button` above), matching the current-page indicator
+ * already set inline in Nav.tsx's `linkStyle`. `!important` on
+ * border-bottom-color is required here — Nav.tsx sets that same property
+ * inline (to color the current-page indicator), and an inline style beats
+ * a non-`!important` stylesheet rule regardless of `:hover` specificity.
+ */
 .nav-link:hover,
 .nav-link:focus-visible {
   color: var(--color-primary-hover) !important;
-  background: rgba(42, 76, 184, 0.08);
-  border-radius: 999px 999px 0 0;
+  border-bottom-color: var(--color-primary-hover) !important;
 }
 
 .nav-link:active {
   color: var(--color-primary-active) !important;
-  background: rgba(0, 34, 122, 0.12);
-  transform: translateY(1px);
+  border-bottom-color: var(--color-primary-active) !important;
 }
 
 a:active, button:active, [role="button"]:active, .interactive-card:active {
@@ -131,15 +135,13 @@ button:focus-visible,
   transform: scale(0.98);
 }
 
-.secondary-btn:hover,
-.nav-link:hover {
+.secondary-btn:hover {
   color: var(--color-primary-hover) !important;
   background: rgba(42, 76, 184, 0.08) !important;
   transform: translateY(-1px);
 }
 
-.secondary-btn:active,
-.nav-link:active {
+.secondary-btn:active {
   color: var(--color-primary-active) !important;
   background: rgba(0, 34, 122, 0.12) !important;
   transform: scale(0.98);
@@ -418,7 +420,7 @@ input::placeholder { color: #A0A4B8; }
 .nav-links { display: flex; gap: 12px; font-size: 14px; font-weight: 500; }
 .nav-link {
   padding: 8px 16px;
-  border-radius: 999px 999px 0 0;
+  border-bottom: 2px solid transparent;
   display: inline-flex;
   align-items: center;
   justify-content: center;
