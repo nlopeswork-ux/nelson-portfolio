@@ -6,9 +6,27 @@ on:
       - main
   workflow_dispatch:
 
+# actions/deploy-pages needs pages:write (to publish) and id-token:write
+# (to mint the OIDC token it deploys with) — without this block the job
+# fails immediately in "Set up job", before any step runs, because the
+# default GITHUB_TOKEN doesn't carry those scopes.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Pages deployments share one target — a second run starting mid-deploy
+# must wait, not race the first.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout repository
@@ -32,9 +50,10 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Upload artifact for deployment
-        uses: actions/upload-pages-artifact@v1
+        uses: actions/upload-pages-artifact@v3
         with:
           path: docs
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+        id: deployment
+        uses: actions/deploy-pages@v4
