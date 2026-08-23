@@ -31,7 +31,7 @@ const workPhases = [
     deliverables: ['Stakeholder interviews', 'Audit findings', 'Journey maps'],
     detail: "I start by shadowing the real workflow, not the org chart's description of it — the gap between the two is usually where the project actually lives. I look for the moment someone reaches for a spreadsheet or a workaround; that's the brief writing itself.",
     question: "What's actually broken, and for whom?",
-    proof: { label: 'See this in the IntelliForge research phase', to: '/work/intelliforge' },
+    proof: { label: 'See this in the OneRAK research phase', to: '/work/onerak' },
   },
   {
     id: 'define', name: 'Define',
@@ -39,7 +39,7 @@ const workPhases = [
     deliverables: ['Personas', 'Problem statements', 'Success metrics'],
     detail: "I write the problem statement before the persona, not after — it keeps the persona honest to a real decision instead of a mood board. Every persona has to earn its place by driving at least one screen that would look different without it.",
     question: "Whose definition of success are we actually designing for?",
-    proof: { label: 'See this in the IntelliForge personas', to: '/work/intelliforge' },
+    proof: { label: 'See this in the Tamkeen personas', to: '/work/tamkeen' },
   },
   {
     id: 'design', name: 'Design',
@@ -47,7 +47,7 @@ const workPhases = [
     deliverables: ['Wireframes', 'Prototypes', 'Design systems'],
     detail: "Every screen has to answer one decision, not showcase a feature. I sketch the rejected direction alongside the shipped one — arguing against my own first idea is usually what gets it to the second, better one.",
     question: "Would this hold up under a live audit, not just a demo?",
-    proof: { label: 'See this in the IntelliForge key decisions', to: '/work/intelliforge' },
+    proof: { label: 'See this in the Design System key decisions', to: '/work/design-system' },
   },
   {
     id: 'deliver', name: 'Deliver',
@@ -55,7 +55,7 @@ const workPhases = [
     deliverables: ['Dev handoff specs', 'QA passes', 'Rollout support'],
     detail: "I stay through the first weeks of real use, not just the handoff meeting. Adoption problems show up as small hesitations, not bug reports — catching those early is the difference between a shipped feature and a used one.",
     question: "Did this actually change how people work?",
-    proof: { label: 'See this in the IntelliForge results', to: '/work/intelliforge' },
+    proof: { label: 'See this in the NEOT results', to: '/work/neot' },
   },
 ]
 

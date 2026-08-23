@@ -6,9 +6,7 @@ import onerakImg from '../imports/OneRAK_Portal_Revamp.png'
 import tamkeenImg from '../imports/National_Workforce_Digital_Platform.png'
 import dsImg from '../imports/Internal_DS.png'
 import neotImg from '../imports/NEOT_Mobile_App.png'
-
-// Placeholder — drop the real card image at this path (public/case-studies/neobank/…) once available.
-const neobankImg = '/case-studies/neobank/phase1/01-dashboard.png'
+import neobankImg from '../imports/NEOT Bank App.png'
 
 const filterOptions = ['All', 'Financial Services', 'Government', 'Internal Platform']
 
