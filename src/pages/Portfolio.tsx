@@ -53,29 +53,18 @@ export default function Portfolio() {
       </div>
 
       {/* FEATURED WORK PREVIEW */}
-      <div
-        ref={preview.ref}
-        className="featured-hero"
-        style={{ position: 'relative', padding: '96px 32px 0', maxWidth: 1200, margin: '0 auto 40px', ...preview.style }}
-      >
-        <div className="featured-hero-blob" style={{ position: 'absolute', top: -160, right: -180, width: 640, height: 640, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,159,111,0.42), rgba(255,214,181,0.16) 55%, rgba(255,255,255,0) 75%)', filter: 'blur(70px)', animation: 'driftA 24s ease-in-out infinite', pointerEvents: 'none' }} />
-
-        <div style={{ position: 'relative', maxWidth: 620, margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 16 }}>Featured Work</div>
-          <div style={{ display: 'inline-block', padding: '6px 14px', borderRadius: 999, background: 'rgba(18,20,31,0.05)', color: '#4A4F63', fontSize: 13, fontWeight: 600, marginBottom: 20 }}>Financial Services</div>
-          <h2 style={{ fontSize: 'clamp(32px,5vw,56px)', fontWeight: 800, letterSpacing: '-0.03em', color: '#12141F', margin: '0 0 16px' }}>IntelliForge SR2R</h2>
-          <p style={{ fontSize: 17, lineHeight: 1.6, color: '#5A5F73', maxWidth: 560, margin: '0 auto 28px' }}>A control layer for a 10× bid.</p>
-          <Link
-            to="/work/intelliforge"
-            className="featured-hero-cta"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 28px', borderRadius: 999, background: '#F0F1F5', color: '#12141F', fontSize: 15, fontWeight: 600, textDecoration: 'none' }}
-          >
+      <div ref={preview.ref} style={{ position: 'relative', padding: '0 32px 40px', maxWidth: 1200, margin: '0 auto', ...preview.style }}>
+        <div style={{ maxWidth: 560, margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ fontSize: 12, fontWeight: 600, color: '#4A4F63', background: '#F2F6FF', padding: '5px 12px', borderRadius: 12, display: 'inline-block', marginBottom: 16 }}>Financial Services</div>
+          <h2 style={{ fontSize: 26, fontWeight: 700, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 12px' }}>IntelliForge SR2R</h2>
+          <p style={{ fontSize: 16, lineHeight: 1.6, color: '#5A5F73', margin: '0 auto 24px' }}>A control layer for a 10× bid.</p>
+          <Link to="/work/intelliforge" className="secondary-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '16px 32px', color: '#002FA7', fontSize: 15, fontWeight: 600 }}>
             See case study →
           </Link>
         </div>
 
-        <div className="featured-hero-mockup-wrap">
-          <img src={intelliforgeImg} alt="IntelliForge SR2R desktop preview" className="featured-hero-mockup" />
+        <div style={{ marginTop: 40, display: 'flex', justifyContent: 'center' }}>
+          <img src={intelliforgeImg} alt="IntelliForge SR2R desktop preview" style={{ width: 'min(1100px, 96%)', height: 'auto' }} />
         </div>
       </div>
 

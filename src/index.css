@@ -230,52 +230,6 @@ button:focus-visible,
   box-shadow: 0 0 0 4px var(--color-primary-halo);
 }
 
-/* ── Featured Work hero banner ── */
-.featured-hero-cta:hover {
-  background: #E4E6ED !important;
-  color: #12141F !important;
-  transform: translateY(-1px);
-}
-
-.featured-hero-cta:active {
-  background: #D8DAE3 !important;
-  transform: scale(0.98);
-}
-
-.featured-hero-mockup-wrap {
-  position: relative;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  margin-top: 48px;
-  margin-bottom: -70px;
-}
-
-.featured-hero-mockup {
-  width: min(1100px, 96%);
-  height: auto;
-  display: block;
-  filter: drop-shadow(0 26px 46px rgba(18, 20, 31, 0.16));
-}
-
-@media (max-width: 640px) {
-  .featured-hero {
-    padding-top: 64px !important;
-  }
-
-  .featured-hero-blob {
-    width: 420px !important;
-    height: 420px !important;
-    top: -110px !important;
-    right: -140px !important;
-  }
-
-  .featured-hero-mockup-wrap {
-    margin-top: 32px;
-    margin-bottom: -30px;
-  }
-}
-
 img { display: block; max-width: 100%; }
 
 input::placeholder { color: #A0A4B8; }
