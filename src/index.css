@@ -230,37 +230,48 @@ button:focus-visible,
   box-shadow: 0 0 0 4px var(--color-primary-halo);
 }
 
-.featured-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  align-items: stretch;
-  min-height: 280px;
+/* ── Featured Work hero banner ── */
+.featured-hero-cta:hover {
+  background: #E4E6ED !important;
+  color: #12141F !important;
+  transform: translateY(-1px);
 }
 
-.featured-card-media {
-  width: 100%;
-  height: 100%;
-  aspect-ratio: unset;
-  max-height: none;
-  overflow: hidden;
-  background: #F5F7FC;
+.featured-hero-cta:active {
+  background: #D8DAE3 !important;
+  transform: scale(0.98);
 }
 
-.featured-card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
+.featured-hero-mockup-wrap {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.featured-hero-mockup {
+  width: min(900px, 94%);
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 30px 60px rgba(18, 20, 31, 0.18), 0 10px 24px rgba(18, 20, 31, 0.1);
+  margin-bottom: -110px;
   display: block;
 }
 
 @media (max-width: 640px) {
-  .featured-card {
-    grid-template-columns: 1fr;
+  .featured-hero {
+    padding-top: 64px !important;
   }
 
-  .featured-card-media {
-    min-height: 220px;
+  .featured-hero-blob {
+    width: 420px !important;
+    height: 420px !important;
+    top: -110px !important;
+    right: -140px !important;
+  }
+
+  .featured-hero-mockup {
+    margin-bottom: -48px;
   }
 }
 
@@ -458,13 +469,6 @@ input::placeholder { color: #A0A4B8; }
   .timeline-eng-row {
     grid-template-columns: 1fr !important;
     gap: 4px !important;
-  }
-}
-
-/* ── Featured Work card — horizontal to vertical on mobile ── */
-@media (max-width: 620px) {
-  .featured-card {
-    grid-template-columns: 1fr !important;
   }
 }
 

@@ -53,28 +53,30 @@ export default function Portfolio() {
       </div>
 
       {/* FEATURED WORK PREVIEW */}
-      <div ref={preview.ref} style={{ position: 'relative', padding: '0 32px 40px', maxWidth: 1200, margin: '0 auto', ...preview.style }}>
-        <div style={{ position: 'absolute', top: 60, right: -260, width: 520, height: 520, borderRadius: '50%', background: 'radial-gradient(circle, rgba(200,216,255,0.25), transparent 70%)', filter: 'blur(80px)', zIndex: -1 }} />
+      <div
+        ref={preview.ref}
+        className="featured-hero"
+        style={{ position: 'relative', overflow: 'hidden', padding: '96px 32px 0', maxWidth: 1200, margin: '0 auto 40px', ...preview.style }}
+      >
+        <div className="featured-hero-blob" style={{ position: 'absolute', top: -160, right: -180, width: 640, height: 640, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,159,111,0.42), rgba(255,214,181,0.16) 55%, rgba(255,255,255,0) 75%)', filter: 'blur(70px)', animation: 'driftA 24s ease-in-out infinite', pointerEvents: 'none' }} />
 
-        <div style={{ marginBottom: 40, maxWidth: 640 }}>
-          <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 12 }}>Featured Work</div>
-          <h2 style={{ fontSize: 'clamp(28px,3.5vw,42px)', fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: 0 }}>A control layer for a 10× bid.</h2>
+        <div style={{ position: 'relative', maxWidth: 620, margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 16 }}>Featured Work</div>
+          <div style={{ display: 'inline-block', padding: '6px 14px', borderRadius: 999, background: 'rgba(18,20,31,0.05)', color: '#4A4F63', fontSize: 13, fontWeight: 600, marginBottom: 20 }}>Financial Services</div>
+          <h2 style={{ fontSize: 'clamp(32px,5vw,56px)', fontWeight: 800, letterSpacing: '-0.03em', color: '#12141F', margin: '0 0 16px' }}>IntelliForge SR2R</h2>
+          <p style={{ fontSize: 17, lineHeight: 1.6, color: '#5A5F73', maxWidth: 560, margin: '0 auto 28px' }}>A control layer for a 10× bid.</p>
+          <Link
+            to="/work/intelliforge"
+            className="featured-hero-cta"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '14px 28px', borderRadius: 999, background: '#F0F1F5', color: '#12141F', fontSize: 15, fontWeight: 600, textDecoration: 'none' }}
+          >
+            See case study →
+          </Link>
         </div>
 
-        <Link to="/work/intelliforge" className="featured-card-link interactive-card" style={{ display: 'block', textDecoration: 'none', borderRadius: 24, overflow: 'hidden', background: 'rgba(255,255,255,0.55)', backdropFilter: 'blur(20px)', WebkitBackdropFilter: 'blur(20px)', border: '1px solid rgba(255,255,255,0.4)', boxShadow: '0 16px 44px rgba(120,150,255,0.1)', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
-          <div className="featured-card">
-            <div className="featured-card-media" style={{ overflow: 'hidden', borderRadius: '20px 0 0 20px', background: '#F5F7FC' }}>
-              <img src={intelliforgeImg} alt="IntelliForge SR2R" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', display: 'block' }} />
-            </div>
-            <div style={{ padding: '24px 32px 24px 24px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <div style={{ fontSize: 12, fontWeight: 600, color: '#001A5C', letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 8 }}>Global energy &amp; mobility company — U.K. market</div>
-              <h3 style={{ fontSize: 24, fontWeight: 700, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 10px' }}>IntelliForge SR2R</h3>
-              <p style={{ fontSize: 15, lineHeight: 1.6, color: '#5A5F73', margin: '0 0 14px' }}>Turned 200 manual close cycles into a governed system, proving a 10× bid could scale at near-zero cost.</p>
-              <div style={{ fontSize: 12, fontWeight: 600, color: '#4A4F63', background: '#F2F6FF', padding: '5px 12px', borderRadius: 12, display: 'inline-block', marginBottom: 14, width: 'fit-content' }}>Financial Services</div>
-              <div style={{ fontSize: 15, fontWeight: 600, color: '#3D63E0' }}>See case study →</div>
-            </div>
-          </div>
-        </Link>
+        <div className="featured-hero-mockup-wrap" style={{ marginTop: 48 }}>
+          <img src={intelliforgeImg} alt="IntelliForge SR2R desktop preview" className="featured-hero-mockup" />
+        </div>
       </div>
 
       {/* AREA TEASERS */}
