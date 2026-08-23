@@ -83,7 +83,7 @@ export default function Portfolio() {
             {
               to: '/work',
               icon: <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>,
-              label: 'Work', sub: '1 case study live, more in progress',
+              label: 'Work', sub: '6 case studies live, more in progress',
               desc: 'Case studies from enterprise systems where the interface is only as good as the decisions underneath it.',
               cta: 'See the work →',
             },

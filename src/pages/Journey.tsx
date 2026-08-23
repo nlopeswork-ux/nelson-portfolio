@@ -2,8 +2,10 @@ import { useState } from 'react'
 import Nav from '../components/Nav'
 
 const kpmgEngagements = [
-  { client: 'Global energy & mobility (U.K.)', industry: 'Financial Services', geo: 'U.K.', period: '2024–2025', scope: 'IntelliForge SR2R — ontology-driven financial close system, 200 franchise dealers' },
-  { client: 'Government econ. zone (UAE)', industry: 'Government', geo: 'Middle East', period: '2025–2026', scope: 'OneRAK Portal Revamp — 3 portals unified, 18/18 services live' },
+  { client: 'Global energy & mobility (U.K.)', industry: 'Financial Services', geo: 'U.K.', period: '2026–Present', scope: 'IntelliForge SR2R — ontology-driven financial close system, 200 franchise dealers' },
+  { client: 'Government econ. zone (UAE)', industry: 'Government', geo: 'UAE', period: '2025–2026', scope: 'OneRAK Portal Revamp — 3 portals unified, 18/18 services live' },
+  { client: 'Retail bank (Bahrain)', industry: 'Financial Services', geo: 'Bahrain', period: '2024–2025', scope: 'Internet Banking Design System — 1,350+ frames, 14 feature areas' },
+  { client: 'Retail bank mobile (Bahrain)', industry: 'Financial Services', geo: 'Bahrain', period: '2024–2025', scope: 'Mobile Banking App Redesign — 1,590+ screens, 12 core features' },
   { client: 'Nat. employment fund (Bahrain)', industry: 'Government', geo: 'Bahrain', period: '2023–present', scope: 'NEOT Mobile App — 1,000+ screens, 8 modules' },
   { client: 'Nat. workforce fund (Bahrain)', industry: 'Government', geo: 'Bahrain', period: '2023–present', scope: 'National Workforce Platform — end-to-end digital funding ecosystem' },
 ]
