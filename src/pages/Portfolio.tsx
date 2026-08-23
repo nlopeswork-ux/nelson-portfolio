@@ -62,7 +62,17 @@ export default function Portfolio() {
         </div>
 
         <div style={{ marginTop: 32 }}>
-          <img src={intelliforgeImg} alt="IntelliForge SR2R desktop preview" style={{ width: '100%', height: 'auto', borderRadius: 16 }} />
+          <img
+            src={intelliforgeImg}
+            alt="IntelliForge SR2R desktop preview"
+            style={{
+              width: '100%',
+              height: 'auto',
+              borderRadius: 16,
+              WebkitMaskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+              maskImage: 'linear-gradient(to bottom, black 75%, transparent 100%)',
+            }}
+          />
         </div>
       </div>
 
