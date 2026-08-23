@@ -53,19 +53,16 @@ export default function Portfolio() {
       </div>
 
       {/* FEATURED WORK PREVIEW */}
-      <div ref={preview.ref} style={{ position: 'relative', padding: '0 32px 40px', maxWidth: 1200, margin: '0 auto', ...preview.style }}>
-        <div style={{ maxWidth: 620 }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: '#001A5C', letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 8 }}>Global energy &amp; mobility company — U.K. market</div>
-          <h2 style={{ fontSize: 26, fontWeight: 700, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 10px' }}>IntelliForge SR2R</h2>
-          <p style={{ fontSize: 16, lineHeight: 1.6, color: '#5A5F73', margin: '0 0 14px' }}>Turned 200 manual close cycles into a governed system, proving a 10× bid could scale at near-zero cost.</p>
-          <div style={{ fontSize: 12, fontWeight: 600, color: '#4A4F63', background: '#F2F6FF', padding: '5px 12px', borderRadius: 12, display: 'inline-block', marginBottom: 14, width: 'fit-content' }}>Financial Services</div>
-          <div>
-            <Link to="/work/intelliforge" style={{ fontSize: 15, fontWeight: 600, color: '#3D63E0' }}>See case study →</Link>
-          </div>
+      <div ref={preview.ref} style={{ position: 'relative', padding: '72px 32px 96px', maxWidth: 1200, margin: '0 auto', ...preview.style }}>
+        <div style={{ maxWidth: 480, margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ fontSize: 14, fontWeight: 500, color: '#6B7086', marginBottom: 10 }}>Featured work</div>
+          <h2 style={{ fontSize: 22, fontWeight: 600, letterSpacing: '-0.01em', color: '#12141F', margin: '0 0 8px' }}>IntelliForge SR2R</h2>
+          <p style={{ fontSize: 16, color: '#5A5F73', margin: '0 0 12px' }}>A control layer for a 10× bid.</p>
+          <Link to="/work/intelliforge" style={{ fontSize: 15, fontWeight: 600, color: '#3D63E0' }}>See case study →</Link>
         </div>
 
-        <div style={{ marginTop: 40, display: 'flex', justifyContent: 'center' }}>
-          <img src={intelliforgeImg} alt="IntelliForge SR2R desktop preview" style={{ width: 'min(1100px, 96%)', height: 'auto' }} />
+        <div style={{ marginTop: 56 }}>
+          <img src={intelliforgeImg} alt="IntelliForge SR2R desktop preview" style={{ width: '100%', height: 'auto', borderRadius: 16 }} />
         </div>
       </div>
 
