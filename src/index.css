@@ -247,15 +247,15 @@ button:focus-visible,
   z-index: 1;
   display: flex;
   justify-content: center;
+  margin-top: 48px;
+  margin-bottom: -70px;
 }
 
 .featured-hero-mockup {
-  width: min(900px, 94%);
+  width: min(1100px, 96%);
   height: auto;
-  border-radius: 20px;
-  box-shadow: 0 30px 60px rgba(18, 20, 31, 0.18), 0 10px 24px rgba(18, 20, 31, 0.1);
-  margin-bottom: -110px;
   display: block;
+  filter: drop-shadow(0 26px 46px rgba(18, 20, 31, 0.16));
 }
 
 @media (max-width: 640px) {
@@ -270,8 +270,9 @@ button:focus-visible,
     right: -140px !important;
   }
 
-  .featured-hero-mockup {
-    margin-bottom: -48px;
+  .featured-hero-mockup-wrap {
+    margin-top: 32px;
+    margin-bottom: -30px;
   }
 }
 

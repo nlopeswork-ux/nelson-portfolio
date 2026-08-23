@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
-import intelliforgeImg from '../imports/IntelliForge_SR2R-2.png'
+import intelliforgeImg from '../imports/hero.png'
 
 function useFadeIn() {
   const ref = useRef<HTMLDivElement>(null)
@@ -56,7 +56,7 @@ export default function Portfolio() {
       <div
         ref={preview.ref}
         className="featured-hero"
-        style={{ position: 'relative', overflow: 'hidden', padding: '96px 32px 0', maxWidth: 1200, margin: '0 auto 40px', ...preview.style }}
+        style={{ position: 'relative', padding: '96px 32px 0', maxWidth: 1200, margin: '0 auto 40px', ...preview.style }}
       >
         <div className="featured-hero-blob" style={{ position: 'absolute', top: -160, right: -180, width: 640, height: 640, borderRadius: '50%', background: 'radial-gradient(circle, rgba(255,159,111,0.42), rgba(255,214,181,0.16) 55%, rgba(255,255,255,0) 75%)', filter: 'blur(70px)', animation: 'driftA 24s ease-in-out infinite', pointerEvents: 'none' }} />
 
@@ -74,7 +74,7 @@ export default function Portfolio() {
           </Link>
         </div>
 
-        <div className="featured-hero-mockup-wrap" style={{ marginTop: 48 }}>
+        <div className="featured-hero-mockup-wrap">
           <img src={intelliforgeImg} alt="IntelliForge SR2R desktop preview" className="featured-hero-mockup" />
         </div>
       </div>
