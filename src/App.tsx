@@ -9,6 +9,7 @@ import CaseStudyOneRAK from './pages/CaseStudyOneRAK'
 import CaseStudyTamkeen from './pages/CaseStudyTamkeen'
 import CaseStudyNEOT from './pages/CaseStudyNEOT'
 import CaseStudyDesignSystem from './pages/CaseStudyDesignSystem'
+import CaseStudyNeoBank from './pages/CaseStudyNeoBank'
 
 export default function App() {
   return (
@@ -21,6 +22,7 @@ export default function App() {
         <Route path="/work/tamkeen" element={<CaseStudyTamkeen />} />
         <Route path="/work/neot" element={<CaseStudyNEOT />} />
         <Route path="/work/design-system" element={<CaseStudyDesignSystem />} />
+        <Route path="/work/neobank" element={<CaseStudyNeoBank />} />
         <Route path="/journey" element={<Journey />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

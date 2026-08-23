@@ -7,6 +7,9 @@ import tamkeenImg from '../imports/National_Workforce_Digital_Platform.png'
 import dsImg from '../imports/Internal_DS.png'
 import neotImg from '../imports/NEOT_Mobile_App.png'
 
+// Placeholder — drop the real card image at this path (public/case-studies/neobank/…) once available.
+const neobankImg = '/case-studies/neobank/phase1/01-dashboard.png'
+
 const filterOptions = ['All', 'Financial Services', 'Government', 'Internal Platform']
 
 const studies = [
@@ -79,6 +82,20 @@ const studies = [
     color: 'linear-gradient(135deg, #003B6F 0%, #0055A5 100%)',
     initials: 'MOB',
     image: neotImg,
+  },
+  {
+    id: 'neobank',
+    to: '/work/neobank',
+    client: 'Retail bank engagement / internal concept',
+    title: 'NeoBank — Reimagining Banking Twice',
+    summary: 'From a research-led app redesign to an AI-native banking experience.',
+    industry: 'Financial Services',
+    tags: ['Financial Services'],
+    quote: null,
+    quoteAttribution: null,
+    color: 'linear-gradient(135deg, #002FA7 0%, #5B7FE8 100%)',
+    initials: 'NB',
+    image: neobankImg,
   },
 ]
 
@@ -161,6 +178,7 @@ export default function Work() {
                   <img
                     src={s.image}
                     alt={s.title}
+                    onError={e => { e.currentTarget.style.display = 'none' }}
                     style={{
                       width: '100%',
                       height: '100%',
