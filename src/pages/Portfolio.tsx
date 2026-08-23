@@ -53,15 +53,15 @@ export default function Portfolio() {
       </div>
 
       {/* FEATURED WORK PREVIEW */}
-      <div ref={preview.ref} style={{ position: 'relative', padding: '72px 32px 96px', maxWidth: 1200, margin: '0 auto', ...preview.style }}>
+      <div ref={preview.ref} style={{ position: 'relative', padding: '24px 32px 96px', maxWidth: 1200, margin: '0 auto', ...preview.style }}>
         <div style={{ maxWidth: 480, margin: '0 auto', textAlign: 'center' }}>
-          <div style={{ fontSize: 14, fontWeight: 500, color: '#6B7086', marginBottom: 10 }}>Featured work</div>
-          <h2 style={{ fontSize: 22, fontWeight: 600, letterSpacing: '-0.01em', color: '#12141F', margin: '0 0 8px' }}>IntelliForge SR2R</h2>
-          <p style={{ fontSize: 16, color: '#5A5F73', margin: '0 0 12px' }}>A control layer for a 10× bid.</p>
+          <div style={{ fontSize: 14, fontWeight: 500, color: '#6B7086', marginBottom: 6 }}>Featured work</div>
+          <h2 style={{ fontSize: 28, fontWeight: 600, letterSpacing: '-0.01em', color: '#12141F', margin: '0 0 6px' }}>IntelliForge SR2R</h2>
+          <p style={{ fontSize: 16, color: '#5A5F73', margin: '0 0 8px' }}>A control layer for a 10× bid.</p>
           <Link to="/work/intelliforge" style={{ fontSize: 15, fontWeight: 600, color: '#3D63E0' }}>See case study →</Link>
         </div>
 
-        <div style={{ marginTop: 56 }}>
+        <div style={{ marginTop: 32 }}>
           <img src={intelliforgeImg} alt="IntelliForge SR2R desktop preview" style={{ width: '100%', height: 'auto', borderRadius: 16 }} />
         </div>
       </div>
