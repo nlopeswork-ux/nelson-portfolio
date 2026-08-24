@@ -261,6 +261,7 @@ input::placeholder { color: #A0A4B8; }
 .rg-phase { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
 .rg-edu   { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .rg-teasers { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.rg-featured { display: grid; grid-template-columns: minmax(220px, 340px) 1fr; gap: 48px; align-items: center; }
 .rg-mods  { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 .rg-outcomes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 
@@ -311,6 +312,7 @@ input::placeholder { color: #A0A4B8; }
   .rg-2         { grid-template-columns: 1fr; }
   .rg-edu       { grid-template-columns: 1fr; }
   .rg-teasers   { grid-template-columns: 1fr; }
+  .rg-featured  { grid-template-columns: 1fr; gap: 32px; }
   .rg-mods      { grid-template-columns: 1fr; }
   .rg-outcomes  { grid-template-columns: 1fr; }
   .carousel-3   { grid-template-columns: 1fr; gap: 16px; }
