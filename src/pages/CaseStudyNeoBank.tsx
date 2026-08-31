@@ -35,7 +35,7 @@ const phase2Images: CarouselImage[] = [
 const processImages: CarouselImage[] = [
   { src: '/case-studies/neobank/process/01-full-board.jpg', alt: 'Full FigJam board — Research, Define, Ideation and Design tracks side by side', caption: 'The full board — Research (trends, personas, competitive and UI analysis), Define (problem, site map, user flows), Ideation and Design, all worked in one place.' },
   { src: '/case-studies/neobank/process/02-login-flows.jpg', alt: 'User-flow diagram for account creation, login and password recovery', caption: 'Entry flows — Create Account → Onboarding and Password Recovery → Login, both converging on Home before branching into Accounts.' },
-  { src: '/case-studies/neobank/process/03-balance-flow.jpg', alt: 'User-flow diagram for checking a balance and its transactions', caption: 'Balance-check flow — Home → Accounts → Checking account → Account Details → Movements → scroll the transaction list. Phase 2 collapsed this into a single question.' },
+  { src: '/case-studies/neobank/process/03-balance-flow.jpg', alt: 'User-flow diagram for the balance-check and transfer flows', caption: 'Core task flows — Home → Accounts → Checking account → Account Details → Movements to reach a transaction, and the parallel Transfers path. Phase 2 collapsed the balance flow into a single question.' },
 ]
 
 const whatChanged = [
