@@ -26,9 +26,9 @@ const phase2Images: CarouselImage[] = [
 ]
 
 const processImages: CarouselImage[] = [
-  { src: '/case-studies/neobank/process/01-figjam-board-full.png', alt: 'Full NeoBank FigJam board, Version D2', caption: "The full board — 'Version D2' — login flows, conversational landing, balance and transaction flows, menu, dashboard and hub." },
-  { src: '/case-studies/neobank/process/02-login-flows-crop.png', alt: 'Zoomed crop of the login flows section of the FigJam board', caption: 'Zoomed crop — login flows.' },
-  { src: '/case-studies/neobank/process/03-balance-flow-crop.png', alt: 'Zoomed crop of the balance-check flow section of the FigJam board', caption: 'Zoomed crop — balance flow.' },
+  { src: '/case-studies/neobank/process/01-full-board.jpg', alt: 'Full FigJam board — Research, Define, Ideation and Design tracks side by side', caption: 'The full board — Research (trends, personas, competitive and UI analysis), Define (problem, site map, user flows), Ideation and Design, all worked in one place.' },
+  { src: '/case-studies/neobank/process/02-login-flows.jpg', alt: 'User-flow diagram for account creation, login and password recovery', caption: 'Entry flows — Create Account → Onboarding and Password Recovery → Login, both converging on Home before branching into Accounts.' },
+  { src: '/case-studies/neobank/process/03-balance-flow.jpg', alt: 'User-flow diagram for checking a balance and its transactions', caption: 'Balance-check flow — Home → Accounts → Checking account → Account Details → Movements → scroll the transaction list. Phase 2 collapsed this into a single question.' },
 ]
 
 const whatChanged = [
@@ -173,7 +173,7 @@ export default function CaseStudyNeoBank() {
       {/* BEHIND THE PROCESS */}
       <div style={S}>
         <h2 style={H2}>Behind the Process</h2>
-        <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 28px' }}>The full NeoBank FigJam board ("Version D2") — login flows, the conversational landing, balance and transaction flows, menu, dashboard and hub, all explored side by side before narrowing to the screens above.</p>
+        <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 28px' }}>One FigJam board carried the whole project — trends and competitive research, personas, the rebuilt site map, and the user flows for every core task — before any of it narrowed to the screens above.</p>
         <PrototypeCarousel images={processImages} aspectRatio="wide" />
       </div>
 
