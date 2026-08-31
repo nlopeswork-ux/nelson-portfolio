@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import CaseStudyShell, { Body, DarkBox } from '../components/CaseStudyShell'
 import PrototypeCarousel, { type CarouselImage } from '../components/PrototypeCarousel'
 
@@ -7,14 +8,20 @@ const NOTE = { padding: 24, borderRadius: 20, background: '#F2F6FF', border: '1p
 
 // Placeholder image slots — drop real exports into these exact paths (public/case-studies/neobank/…)
 // and the carousels will pick them up automatically; no layout code needs to change.
-const phase1Images: CarouselImage[] = [
-  { src: '/case-studies/neobank/phase1/01-homepage.png', alt: 'App redesign — home screen with balance, quick actions and recent transactions', caption: 'Home — balance front and centre, four quick actions, and the latest transactions in one glance.' },
-  { src: '/case-studies/neobank/phase1/02-accounts.png', alt: 'App redesign — My Accounts with Movements, Balance and Details tabs', caption: 'My Accounts — switch between accounts and move between Movements, Balance and Details without leaving the screen.' },
-  { src: '/case-studies/neobank/phase1/03-transfers-light.png', alt: 'App redesign — Transfers screen in Light theme', caption: 'Transfers — pick how to send money: between my accounts, to another person, or abroad. Light theme.' },
-  { src: '/case-studies/neobank/phase1/04-transfers-dark.png', alt: 'App redesign — Transfers screen in Dark theme', caption: 'The same Transfers flow in Dark theme — every screen was designed across Light, Dark, High-Contrast and Web.' },
-  { src: '/case-studies/neobank/phase1/05-analytics.png', alt: 'App redesign — Analytics with a spending bar chart and CO2 footprint', caption: 'Analytics — monthly spend as a bar chart, filterable by account, with a CO₂ footprint alongside each total.' },
-  { src: '/case-studies/neobank/phase1/06-support.png', alt: 'App redesign — Support screen with hotline, office search and live chat', caption: 'Support — the 24/7 hotline, office search on a map, and live chat. In Phase 1, AI lived here: one option among many.' },
+const phase1Cards = [
+  { title: 'Home', caption: 'Balance front and centre, four quick actions, and the latest transactions in one glance.', image: '/case-studies/neobank/phase1/01-homepage.png' },
+  { title: 'My Accounts', caption: 'Switch between accounts and move across Movements, Balance and Details without leaving the screen.', image: '/case-studies/neobank/phase1/02-accounts.png' },
+  { title: 'Transfers — Light', caption: 'Pick how to send money: between my accounts, to another person, or abroad.', image: '/case-studies/neobank/phase1/03-transfers-light.png' },
+  { title: 'Transfers — Dark', caption: 'The same flow in Dark theme — every screen was designed across Light, Dark, High-Contrast and Web.', image: '/case-studies/neobank/phase1/04-transfers-dark.png' },
+  { title: 'Analytics', caption: 'Monthly spend as a bar chart, filterable by account, with a CO₂ footprint alongside each total.', image: '/case-studies/neobank/phase1/05-analytics.png' },
+  { title: 'Support', caption: 'Hotline, office search on a map, and live chat. In Phase 1, AI lived here — one option among many.', image: '/case-studies/neobank/phase1/06-support.png' },
 ]
+
+function chunkCards<T>(cards: T[], size: number): T[][] {
+  const chunks: T[][] = []
+  for (let i = 0; i < cards.length; i += size) chunks.push(cards.slice(i, i + size))
+  return chunks
+}
 
 const phase2Images: CarouselImage[] = [
   { src: '/case-studies/neobank/phase2/01-landing-greeting.png', alt: 'NeoBank AI assistant — landing greeting screen', caption: 'Landing screen — the assistant greets and offers to help.' },
@@ -54,6 +61,19 @@ const validationSteps = [
 ]
 
 export default function CaseStudyNeoBank() {
+  const [galleryIdx, setGalleryIdx] = useState(0)
+  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 640)
+
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 640px)')
+    const handler = (e: MediaQueryListEvent) => { setIsMobile(e.matches); setGalleryIdx(0) }
+    mq.addEventListener('change', handler)
+    setIsMobile(mq.matches)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+
+  const gallerySlides = chunkCards(phase1Cards, isMobile ? 1 : 3)
+
   return (
     <CaseStudyShell
       eyebrow="Case Study · Concept Exploration"
@@ -91,7 +111,33 @@ export default function CaseStudyNeoBank() {
       </div>
 
       <div style={S}>
-        <PrototypeCarousel images={phase1Images} aspectRatio="screen" />
+        <div style={{ overflow: 'hidden', marginBottom: 20 }}>
+          <div style={{ display: 'flex', transform: `translateX(-${galleryIdx * 100}%)`, transition: 'transform 420ms ease-out' }}>
+            {gallerySlides.map((slide, si) => (
+              <div key={si} className={isMobile ? undefined : 'carousel-3'} style={{ flex: '0 0 100%' }}>
+                {slide.map(({ title, caption, image }) => (
+                  <div key={title} style={{ borderRadius: 16, border: '1px solid #EAF1FF', overflow: 'hidden', background: '#FFFFFF' }}>
+                    <img src={image} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
+                    <div style={{ padding: 16 }}>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: '#12141F', marginBottom: 4 }}>{title}</div>
+                      <p style={{ fontSize: 13, lineHeight: 1.6, color: '#5A5F73', margin: 0 }}>{caption}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 20 }}>
+          <button onClick={() => setGalleryIdx(i => (i - 1 + gallerySlides.length) % gallerySlides.length)} style={{ cursor: 'pointer', width: 36, height: 36, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F2F6FF', color: '#3D63E0', fontSize: 16, fontWeight: 700, border: 'none', fontFamily: "'Inter', sans-serif" }}>←</button>
+          <div style={{ display: 'flex', gap: 8 }}>
+            {gallerySlides.map((_, i) => (
+              <button key={i} onClick={() => setGalleryIdx(i)} style={{ cursor: 'pointer', width: 8, height: 8, borderRadius: '50%', background: i === galleryIdx ? '#002FA7' : '#DCE8FF', border: 'none', padding: 0 }} />
+            ))}
+          </div>
+          <button onClick={() => setGalleryIdx(i => (i + 1) % gallerySlides.length)} style={{ cursor: 'pointer', width: 36, height: 36, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#F2F6FF', color: '#3D63E0', fontSize: 16, fontWeight: 700, border: 'none', fontFamily: "'Inter', sans-serif" }}>→</button>
+        </div>
       </div>
 
       <div style={S}>

@@ -9,13 +9,12 @@ export interface CarouselImage {
 
 interface PrototypeCarouselProps {
   images: CarouselImage[]
-  /** "mobile" = 390:844 phone frame. "screen" = bare phone screenshot, no device frame. "wide" = FigJam/board-shot aspect. */
-  aspectRatio?: 'mobile' | 'screen' | 'wide'
+  /** "mobile" = 390:844 phone frame. "wide" = FigJam/board-shot aspect. */
+  aspectRatio?: 'mobile' | 'wide'
 }
 
-const ASPECT: Record<'mobile' | 'screen' | 'wide', string> = {
+const ASPECT: Record<'mobile' | 'wide', string> = {
   mobile: '390 / 844',
-  screen: '234 / 372',
   wide: '16 / 10',
 }
 
@@ -26,7 +25,6 @@ export default function PrototypeCarousel({ images, aspectRatio = 'mobile' }: Pr
   const [failed, setFailed] = useState<Record<number, boolean>>({})
   const touchStartX = useRef<number | null>(null)
   const isMobileFrame = aspectRatio === 'mobile'
-  const isPhoneScreen = aspectRatio === 'screen'
 
   const go = useCallback((delta: number) => {
     setIndex(i => (i + delta + images.length) % images.length)
@@ -66,10 +64,10 @@ export default function PrototypeCarousel({ images, aspectRatio = 'mobile' }: Pr
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 20 }}>
         <div
           style={{
-            width: isMobileFrame || isPhoneScreen ? 'min(280px, 68vw)' : '100%',
-            maxWidth: isMobileFrame || isPhoneScreen ? 280 : 680,
+            width: isMobileFrame ? 'min(280px, 68vw)' : '100%',
+            maxWidth: isMobileFrame ? 280 : 680,
             aspectRatio: ASPECT[aspectRatio],
-            borderRadius: isMobileFrame ? 32 : isPhoneScreen ? 24 : 16,
+            borderRadius: isMobileFrame ? 32 : 16,
             border: isMobileFrame ? '8px solid #12141F' : '1px solid #EAF1FF',
             overflow: 'hidden',
             background: '#F5F7FC',
