@@ -57,7 +57,7 @@ export default function CaseStudyNEOT() {
       description="Empowering citizens through a unified employment and career support experience — a mobile-first platform bringing employment services, training programmes, financial support and career guidance into a single digital experience."
       meta={[
         { label: 'Role', value: 'Lead UX/UI Designer' },
-        { label: 'Client', value: 'National employment fund — Bahrain (Government / Employment Services)' },
+        { label: 'Client', value: 'National employment fund (Government / Employment Services)' },
         { label: 'Platform', value: 'Mobile App (iOS & Android)' },
         { label: 'Languages', value: 'English & Arabic (RTL), light & dark mode' },
         { label: 'Modules', value: '8 core product areas' },
@@ -96,7 +96,7 @@ export default function CaseStudyNEOT() {
         <div style={{ padding: 24, borderRadius: 20, background: '#F2F6FF', border: '1px solid #EAF1FF' }}>
           <div style={{ fontSize: 14, fontWeight: 700, color: '#12141F', marginBottom: 10 }}>The Brief</div>
           <Body>The companion web platform (see separate case study) had digitised the Fund's core services for desktop. The 2025 Omnichannel phase added a new requirement: a native mobile companion app — NEOT — bringing the same services to citizens on iOS and Android, with full Arabic RTL support, dark mode, and push notifications.</Body>
-          <p style={{ fontSize: 15, lineHeight: 1.75, color: '#5A5F73', margin: 0 }}>NEOT was not a simplified mobile version of the web platform. It was a citizen-first redesign from scratch: what does a Bahraini citizen actually need to access from their phone, in what context, in what language, and with what level of connectivity? Those questions drove 18 weeks of discovery and definition before a single production screen was committed.</p>
+          <p style={{ fontSize: 15, lineHeight: 1.75, color: '#5A5F73', margin: 0 }}>NEOT was not a simplified mobile version of the web platform. It was a citizen-first redesign from scratch: what does a citizen actually need to access from their phone, in what context, in what language, and with what level of connectivity? Those questions drove 18 weeks of discovery and definition before a single production screen was committed.</p>
         </div>
       </div>
 
@@ -204,7 +204,7 @@ export default function CaseStudyNEOT() {
               {[
                 ['Role', 'Lead UX/UI Designer'],
                 ['Industry', 'Government / Employment Services'],
-                ['Client', 'National employment fund — Bahrain'],
+                ['Client', 'National employment fund'],
                 ['Platform', 'Mobile App (iOS & Android)'],
                 ['Languages', 'English & Arabic (RTL)'],
                 ['Modules', '8'],

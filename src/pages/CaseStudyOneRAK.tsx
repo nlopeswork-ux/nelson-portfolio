@@ -74,7 +74,7 @@ export default function CaseStudyOneRAK() {
       description="Turning three disconnected, low-trust government portals — the Customer Portal, the Agent Portal, and the Secondary Government Portal — into one unified, evidence-based OneRAK experience for investors, agents, and government stakeholders."
       meta={[
         { label: 'Role', value: 'UX/UI Designer & Service Design — Discover through Handover' },
-        { label: 'Client', value: 'Government economic zone authority — Middle East' },
+        { label: 'Client', value: 'Government economic zone authority' },
         { label: 'Timeline', value: '13 months, end to end — Discover May–Aug 2025 through Handover Sep 2026' },
         { label: 'Team', value: 'Engagement Director/Partner · Service Design Lead · Business/Process Analyst · CX Analyst · Senior UX/UI · UI Designer · Creative Director · Tech Lead · 3 Developers · Change BA' },
         { label: 'Tools', value: 'Figma · FigJam · Storybook · Salesforce Communities Cloud · SAP BTP + BLS.NET' },
@@ -197,7 +197,7 @@ export default function CaseStudyOneRAK() {
 
         <div>
           <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', marginBottom: 10 }}>One Design Language System, Not Three House Styles</div>
-          <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 14px' }}>The most consequential structural decision to come out of Discover was architectural, not visual: the two portals would share one Design Language System rather than each maintaining its own component library. The OneRAK DLS defines design principles, WCAG 2.1 and UAE accessibility standards, layout fundamentals, and a production interaction-pattern library — built and maintained in Figma for design tokens and components, mirrored in Storybook so engineering builds and tests against the same source of truth.</p>
+          <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 14px' }}>The most consequential structural decision to come out of Discover was architectural, not visual: the two portals would share one Design Language System rather than each maintaining its own component library. The OneRAK DLS defines design principles, WCAG 2.1 and regional accessibility standards, layout fundamentals, and a production interaction-pattern library — built and maintained in Figma for design tokens and components, mirrored in Storybook so engineering builds and tests against the same source of truth.</p>
           {[
             ['Why it matters', 'Focus states, inline validation, and tab-reachable help text became DLS-level requirements instead of a per-screen fix.'],
             ['Brand flexibility', 'The two portals keep distinct brand identities while sharing the same underlying components, spacing, and interaction rules.'],
@@ -296,7 +296,7 @@ export default function CaseStudyOneRAK() {
         </div>
         <div style={{ padding: '24px 28px', borderRadius: 20, border: '1px solid rgba(61,99,224,0.2)', background: 'rgba(0,47,167,0.03)' }}>
           <p style={{ fontSize: 16, fontStyle: 'italic', lineHeight: 1.7, color: '#3A3F4C', margin: '0 0 8px' }}>"What used to take a full audit cycle to trace, we can now walk through in one meeting."</p>
-          <div style={{ fontSize: 13, fontWeight: 600, color: '#001A5C' }}>— Engagement Lead, the consultancy</div>
+          <div style={{ fontSize: 13, fontWeight: 600, color: '#001A5C' }}>— Engagement Lead, KPMG</div>
         </div>
       </div>
     </CaseStudyShell>

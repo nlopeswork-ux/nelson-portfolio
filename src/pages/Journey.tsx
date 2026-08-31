@@ -2,23 +2,23 @@ import { useState } from 'react'
 import Nav from '../components/Nav'
 
 const kpmgEngagements = [
-  { client: 'Global energy & mobility (U.K.)', industry: 'Financial Services', geo: 'U.K.', period: '2026–Present', scope: 'IntelliForge SR2R — ontology-driven financial close system, 200 franchise dealers' },
-  { client: 'Government econ. zone (UAE)', industry: 'Government', geo: 'UAE', period: '2025–2026', scope: 'OneRAK Portal Revamp — 3 portals unified, 18/18 services live' },
-  { client: 'Retail bank (Bahrain)', industry: 'Financial Services', geo: 'Bahrain', period: '2024–2025', scope: 'Backoffice — 1,350+ frames, 14 feature areas' },
-  { client: 'Retail bank mobile (Bahrain)', industry: 'Financial Services', geo: 'Bahrain', period: '2024–2025', scope: 'Mobile Banking App Redesign — 1,590+ screens, 12 core features' },
-  { client: 'Nat. employment fund (Bahrain)', industry: 'Government', geo: 'Bahrain', period: '2023–present', scope: 'NEOT Mobile App — 1,000+ screens, 8 modules' },
-  { client: 'Nat. workforce fund (Bahrain)', industry: 'Government', geo: 'Bahrain', period: '2023–present', scope: 'National Workforce Platform — end-to-end digital funding ecosystem' },
+  { client: 'Global energy company', industry: 'Financial Services', period: '2026–Present', scope: 'IntelliForge SR2R — ontology-driven financial close system, 200 franchise dealers' },
+  { client: 'Government economic zone authority', industry: 'Government', period: '2025–2026', scope: 'OneRAK Portal Revamp — 3 portals unified, 18/18 services live' },
+  { client: 'Retail bank', industry: 'Financial Services', period: '2024–2025', scope: 'Backoffice — 1,350+ frames, 14 feature areas' },
+  { client: 'Retail bank — mobile', industry: 'Financial Services', period: '2024–2025', scope: 'Mobile Banking App Redesign — 1,590+ screens, 12 core features' },
+  { client: 'National employment fund', industry: 'Government', period: '2023–present', scope: 'NEOT Mobile App — 1,000+ screens, 8 modules' },
+  { client: 'National workforce fund', industry: 'Government', period: '2023–present', scope: 'National Workforce Platform — end-to-end digital funding ecosystem' },
 ]
 
 const deloitteEngagements = [
-  { client: 'Major airline', industry: 'Aviation', geo: 'Portugal', period: '2022–2023', scope: 'Passenger digital experience redesign' },
-  { client: 'Energy group', industry: 'Energy', geo: 'Portugal / Spain', period: '2021–2022', scope: 'B2B customer portal and internal operations platform' },
-  { client: 'Automotive manufacturer', industry: 'Automotive', geo: 'Germany', period: '2020–2021', scope: 'Fleet management and dealer digital tools' },
-  { client: 'Insurance provider', industry: 'Insurance', geo: 'Portugal', period: '2019–2020', scope: 'Claims management and customer-facing portal redesign' },
-  { client: 'Energy operator', industry: 'Energy', geo: 'Portugal', period: '2019', scope: 'Internal digital workspace' },
-  { client: 'Insurance group', industry: 'Insurance', geo: 'Belgium / Portugal', period: '2018–2019', scope: 'Digital product design for broker platform' },
-  { client: 'Automotive brand', industry: 'Automotive', geo: 'Sweden / Portugal', period: '2018', scope: 'Dealer-facing UX design sprint' },
-  { client: 'Various clients', industry: 'Multiple', geo: 'Europe', period: '2018–2023', scope: 'Workshop facilitation, design sprints, UX audits' },
+  { client: 'Major airline', industry: 'Aviation', period: '2022–2023', scope: 'Passenger digital experience redesign' },
+  { client: 'Energy group', industry: 'Energy', period: '2021–2022', scope: 'B2B customer portal and internal operations platform' },
+  { client: 'Automotive manufacturer', industry: 'Automotive', period: '2020–2021', scope: 'Fleet management and dealer digital tools' },
+  { client: 'Insurance provider', industry: 'Insurance', period: '2019–2020', scope: 'Claims management and customer-facing portal redesign' },
+  { client: 'Energy operator', industry: 'Energy', period: '2019', scope: 'Internal digital workspace' },
+  { client: 'Insurance group', industry: 'Insurance', period: '2018–2019', scope: 'Digital product design for broker platform' },
+  { client: 'Automotive brand', industry: 'Automotive', period: '2018', scope: 'Dealer-facing UX design sprint' },
+  { client: 'Various clients', industry: 'Multiple', period: '2018–2023', scope: 'Workshop facilitation, design sprints, UX audits' },
 ]
 
 const divider = <div style={{ height: 1, background: '#EAF1FF' }} />
@@ -56,8 +56,8 @@ export default function Journey() {
           {/* KPMG */}
           <TimelineRow period="2023 — Present">
             <h3 style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 4px' }}>Lead UX/UI Designer</h3>
-            <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Global consultancy</div>
-            <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 16px' }}>Took ownership of enterprise product design across Europe, the Middle East and the U.S., leading end-to-end digital products from discovery to delivery while shaping product strategy, design systems and scalable user experiences.</p>
+            <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>KPMG</div>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 16px' }}>Took ownership of enterprise product design across multiple industries and regions, leading end-to-end digital products from discovery to delivery while shaping product strategy, design systems and scalable user experiences.</p>
             <button type="button" aria-expanded={kpmgOpen} className="engagement-toggle" onClick={() => setKpmgOpen(o => !o)}>
               {kpmgOpen ? 'Hide engagements ↑' : 'Show engagements ↓'}
             </button>
@@ -66,7 +66,7 @@ export default function Journey() {
                 {kpmgEngagements.map((eng, i) => (
                   <div key={i} className="timeline-eng-row" style={{ display: 'grid', gridTemplateColumns: '160px 1fr', gap: 12, fontSize: 14, padding: '10px 0', borderBottom: i < kpmgEngagements.length - 1 ? '1px solid #EAF1FF' : 'none' }}>
                     <div style={{ fontWeight: 600, color: '#12141F' }}>{eng.client}</div>
-                    <div style={{ color: '#5A5F73' }}>{eng.industry} · {eng.geo} · {eng.period}<br />{eng.scope}</div>
+                    <div style={{ color: '#5A5F73' }}>{eng.industry} · {eng.period}<br />{eng.scope}</div>
                   </div>
                 ))}
               </div>
@@ -78,7 +78,7 @@ export default function Journey() {
           {/* Deloitte */}
           <TimelineRow period="2018 — 2023">
             <h3 style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 4px' }}>Digital Designer</h3>
-            <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Deloitte Portugal</div>
+            <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Deloitte Digital</div>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 16px' }}>Grew from delivering individual screens to owning end-to-end digital experiences for aviation, energy, automotive and insurance clients.</p>
             <button type="button" aria-expanded={deloitteOpen} className="engagement-toggle" onClick={() => setDeloitteOpen(o => !o)}>
               {deloitteOpen ? 'Hide engagements ↑' : 'Show engagements ↓'}
@@ -88,7 +88,7 @@ export default function Journey() {
                 {deloitteEngagements.map((eng, i) => (
                   <div key={i} className="timeline-eng-row" style={{ display: 'grid', gridTemplateColumns: '160px 1fr', gap: 12, fontSize: 14, padding: '10px 0', borderBottom: i < deloitteEngagements.length - 1 ? '1px solid #EAF1FF' : 'none' }}>
                     <div style={{ fontWeight: 600, color: '#12141F' }}>{eng.client}</div>
-                    <div style={{ color: '#5A5F73' }}>{eng.industry} · {eng.geo} · {eng.period}<br />{eng.scope}</div>
+                    <div style={{ color: '#5A5F73' }}>{eng.industry} · {eng.period}<br />{eng.scope}</div>
                   </div>
                 ))}
               </div>
@@ -109,7 +109,7 @@ export default function Journey() {
           {/* Ogilvy */}
           <TimelineRow period="Jan–Feb 2016">
             <h3 style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 4px' }}>Trainee Motion Designer</h3>
-            <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Ogilvy Paris</div>
+            <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>Ogilvy</div>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>Short international placement focused on motion design fundamentals.</p>
           </TimelineRow>
 

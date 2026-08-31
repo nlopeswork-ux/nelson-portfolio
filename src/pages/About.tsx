@@ -39,7 +39,7 @@ const workPhases = [
     deliverables: ['Personas', 'Problem statements', 'Success metrics'],
     detail: "I write the problem statement before the persona, not after — it keeps the persona honest to a real decision instead of a mood board. Every persona has to earn its place by driving at least one screen that would look different without it.",
     question: "Whose definition of success are we actually designing for?",
-    proof: { label: 'See this in the Tamkeen personas', to: '/work/tamkeen' },
+    proof: { label: 'See this in the workforce-fund personas', to: '/work/tamkeen' },
   },
   {
     id: 'design', name: 'Design',
@@ -108,7 +108,7 @@ export default function About() {
             <p style={{ fontSize: 18, lineHeight: 1.75, color: '#4A4F63', margin: '0 0 20px' }}>I began in Graphic Design, where I developed a deep appreciation for visual communication, typography and the subtle details that shape how people perceive information. Over time, I became less interested in the interface itself and more interested in the people behind it. That curiosity naturally led me into UX, UI and eventually Product Design.</p>
             <p style={{ fontSize: 18, lineHeight: 1.75, color: '#4A4F63', margin: '0 0 20px' }}>Today, I design enterprise products that transform complex systems into experiences that feel intuitive, efficient and meaningful. Looking back, my career has never been about changing disciplines — it has been about broadening my perspective: from visual execution to strategic thinking, from designing screens to designing products that create value for both people and businesses.</p>
             <p style={{ fontSize: 18, lineHeight: 1.75, color: '#4A4F63', margin: '0 0 20px' }}>I believe the best design isn't the one people notice. It's the one that quietly helps them achieve what they came to do.</p>
-            <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>That work has also taken me across borders — client engagements in Bahrain, Germany, Ireland, Spain and France, among others.</p>
+            <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>That work has also taken me across borders — international client engagements across financial services and government, among others.</p>
           </div>
           <div style={{ flex: '0 0 auto', width: 'min(320px, 100%)', height: 480, borderRadius: 20, overflow: 'hidden', boxShadow: '0 20px 50px rgba(120,150,255,0.18)', background: '#F2F6FF' }}>
             <img src={profileImg} alt="Nelson Lopes" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />

@@ -10,7 +10,7 @@ const iaColumns = ['Section', 'What it contains']
 const validationColumns = ['Flow', 'Category', 'Quick win']
 
 const contextCards = [
-  { title: 'Business Goals', body: 'Replace a fully manual funding process with a unified digital lifecycle; support Bahrain\'s national digital-first mandate; build a platform capable of absorbing new programmes without rebuilding it each time.' },
+  { title: 'Business Goals', body: 'Replace a fully manual funding process with a unified digital lifecycle; support a national digital-first mandate; build a platform capable of absorbing new programmes without rebuilding it each time.' },
   { title: 'Users', body: '5 external personas (Individual, Enterprise, Vendor, Training Provider, Bank) and 15 internal roles across 5 functional groups (Assessment, Customer Service, Disbursement, Monitoring, Data Monitoring).' },
   { title: 'Stakeholders', body: 'Internal Fund departments, banking partners, training providers, vendors.' },
   { title: 'Constraints', body: 'Built on OutSystems (low-code); bilingual English/Arabic with RTL layout, light/dark mode; three distinct support types (P&S, Training and Wages), each with its own eligibility, claim and amendment rules.' },
@@ -50,9 +50,9 @@ const quickWins = [
   'A dashboard for quick review of pending rejections and approvals',
   'Accepting an application directly from a notification hyperlink',
   'A required reason whenever an application is sent back',
-  'A tutorial for creating a Fawateer vs. non-Fawateer payment',
-  'Cancelling a pending Fawateer code and generating a new one',
-  'Paying multiple vendors within a single Fawateer transaction',
+  'A tutorial for creating an e-bill vs. non-e-bill payment',
+  'Cancelling a pending e-bill payment code and generating a new one',
+  'Paying multiple vendors within a single e-bill transaction',
 ]
 
 const designPrinciples = [
@@ -98,9 +98,9 @@ const validationRows = [
   { flow: 'Assessment & Approval', category: 'Dashboard', win: 'Quick review of pending rejections, approvals, or a specific certificate type' },
   { flow: 'Assessment & Approval', category: 'Customer view', win: 'Accept an approved application directly from a notification hyperlink' },
   { flow: 'Assessment & Approval', category: 'Remarks & send back', win: 'Require a specific reason whenever an application is sent back' },
-  { flow: 'Fawateer Payments', category: 'Guidance', win: 'Short tutorial on Fawateer vs. non-Fawateer payment' },
-  { flow: 'Fawateer Payments', category: 'Cancel Fawateer code', win: 'Cancel a pending code and generate a new one' },
-  { flow: 'Fawateer Payments', category: 'Multiple vendors payment', win: 'Pay multiple vendors within a single transaction' },
+  { flow: 'E-Bill Payments', category: 'Guidance', win: 'Short tutorial on e-bill vs. non-e-bill payment' },
+  { flow: 'E-Bill Payments', category: 'Cancel payment code', win: 'Cancel a pending code and generate a new one' },
+  { flow: 'E-Bill Payments', category: 'Multiple vendors payment', win: 'Pay multiple vendors within a single transaction' },
 ]
 
 const ecosystem = [
@@ -114,10 +114,10 @@ export default function CaseStudyTamkeen() {
     <CaseStudyShell
       eyebrow="Case Study · 01 Overview"
       title="National Workforce Digital Platform"
-      description="Designing Bahrain's national workforce development ecosystem — from a manual, email-and-in-person process to a unified digital platform for citizens, businesses and government, across four years of continuous evolution."
+      description="Designing a national workforce-development ecosystem — from a manual, email-and-in-person process to a unified digital platform for citizens, businesses and government, across four years of continuous evolution."
       meta={[
         { label: 'Role', value: 'UX/UI Designer (2023, on kickoff) → Senior UX/UI Designer & Design Lead (2024–present)' },
-        { label: 'Client', value: 'National workforce development fund — Bahrain (Government / Employment & Economic Development)' },
+        { label: 'Client', value: 'National workforce-development fund (Government / Employment & Economic Development)' },
         { label: 'Timeline', value: 'January 2023 – Present (3.5+ years), across 4 annual phases: 2023 Foundation, 2024 Platform Expansion, 2025 Omnichannel, 2026 Intelligence & Personalisation (current)' },
         { label: 'Platform', value: 'OutSystems (low-code) — External Platform + Internal Operations Platform, plus a native mobile companion (NEOT) introduced in the 2025 phase' },
         { label: 'Team (peak)', value: '1 Design Lead · 2 UX/UI Designers · 2 Business Analysts · 1 PM · 1 Solution Architect · 5 OutSystems Developers · 1 QA Lead' },
@@ -132,8 +132,8 @@ export default function CaseStudyTamkeen() {
       {/* 02 CONTEXT */}
       <div style={{ ...SW, paddingTop: 48 }}>
         <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#001A5C', marginBottom: 16 }}>02 Context</div>
-        <p style={{ fontSize: 17, lineHeight: 1.8, color: '#4A4F63', margin: '0 0 20px' }}>The Fund is Bahrain's national labour fund, funding skills, employment and enterprise-growth programmes for Bahraini individuals and private-sector companies. Before 2023, none of that ran through a portal — applications, documents, approvals, payment claims and status updates were handled entirely through email correspondence and in-person visits. There was no self-service channel and no shared case record between an applicant and the Fund.</p>
-        <p style={{ fontSize: 17, lineHeight: 1.8, color: '#4A4F63', margin: '0 0 32px' }}>Bahrain's Digital Government Strategy 2022 and the Telecommunications, ICT and Digital Economy Sector Strategy 2022–26 set a national "digital-first" mandate to rebuild public and semi-governmental services around digital delivery. This platform is the Fund's answer to that mandate: not a single portal, but a scalable digital product built and grown across four annual phases.</p>
+        <p style={{ fontSize: 17, lineHeight: 1.8, color: '#4A4F63', margin: '0 0 20px' }}>The Fund is a national labour fund, funding skills, employment and enterprise-growth programmes for eligible individuals and private-sector companies. Before 2023, none of that ran through a portal — applications, documents, approvals, payment claims and status updates were handled entirely through email correspondence and in-person visits. There was no self-service channel and no shared case record between an applicant and the Fund.</p>
+        <p style={{ fontSize: 17, lineHeight: 1.8, color: '#4A4F63', margin: '0 0 32px' }}>A national Digital Government Strategy and a parallel digital-economy sector strategy set a "digital-first" mandate to rebuild public and semi-governmental services around digital delivery. This platform is the Fund's answer to that mandate: not a single portal, but a scalable digital product built and grown across four annual phases.</p>
 
         <div className="rg-2" style={{ gap: 20 }}>
           {contextCards.map(({ title, body }, i) => (
@@ -220,7 +220,7 @@ export default function CaseStudyTamkeen() {
       <div style={SW}>
         <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#001A5C', marginBottom: 16 }}>06 Workshop &amp; Prioritisation</div>
         <h2 style={H2}>Aligning teams around the highest-impact opportunities</h2>
-        <p style={{ fontSize: 17, lineHeight: 1.8, color: '#4A4F63', margin: '0 0 20px', maxWidth: 760 }}>Following the discovery phase, we facilitated client retrospective workshops with Product Owners, BA leads, QA leads and UX/UI leads to translate research into a prioritised action plan — one workshop per flow, run across Customer Application, Assessment &amp; Approval, and Fawateer Payments, with roughly 20 cross-functional participants per session.</p>
+        <p style={{ fontSize: 17, lineHeight: 1.8, color: '#4A4F63', margin: '0 0 20px', maxWidth: 760 }}>Following the discovery phase, we facilitated client retrospective workshops with Product Owners, BA leads, QA leads and UX/UI leads to translate research into a prioritised action plan — one workshop per flow, run across Customer Application, Assessment &amp; Approval, and E-Bill Payments, with roughly 20 cross-functional participants per session.</p>
         <p style={{ fontSize: 17, lineHeight: 1.8, color: '#4A4F63', margin: '0 0 32px', maxWidth: 760 }}>Rather than redesigning the experience immediately, the objective was to build shared understanding, align priorities across teams, and identify improvements capable of delivering measurable value in the shortest time.</p>
 
         <div style={{ padding: 24, borderRadius: 18, background: '#F2F6FF', marginBottom: 32, maxWidth: 760 }}>
@@ -374,7 +374,7 @@ export default function CaseStudyTamkeen() {
       {/* 09 VALIDATION */}
       <div style={SW}>
         <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' as const, color: '#001A5C', marginBottom: 16 }}>09 Validation &amp; Continuous Product Iteration</div>
-        <p style={{ fontSize: 17, lineHeight: 1.8, color: '#4A4F63', margin: '0 0 32px' }}>Validation ran as a continuous activity, not a single usability-testing pass. Every year has included a recurring cycle of client retrospective workshops, run specifically to identify and implement quick wins. One full cycle is documented in a dated internal deliverable ("UX Monitoring," the Fund, 20 May 2024) reviewing three flows: Customer Application, Assessment &amp; Approval, and Fawateer Payments.</p>
+        <p style={{ fontSize: 17, lineHeight: 1.8, color: '#4A4F63', margin: '0 0 32px' }}>Validation ran as a continuous activity, not a single usability-testing pass. Every year has included a recurring cycle of client retrospective workshops, run specifically to identify and implement quick wins. One full cycle is documented in a dated internal deliverable ("UX Monitoring," the Fund, 20 May 2024) reviewing three flows: Customer Application, Assessment &amp; Approval, and E-Bill Payments.</p>
 
         <div className="table-scroll" style={{ marginBottom: 24 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
@@ -405,7 +405,7 @@ export default function CaseStudyTamkeen() {
 
         <div className="rg-impact" style={{ marginBottom: 40 }}>
           {[
-            { label: 'Business Impact', bg: '#12141F', items: ['Created Bahrain\'s unified digital platform for workforce development, replacing a fully manual, email-and-in-person process.', 'Established a scalable product architecture that absorbed 4 major expansions (Job Centre, NEOT mobile, AI services, BI dashboards) without a ground-up rebuild.', 'Reduced dependency on manual operational processes across Assessment, Disbursement and Monitoring.'] },
+            { label: 'Business Impact', bg: '#12141F', items: ['Created a unified national digital platform for workforce development, replacing a fully manual, email-and-in-person process.', 'Established a scalable product architecture that absorbed 4 major expansions (Job Centre, NEOT mobile, AI services, BI dashboards) without a ground-up rebuild.', 'Reduced dependency on manual operational processes across Assessment, Disbursement and Monitoring.'] },
             { label: 'User Impact', bg: '#3A5A99', items: ['Simplified funding journeys for 5 external personas through one shared Application Detail (360) record.', 'Improved transparency at every application stage via the status-tracker design principle.', 'Reduced administrative effort through integrated, unified reimbursement workflows.', 'Extended access through NEOT, a dedicated mobile experience (2025).'] },
             { label: 'Team Impact', bg: '#2A4CB8', items: ['A shared design system reduced implementation effort and kept 5 external and 15 internal experiences visually and behaviourally consistent across 4 annual releases.', 'A repeatable annual delivery model let the team plan a year at a time instead of one continuous, undifferentiated backlog.'] },
           ].map(({ label, bg, items }) => (

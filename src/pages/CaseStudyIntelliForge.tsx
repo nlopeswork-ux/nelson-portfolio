@@ -18,7 +18,7 @@ const personas = [
   {
     n: '2 of 3',
     name: 'The Account Partner',
-    desc: "The commercial lead for the U.S. bid. Success: walking out with a signed letter of intent. Frustration: no visual, interactive proof point — only a spreadsheet projection any skeptic can dismiss.",
+    desc: "The commercial lead for the expansion bid. Success: walking out with a signed letter of intent. Frustration: no visual, interactive proof point — only a spreadsheet projection any skeptic can dismiss.",
     implication: 'Design implication: operable by a non-technical partner, unassisted, in under three minutes, live in the room.',
   },
   {
@@ -104,7 +104,7 @@ const kpiRows = [
   { kpi: 'Audit trail reproduction time', baseline: '30+ min, 3 spreadsheets', result: '2 min 11 sec' },
   { kpi: 'Exception triage accuracy', baseline: '40% (Round 1)', result: '100% post-iteration' },
   { kpi: 'Submission format variants handled', baseline: '0 (all manual)', result: '12 variants' },
-  { kpi: 'Partner demo (U.S. bid scenario)', baseline: 'Spreadsheet estimate only', result: '2 min 40 sec uncoached' },
+  { kpi: 'Partner demo (expansion bid scenario)', baseline: 'Spreadsheet estimate only', result: '2 min 40 sec uncoached' },
   { kpi: 'Policy change turnaround', baseline: 'Engineering deployment', result: 'Partner-editable YAML, no deployment' },
   { kpi: 'Marginal cost of 1,800 new franchises', baseline: '≈ 10× headcount', result: 'Near-zero — same system, new config' },
 ]
@@ -120,7 +120,7 @@ export default function CaseStudyIntelliForge() {
       description="Designing a governed, ontology-driven Intelligent Financial Close system that transforms 200 manual month-end close cycles into a scalable, auditable decision engine — and builds the evidence base for a 10× volume bid."
       meta={[
         { label: 'Role', value: 'Product Designer (UX/UI)' },
-        { label: 'Client', value: 'Global energy & mobility company — U.K. market' },
+        { label: 'Client', value: 'Global energy company' },
         { label: 'Timeline', value: '14 weeks — Phase 1 prototype' },
         { label: 'Team', value: '1 Designer · Architect · Data Engineer · 2 Engineers · Partner · PM' },
         { label: 'Tools', value: 'Figma · FigJam · Python (FastAPI) · RDFLib · YAML' },
@@ -137,7 +137,7 @@ export default function CaseStudyIntelliForge() {
         <h2 style={H2}>The Hook</h2>
         <Body>Every month, 200 third-party retail franchise dealers submit financial data to the client's Record-to-Report managed service — trial balances, account schedules, and supporting documents loaded into Microsoft Business Central. Every month, client analysts manually ingest every file, map every local dealer account code to the client's corporate Chart of Accounts, reconcile discrepancies, investigate anomalies, propose journal entries, and govern what gets posted — against a hard month-end close deadline that waits for no one.</Body>
         <p style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 20px' }}>The process works. The economics don't.</p>
-        <Body>At 60–90 minutes of analyst time per franchise per cycle, the U.K. engagement consumes up to 300 analyst-hours every single month. The cost of the 200th franchise equals the cost of the first. Nothing compounds. When the client's U.S. Mobility division — roughly 10× the U.K. in scale — issued a bid invitation, the engagement team faced a structural problem: winning that contract and delivering it manually would require 10× the headcount. Winning it on a cost basis was not commercially viable.</Body>
+        <Body>At 60–90 minutes of analyst time per franchise per cycle, the engagement consumes up to 300 analyst-hours every single month. The cost of the 200th franchise equals the cost of the first. Nothing compounds. When the client's Mobility division — roughly 10× the current engagement in scale — issued a bid invitation, the engagement team faced a structural problem: winning that contract and delivering it manually would require 10× the headcount. Winning it on a cost basis was not commercially viable.</Body>
         <Body>IntelliForge SR2R is an ontology-driven Decision Twin — a governed control layer sitting on top of Business Central — that ingests submissions, maps accounts with confidence scoring, scores close readiness, predicts risk, estimates the cost of inaction, generates intervention plans, automates governed journal entries, and maintains a complete, reproducible audit trail. Eight decision capabilities. One system. Near-zero marginal cost of scale.</Body>
       </div>
 
@@ -200,7 +200,7 @@ export default function CaseStudyIntelliForge() {
       <div style={S}>
         <DarkBox label="What We Learned">
           <p style={{ fontSize: 16, lineHeight: 1.75, margin: '0 0 16px' }}>The root problem wasn't the volume of work — it was that all mapping knowledge, validation rules, and escalation logic lived in analyst memory and spreadsheets. Nothing accumulated into institutional knowledge.</p>
-          <p style={{ fontSize: 16, lineHeight: 1.75, margin: 0 }}>The secondary finding reshaped the product's commercial framing: the Account Partner's real audience wasn't the U.K. team — it was the client U.S. bid committee. The hero screen wasn't the analyst workbench; it was a Simulation Mode proving the model could scale to 2,000 franchises at near-zero marginal cost.</p>
+          <p style={{ fontSize: 16, lineHeight: 1.75, margin: 0 }}>The secondary finding reshaped the product's commercial framing: the Account Partner's real audience wasn't the delivery team — it was the client's bid committee. The hero screen wasn't the analyst workbench; it was a Simulation Mode proving the model could scale to 2,000 franchises at near-zero marginal cost.</p>
         </DarkBox>
       </div>
 
@@ -352,8 +352,8 @@ export default function CaseStudyIntelliForge() {
       <div style={S}>
         <h2 style={H2}>{"What's Next"}</h2>
         <Body>Phase 2 replaces the synthetic dataset with a live Business Central connection and adds persistent storage, authentication, and role-based access control — the test architecture was written to be data-source-agnostic, making this a configuration change, not a rewrite.</Body>
-        <Body>Phase 3 brings U.S. Mobility onboarding: a gain-share commercial module converting Simulation Mode from a demo tool into a live dashboard tracking actual versus projected margin differential.</Body>
-        <Body>If the client's U.S. Mobility contract is won and delivered manually, delivery cost scales 10×. With IntelliForge SR2R as the control layer, delivery cost scales near-zero — and the margin differential funds the full platform investment. The prototype doesn't just improve the U.K. engagement. It proves the model that wins the bid.</Body>
+        <Body>Phase 3 brings Mobility-division onboarding: a gain-share commercial module converting Simulation Mode from a demo tool into a live dashboard tracking actual versus projected margin differential.</Body>
+        <Body>If the client's Mobility contract is won and delivered manually, delivery cost scales 10×. With IntelliForge SR2R as the control layer, delivery cost scales near-zero — and the margin differential funds the full platform investment. The prototype doesn't just improve the current engagement. It proves the model that wins the bid.</Body>
       </div>
     </CaseStudyShell>
   )
