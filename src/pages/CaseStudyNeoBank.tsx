@@ -8,13 +8,12 @@ const NOTE = { padding: 24, borderRadius: 20, background: '#F2F6FF', border: '1p
 // Placeholder image slots — drop real exports into these exact paths (public/case-studies/neobank/…)
 // and the carousels will pick them up automatically; no layout code needs to change.
 const phase1Images: CarouselImage[] = [
-  { src: '/case-studies/neobank/phase1/01-dashboard.png', alt: 'NeoBank app redesign — home dashboard', caption: 'Home dashboard — balances, recent activity and quick actions.' },
-  { src: '/case-studies/neobank/phase1/02-accounts.png', alt: 'NeoBank app redesign — accounts overview', caption: 'Accounts overview across checking, savings and cards.' },
-  { src: '/case-studies/neobank/phase1/03-transfers.png', alt: 'NeoBank app redesign — transfer money flow', caption: 'Transfer money — recipient, amount and confirmation.' },
-  { src: '/case-studies/neobank/phase1/04-transfers-light.png', alt: 'Transfer confirmation screen in Light theme', caption: 'Transfer confirmation — Light theme.' },
-  { src: '/case-studies/neobank/phase1/05-transfers-dark.png', alt: 'Transfer confirmation screen in Dark theme', caption: 'Transfer confirmation — Dark theme.' },
-  { src: '/case-studies/neobank/phase1/06-transfers-high-contrast.png', alt: 'Transfer confirmation screen in High-Contrast theme', caption: 'Transfer confirmation — High-Contrast theme.' },
-  { src: '/case-studies/neobank/phase1/07-spending-insights.png', alt: 'NeoBank app redesign — spending insights', caption: 'Spending insights — category breakdown and trends.' },
+  { src: '/case-studies/neobank/phase1/01-homepage.png', alt: 'App redesign — home screen with balance, quick actions and recent transactions', caption: 'Home — balance front and centre, four quick actions, and the latest transactions in one glance.' },
+  { src: '/case-studies/neobank/phase1/02-accounts.png', alt: 'App redesign — My Accounts with Movements, Balance and Details tabs', caption: 'My Accounts — switch between accounts and move between Movements, Balance and Details without leaving the screen.' },
+  { src: '/case-studies/neobank/phase1/03-transfers-light.png', alt: 'App redesign — Transfers screen in Light theme', caption: 'Transfers — pick how to send money: between my accounts, to another person, or abroad. Light theme.' },
+  { src: '/case-studies/neobank/phase1/04-transfers-dark.png', alt: 'App redesign — Transfers screen in Dark theme', caption: 'The same Transfers flow in Dark theme — every screen was designed across Light, Dark, High-Contrast and Web.' },
+  { src: '/case-studies/neobank/phase1/05-analytics.png', alt: 'App redesign — Analytics with a spending bar chart and CO2 footprint', caption: 'Analytics — monthly spend as a bar chart, filterable by account, with a CO₂ footprint alongside each total.' },
+  { src: '/case-studies/neobank/phase1/06-support.png', alt: 'App redesign — Support screen with hotline, office search and live chat', caption: 'Support — the 24/7 hotline, office search on a map, and live chat. In Phase 1, AI lived here: one option among many.' },
 ]
 
 const phase2Images: CarouselImage[] = [
@@ -92,7 +91,7 @@ export default function CaseStudyNeoBank() {
       </div>
 
       <div style={S}>
-        <PrototypeCarousel images={phase1Images} aspectRatio="mobile" />
+        <PrototypeCarousel images={phase1Images} aspectRatio="screen" />
       </div>
 
       <div style={S}>
