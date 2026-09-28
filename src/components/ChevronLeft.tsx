@@ -1,4 +1,4 @@
-export default function ChevronRight({ size = 16, className = 'cta-arrow' }: { size?: number; className?: string }) {
+export default function ChevronLeft({ size = 16, className = 'cta-arrow' }: { size?: number; className?: string }) {
   return (
     <svg
       width={size}
@@ -13,7 +13,7 @@ export default function ChevronRight({ size = 16, className = 'cta-arrow' }: { s
       className={className}
       style={{ flexShrink: 0 }}
     >
-      <polyline points="9 6 15 12 9 18" />
+      <polyline points="15 6 9 12 15 18" />
     </svg>
   )
 }
