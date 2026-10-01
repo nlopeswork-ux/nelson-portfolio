@@ -2,6 +2,20 @@ import { Link } from 'react-router-dom'
 import Nav from './Nav'
 import Counter from './Counter'
 import ChevronLeft from './ChevronLeft'
+import { useLanguage } from '../i18n/LanguageContext'
+
+const shellCopy = {
+  en: {
+    backToWork: 'Back to all work',
+    confidentiality: 'Client names and identifying details have been generalized to respect confidentiality agreements. Metrics and outcomes reflect the real scope and impact of the engagement.',
+    copyright: '© 2026 Nelson Lopes. Designed with care.',
+  },
+  pt: {
+    backToWork: 'Voltar a todo o trabalho',
+    confidentiality: 'Os nomes de clientes e detalhes identificativos foram generalizados para respeitar acordos de confidencialidade. As métricas e os resultados refletem o âmbito e o impacto reais da colaboração.',
+    copyright: '© 2026 Nelson Lopes. Feito com cuidado.',
+  },
+}
 
 interface MetaItem {
   label: string
@@ -25,6 +39,8 @@ interface CaseStudyShellProps {
 }
 
 export default function CaseStudyShell({ eyebrow, title, description, meta, stats, accentColor = '#002FA7', children }: CaseStudyShellProps) {
+  const { lang } = useLanguage()
+  const t = shellCopy[lang]
   return (
     <div style={{ position: 'relative', overflow: 'hidden', background: '#FFFFFF', minHeight: '100vh' }}>
       <Nav />
@@ -64,15 +80,15 @@ export default function CaseStudyShell({ eyebrow, title, description, meta, stat
       {/* BACK LINK */}
       <div style={{ maxWidth: 760, margin: '0 auto', padding: '0 20px 80px' }}>
         <Link to="/work" style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 14, fontWeight: 600, color: '#002FA7', textDecoration: 'none' }}>
-          <ChevronLeft size={15} className="" />Back to all work
+          <ChevronLeft size={15} className="" />{t.backToWork}
         </Link>
       </div>
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '0 20px 40px', textAlign: 'center' }}>
-        <p style={{ fontSize: 12, lineHeight: 1.6, color: '#A0A4B8', margin: 0 }}>Client names and identifying details have been generalized to respect confidentiality agreements. Metrics and outcomes reflect the real scope and impact of the engagement.</p>
+        <p style={{ fontSize: 12, lineHeight: 1.6, color: '#A0A4B8', margin: 0 }}>{t.confidentiality}</p>
       </div>
 
-      <div style={{ textAlign: 'center', padding: '0 20px 40px', fontSize: 13, color: '#6B7086' }}>© 2026 Nelson Lopes. Designed with care.</div>
+      <div style={{ textAlign: 'center', padding: '0 20px 40px', fontSize: 13, color: '#6B7086' }}>{t.copyright}</div>
     </div>
   )
 }

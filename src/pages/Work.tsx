@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import ChevronRight from '../components/ChevronRight'
+import { useLanguage, type Lang } from '../i18n/LanguageContext'
 import intelliforgeImg from '../imports/IntelliForge_SR2R.png'
 import onerakImg from '../imports/OneRAK_Portal_Revamp.png'
 import tamkeenImg from '../imports/National_Workforce_Digital_Platform.png'
@@ -9,95 +10,42 @@ import dsImg from '../imports/Internal_DS.png'
 import neotImg from '../imports/NEOT_Mobile_App.png'
 import neobankImg from '../imports/NEOT Bank App.png'
 
-const filterOptions = ['All', 'Financial Services', 'Government', 'Internal Platform']
+type Category = 'all' | 'financial-services' | 'government' | 'internal-platform'
 
-const studies = [
-  {
-    id: 'intelliforge',
-    to: '/work/intelliforge',
-    client: 'Global energy company',
-    title: 'IntelliForge SR2R',
-    summary: 'Turned 200 manual close cycles into a governed, auditable system.',
-    industry: 'Financial Services',
-    tags: ['Financial Services'],
-    quote: 'The confidence scoring changed how fast the team could move — cases that sat in review for a day now clear in minutes.',
-    quoteAttribution: 'Head of Delivery, the client',
-    color: 'linear-gradient(135deg, #002FA7 0%, #3D63E0 100%)',
-    initials: 'SR2R',
-    image: intelliforgeImg,
-  },
-  {
-    id: 'onerak',
-    to: '/work/onerak',
-    client: 'KPMG × government economic zone authority',
-    title: 'OneRAK Portal Revamp',
-    summary: '18/18 services unified, 97.8% task success, 82% fewer support calls.',
-    industry: 'Government',
-    tags: ['Government'],
-    quote: 'What used to take a full audit cycle to trace, we can now walk through in one meeting.',
-    quoteAttribution: 'Engagement Lead, KPMG',
-    color: 'linear-gradient(135deg, #0F4C75 0%, #1B6CA8 100%)',
-    initials: 'GEZ',
-    image: onerakImg,
-  },
-  {
-    id: 'tamkeen',
-    to: '/work/tamkeen',
-    client: 'National workforce-development fund',
-    title: 'National Workforce Digital Platform',
-    summary: 'Replaced a fully manual funding process with one unified ecosystem.',
-    industry: 'Government',
-    tags: ['Government'],
-    quote: null,
-    quoteAttribution: null,
-    color: 'linear-gradient(135deg, #1E3A5F 0%, #2E6EA6 100%)',
-    initials: 'NEOT',
-    image: tamkeenImg,
-  },
-  {
-    id: 'design-system',
-    to: '/work/design-system',
-    client: 'Internal — multiple client domains',
-    title: 'Internal Design System',
-    summary: 'A shared foundation across 15 projects, delivering the flagship pilot 25% faster.',
-    industry: 'Internal Platform',
-    tags: ['Internal Platform'],
-    quote: null,
-    quoteAttribution: null,
-    color: 'linear-gradient(135deg, #2D2D2D 0%, #4A4A6A 100%)',
-    initials: 'DS',
-    image: dsImg,
-  },
-  {
-    id: 'neot',
-    to: '/work/neot',
-    client: 'National employment fund',
-    title: 'NEOT Mobile App',
-    summary: '1,000+ screens across 8 modules unifying employment, training and financial support.',
-    industry: 'Government',
-    tags: ['Government'],
-    quote: null,
-    quoteAttribution: null,
-    color: 'linear-gradient(135deg, #003B6F 0%, #0055A5 100%)',
-    initials: 'MOB',
-    image: neotImg,
-  },
-  {
-    id: 'neobank',
-    to: '/work/neobank',
-    client: 'Retail bank engagement / internal concept',
-    title: 'NeoBank — Reimagining Banking Twice',
-    summary: 'From a research-led app redesign to an AI-native banking experience.',
-    industry: 'Financial Services',
-    tags: ['Financial Services'],
-    quote: null,
-    quoteAttribution: null,
-    color: 'linear-gradient(135deg, #002FA7 0%, #5B7FE8 100%)',
-    initials: 'NB',
-    image: neobankImg,
-  },
+const categoryLabel: Record<Lang, Record<Category, string>> = {
+  en: { all: 'All', 'financial-services': 'Financial Services', government: 'Government', 'internal-platform': 'Internal Platform' },
+  pt: { all: 'Todos', 'financial-services': 'Serviços Financeiros', government: 'Setor Público', 'internal-platform': 'Plataforma Interna' },
+}
+
+const filterOptions: Category[] = ['all', 'financial-services', 'government', 'internal-platform']
+
+const studiesBase = [
+  { id: 'intelliforge', to: '/work/intelliforge', title: 'IntelliForge SR2R', category: 'financial-services' as Category, color: 'linear-gradient(135deg, #002FA7 0%, #3D63E0 100%)', initials: 'SR2R', image: intelliforgeImg },
+  { id: 'onerak', to: '/work/onerak', title: 'OneRAK Portal Revamp', category: 'government' as Category, color: 'linear-gradient(135deg, #0F4C75 0%, #1B6CA8 100%)', initials: 'GEZ', image: onerakImg },
+  { id: 'tamkeen', to: '/work/tamkeen', title: 'National Workforce Digital Platform', category: 'government' as Category, color: 'linear-gradient(135deg, #1E3A5F 0%, #2E6EA6 100%)', initials: 'NEOT', image: tamkeenImg },
+  { id: 'design-system', to: '/work/design-system', title: 'Internal Design System', category: 'internal-platform' as Category, color: 'linear-gradient(135deg, #2D2D2D 0%, #4A4A6A 100%)', initials: 'DS', image: dsImg },
+  { id: 'neot', to: '/work/neot', title: 'NEOT Mobile App', category: 'government' as Category, color: 'linear-gradient(135deg, #003B6F 0%, #0055A5 100%)', initials: 'MOB', image: neotImg },
+  { id: 'neobank', to: '/work/neobank', title: 'NeoBank — Reimagining Banking Twice', category: 'financial-services' as Category, color: 'linear-gradient(135deg, #002FA7 0%, #5B7FE8 100%)', initials: 'NB', image: neobankImg },
 ]
 
+const studiesText: Record<Lang, Record<string, { summary: string; quote: string | null; quoteAttribution: string | null }>> = {
+  en: {
+    intelliforge: { summary: 'Turned 200 manual close cycles into a governed, auditable system.', quote: 'The confidence scoring changed how fast the team could move — cases that sat in review for a day now clear in minutes.', quoteAttribution: 'Head of Delivery, the client' },
+    onerak: { summary: '18/18 services unified, 97.8% task success, 82% fewer support calls.', quote: 'What used to take a full audit cycle to trace, we can now walk through in one meeting.', quoteAttribution: 'Engagement Lead, KPMG' },
+    tamkeen: { summary: 'Replaced a fully manual funding process with one unified ecosystem.', quote: null, quoteAttribution: null },
+    'design-system': { summary: 'A shared foundation across 15 projects, delivering the flagship pilot 25% faster.', quote: null, quoteAttribution: null },
+    neot: { summary: '1,000+ screens across 8 modules unifying employment, training and financial support.', quote: null, quoteAttribution: null },
+    neobank: { summary: 'From a research-led app redesign to an AI-native banking experience.', quote: null, quoteAttribution: null },
+  },
+  pt: {
+    intelliforge: { summary: 'Transformou 200 ciclos de fecho manuais num sistema governado e auditável.', quote: 'A pontuação de confiança mudou a velocidade a que a equipa conseguia avançar — casos que ficavam um dia em revisão agora ficam concluídos em minutos.', quoteAttribution: 'Head of Delivery, o cliente' },
+    onerak: { summary: '18/18 serviços unificados, 97,8% de sucesso nas tarefas, menos 82% de chamadas de suporte.', quote: 'O que antes levava um ciclo de auditoria completo a rastrear, agora conseguimos percorrer numa única reunião.', quoteAttribution: 'Engagement Lead, KPMG' },
+    tamkeen: { summary: 'Substituiu um processo de financiamento totalmente manual por um ecossistema unificado.', quote: null, quoteAttribution: null },
+    'design-system': { summary: 'Uma base partilhada em 15 projetos, entregando o piloto principal 25% mais rápido.', quote: null, quoteAttribution: null },
+    neot: { summary: 'Mais de 1.000 ecrãs em 8 módulos, unificando emprego, formação e apoio financeiro.', quote: null, quoteAttribution: null },
+    neobank: { summary: 'De um redesign de app orientado por investigação a uma experiência bancária nativa em IA.', quote: null, quoteAttribution: null },
+  },
+}
 
 function useFadeIn() {
   const ref = useRef<HTMLDivElement>(null)
@@ -115,13 +63,36 @@ function useFadeIn() {
   return { ref, style: { opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)', transition: 'opacity 600ms ease-out, transform 600ms ease-out' } }
 }
 
+const pageCopy = {
+  en: {
+    eyebrow: 'Work',
+    title: 'Case studies from the decision layer.',
+    subtitle: 'Selected engagements where the interface was only as good as the decisions built underneath it.',
+    readFull: 'Read the full case study',
+    moreInProgress: 'More case studies in progress',
+    copyright: '© 2026 Nelson Lopes. Designed with care.',
+  },
+  pt: {
+    eyebrow: 'Trabalho',
+    title: 'Case studies da camada de decisão.',
+    subtitle: 'Colaborações selecionadas onde a interface só foi tão boa quanto as decisões construídas por trás dela.',
+    readFull: 'Ver a case study completa',
+    moreInProgress: 'Mais case studies em curso',
+    copyright: '© 2026 Nelson Lopes. Feito com cuidado.',
+  },
+}
+
 export default function Work() {
-  const [activeFilter, setActiveFilter] = useState('All')
+  const { lang } = useLanguage()
+  const p = pageCopy[lang]
+  const [activeFilter, setActiveFilter] = useState<Category>('all')
   const list = useFadeIn()
 
+  const studies = useMemo(() => studiesBase.map(s => ({ ...s, ...studiesText[lang][s.id] })), [lang])
+
   const filtered = useMemo(() =>
-    activeFilter === 'All' ? studies : studies.filter(s => s.tags.includes(activeFilter)),
-    [activeFilter]
+    activeFilter === 'all' ? studies : studies.filter(s => s.category === activeFilter),
+    [activeFilter, studies]
   )
 
   return (
@@ -130,12 +101,12 @@ export default function Work() {
 
       {/* HEADER */}
       <div style={{ position: 'relative', padding: 'clamp(100px,15vw,150px) 20px 20px', maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 12 }}>Work</div>
+        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 12 }}>{p.eyebrow}</div>
         <h1 style={{ fontSize: 'clamp(30px,4vw,46px)', fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 16px', maxWidth: 700 }}>
-          Case studies from the decision layer.
+          {p.title}
         </h1>
         <p style={{ fontSize: 17, lineHeight: 1.6, color: '#5A5F73', maxWidth: 600, margin: 0 }}>
-          Selected engagements where the interface was only as good as the decisions built underneath it.
+          {p.subtitle}
         </p>
       </div>
 
@@ -155,7 +126,7 @@ export default function Work() {
               transition: 'background 200ms ease-out, color 200ms ease-out',
               fontFamily: "'Inter', sans-serif",
             }}
-          >{f}</button>
+          >{categoryLabel[lang][f]}</button>
         ))}
       </div>
 
@@ -190,7 +161,7 @@ export default function Work() {
                 </div>
               </div>
               <div style={{ padding: '8px 24px 24px' }}>
-                <div style={{ fontSize: 11, fontWeight: 600, color: '#4A4F63', background: '#F2F6FF', display: 'inline-block', padding: '4px 11px', borderRadius: 11, marginBottom: 10 }}>{s.industry}</div>
+                <div style={{ fontSize: 11, fontWeight: 600, color: '#4A4F63', background: '#F2F6FF', display: 'inline-block', padding: '4px 11px', borderRadius: 11, marginBottom: 10 }}>{categoryLabel[lang][s.category]}</div>
                 <h3 style={{ fontSize: 20, fontWeight: 700, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 6px' }}>{s.title}</h3>
                 <p style={{ fontSize: 14, lineHeight: 1.5, color: '#5A5F73', margin: '0 0 12px' }}>{s.summary}</p>
                 {s.quote && (
@@ -199,7 +170,7 @@ export default function Work() {
                     <div style={{ fontSize: 12, fontWeight: 600, color: '#001A5C' }}>— {s.quoteAttribution}</div>
                   </div>
                 )}
-                <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 14, fontWeight: 600, color: '#002FA7' }}>Read the full case study<ChevronRight size={15} /></div>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 14, fontWeight: 600, color: '#002FA7' }}>{p.readFull}<ChevronRight size={15} /></div>
               </div>
             </Link>
           ))}
@@ -209,10 +180,10 @@ export default function Work() {
 
       {/* PLACEHOLDER */}
       <div style={{ padding: '0 32px 120px', maxWidth: 1200, margin: '0 auto', textAlign: 'center' }}>
-        <span style={{ fontSize: 13, color: '#A0A4B8' }}>More case studies in progress</span>
+        <span style={{ fontSize: 13, color: '#A0A4B8' }}>{p.moreInProgress}</span>
       </div>
 
-      <div style={{ textAlign: 'center', padding: '40px 32px', fontSize: 13, color: '#6B7086' }}>© 2026 Nelson Lopes. Designed with care.</div>
+      <div style={{ textAlign: 'center', padding: '40px 32px', fontSize: 13, color: '#6B7086' }}>{p.copyright}</div>
     </div>
   )
 }
