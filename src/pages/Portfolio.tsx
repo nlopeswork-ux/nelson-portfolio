@@ -86,7 +86,7 @@ const copy = {
     ],
     contactTitleLine1: 'Vamos construir algo',
     contactTitleLine2: 'cuidado, juntos.',
-    contactSubtitle: 'Baseado em Lisboa — disponível para oportunidades globais selecionadas.',
+    contactSubtitle: 'Vivo em Lisboa — disponível para oportunidades globais selecionadas.',
     emailMe: 'Enviar email diretamente',
     copyright: '© 2026 Nelson Lopes. Feito com cuidado.',
   },

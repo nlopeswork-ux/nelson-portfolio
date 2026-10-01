@@ -22,7 +22,7 @@ const copy = {
     emailNote: 'Ideal para briefings de projeto e perguntas à conversa de café.',
     linkedinLabel: 'LinkedIn',
     linkedinNote: 'Ideal para networking e curiosidade mútua.',
-    footerNote: 'Costumo responder no tempo de um café ☕ — baseado em Lisboa, disponível para trabalhar com qualquer pessoa, em qualquer lugar.',
+    footerNote: 'Costumo responder no tempo de um café ☕ — vivo em Lisboa, disponível para trabalhar com qualquer pessoa, em qualquer lugar.',
     copyright: '© 2026 Nelson Lopes. Feito com cuidado.',
   },
 }
