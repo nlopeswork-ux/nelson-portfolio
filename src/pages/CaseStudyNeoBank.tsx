@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import CaseStudyShell, { Body, DarkBox } from '../components/CaseStudyShell'
 import PrototypeCarousel, { type CarouselImage } from '../components/PrototypeCarousel'
 import ChevronLeft from '../components/ChevronLeft'
@@ -25,14 +26,6 @@ function chunkCards<T>(cards: T[], size: number): T[][] {
   return chunks
 }
 
-const phase2Images: CarouselImage[] = [
-  { src: '/case-studies/neobank/phase2/01-landing-greeting.png', alt: 'NeoBank AI assistant — landing greeting screen', caption: 'Landing screen — the assistant greets and offers to help.' },
-  { src: '/case-studies/neobank/phase2/02-typing-state.png', alt: 'NeoBank AI assistant — typing / thinking state', caption: 'Typing state while the assistant composes a response.' },
-  { src: '/case-studies/neobank/phase2/03-balance-check-flow-1.png', alt: 'NeoBank AI assistant — balance check, turn one', caption: 'Balance-check conversation — turn one.' },
-  { src: '/case-studies/neobank/phase2/04-balance-check-flow-2.png', alt: 'NeoBank AI assistant — balance check, turn two', caption: 'Balance-check conversation — turn two, drilling into transactions.' },
-  { src: '/case-studies/neobank/phase2/05-menu-recent-chat.png', alt: 'NeoBank AI assistant — menu with Recent Chat history', caption: 'Menu with Recent Chat — a visible, revisitable action log.' },
-  { src: '/case-studies/neobank/phase2/06-banking-hub-fallback.png', alt: 'NeoBank — Banking Hub dashboard fallback', caption: 'Banking Hub — the traditional dashboard, one tap away.' },
-]
 
 const processImages: CarouselImage[] = [
   { src: '/case-studies/neobank/process/01-full-board.jpg', alt: 'Full FigJam board — Research, Define, Ideation and Design tracks side by side', caption: 'The full board — Research (trends, personas, competitive and UI analysis), Define (problem, site map, user flows), Ideation and Design, all worked in one place.' },
@@ -148,7 +141,21 @@ export default function CaseStudyNeoBank() {
       </div>
 
       <div style={S}>
-        <PrototypeCarousel images={phase2Images} aspectRatio="mobile" />
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
+          <div style={{
+            width: 'min(280px, 68vw)', maxWidth: 280, aspectRatio: '390 / 844',
+            borderRadius: 32, border: '8px solid #12141F', overflow: 'hidden',
+            background: 'repeating-linear-gradient(135deg, #EEF1F8, #EEF1F8 10px, #E4E8F4 10px, #E4E8F4 20px)',
+            display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
+            gap: 8, padding: 24, textAlign: 'center',
+          }}>
+            <div style={{ fontSize: 11, fontWeight: 700, color: '#8A8FA3', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Concept in progress</div>
+            <div style={{ fontSize: 13, fontWeight: 600, color: '#5A5F73', lineHeight: 1.5 }}>These AI-native screens aren't published here yet — happy to walk through the proposal in a conversation.</div>
+          </div>
+          <Link to="/contact" className="secondary-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '10px 20px', fontSize: 13, fontWeight: 600, color: '#002FA7', textDecoration: 'none' }}>
+            Get in touch to see it<ChevronRight size={14} />
+          </Link>
+        </div>
       </div>
 
       {/* WHAT CHANGED */}
