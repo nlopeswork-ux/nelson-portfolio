@@ -11,9 +11,9 @@ interface LanguageContextValue {
 const LanguageContext = createContext<LanguageContextValue | null>(null)
 
 function readStoredLang(): Lang {
-  if (typeof window === 'undefined') return 'pt'
+  if (typeof window === 'undefined') return 'en'
   const stored = window.localStorage.getItem('lang')
-  return stored === 'en' ? 'en' : 'pt'
+  return stored === 'pt' ? 'pt' : 'en'
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

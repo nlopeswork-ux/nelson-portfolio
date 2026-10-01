@@ -114,7 +114,7 @@ const copy = {
       bachelorDesign: 'Bachelor — Design',
     },
     certificationsEyebrow: 'Certifications',
-    languages: 'Fluent in English and French, working proficiency in Spanish.',
+    languages: 'Fluent in Portuguese and English, working proficiency in Spanish and French.',
     copyright: '© 2026 Nelson Lopes. Designed with care.',
   },
   pt: {
@@ -202,7 +202,7 @@ const copy = {
       bachelorDesign: 'Licenciatura — Design',
     },
     certificationsEyebrow: 'Certificações',
-    languages: 'Fluente em Inglês e Francês, com conhecimentos de trabalho em Espanhol.',
+    languages: 'Fluente em Português e Inglês, com conhecimentos de trabalho em Espanhol e Francês.',
     copyright: '© 2026 Nelson Lopes. Feito com cuidado.',
   },
 }
