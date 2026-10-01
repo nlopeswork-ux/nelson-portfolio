@@ -7,30 +7,25 @@ import ChevronUp from '../components/ChevronUp'
 import ChevronLeft from '../components/ChevronLeft'
 import { useLanguage } from '../i18n/LanguageContext'
 import profileImg from '../imports/c6037aa9-14d7-4c26-9a01-4a3a2bb1cf8d.jpg'
+import iadeLogo from '../imports/logos/iade.png'
+import ecvLogo from '../imports/logos/ecv.png'
+import ixdfLogo from '../imports/logos/ixdf.png'
 
-const GradCap = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="1.6" style={{ marginBottom: 14, display: 'block' }}>
-    <path d="M12 3l9 4.5-9 4.5-9-4.5 9-4.5z"/><path d="M6.5 9.7v5.3c0 1.5 2.5 3 5.5 3s5.5-1.5 5.5-3V9.7"/><path d="M20 8v6"/>
-  </svg>
-)
-const CertBadge = () => (
-  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="1.6" style={{ marginBottom: 14, display: 'block' }}>
-    <circle cx="12" cy="9" r="6"/><path d="M9 9l2 2 3.5-3.5"/><path d="M8.5 14.5L7 21l5-2.5 5 2.5-1.5-6.5"/>
-  </svg>
-)
+const thumb = { width: 48, height: 48, borderRadius: 8, flexShrink: 0, background: '#F7FAFF', border: '1px solid #EAF1FF', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' } as const
+const thumbImg = { width: '70%', height: '70%', objectFit: 'contain' } as const
 
 const education = [
-  { degreeKey: 'master', school: 'IADE – Creative University · 2017–2019' },
-  { degreeKey: 'bachelorGraphic', school: 'ECV – École de Création Visuelle · 2016' },
-  { degreeKey: 'bachelorDesign', school: 'IADE – Creative University · 2012–2015' },
+  { degreeKey: 'master', school: 'IADE – Creative University · 2017–2019', logo: iadeLogo },
+  { degreeKey: 'bachelorGraphic', school: 'ECV – École de Création Visuelle · 2016', logo: ecvLogo },
+  { degreeKey: 'bachelorDesign', school: 'IADE – Creative University · 2012–2015', logo: iadeLogo },
 ]
 
 const certifications = [
-  { title: 'Dynamic User Experience: Design and Usability', org: 'IxDF · Sep 2024' },
-  { title: 'AI for Designers', org: 'IxDF · May 2026' },
-  { title: 'Accessibility: How to Design for All', org: 'IxDF · Jan 2025' },
-  { title: 'UX Management: Strategy and Tactics', org: 'IxDF · Sep 2024' },
-  { title: 'User Research: Methods and Best Practices', org: 'IxDF · Sep 2023' },
+  { title: 'Dynamic User Experience: Design and Usability', org: 'IxDF · Sep 2024', logo: ixdfLogo },
+  { title: 'AI for Designers', org: 'IxDF · May 2026', logo: ixdfLogo },
+  { title: 'Accessibility: How to Design for All', org: 'IxDF · Jan 2025', logo: ixdfLogo },
+  { title: 'UX Management: Strategy and Tactics', org: 'IxDF · Sep 2024', logo: ixdfLogo },
+  { title: 'User Research: Methods and Best Practices', org: 'IxDF · Sep 2023', logo: ixdfLogo },
 ]
 
 const copy = {
@@ -360,11 +355,13 @@ export default function About() {
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
         <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 20 }}>{t.educationEyebrow}</div>
         <div className="rg-edu" style={{ marginBottom: 60 }}>
-          {education.map(({ degreeKey, school }) => (
-            <div key={degreeKey} style={{ border: '1px solid #EAF1FF', borderRadius: 12, padding: 22, background: '#FFFFFF', boxShadow: '0 4px 12px rgba(20,30,60,0.04)' }}>
-              <GradCap />
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', marginBottom: 4 }}>{t.degree[degreeKey as keyof typeof t.degree]}</div>
-              <div style={{ fontSize: 13, color: '#5A5F73' }}>{school}</div>
+          {education.map(({ degreeKey, school, logo }) => (
+            <div key={degreeKey} style={{ display: 'flex', alignItems: 'center', gap: 14, border: '1px solid #EAF1FF', borderRadius: 12, padding: 22, background: '#FFFFFF', boxShadow: '0 4px 12px rgba(20,30,60,0.04)' }}>
+              <div style={thumb}><img src={logo} alt="" style={thumbImg} /></div>
+              <div>
+                <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', marginBottom: 4 }}>{t.degree[degreeKey as keyof typeof t.degree]}</div>
+                <div style={{ fontSize: 13, color: '#5A5F73' }}>{school}</div>
+              </div>
             </div>
           ))}
         </div>
@@ -376,11 +373,13 @@ export default function About() {
             <div style={{ display: 'flex', transform: `translateX(${-certIdx * 100}%)`, transition: 'transform 420ms ease-out' }}>
               {certSlides.map((slide, si) => (
                 <div key={si} className={isMobile ? undefined : 'carousel-3'} style={{ flex: '0 0 100%' }}>
-                  {slide.map(({ title, org }) => (
-                    <div key={title} style={{ border: '1px solid #EAF1FF', borderRadius: 12, padding: 22, background: '#FFFFFF', boxShadow: '0 4px 12px rgba(20,30,60,0.04)' }}>
-                      <CertBadge />
-                      <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', marginBottom: 4 }}>{title}</div>
-                      <div style={{ fontSize: 13, color: '#5A5F73' }}>{org}</div>
+                  {slide.map(({ title, org, logo }) => (
+                    <div key={title} style={{ display: 'flex', alignItems: 'center', gap: 14, border: '1px solid #EAF1FF', borderRadius: 12, padding: 22, background: '#FFFFFF', boxShadow: '0 4px 12px rgba(20,30,60,0.04)' }}>
+                      <div style={thumb}><img src={logo} alt="" style={thumbImg} /></div>
+                      <div>
+                        <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', marginBottom: 4 }}>{title}</div>
+                        <div style={{ fontSize: 13, color: '#5A5F73' }}>{org}</div>
+                      </div>
                     </div>
                   ))}
                 </div>
