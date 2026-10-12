@@ -25,7 +25,7 @@ const copy = {
   en: {
     eyebrow: 'Case Study',
     title: 'NEOT Mobile App',
-    description: 'Empowering citizens through a unified employment and career support experience — a mobile-first platform bringing employment services, training programmes, financial support and career guidance into a single digital experience.',
+    description: 'A mobile-first platform that brings employment services, training programmes, financial support and career guidance into one experience for citizens.',
     meta: [
       { label: 'Role', value: 'Lead UX/UI Designer' },
       { label: 'Client', value: 'National employment fund (Government / Employment Services)' },
@@ -98,7 +98,7 @@ const copy = {
       { value: '100%', label: 'of screens verified in both LTR and RTL' },
     ],
     impactTitle: 'Impact',
-    impactBody: "The project established a scalable mobile experience capable of supporting thousands of citizens interacting with the Fund's employment ecosystem. By consolidating multiple government services into a unified product, the platform simplified access to employment programmes, financial support and career development while creating a consistent digital experience across every touchpoint. The work also resulted in a robust mobile design system, reusable interaction patterns and a structured design process supporting future product evolution.",
+    impactBody: "The project established a scalable mobile experience capable of supporting thousands of citizens interacting with the Fund's employment ecosystem. By consolidating multiple government services into a unified product, the platform simplified access to employment programmes, financial support and career development while creating a consistent digital experience across every touchpoint. The work also resulted in a mobile design system, reusable interaction patterns and a structured design process supporting future product evolution.",
     glanceTitle: 'Project at a Glance',
     glanceRows: [
       ['Role', 'Lead UX/UI Designer'],
@@ -116,7 +116,7 @@ const copy = {
   pt: {
     eyebrow: 'Case Study',
     title: 'NEOT Mobile App',
-    description: 'Capacitar cidadãos através de uma experiência unificada de emprego e apoio à carreira — uma plataforma mobile-first que reúne serviços de emprego, programas de formação, apoio financeiro e orientação de carreira numa única experiência digital.',
+    description: 'Uma plataforma mobile-first que reúne serviços de emprego, programas de formação, apoio financeiro e orientação de carreira numa única experiência para o cidadão.',
     meta: [
       { label: 'Função', value: 'Lead UX/UI Designer' },
       { label: 'Cliente', value: 'Fundo nacional de emprego (Setor Público / Serviços de Emprego)' },
@@ -189,7 +189,7 @@ const copy = {
       { value: '100%', label: 'dos ecrãs verificados em LTR e RTL' },
     ],
     impactTitle: 'Impacto',
-    impactBody: 'O projeto estabeleceu uma experiência mobile escalável, capaz de suportar milhares de cidadãos a interagir com o ecossistema de emprego do Fundo. Ao consolidar vários serviços públicos num produto unificado, a plataforma simplificou o acesso a programas de emprego, apoio financeiro e desenvolvimento de carreira, criando uma experiência digital consistente em todos os pontos de contacto. O trabalho também resultou num design system mobile robusto, padrões de interação reutilizáveis e um processo de design estruturado que suporta evolução futura do produto.',
+    impactBody: 'O projeto estabeleceu uma experiência mobile escalável, capaz de suportar milhares de cidadãos a interagir com o ecossistema de emprego do Fundo. Ao consolidar vários serviços públicos num produto unificado, a plataforma simplificou o acesso a programas de emprego, apoio financeiro e desenvolvimento de carreira, criando uma experiência digital consistente em todos os pontos de contacto. O trabalho também resultou num design system mobile, em padrões de interação reutilizáveis e num processo de design estruturado que suporta a evolução futura do produto.',
     glanceTitle: 'O Projeto em Resumo',
     glanceRows: [
       ['Função', 'Lead UX/UI Designer'],

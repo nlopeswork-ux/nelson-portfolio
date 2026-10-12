@@ -107,7 +107,7 @@ const copy = {
     ],
     keyDecisionLabel: 'Key Design Decision',
     keyDecisionBox: [
-      "The most contested design decision was the unified account model — one login, one profile, multiple roles. The technical team initially pushed for separate authenticated experiences per portal. We held the position: a single account with role-switching is not just a UX preference, it's the only architecture that reflects how real investors operate. An agent managing 12 clients doesn't want 12 logins.",
+      "The most contested design decision was the unified account model — one login, one profile, multiple roles. The technical team initially pushed for separate authenticated experiences per portal. We held the position: a single account with role-switching is the only architecture that reflects how real investors actually operate. An agent managing 12 clients doesn't want 12 logins.",
       'User testing at week 8 with 14 representative users confirmed the hypothesis: task completion on the unified model outperformed the separate-portal baseline by 34 percentage points on the first attempt.',
     ],
     rejectedTitle: 'Key Decisions — What We Rejected',
@@ -241,7 +241,7 @@ const copy = {
     ],
     keyDecisionLabel: 'Decisão de Design Chave',
     keyDecisionBox: [
-      'A decisão de design mais contestada foi o modelo de conta unificado — um login, um perfil, vários papéis. A equipa técnica pressionou inicialmente por experiências autenticadas separadas por portal. Mantivemos a posição: uma única conta com troca de papel não é apenas uma preferência de UX, é a única arquitetura que reflete como os investidores reais operam. Um agente a gerir 12 clientes não quer 12 logins.',
+      'A decisão de design mais contestada foi o modelo de conta unificado — um login, um perfil, vários papéis. A equipa técnica pressionou inicialmente por experiências autenticadas separadas por portal. Mantivemos a posição: uma única conta com troca de papel é a única arquitetura que reflete como os investidores reais operam de facto. Um agente a gerir 12 clientes não quer 12 logins.',
       'Os testes com utilizadores na semana 8, com 14 utilizadores representativos, confirmaram a hipótese: a conclusão de tarefas no modelo unificado superou a referência de portais separados em 34 pontos percentuais à primeira tentativa.',
     ],
     rejectedTitle: 'Decisões Chave — O Que Rejeitámos',
