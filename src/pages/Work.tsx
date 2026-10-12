@@ -38,7 +38,7 @@ const studiesText: Record<Lang, Record<string, { summary: string; quote: string 
     neobank: { summary: 'From a research-led app redesign to an AI-native banking experience.', quote: null, quoteAttribution: null },
   },
   pt: {
-    intelliforge: { summary: 'Transformou 200 ciclos de fecho manuais num sistema governado e auditável.', quote: 'A pontuação de confiança mudou a velocidade a que a equipa conseguia avançar — casos que ficavam um dia em revisão agora ficam concluídos em minutos.', quoteAttribution: 'Head of Delivery, o cliente' },
+    intelliforge: { summary: 'Transformou 200 ciclos de fecho manuais num sistema governado e auditável.', quote: 'A pontuação de confiança mudou a velocidade a que a equipa conseguia avançar — casos que ficavam um dia em revisão agora ficam concluídos em minutos.', quoteAttribution: 'Head of Delivery do cliente' },
     onerak: { summary: '18/18 serviços unificados, 97,8% de sucesso nas tarefas, menos 82% de chamadas de suporte.', quote: 'O que antes levava um ciclo de auditoria completo a rastrear, agora conseguimos percorrer numa única reunião.', quoteAttribution: 'Engagement Lead, KPMG' },
     tamkeen: { summary: 'Substituiu um processo de financiamento totalmente manual por um ecossistema unificado.', quote: null, quoteAttribution: null },
     'design-system': { summary: 'Uma base partilhada em 15 projetos, entregando o piloto principal 25% mais rápido.', quote: null, quoteAttribution: null },

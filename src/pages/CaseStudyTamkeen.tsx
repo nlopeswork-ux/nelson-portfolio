@@ -220,7 +220,7 @@ const copy = {
       { finding: '"A atribuição de candidaturas é ineficiente pela falta de uma opção de atribuição direta a utilizadores internos específicos" (mais votado, 2024)', decision: 'Reconstruído o modelo interno à volta de um papel de Relationship Manager responsável pela atribuição de casos, distinto do Assessor e do Approver.' },
       { finding: '"Difícil para o cliente saber por que outras fases a candidatura vai passar" (6/7 votos, 2024)', decision: 'Princípio de design do Application Detail (360): um indicador de estado sempre visível por candidatura, mais um tutorial guiado no primeiro login.' },
       { finding: '"Mensagens de erro pouco claras" / "o sistema não reencaminha o cliente para o campo específico por preencher" (2024)', decision: 'Princípio de design: definir mensagens de validação claras e específicas nos formulários de candidatura, em vez de genéricas.' },
-      { finding: 'Não existia qualquer canal digital antes de 2023', decision: 'Decisão central de IA: unificar Application, Payment & Claims, Approved Support e Processes num único registo de Application Detail (360) partilhado por candidato e revisor.' },
+      { finding: 'Não existia qualquer canal digital antes de 2023', decision: 'Decisão central de arquitetura de informação: unificar Application, Payment & Claims, Approved Support e Processes num único registo de Application Detail (360) partilhado por candidato e revisor.' },
     ],
     insightsLabel: '05 Principais Descobertas',
     insights: [

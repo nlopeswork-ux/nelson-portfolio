@@ -322,7 +322,7 @@ const copy = {
       { kpi: 'Custo marginal de 1.800 novos concessionários', baseline: '≈ 10× o número de pessoas', result: 'Quase zero — mesmo sistema, nova configuração' },
     ],
     quote: 'A pontuação de confiança mudou a velocidade a que a equipa conseguia avançar — casos que ficavam um dia em revisão agora ficam concluídos em minutos.',
-    quoteAttrib: '— Head of Delivery, o cliente',
+    quoteAttrib: '— Head of Delivery do cliente',
     nextTitle: 'O Que Vem a Seguir',
     next: [
       'A Fase 2 substitui o conjunto de dados sintéticos por uma ligação ao vivo ao Business Central e acrescenta armazenamento persistente, autenticação e controlo de acesso baseado em papéis — a arquitetura de testes foi escrita para ser agnóstica à fonte de dados, tornando isto uma mudança de configuração, não uma reescrita.',

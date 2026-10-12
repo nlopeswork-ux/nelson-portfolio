@@ -165,13 +165,13 @@ const copy = {
     ],
     stats: [
       { value: '18/18', label: 'serviços principais em produção no OneRAK' },
-      { value: '97.8%', label: 'taxa de sucesso nas tarefas no lançamento (de 63,3%)' },
+      { value: '97,8%', label: 'taxa de sucesso nas tarefas no lançamento (de 63,3%)' },
       { value: '82%', label: 'redução em chamadas de suporte' },
     ],
     hookTitle: 'O Ponto de Partida',
     hook: [
       'O governo regional quer ser um dos 10 melhores destinos do mundo para facilidade de fazer negócio — uma "janela única" onde 100% dos pedidos de negócio são tratados através de uma única porta digital coordenada. No início desta colaboração, essa porta eram, na verdade, três portas separadas.',
-      'Investidores e agentes navegavam entre o Portal de Clientes, um Portal de Agentes separado, e o Portal Governamental Secundário — três produtos, três stacks tecnológicas (Salesforce Communities Cloud, Salesforce Communities Cloud + Visual Force, e SAP BTP + BLS.NET), e três experiências inconsistentes sobrepostas a uma arquitetura altamente customizada e difícil de alterar. O portal secundário corria sobre uma arquitetura MVC que causava atrasos de resposta, e tanto clientes como agentes se queixavam do design, da terminologia e da quantidade de idas e vindas manuais necessárias para obter uma licença.',
+      'Investidores e agentes navegavam entre o Portal de Clientes, um Portal de Agentes separado, e o Portal Governamental Secundário — três produtos, três stacks tecnológicas (Salesforce Communities Cloud, Salesforce Communities Cloud + Visual Force, e SAP BTP + BLS.NET), e três experiências inconsistentes sobrepostas a uma arquitetura altamente personalizada e difícil de alterar. O portal secundário corria sobre uma arquitetura MVC que causava atrasos de resposta, e tanto clientes como agentes se queixavam do design, da terminologia e da quantidade de idas e vindas manuais necessárias para obter uma licença.',
       'Quando a equipa colocou utilizadores reais perante os portais atuais, os números por si só justificaram o projeto: em 60 tarefas tentadas em testes de usabilidade, apenas 63,3% foram concluídas com sucesso. Não porque a interface fosse feia — os testadores chamavam-lhe repetidamente "limpa" e "rápida". Falhava porque os utilizadores não conseguiam perceber em que estado estavam, o que um label significava, ou o que fazer quando algo corria mal.',
       'Treze meses depois, o OneRAK está em produção: uma experiência unificada que abrange os 18 serviços principais nos três portais, construída sobre um Design Language System partilhado, e validada de ponta a ponta com os mesmos investidores e agentes que tinham dificuldades com os portais originais. O sucesso nas tarefas nos serviços redesenhados está agora em 97,8%, o tempo médio de conclusão da jornada principal de Licença Instantânea caiu de 32 minutos para 11, e as chamadas de agentes para o IT interno a perguntar pelo estado caíram 82%.',
     ],
@@ -277,7 +277,7 @@ const copy = {
     ],
     outcomesTitle: 'Resultados',
     outcomes: [
-      { value: '97.8%', label: 'taxa de sucesso nas tarefas no lançamento' },
+      { value: '97,8%', label: 'taxa de sucesso nas tarefas no lançamento' },
       { value: '18/18', label: 'serviços principais em produção no primeiro dia' },
       { value: '82%', label: 'redução no volume de chamadas de suporte' },
       { value: '142', label: 'componentes do DLS entregues em produção' },
