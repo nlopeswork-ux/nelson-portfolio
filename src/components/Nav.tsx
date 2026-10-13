@@ -93,19 +93,19 @@ export default function Nav() {
       borderRadius: 20,
       boxShadow: '0 10px 30px rgba(20,30,60,0.14)',
     }}>
-      {/* Top row: logo + desktop links + language + burger */}
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
-        <Link to="/" className="logo-link" style={{ fontSize: 16, fontWeight: 700, letterSpacing: '-0.01em', color: '#1A1D29', textDecoration: 'none', flexShrink: 0 }}>
+      {/* Top row: logo | desktop links (true center) | language + burger */}
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', columnGap: 12 }}>
+        <Link to="/" className="logo-link" style={{ justifySelf: 'start', fontSize: 16, fontWeight: 700, letterSpacing: '-0.01em', color: '#1A1D29', textDecoration: 'none', flexShrink: 0 }}>
           Nelson Lopes
         </Link>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-          <nav className="nav-links" style={{ alignItems: 'center', gap: 12 }}>
-            {links.map(({ to, label }) => (
-              <Link key={to} to={to} className="nav-link" style={linkStyle(to)}>{label}</Link>
-            ))}
-          </nav>
+        <nav className="nav-links" style={{ justifySelf: 'center', alignItems: 'center', gap: 12 }}>
+          {links.map(({ to, label }) => (
+            <Link key={to} to={to} className="nav-link" style={linkStyle(to)}>{label}</Link>
+          ))}
+        </nav>
 
+        <div style={{ justifySelf: 'end', display: 'flex', alignItems: 'center', gap: 12 }}>
           <LanguageSwitch />
 
           <button

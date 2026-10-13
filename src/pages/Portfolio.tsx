@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import ChevronRight from '../components/ChevronRight'
@@ -18,33 +18,27 @@ function useFadeIn() {
     obs.observe(el)
     return () => obs.disconnect()
   }, [])
-  return { ref, style: { opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)', transition: 'opacity 600ms ease-out, transform 600ms ease-out' } }
+  return { ref, visible, style: { opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)', transition: 'opacity 600ms ease-out, transform 600ms ease-out' } }
 }
 
 const copy = {
   en: {
     role: 'Lead Product Designer — Lisbon, Portugal',
     titleLine1: 'Product systems for complex,',
-    titleLine2: 'high-stakes decisions.',
+    titleLine2Pre: '',
+    titleLine2Highlight: 'high-stakes',
+    titleLine2Post: ' decisions.',
     subtitle: 'I design the decision layer beneath enterprise products — banking, insurance, government — where clarity has to survive real deadlines and real stakes.',
+    heroTags: [
+      { icon: 'pen', label: 'Product Design', caption: 'Shaping end-to-end flows' },
+      { icon: 'layers', label: 'Design Systems', caption: 'Scaling consistency' },
+    ],
     viewWork: 'View selected work',
     getInTouch: 'Get in touch',
     featuredLabel: 'Featured work',
     featuredTitle: 'IntelliForge SR2R',
     featuredDesc: 'A control layer for a 10× bid.',
     seeCaseStudy: 'See case study',
-    decisionLabel: 'How I approach it',
-    decisionSteps: [
-      { title: 'Context', question: 'What is actually happening?' },
-      { title: 'Signal', question: 'What matters now?' },
-      { title: 'Decision', question: 'What should change?' },
-      { title: 'Action', question: 'What can the team run?' },
-    ],
-    scaleStats: [
-      { value: '11', label: 'years' },
-      { value: '4', label: 'studios' },
-      { value: '6', label: 'case studies live' },
-    ],
     teasers: [
       {
         to: '/work', label: 'Work', sub: '6 case studies live, more in progress',
@@ -71,26 +65,20 @@ const copy = {
   pt: {
     role: 'Lead Product Designer — Lisboa, Portugal',
     titleLine1: 'Sistemas de produto para decisões',
-    titleLine2: 'complexas e de alto risco.',
+    titleLine2Pre: 'complexas e de ',
+    titleLine2Highlight: 'alto risco',
+    titleLine2Post: '.',
     subtitle: 'Desenho a camada de decisão por trás de produtos empresariais — banca, seguros, setor público — onde a clareza tem de sobreviver a prazos e riscos reais.',
+    heroTags: [
+      { icon: 'pen', label: 'Product Design', caption: 'A desenhar fluxos end-to-end' },
+      { icon: 'layers', label: 'Design Systems', caption: 'A escalar consistência' },
+    ],
     viewWork: 'Ver trabalho selecionado',
     getInTouch: 'Entrar em contacto',
     featuredLabel: 'Trabalho em destaque',
     featuredTitle: 'IntelliForge SR2R',
     featuredDesc: 'Uma camada de controlo para uma proposta 10×.',
     seeCaseStudy: 'Ver case study',
-    decisionLabel: 'Como abordo o problema',
-    decisionSteps: [
-      { title: 'Contexto', question: 'O que está realmente a acontecer?' },
-      { title: 'Sinal', question: 'O que importa agora?' },
-      { title: 'Decisão', question: 'O que deve mudar?' },
-      { title: 'Ação', question: 'O que a equipa pode executar?' },
-    ],
-    scaleStats: [
-      { value: '11', label: 'anos' },
-      { value: '4', label: 'estúdios' },
-      { value: '6', label: 'case studies publicadas' },
-    ],
     teasers: [
       {
         to: '/work', label: 'Trabalho', sub: '6 case studies publicadas, mais em curso',
@@ -118,18 +106,33 @@ const copy = {
 
 type Teaser = (typeof copy)['en']['teasers'][number]
 
+const heroTagIcons: Record<string, React.ReactNode> = {
+  pen: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>,
+  layers: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>,
+}
+
 const teaserIcons: Record<Teaser['to'], React.ReactNode> = {
-  '/work': <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>,
-  '/journey': <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="19" cy="9" r="2"/><path d="M5 8v4a3 3 0 0 0 3 3h2"/><path d="M14 17l3-3a3 3 0 0 0 .9-2.1V10"/></svg>,
-  '/about': <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.5 19a5.5 5.5 0 0 1 11 0"/></svg>,
+  '/work': <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><rect x="14" y="14" width="7" height="7" rx="1.2"/></svg>,
+  '/journey': <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="19" cy="9" r="2"/><path d="M5 8v4a3 3 0 0 0 3 3h2"/><path d="M14 17l3-3a3 3 0 0 0 .9-2.1V10"/></svg>,
+  '/about': <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.5 19a5.5 5.5 0 0 1 11 0"/></svg>,
+}
+
+const teaserTheme: Record<Teaser['to'], { base: string; glow: string }> = {
+  '/work': { base: '#F9F8FC', glow: '#F0845F' },
+  '/journey': { base: '#F6FAF9', glow: '#4FBF93' },
+  '/about': { base: '#F6F7FC', glow: '#6E86D6' },
+}
+
+const teaserTilts: Record<Teaser['to'], number> = {
+  '/work': -3,
+  '/journey': 2,
+  '/about': -2,
 }
 
 export default function Portfolio() {
   const { lang } = useLanguage()
   const t = copy[lang as Lang]
-  const decision = useFadeIn()
   const preview = useFadeIn()
-  const scale = useFadeIn()
   const teasers = useFadeIn()
   const contact = useFadeIn()
 
@@ -142,10 +145,31 @@ export default function Portfolio() {
         <div style={{ position: 'absolute', top: -180, left: -160, width: 620, height: 620, borderRadius: '50%', background: 'radial-gradient(circle, rgba(168,191,255,0.35), rgba(220,232,255,0.1) 60%, transparent 75%)', filter: 'blur(60px)', animation: 'driftA 22s var(--ease-in-out) infinite' }} />
         <div style={{ position: 'absolute', top: -60, right: -220, width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle, rgba(200,216,255,0.22), rgba(242,246,255,0.08) 60%, transparent 75%)', filter: 'blur(70px)', animation: 'driftB 26s var(--ease-in-out) infinite' }} />
 
+        {/* geometric accents */}
+        <div className="hero-accent" style={{ top: 140, left: '7%', width: 14, height: 14, background: '#3D63E0', borderRadius: 4, transform: 'rotate(45deg)', opacity: 0.5, animation: 'floatSlow 7s ease-in-out infinite' }} />
+        <div className="hero-accent" style={{ top: 100, right: '10%', width: 8, height: 8, background: '#002FA7', borderRadius: '50%', opacity: 0.4, animation: 'floatSlow 9s ease-in-out infinite 1s' }} />
+        <div className="hero-accent" style={{ bottom: 70, left: '12%', width: 10, height: 10, border: '2px solid #3D63E0', borderRadius: '50%', opacity: 0.45, animation: 'floatSlow 8s ease-in-out infinite 0.5s' }} />
+
+        {/* floating labels — glass chips, not buttons */}
+        <div className="hero-float" style={{ top: 190, left: '4%', animation: 'floatSlow 8s ease-in-out infinite' }}>
+          <span className="hero-float-icon">{heroTagIcons[t.heroTags[0].icon]}</span>
+          <span>
+            <span className="hero-float-label">{t.heroTags[0].label}</span>
+            <span className="hero-float-caption">{t.heroTags[0].caption}</span>
+          </span>
+        </div>
+        <div className="hero-float" style={{ bottom: 40, right: '5%', animation: 'floatSlow 9s ease-in-out infinite 0.8s' }}>
+          <span className="hero-float-icon">{heroTagIcons[t.heroTags[1].icon]}</span>
+          <span>
+            <span className="hero-float-label">{t.heroTags[1].label}</span>
+            <span className="hero-float-caption">{t.heroTags[1].caption}</span>
+          </span>
+        </div>
+
         <div style={{ position: 'relative', maxWidth: 920, margin: '0 auto', textAlign: 'center', padding: '0 32px 32px' }}>
           <div className="hero-reveal" style={{ transitionDelay: '0ms', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 24 }}>{t.role}</div>
           <h1 className="hero-reveal" style={{ transitionDelay: '60ms', fontSize: 'clamp(42px,6.6vw,78px)', lineHeight: 1.06, fontWeight: 900, letterSpacing: '-0.04em', color: '#12141F', margin: '0 0 28px' }}>
-            {t.titleLine1}<br />{t.titleLine2}
+            {t.titleLine1}<br />{t.titleLine2Pre}<span className="hero-highlight">{t.titleLine2Highlight}</span>{t.titleLine2Post}
           </h1>
           <p className="hero-reveal" style={{ transitionDelay: '120ms', fontSize: 20, lineHeight: 1.6, fontWeight: 400, color: '#5A5F73', maxWidth: 600, margin: '0 auto 44px' }}>
             {t.subtitle}
@@ -161,26 +185,8 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* DECISION LAYER DIAGRAM */}
-      <div ref={decision.ref} style={{ position: 'relative', padding: '0 32px 64px', maxWidth: 900, margin: '0 auto', ...decision.style }}>
-        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8A8FA3', textAlign: 'center', marginBottom: 20 }}>{t.decisionLabel}</div>
-        <div className="decision-grid">
-          {t.decisionSteps.map(({ title, question }, i) => (
-            <Fragment key={title}>
-              <div className="decision-card">
-                <div style={{ fontSize: 15, fontWeight: 700, color: '#001A5C' }}>{title}</div>
-                <div className="decision-reveal" style={{ fontSize: 13, lineHeight: 1.4, color: '#5A5F73' }}>{question}</div>
-              </div>
-              {i < t.decisionSteps.length - 1 && (
-                <div className="decision-arrow"><ChevronRight size={16} /></div>
-              )}
-            </Fragment>
-          ))}
-        </div>
-      </div>
-
       {/* FEATURED WORK PREVIEW */}
-      <div ref={preview.ref} style={{ position: 'relative', padding: '24px 32px 64px', maxWidth: 1200, margin: '0 auto', ...preview.style }}>
+      <div ref={preview.ref} style={{ position: 'relative', padding: '24px 32px 96px', maxWidth: 1200, margin: '0 auto', ...preview.style }}>
         <div className="rg-featured">
           <div>
             <div style={{ fontSize: 14, fontWeight: 500, color: '#6B7086', marginBottom: 6 }}>{t.featuredLabel}</div>
@@ -197,30 +203,47 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* SCALE PROOF BAND */}
-      <div ref={scale.ref} style={{ position: 'relative', padding: '0 32px 64px', maxWidth: 1200, margin: '0 auto', ...scale.style }}>
-        <div className="scale-band">
-          {t.scaleStats.map(({ value, label }) => (
-            <div key={label} className="scale-stat">
-              <div style={{ fontSize: 28, fontWeight: 800, color: '#001A5C', letterSpacing: '-0.02em' }}>{value}</div>
-              <div style={{ fontSize: 13, color: '#8A8FA3' }}>{label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* AREA TEASERS */}
-      <div ref={teasers.ref} style={{ position: 'relative', padding: '20px 32px 32px', maxWidth: 1200, margin: '0 auto', ...teasers.style }}>
+      <div ref={teasers.ref} style={{ position: 'relative', padding: '20px 32px 32px', maxWidth: 1200, margin: '0 auto' }}>
         <div className="rg-teasers">
-          {t.teasers.map(({ to, label, sub, desc, cta }) => (
-            <Link key={to} to={to} className="teaser-card interactive-card" style={{ display: 'block', background: '#FFFFFF', padding: '32px 28px', borderRadius: 16, border: '1px solid #E9EBF2', boxShadow: '0 1px 2px rgba(18,20,31,0.03)', textDecoration: 'none', transition: 'box-shadow 180ms ease-out, transform 180ms ease-out' }}>
-              <div style={{ marginBottom: 16 }}>{teaserIcons[to]}</div>
-              <div style={{ fontSize: 12, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 12 }}>{label}</div>
-              <div style={{ fontSize: 13, color: '#8A8FA3', marginBottom: 10 }}>{sub}</div>
-              <p style={{ fontSize: 16, lineHeight: 1.6, color: '#4A4F63', margin: '0 0 16px' }}>{desc}</p>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 4, fontSize: 14, fontWeight: 600, color: '#3D63E0' }}>{cta}<ChevronRight size={15} /></div>
-            </Link>
-          ))}
+          {t.teasers.map(({ to, label, sub, desc, cta }, i) => {
+            const tilt = teaserTilts[to]
+            return (
+              <div
+                key={to}
+                className="teaser-reveal"
+                style={{
+                  ['--tilt' as string]: `${tilt}deg`,
+                  opacity: teasers.visible ? 1 : 0,
+                  transform: teasers.visible
+                    ? 'rotate(var(--tilt))'
+                    : 'translateY(28px) rotate(calc(var(--tilt) * 3)) scale(0.97)',
+                  transitionDelay: `${i * 70}ms`,
+                } as React.CSSProperties}
+              >
+                <Link
+                  to={to}
+                  className="teaser-card-v3"
+                  style={{ background: teaserTheme[to].base }}
+                  aria-label={`${label} — ${sub}. ${desc}`}
+                >
+                  <div className="teaser-glow" style={{ background: teaserTheme[to].glow }} />
+                  <div className="teaser-grain" />
+                  <div className="teaser-icon-big">{teaserIcons[to]}</div>
+                  <div className="teaser-label-v3" aria-hidden="true">{label}</div>
+                  <div className="teaser-flip" aria-hidden="true">
+                    <div className="teaser-face teaser-face-front">
+                      <div className="teaser-sub-v3">{sub}</div>
+                    </div>
+                    <div className="teaser-face teaser-face-back">
+                      <p className="teaser-desc-v3">{desc}</p>
+                    </div>
+                  </div>
+                  <div className="teaser-cta-link" aria-hidden="true">{cta}<ChevronRight size={15} /></div>
+                </Link>
+              </div>
+            )
+          })}
         </div>
       </div>
 
