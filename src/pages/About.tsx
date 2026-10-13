@@ -20,11 +20,11 @@ const sectionTitle = { fontSize: 22, fontWeight: 800, letterSpacing: '-0.01em', 
 
 const PHILOSOPHY_ANGLES = [-90, -18, 54, 126, 198]
 
-function PhilosophyFlower({ label, hovered, onHover }: { label: [string, string]; hovered: number | null; onHover: (i: number | null) => void }) {
+function PhilosophyFlower({ label, hovered, onHover, size = 340 }: { label: [string, string]; hovered: number | null; onHover: (i: number | null) => void; size?: number }) {
   const cx = 180, cy = 180, R = 96, d = 74
   const order = [...PHILOSOPHY_ANGLES.map((_, i) => i)].sort((a, b) => (a === hovered ? 1 : b === hovered ? -1 : 0))
   return (
-    <svg viewBox="0 0 360 360" width={260} height={260} style={{ flexShrink: 0, overflow: 'visible' }}>
+    <svg viewBox="0 0 360 360" width={size} height={size} style={{ flexShrink: 0, overflow: 'visible' }}>
       <defs>
         <filter id="philosophy-center-shadow" x="-60%" y="-60%" width="220%" height="220%">
           <feDropShadow dx="0" dy="4" stdDeviation="7" floodColor="rgba(20,30,60,0.22)" />
@@ -124,7 +124,6 @@ const copy = {
     skills: ['Product Design', 'UX Research', 'Design Systems', 'Accessibility', 'Strategy', 'Leadership', 'Visual Design', 'AI for Designers'],
     methodologiesLabel: 'Methodologies:',
     methodologies: 'Agile, Lean, Scrum, Waterfall, Design Thinking',
-    philosophyEyebrow: 'Design Philosophy',
     philosophyLabel: ['DESIGN', 'PHILOSOPHY'] as [string, string],
     philosophyItems: [
       { n: '01', text: 'Clarity over decoration.' },
@@ -213,7 +212,6 @@ const copy = {
     skills: ['Design de Produto', 'Investigação UX', 'Design Systems', 'Acessibilidade', 'Estratégia', 'Liderança', 'Design Visual', 'IA para Designers'],
     methodologiesLabel: 'Metodologias:',
     methodologies: 'Agile, Lean, Scrum, Waterfall, Design Thinking',
-    philosophyEyebrow: 'Filosofia de Design',
     philosophyLabel: ['FILOSOFIA', 'DE DESIGN'] as [string, string],
     philosophyItems: [
       { n: '01', text: 'Clareza antes da decoração.' },
@@ -311,22 +309,20 @@ export default function About() {
 
         <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', margin: '56px 0' }}>⸻</div>
 
-        <div style={eyebrowStandalone}>{t.philosophyEyebrow}</div>
         <div className="philosophy-layout">
           <PhilosophyFlower label={t.philosophyLabel} hovered={philosophyHover} onHover={setPhilosophyHover} />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flex: '1 1 360px', minWidth: 0 }}>
+          <div className="philosophy-list">
             {t.philosophyItems.map(({ n, text }, i) => {
               const isHovered = philosophyHover === i
               return (
                 <div
                   key={n}
+                  className="philosophy-row"
                   onMouseEnter={() => setPhilosophyHover(i)}
                   onMouseLeave={() => setPhilosophyHover(null)}
                   style={{
-                    display: 'flex', alignItems: 'center', gap: 20, padding: '20px 24px', borderRadius: 14, cursor: 'default',
                     background: isHovered ? 'rgba(61,99,224,0.12)' : 'rgba(0,47,167,0.05)',
                     boxShadow: isHovered ? '0 6px 18px rgba(20,30,60,0.08)' : 'none',
-                    transition: 'background-color 160ms ease, box-shadow 160ms ease',
                   }}
                 >
                   <div style={{ fontSize: 13, fontWeight: 600, color: '#001A5C', minWidth: 24, flexShrink: 0 }}>{n}</div>

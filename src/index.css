@@ -426,8 +426,29 @@ input::placeholder { color: #A0A4B8; }
   max-width: 960px;
   margin: 0 auto;
 }
+.philosophy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 0 1 auto;
+  width: fit-content;
+  max-width: 100%;
+  min-width: 0;
+}
+.philosophy-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 24px;
+  border-radius: 14px;
+  cursor: default;
+  white-space: nowrap;
+  transition: background-color 160ms ease, box-shadow 160ms ease;
+}
 @media (max-width: 768px) {
   .philosophy-layout { flex-direction: column; }
+  .philosophy-list { width: 100%; }
+  .philosophy-row { white-space: normal; }
 }
 
 /* ── Responsive grids ── */
