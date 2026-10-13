@@ -13,6 +13,11 @@ import ixdfLogo from '../imports/logos/ixdf.png'
 const thumb = { width: 48, height: 48, borderRadius: 8, flexShrink: 0, background: '#F7FAFF', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' } as const
 const thumbImg = { width: '70%', height: '70%', objectFit: 'contain' } as const
 
+const eyebrow = { fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C' } as const
+const eyebrowWithTitle = { ...eyebrow, marginBottom: 12 } as const
+const eyebrowStandalone = { ...eyebrow, marginBottom: 20 } as const
+const sectionTitle = { fontSize: 22, fontWeight: 800, letterSpacing: '-0.01em', color: '#12141F', margin: '0 0 24px' } as const
+
 const PHILOSOPHY_ANGLES = [-90, -18, 54, 126, 198]
 
 function PhilosophyFlower({ label, hovered, onHover }: { label: [string, string]; hovered: number | null; onHover: (i: number | null) => void }) {
@@ -281,7 +286,7 @@ export default function About() {
 
       {/* ── ABOUT BIO ── */}
       <div style={{ position: 'relative', padding: 'clamp(100px,15vw,150px) 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 32 }}>{t.eyebrow}</div>
+        <div style={{ ...eyebrow, marginBottom: 32 }}>{t.eyebrow}</div>
 
         <div style={{ display: 'flex', gap: 48, flexWrap: 'wrap', alignItems: 'flex-start' }}>
           <div style={{ flex: '1 1 320px', minWidth: 0 }}>
@@ -297,7 +302,7 @@ export default function About() {
 
         <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', margin: '56px 0' }}>⸻</div>
 
-        <h3 style={{ fontSize: 22, fontWeight: 800, letterSpacing: '-0.01em', color: '#12141F', margin: '0 0 24px' }}>{t.howIThinkTitle}</h3>
+        <h2 style={sectionTitle}>{t.howIThinkTitle}</h2>
         <div style={{ columns: '2 340px', columnGap: 48 }}>
           {t.howIThink.map((p, i) => (
             <p key={i} style={{ fontSize: 17, lineHeight: 1.75, color: '#4A4F63', margin: i === t.howIThink.length - 1 ? 0 : '0 0 20px' }}>{p}</p>
@@ -306,7 +311,7 @@ export default function About() {
 
         <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', margin: '56px 0' }}>⸻</div>
 
-        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 24, textAlign: 'center' }}>{t.philosophyEyebrow}</div>
+        <div style={eyebrowStandalone}>{t.philosophyEyebrow}</div>
         <div className="philosophy-layout">
           <PhilosophyFlower label={t.philosophyLabel} hovered={philosophyHover} onHover={setPhilosophyHover} />
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flex: '1 1 360px', minWidth: 0 }}>
@@ -341,7 +346,7 @@ export default function About() {
 
         <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', margin: '56px 0' }}>⸻</div>
 
-        <h3 style={{ fontSize: 22, fontWeight: 800, letterSpacing: '-0.01em', color: '#12141F', margin: '0 0 24px' }}>{t.beyondTitle}</h3>
+        <h2 style={sectionTitle}>{t.beyondTitle}</h2>
         <div style={{ columns: '2 300px', columnGap: 40 }}>
           {t.beyond.map((p, i) => (
             <p key={i} style={{ fontSize: 17, lineHeight: 1.75, color: '#4A4F63', margin: i === t.beyond.length - 1 ? 0 : '0 0 20px' }}>{p}</p>
@@ -355,8 +360,8 @@ export default function About() {
 
       {/* ── SKILLS ── */}
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 12 }}>{t.skillsEyebrow}</div>
-        <h2 style={{ fontSize: 22, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 24px' }}>{t.skillsTitle}</h2>
+        <div style={eyebrowWithTitle}>{t.skillsEyebrow}</div>
+        <h2 style={sectionTitle}>{t.skillsTitle}</h2>
         <div className="skills-marquee">
           <div className="skills-marquee-track">
             <div className="skills-marquee-group">
@@ -374,8 +379,8 @@ export default function About() {
 
       {/* ── HOW I WORK ── */}
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 12, textAlign: 'center' }}>{t.howIWorkEyebrow}</div>
-        <h2 style={{ fontSize: 22, fontWeight: 800, letterSpacing: '-0.01em', color: '#12141F', margin: '0 0 32px', textAlign: 'center' }}>{t.howIWorkTitle}</h2>
+        <div style={eyebrowWithTitle}>{t.howIWorkEyebrow}</div>
+        <h2 style={sectionTitle}>{t.howIWorkTitle}</h2>
         <div className="rg-phase">
           {t.workPhases.map(phase => {
             const isOpen = !!expanded[phase.id]
@@ -413,7 +418,7 @@ export default function About() {
 
       {/* ── EDUCATION ── */}
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 20 }}>{t.educationEyebrow}</div>
+        <div style={eyebrowStandalone}>{t.educationEyebrow}</div>
         <div className="rg-edu" style={{ marginBottom: 60 }}>
           {education.map(({ degreeKey, school, logo }) => (
             <div key={degreeKey} style={{ display: 'flex', alignItems: 'center', gap: 14, border: '1px solid #EAF1FF', borderRadius: 12, padding: 22, background: '#FFFFFF', boxShadow: '0 4px 12px rgba(20,30,60,0.04)' }}>
@@ -427,7 +432,7 @@ export default function About() {
         </div>
 
         {/* CERTIFICATIONS */}
-        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 20 }}>{t.certificationsEyebrow}</div>
+        <div style={eyebrowStandalone}>{t.certificationsEyebrow}</div>
         <div className="cert-marquee">
           <div className="cert-marquee-track">
             {[0, 1].map(dup => (
