@@ -365,7 +365,7 @@ export default function About() {
                   }}
                 >
                   <div style={{ fontSize: 13, fontWeight: 600, color: '#001A5C', minWidth: 24, flexShrink: 0 }}>{n}</div>
-                  <div style={{ fontSize: 'clamp(17px,2.2vw,22px)', fontWeight: 700, letterSpacing: '-0.01em', color: '#12141F' }}>{text}</div>
+                  <div style={{ fontSize: 15, fontWeight: 600, color: '#12141F' }}>{text}</div>
                 </div>
               )
             })}
