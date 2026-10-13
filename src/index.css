@@ -430,19 +430,6 @@ input::placeholder { color: #A0A4B8; }
   z-index: 0;
 }
 
-.teaser-icon-big {
-  position: absolute;
-  right: -26px;
-  bottom: -20px;
-  width: 160px;
-  height: 160px;
-  color: rgba(255, 255, 255, 0.85);
-  opacity: 1;
-  transform: rotate(-8deg);
-  pointer-events: none;
-  z-index: 0;
-}
-
 .teaser-label-v3 {
   position: relative;
   z-index: 1;
@@ -519,7 +506,6 @@ input::placeholder { color: #A0A4B8; }
 
 @media (max-width: 640px) {
   .teaser-card-v3 { min-height: 250px; padding: 24px; }
-  .teaser-icon-big { width: 130px; height: 130px; }
 }
 
 .rg-mods  { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }

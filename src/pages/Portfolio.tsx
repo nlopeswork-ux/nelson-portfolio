@@ -111,12 +111,6 @@ const heroTagIcons: Record<string, React.ReactNode> = {
   layers: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>,
 }
 
-const teaserIcons: Record<Teaser['to'], React.ReactNode> = {
-  '/work': <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><rect x="14" y="14" width="7" height="7" rx="1.2"/></svg>,
-  '/journey': <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><circle cx="5" cy="6" r="2"/><circle cx="12" cy="18" r="2"/><circle cx="19" cy="9" r="2"/><path d="M5 8v4a3 3 0 0 0 3 3h2"/><path d="M14 17l3-3a3 3 0 0 0 .9-2.1V10"/></svg>,
-  '/about': <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="10" r="3"/><path d="M6.5 19a5.5 5.5 0 0 1 11 0"/></svg>,
-}
-
 const teaserTheme: Record<Teaser['to'], { base: string; glow: string }> = {
   '/work': { base: '#F9F8FC', glow: '#F0845F' },
   '/journey': { base: '#F6FAF9', glow: '#4FBF93' },
@@ -229,7 +223,6 @@ export default function Portfolio() {
                 >
                   <div className="teaser-glow" style={{ background: teaserTheme[to].glow }} />
                   <div className="teaser-grain" />
-                  <div className="teaser-icon-big">{teaserIcons[to]}</div>
                   <div className="teaser-label-v3" aria-hidden="true">{label}</div>
                   <div className="teaser-flip" aria-hidden="true">
                     <div className="teaser-face teaser-face-front">
