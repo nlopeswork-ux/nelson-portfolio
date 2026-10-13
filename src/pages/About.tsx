@@ -15,23 +15,58 @@ const thumbImg = { width: '70%', height: '70%', objectFit: 'contain' } as const
 
 const PHILOSOPHY_ANGLES = [-90, -18, 54, 126, 198]
 
-function PhilosophyFlower({ label }: { label: [string, string] }) {
-  const cx = 160, cy = 160, R = 108, d = 82
+function PhilosophyFlower({ label, hovered, onHover }: { label: [string, string]; hovered: number | null; onHover: (i: number | null) => void }) {
+  const cx = 180, cy = 180, R = 96, d = 74
+  const order = [...PHILOSOPHY_ANGLES.map((_, i) => i)].sort((a, b) => (a === hovered ? 1 : b === hovered ? -1 : 0))
   return (
-    <svg viewBox="0 0 320 320" width={260} height={260} style={{ flexShrink: 0 }}>
+    <svg viewBox="0 0 360 360" width={260} height={260} style={{ flexShrink: 0, overflow: 'visible' }}>
+      <defs>
+        <filter id="philosophy-center-shadow" x="-60%" y="-60%" width="220%" height="220%">
+          <feDropShadow dx="0" dy="4" stdDeviation="7" floodColor="rgba(20,30,60,0.22)" />
+        </filter>
+      </defs>
       <g style={{ mixBlendMode: 'multiply' }}>
-        {PHILOSOPHY_ANGLES.map((deg, i) => {
-          const rad = (deg * Math.PI) / 180
-          return <circle key={i} cx={cx + d * Math.cos(rad)} cy={cy + d * Math.sin(rad)} r={R} fill="rgba(61,99,224,0.14)" stroke="#9FB4F2" strokeWidth={1} />
+        {order.map(i => {
+          const rad = (PHILOSOPHY_ANGLES[i] * Math.PI) / 180
+          const isHovered = hovered === i
+          return (
+            <circle
+              key={i}
+              cx={cx + d * Math.cos(rad)}
+              cy={cy + d * Math.sin(rad)}
+              r={R}
+              fill={isHovered ? 'rgba(61,99,224,0.34)' : 'rgba(61,99,224,0.14)'}
+              stroke={isHovered ? '#3D63E0' : '#9FB4F2'}
+              strokeWidth={isHovered ? 2 : 1}
+              style={{ cursor: 'pointer', transition: 'fill 160ms ease, stroke 160ms ease, stroke-width 160ms ease' }}
+              onMouseEnter={() => onHover(i)}
+              onMouseLeave={() => onHover(null)}
+            />
+          )
         })}
       </g>
-      <circle cx={cx} cy={cy} r={74} fill="#EEF2FF" stroke="#9FB4F2" strokeWidth={1} />
-      <text x={cx} y={cy - 6} textAnchor="middle" fontSize={15} fontWeight={800} fill="#001A5C" fontFamily="Inter, sans-serif">{label[0]}</text>
-      <text x={cx} y={cy + 14} textAnchor="middle" fontSize={15} fontWeight={800} fill="#001A5C" fontFamily="Inter, sans-serif">{label[1]}</text>
+      <circle cx={cx} cy={cy} r={66} fill="#FFFFFF" stroke="#DCE4F9" strokeWidth={1.5} filter="url(#philosophy-center-shadow)" style={{ pointerEvents: 'none' }} />
+      <text x={cx} y={cy - 6} textAnchor="middle" fontSize={14} fontWeight={800} fill="#001A5C" fontFamily="Inter, sans-serif" style={{ pointerEvents: 'none' }}>{label[0]}</text>
+      <text x={cx} y={cy + 13} textAnchor="middle" fontSize={14} fontWeight={800} fill="#001A5C" fontFamily="Inter, sans-serif" style={{ pointerEvents: 'none' }}>{label[1]}</text>
       {PHILOSOPHY_ANGLES.map((deg, i) => {
         const rad = (deg * Math.PI) / 180
-        const nd = d + R * 0.42
-        return <text key={i} x={cx + nd * Math.cos(rad)} y={cy + nd * Math.sin(rad) + 5} textAnchor="middle" fontSize={13} fontWeight={700} fill="#001A5C" fontFamily="Inter, sans-serif">{String(i + 1).padStart(2, '0')}</text>
+        const nd = d + R * 0.46
+        const isHovered = hovered === i
+        return (
+          <text
+            key={i}
+            x={cx + nd * Math.cos(rad)}
+            y={cy + nd * Math.sin(rad) + 5}
+            textAnchor="middle"
+            fontSize={isHovered ? 14 : 13}
+            fontWeight={800}
+            fill="#001A5C"
+            fontFamily="Inter, sans-serif"
+            style={{ pointerEvents: 'none', transition: 'font-size 160ms ease' }}
+          >
+            {String(i + 1).padStart(2, '0')}
+          </text>
+        )
       })}
     </svg>
   )
@@ -236,6 +271,7 @@ export default function About() {
   const { lang } = useLanguage()
   const t = copy[lang]
   const [expanded, setExpanded] = useState<Record<string, boolean>>({})
+  const [philosophyHover, setPhilosophyHover] = useState<number | null>(null)
 
   const toggle = (id: string) => setExpanded(e => ({ ...e, [id]: !e[id] }))
 
@@ -312,14 +348,27 @@ export default function About() {
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
         <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 24, textAlign: 'center' }}>{t.philosophyEyebrow}</div>
         <div className="philosophy-layout">
-          <PhilosophyFlower label={t.philosophyLabel} />
+          <PhilosophyFlower label={t.philosophyLabel} hovered={philosophyHover} onHover={setPhilosophyHover} />
           <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flex: '1 1 360px', minWidth: 0 }}>
-            {t.philosophyItems.map(({ n, text }) => (
-              <div key={n} style={{ display: 'flex', alignItems: 'center', gap: 20, padding: '20px 24px', background: 'rgba(0,47,167,0.05)', borderRadius: 14 }}>
-                <div style={{ fontSize: 13, fontWeight: 600, color: '#001A5C', minWidth: 24, flexShrink: 0 }}>{n}</div>
-                <div style={{ fontSize: 'clamp(17px,2.2vw,22px)', fontWeight: 700, letterSpacing: '-0.01em', color: '#12141F' }}>{text}</div>
-              </div>
-            ))}
+            {t.philosophyItems.map(({ n, text }, i) => {
+              const isHovered = philosophyHover === i
+              return (
+                <div
+                  key={n}
+                  onMouseEnter={() => setPhilosophyHover(i)}
+                  onMouseLeave={() => setPhilosophyHover(null)}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 20, padding: '20px 24px', borderRadius: 14, cursor: 'default',
+                    background: isHovered ? 'rgba(61,99,224,0.12)' : 'rgba(0,47,167,0.05)',
+                    boxShadow: isHovered ? '0 6px 18px rgba(20,30,60,0.08)' : 'none',
+                    transition: 'background-color 160ms ease, box-shadow 160ms ease',
+                  }}
+                >
+                  <div style={{ fontSize: 13, fontWeight: 600, color: '#001A5C', minWidth: 24, flexShrink: 0 }}>{n}</div>
+                  <div style={{ fontSize: 'clamp(17px,2.2vw,22px)', fontWeight: 700, letterSpacing: '-0.01em', color: '#12141F' }}>{text}</div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
