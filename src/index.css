@@ -418,6 +418,18 @@ input::placeholder { color: #A0A4B8; }
   .cert-card { width: 260px; }
 }
 
+/* ── Design philosophy flower + list (About page) ── */
+.philosophy-layout {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+@media (max-width: 768px) {
+  .philosophy-layout { flex-direction: column; }
+}
+
 /* ── Responsive grids ── */
 .rg-meta  { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .rg-stats { display: grid; grid-template-columns: repeat(var(--stat-cols, 3), 1fr); gap: 20px; }

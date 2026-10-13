@@ -13,6 +13,30 @@ import ixdfLogo from '../imports/logos/ixdf.png'
 const thumb = { width: 48, height: 48, borderRadius: 8, flexShrink: 0, background: '#F7FAFF', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' } as const
 const thumbImg = { width: '70%', height: '70%', objectFit: 'contain' } as const
 
+const PHILOSOPHY_ANGLES = [-90, -18, 54, 126, 198]
+
+function PhilosophyFlower({ label }: { label: [string, string] }) {
+  const cx = 160, cy = 160, R = 108, d = 82
+  return (
+    <svg viewBox="0 0 320 320" width={260} height={260} style={{ flexShrink: 0 }}>
+      <g style={{ mixBlendMode: 'multiply' }}>
+        {PHILOSOPHY_ANGLES.map((deg, i) => {
+          const rad = (deg * Math.PI) / 180
+          return <circle key={i} cx={cx + d * Math.cos(rad)} cy={cy + d * Math.sin(rad)} r={R} fill="rgba(61,99,224,0.14)" stroke="#9FB4F2" strokeWidth={1} />
+        })}
+      </g>
+      <circle cx={cx} cy={cy} r={74} fill="#EEF2FF" stroke="#9FB4F2" strokeWidth={1} />
+      <text x={cx} y={cy - 6} textAnchor="middle" fontSize={15} fontWeight={800} fill="#001A5C" fontFamily="Inter, sans-serif">{label[0]}</text>
+      <text x={cx} y={cy + 14} textAnchor="middle" fontSize={15} fontWeight={800} fill="#001A5C" fontFamily="Inter, sans-serif">{label[1]}</text>
+      {PHILOSOPHY_ANGLES.map((deg, i) => {
+        const rad = (deg * Math.PI) / 180
+        const nd = d + R * 0.42
+        return <text key={i} x={cx + nd * Math.cos(rad)} y={cy + nd * Math.sin(rad) + 5} textAnchor="middle" fontSize={13} fontWeight={700} fill="#001A5C" fontFamily="Inter, sans-serif">{String(i + 1).padStart(2, '0')}</text>
+      })}
+    </svg>
+  )
+}
+
 const education = [
   { degreeKey: 'master', school: 'IADE – Creative University · 2017–2019', logo: iadeLogo },
   { degreeKey: 'bachelorGraphic', school: 'ECV – École de Création Visuelle · 2016', logo: ecvLogo },
@@ -61,12 +85,13 @@ const copy = {
     methodologiesLabel: 'Methodologies:',
     methodologies: 'Agile, Lean, Scrum, Waterfall, Design Thinking',
     philosophyEyebrow: 'Design Philosophy',
+    philosophyLabel: ['DESIGN', 'PHILOSOPHY'] as [string, string],
     philosophyItems: [
       { n: '01', text: 'Clarity over decoration.' },
       { n: '02', text: 'Research before assumptions.' },
       { n: '03', text: 'Systems before screens.' },
       { n: '04', text: 'Accessibility by default.' },
-      { n: '05', text: 'Products should reduce complexity, not display it.', full: true },
+      { n: '05', text: 'Products should reduce complexity, not display it.' },
     ],
     howIWorkEyebrow: 'How I Work',
     howIWorkTitle: 'From discovery to a shipped decision',
@@ -149,12 +174,13 @@ const copy = {
     methodologiesLabel: 'Metodologias:',
     methodologies: 'Agile, Lean, Scrum, Waterfall, Design Thinking',
     philosophyEyebrow: 'Filosofia de Design',
+    philosophyLabel: ['FILOSOFIA', 'DE DESIGN'] as [string, string],
     philosophyItems: [
       { n: '01', text: 'Clareza antes da decoração.' },
       { n: '02', text: 'Investigação antes de suposições.' },
       { n: '03', text: 'Sistemas antes de ecrãs.' },
       { n: '04', text: 'Acessibilidade por omissão.' },
-      { n: '05', text: 'Os produtos devem reduzir a complexidade, não exibi-la.', full: true },
+      { n: '05', text: 'Os produtos devem reduzir a complexidade, não exibi-la.' },
     ],
     howIWorkEyebrow: 'Como Trabalho',
     howIWorkTitle: 'Da descoberta a uma decisão implementada',
@@ -285,13 +311,16 @@ export default function About() {
       {/* ── PHILOSOPHY ── */}
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
         <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 24, textAlign: 'center' }}>{t.philosophyEyebrow}</div>
-        <div className="rg-2" style={{ maxWidth: 900, margin: '0 auto' }}>
-          {t.philosophyItems.map(({ n, text, full }) => (
-            <div key={n} style={{ gridColumn: full ? '1 / -1' : undefined, display: 'flex', alignItems: 'center', gap: 20, padding: '20px 24px', background: 'rgba(0,47,167,0.05)', borderRadius: 14 }}>
-              <div style={{ fontSize: 13, fontWeight: 600, color: '#001A5C', minWidth: 24, flexShrink: 0 }}>{n}</div>
-              <div style={{ fontSize: 'clamp(17px,2.2vw,22px)', fontWeight: 700, letterSpacing: '-0.01em', color: '#12141F' }}>{text}</div>
-            </div>
-          ))}
+        <div className="philosophy-layout">
+          <PhilosophyFlower label={t.philosophyLabel} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flex: '1 1 360px', minWidth: 0 }}>
+            {t.philosophyItems.map(({ n, text }) => (
+              <div key={n} style={{ display: 'flex', alignItems: 'center', gap: 20, padding: '20px 24px', background: 'rgba(0,47,167,0.05)', borderRadius: 14 }}>
+                <div style={{ fontSize: 13, fontWeight: 600, color: '#001A5C', minWidth: 24, flexShrink: 0 }}>{n}</div>
+                <div style={{ fontSize: 'clamp(17px,2.2vw,22px)', fontWeight: 700, letterSpacing: '-0.01em', color: '#12141F' }}>{text}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
