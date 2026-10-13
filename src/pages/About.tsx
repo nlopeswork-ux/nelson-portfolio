@@ -306,6 +306,34 @@ export default function About() {
 
         <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', margin: '56px 0' }}>⸻</div>
 
+        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 24, textAlign: 'center' }}>{t.philosophyEyebrow}</div>
+        <div className="philosophy-layout">
+          <PhilosophyFlower label={t.philosophyLabel} hovered={philosophyHover} onHover={setPhilosophyHover} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flex: '1 1 360px', minWidth: 0 }}>
+            {t.philosophyItems.map(({ n, text }, i) => {
+              const isHovered = philosophyHover === i
+              return (
+                <div
+                  key={n}
+                  onMouseEnter={() => setPhilosophyHover(i)}
+                  onMouseLeave={() => setPhilosophyHover(null)}
+                  style={{
+                    display: 'flex', alignItems: 'center', gap: 20, padding: '20px 24px', borderRadius: 14, cursor: 'default',
+                    background: isHovered ? 'rgba(61,99,224,0.12)' : 'rgba(0,47,167,0.05)',
+                    boxShadow: isHovered ? '0 6px 18px rgba(20,30,60,0.08)' : 'none',
+                    transition: 'background-color 160ms ease, box-shadow 160ms ease',
+                  }}
+                >
+                  <div style={{ fontSize: 13, fontWeight: 600, color: '#001A5C', minWidth: 24, flexShrink: 0 }}>{n}</div>
+                  <div style={{ fontSize: 15, fontWeight: 600, color: '#12141F' }}>{text}</div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+
+        <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', margin: '56px 0' }}>⸻</div>
+
         <div style={{ textAlign: 'center', maxWidth: 900, margin: '0 auto', padding: '24px 0' }}>
           <div style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: 52, lineHeight: 1, color: '#001A5C', opacity: 0.35, marginBottom: 8 }}>"</div>
           <p style={{ fontFamily: "Georgia,'Times New Roman',serif", fontStyle: 'italic', fontSize: 'clamp(22px,3vw,34px)', lineHeight: 1.45, color: '#2A2F3A', margin: 0 }}>{t.pullQuote}</p>
@@ -342,35 +370,6 @@ export default function About() {
         <p style={{ marginTop: 16, fontSize: 14, color: '#5A5F73' }}>
           <span style={{ fontWeight: 600, color: '#12141F' }}>{t.methodologiesLabel}</span> {t.methodologies}
         </p>
-      </div>
-
-      {/* ── PHILOSOPHY ── */}
-      <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
-        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 24, textAlign: 'center' }}>{t.philosophyEyebrow}</div>
-        <div className="philosophy-layout">
-          <PhilosophyFlower label={t.philosophyLabel} hovered={philosophyHover} onHover={setPhilosophyHover} />
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 16, flex: '1 1 360px', minWidth: 0 }}>
-            {t.philosophyItems.map(({ n, text }, i) => {
-              const isHovered = philosophyHover === i
-              return (
-                <div
-                  key={n}
-                  onMouseEnter={() => setPhilosophyHover(i)}
-                  onMouseLeave={() => setPhilosophyHover(null)}
-                  style={{
-                    display: 'flex', alignItems: 'center', gap: 20, padding: '20px 24px', borderRadius: 14, cursor: 'default',
-                    background: isHovered ? 'rgba(61,99,224,0.12)' : 'rgba(0,47,167,0.05)',
-                    boxShadow: isHovered ? '0 6px 18px rgba(20,30,60,0.08)' : 'none',
-                    transition: 'background-color 160ms ease, box-shadow 160ms ease',
-                  }}
-                >
-                  <div style={{ fontSize: 13, fontWeight: 600, color: '#001A5C', minWidth: 24, flexShrink: 0 }}>{n}</div>
-                  <div style={{ fontSize: 15, fontWeight: 600, color: '#12141F' }}>{text}</div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
       </div>
 
       {/* ── HOW I WORK ── */}
