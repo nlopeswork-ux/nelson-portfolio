@@ -1,17 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import ChevronRight from '../components/ChevronRight'
 import ChevronDown from '../components/ChevronDown'
 import ChevronUp from '../components/ChevronUp'
-import ChevronLeft from '../components/ChevronLeft'
 import { useLanguage } from '../i18n/LanguageContext'
 import profileImg from '../imports/c6037aa9-14d7-4c26-9a01-4a3a2bb1cf8d.jpg'
 import iadeLogo from '../imports/logos/iade.png'
 import ecvLogo from '../imports/logos/ecv.png'
 import ixdfLogo from '../imports/logos/ixdf.png'
 
-const thumb = { width: 48, height: 48, borderRadius: 8, flexShrink: 0, background: '#F7FAFF', border: '1px solid #EAF1FF', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' } as const
+const thumb = { width: 48, height: 48, borderRadius: 8, flexShrink: 0, background: '#F7FAFF', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' } as const
 const thumbImg = { width: '70%', height: '70%', objectFit: 'contain' } as const
 
 const education = [
@@ -211,24 +210,8 @@ export default function About() {
   const { lang } = useLanguage()
   const t = copy[lang]
   const [expanded, setExpanded] = useState<Record<string, boolean>>({})
-  const [certIdx, setCertIdx] = useState(0)
-  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 640)
-
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 640px)')
-    const handler = (e: MediaQueryListEvent) => { setIsMobile(e.matches); setCertIdx(0) }
-    mq.addEventListener('change', handler)
-    setIsMobile(mq.matches)
-    return () => mq.removeEventListener('change', handler)
-  }, [])
-
-  const perSlide = isMobile ? 1 : 3
-  const certSlides = []
-  for (let i = 0; i < certifications.length; i += perSlide) certSlides.push(certifications.slice(i, i + perSlide))
 
   const toggle = (id: string) => setExpanded(e => ({ ...e, [id]: !e[id] }))
-  const certPrev = () => setCertIdx(i => (i - 1 + certSlides.length) % certSlides.length)
-  const certNext = () => setCertIdx(i => (i + 1) % certSlides.length)
 
   return (
     <div style={{ position: 'relative', overflow: 'hidden', background: '#FFFFFF', minHeight: '100vh' }}>
@@ -368,32 +351,21 @@ export default function About() {
 
         {/* CERTIFICATIONS */}
         <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 20 }}>{t.certificationsEyebrow}</div>
-        <div>
-          <div style={{ overflow: 'hidden' }}>
-            <div style={{ display: 'flex', transform: `translateX(${-certIdx * 100}%)`, transition: 'transform 420ms ease-out' }}>
-              {certSlides.map((slide, si) => (
-                <div key={si} className={isMobile ? undefined : 'carousel-3'} style={{ flex: '0 0 100%' }}>
-                  {slide.map(({ title, org, logo }) => (
-                    <div key={title} style={{ display: 'flex', alignItems: 'center', gap: 14, border: '1px solid #EAF1FF', borderRadius: 12, padding: 22, background: '#FFFFFF', boxShadow: '0 4px 12px rgba(20,30,60,0.04)' }}>
-                      <div style={thumb}><img src={logo} alt="" style={thumbImg} /></div>
-                      <div>
-                        <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', marginBottom: 4 }}>{title}</div>
-                        <div style={{ fontSize: 13, color: '#5A5F73' }}>{org}</div>
-                      </div>
+        <div className="cert-marquee">
+          <div className="cert-marquee-track">
+            {[0, 1].map(dup => (
+              <div className="cert-marquee-group" key={dup} aria-hidden={dup === 1}>
+                {certifications.map(({ title, org, logo }) => (
+                  <div key={title} className="cert-card">
+                    <div style={thumb}><img src={logo} alt="" style={thumbImg} /></div>
+                    <div>
+                      <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', marginBottom: 4 }}>{title}</div>
+                      <div style={{ fontSize: 13, color: '#5A5F73' }}>{org}</div>
                     </div>
-                  ))}
-                </div>
-              ))}
-            </div>
-          </div>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 20, marginTop: 20 }}>
-            <button type="button" aria-label={lang === 'pt' ? 'Anterior' : 'Previous'} className="carousel-arrow" onClick={certPrev}><ChevronLeft size={16} className="" /></button>
-            <div style={{ display: 'flex', gap: 8 }}>
-              {certSlides.map((_, i) => (
-                <button key={i} type="button" onClick={() => setCertIdx(i)} style={{ cursor: 'pointer', width: 8, height: 8, borderRadius: '50%', background: i === certIdx ? '#3D63E0' : '#D8E0F5', border: 'none', padding: 0 }} />
-              ))}
-            </div>
-            <button type="button" aria-label={lang === 'pt' ? 'Seguinte' : 'Next'} className="carousel-arrow" onClick={certNext}><ChevronRight size={16} className="" /></button>
+                  </div>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
 

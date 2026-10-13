@@ -372,6 +372,50 @@ input::placeholder { color: #A0A4B8; }
   .skills-marquee-group:last-child { display: none; }
 }
 
+/* ── Certifications marquee (About page) ── */
+.cert-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
+}
+.cert-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: cert-marquee-scroll 36s linear infinite;
+}
+.cert-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 20px;
+  padding-right: 20px;
+}
+.cert-card {
+  flex-shrink: 0;
+  width: 320px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border-radius: 12px;
+  padding: 22px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 12px rgba(20, 30, 60, 0.04);
+}
+@keyframes cert-marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (hover: hover) and (pointer: fine) {
+  .cert-marquee:hover .cert-marquee-track { animation-play-state: paused; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cert-marquee-track { animation: none; width: 100%; flex-wrap: wrap; }
+  .cert-marquee-group { flex-wrap: wrap; }
+  .cert-marquee-group:last-child { display: none; }
+}
+@media (max-width: 640px) {
+  .cert-card { width: 260px; }
+}
+
 /* ── Responsive grids ── */
 .rg-meta  { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .rg-stats { display: grid; grid-template-columns: repeat(var(--stat-cols, 3), 1fr); gap: 20px; }
