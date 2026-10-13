@@ -375,6 +375,8 @@ input::placeholder { color: #A0A4B8; }
 /* ── Certifications marquee (About page) ── */
 .cert-marquee {
   overflow: hidden;
+  margin: -20px 0;
+  padding: 20px 0;
   -webkit-mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
   mask-image: linear-gradient(to right, transparent, #000 48px, #000 calc(100% - 48px), transparent);
 }
