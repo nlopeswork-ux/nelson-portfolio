@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { Fragment, useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import ChevronRight from '../components/ChevronRight'
@@ -33,6 +33,18 @@ const copy = {
     featuredTitle: 'IntelliForge SR2R',
     featuredDesc: 'A control layer for a 10× bid.',
     seeCaseStudy: 'See case study',
+    decisionLabel: 'How I approach it',
+    decisionSteps: [
+      { title: 'Context', question: 'What is actually happening?' },
+      { title: 'Signal', question: 'What matters now?' },
+      { title: 'Decision', question: 'What should change?' },
+      { title: 'Action', question: 'What can the team run?' },
+    ],
+    scaleStats: [
+      { value: '11', label: 'years' },
+      { value: '4', label: 'studios' },
+      { value: '6', label: 'case studies live' },
+    ],
     teasers: [
       {
         to: '/work', label: 'Work', sub: '6 case studies live, more in progress',
@@ -67,6 +79,18 @@ const copy = {
     featuredTitle: 'IntelliForge SR2R',
     featuredDesc: 'Uma camada de controlo para uma proposta 10×.',
     seeCaseStudy: 'Ver case study',
+    decisionLabel: 'Como abordo o problema',
+    decisionSteps: [
+      { title: 'Contexto', question: 'O que está realmente a acontecer?' },
+      { title: 'Sinal', question: 'O que importa agora?' },
+      { title: 'Decisão', question: 'O que deve mudar?' },
+      { title: 'Ação', question: 'O que a equipa pode executar?' },
+    ],
+    scaleStats: [
+      { value: '11', label: 'anos' },
+      { value: '4', label: 'estúdios' },
+      { value: '6', label: 'case studies publicadas' },
+    ],
     teasers: [
       {
         to: '/work', label: 'Trabalho', sub: '6 case studies publicadas, mais em curso',
@@ -103,7 +127,9 @@ const teaserIcons: Record<Teaser['to'], React.ReactNode> = {
 export default function Portfolio() {
   const { lang } = useLanguage()
   const t = copy[lang as Lang]
+  const decision = useFadeIn()
   const preview = useFadeIn()
+  const scale = useFadeIn()
   const teasers = useFadeIn()
   const contact = useFadeIn()
 
@@ -135,8 +161,26 @@ export default function Portfolio() {
         </div>
       </div>
 
+      {/* DECISION LAYER DIAGRAM */}
+      <div ref={decision.ref} style={{ position: 'relative', padding: '0 32px 64px', maxWidth: 900, margin: '0 auto', ...decision.style }}>
+        <div style={{ fontSize: 13, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#8A8FA3', textAlign: 'center', marginBottom: 20 }}>{t.decisionLabel}</div>
+        <div className="decision-grid">
+          {t.decisionSteps.map(({ title, question }, i) => (
+            <Fragment key={title}>
+              <div className="decision-card">
+                <div style={{ fontSize: 15, fontWeight: 700, color: '#001A5C' }}>{title}</div>
+                <div className="decision-reveal" style={{ fontSize: 13, lineHeight: 1.4, color: '#5A5F73' }}>{question}</div>
+              </div>
+              {i < t.decisionSteps.length - 1 && (
+                <div className="decision-arrow"><ChevronRight size={16} /></div>
+              )}
+            </Fragment>
+          ))}
+        </div>
+      </div>
+
       {/* FEATURED WORK PREVIEW */}
-      <div ref={preview.ref} style={{ position: 'relative', padding: '24px 32px 96px', maxWidth: 1200, margin: '0 auto', ...preview.style }}>
+      <div ref={preview.ref} style={{ position: 'relative', padding: '24px 32px 64px', maxWidth: 1200, margin: '0 auto', ...preview.style }}>
         <div className="rg-featured">
           <div>
             <div style={{ fontSize: 14, fontWeight: 500, color: '#6B7086', marginBottom: 6 }}>{t.featuredLabel}</div>
@@ -150,6 +194,18 @@ export default function Portfolio() {
             alt="IntelliForge SR2R desktop preview"
             style={{ width: '100%', height: 'auto', borderRadius: 16 }}
           />
+        </div>
+      </div>
+
+      {/* SCALE PROOF BAND */}
+      <div ref={scale.ref} style={{ position: 'relative', padding: '0 32px 64px', maxWidth: 1200, margin: '0 auto', ...scale.style }}>
+        <div className="scale-band">
+          {t.scaleStats.map(({ value, label }) => (
+            <div key={label} className="scale-stat">
+              <div style={{ fontSize: 28, fontWeight: 800, color: '#001A5C', letterSpacing: '-0.02em' }}>{value}</div>
+              <div style={{ fontSize: 13, color: '#8A8FA3' }}>{label}</div>
+            </div>
+          ))}
         </div>
       </div>
 
