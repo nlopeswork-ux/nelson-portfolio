@@ -77,6 +77,13 @@ function PhilosophyFlower({ label, hovered, onHover, size = 340 }: { label: [str
   )
 }
 
+const phaseTheme: Record<string, { base: string; glow: string }> = {
+  discover: { base: '#F9F8FC', glow: '#F0845F' },
+  define: { base: '#F6FAF9', glow: '#4FBF93' },
+  design: { base: '#F6F7FC', glow: '#6E86D6' },
+  deliver: { base: '#FBF8F2', glow: '#E8A33D' },
+}
+
 const education = [
   { degreeKey: 'master', school: 'IADE – Creative University · 2017–2019', logo: iadeLogo },
   { degreeKey: 'bachelorGraphic', school: 'ECV – École de Création Visuelle · 2016', logo: ecvLogo },
@@ -293,7 +300,7 @@ export default function About() {
             ))}
             <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>{t.bioNote}</p>
           </div>
-          <div style={{ flex: '0 0 auto', width: 'min(320px, 100%)', height: 480, borderRadius: 20, overflow: 'hidden', boxShadow: '0 20px 50px rgba(120,150,255,0.18)', background: '#F2F6FF' }}>
+          <div style={{ flex: '0 0 auto', width: 'min(320px, 100%)', height: 480, borderRadius: 20, overflow: 'hidden', boxShadow: '0 20px 50px rgba(120,150,255,0.18)', background: '#F2F6FF', animation: 'floatSlow 9s ease-in-out infinite' }}>
             <img src={profileImg} alt="Nelson Lopes" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
           </div>
         </div>
@@ -380,32 +387,36 @@ export default function About() {
         <div className="rg-phase">
           {t.workPhases.map(phase => {
             const isOpen = !!expanded[phase.id]
+            const theme = phaseTheme[phase.id]
             return (
-              <div key={phase.id} style={{ display: 'flex', flexDirection: 'column', height: '100%', border: '1px solid #EAF1FF', borderRadius: 16, padding: 24, background: '#FFFFFF', boxShadow: '0 4px 12px rgba(20,30,60,0.04)' }}>
-                <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#002FA7', marginBottom: 16, flexShrink: 0 }} />
-                <h3 style={{ fontSize: 17, fontWeight: 700, color: '#12141F', margin: '0 0 8px' }}>{phase.name}</h3>
-                <p style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73', margin: '0 0 12px' }}>{phase.description}</p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 16 }}>
-                  {phase.deliverables.map(d => (
-                    <div key={d} style={{ fontSize: 12, color: '#8A8FA3' }}>· {d}</div>
-                  ))}
-                </div>
-                <button
-                  type="button"
-                  aria-expanded={isOpen}
-                  className="engagement-toggle"
-                  onClick={() => toggle(phase.id)}
-                  style={{ marginTop: 'auto', alignSelf: 'flex-start' }}
-                >
-                  {isOpen ? <>{t.showLess}<ChevronUp size={14} /></> : <>{t.learnMore}<ChevronDown size={14} /></>}
-                </button>
-                {isOpen && (
-                  <div style={{ marginTop: 16, padding: 16, background: 'rgba(0,47,167,0.03)', borderRadius: 14, borderTop: '1px solid #EAF1FF' }}>
-                    <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4A4F63', margin: '0 0 10px' }}>{phase.detail}</p>
-                    <div style={{ fontSize: 13, fontWeight: 600, color: '#12141F', fontStyle: 'italic', margin: '0 0 10px' }}>"{phase.question}"</div>
-                    <Link to={phase.proof.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 13, fontWeight: 600, color: '#002FA7' }}>{phase.proof.label}<ChevronRight size={14} /></Link>
+              <div key={phase.id} className="phase-card-v3" style={{ background: theme.base }}>
+                <div className="teaser-glow" style={{ background: theme.glow }} />
+                <div className="teaser-grain" />
+                <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
+                  <h3 style={{ fontSize: 17, fontWeight: 700, color: '#12141F', margin: '0 0 8px' }}>{phase.name}</h3>
+                  <p style={{ fontSize: 14, lineHeight: 1.6, color: '#4A4F63', margin: '0 0 12px' }}>{phase.description}</p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 16 }}>
+                    {phase.deliverables.map(d => (
+                      <div key={d} style={{ fontSize: 12, color: '#6B7086' }}>· {d}</div>
+                    ))}
                   </div>
-                )}
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    className="engagement-toggle"
+                    onClick={() => toggle(phase.id)}
+                    style={{ marginTop: 'auto', alignSelf: 'flex-start', background: '#FFFFFF' }}
+                  >
+                    {isOpen ? <>{t.showLess}<ChevronUp size={14} /></> : <>{t.learnMore}<ChevronDown size={14} /></>}
+                  </button>
+                  {isOpen && (
+                    <div style={{ marginTop: 16, padding: 16, background: 'rgba(255,255,255,0.6)', borderRadius: 14, borderTop: '1px solid rgba(255,255,255,0.8)' }}>
+                      <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4A4F63', margin: '0 0 10px' }}>{phase.detail}</p>
+                      <div style={{ fontSize: 13, fontWeight: 600, color: '#12141F', fontStyle: 'italic', margin: '0 0 10px' }}>"{phase.question}"</div>
+                      <Link to={phase.proof.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 13, fontWeight: 600, color: '#002FA7' }}>{phase.proof.label}<ChevronRight size={14} /></Link>
+                    </div>
+                  )}
+                </div>
               </div>
             )
           })}
