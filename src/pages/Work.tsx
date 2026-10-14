@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import ChevronRight from '../components/ChevronRight'
 import ChevronLeft from '../components/ChevronLeft'
 import { useLanguage, type Lang } from '../i18n/LanguageContext'
@@ -167,7 +168,6 @@ const pageCopy = {
     subtitle: 'Selected engagements where the interface was only as good as the decisions built underneath it.',
     readFull: 'Read the full case study',
     moreInProgress: 'More case studies in progress',
-    copyright: '© 2026 Nelson Lopes. Designed with care.',
     filterLabel: 'Filter by category',
     scrollLeft: 'Scroll categories left',
     scrollRight: 'Scroll categories right',
@@ -178,7 +178,6 @@ const pageCopy = {
     subtitle: 'Colaborações selecionadas onde a interface só foi tão boa quanto as decisões construídas por trás dela.',
     readFull: 'Ver a case study completa',
     moreInProgress: 'Mais case studies em curso',
-    copyright: '© 2026 Nelson Lopes. Feito com cuidado.',
     filterLabel: 'Filtrar por categoria',
     scrollLeft: 'Deslocar categorias para a esquerda',
     scrollRight: 'Deslocar categorias para a direita',
@@ -279,7 +278,7 @@ export default function Work() {
         <span style={{ fontSize: 13, color: '#A0A4B8' }}>{p.moreInProgress}</span>
       </div>
 
-      <div style={{ textAlign: 'center', padding: '40px 32px', fontSize: 13, color: '#6B7086' }}>{p.copyright}</div>
+      <Footer />
     </div>
   )
 }

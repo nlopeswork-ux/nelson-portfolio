@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import { useLanguage } from '../i18n/LanguageContext'
 
 const copy = {
@@ -12,7 +13,6 @@ const copy = {
     linkedinLabel: 'LinkedIn',
     linkedinNote: 'Best for networking & mutual nosiness.',
     footerNote: "Usually replies within a coffee's brew ☕ — based in Lisbon, happy to work with anyone, anywhere.",
-    copyright: '© 2026 Nelson Lopes. Designed with care.',
   },
   pt: {
     eyebrow: 'Diz olá 👋',
@@ -23,7 +23,6 @@ const copy = {
     linkedinLabel: 'LinkedIn',
     linkedinNote: 'Ideal para networking e curiosidade mútua.',
     footerNote: 'Costumo responder no tempo de um café ☕ — vivo em Lisboa, disponível para trabalhar com qualquer pessoa, em qualquer lugar.',
-    copyright: '© 2026 Nelson Lopes. Feito com cuidado.',
   },
 }
 
@@ -82,7 +81,7 @@ export default function Contact() {
         <div style={{ textAlign: 'center', marginTop: 56, fontSize: 14, color: '#A0A4B8' }}>{t.footerNote}</div>
       </div>
 
-      <div style={{ textAlign: 'center', padding: '40px 32px', fontSize: 13, color: '#6B7086' }}>{t.copyright}</div>
+      <Footer />
     </div>
   )
 }

@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import ChevronDown from '../components/ChevronDown'
 import ChevronUp from '../components/ChevronUp'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -21,9 +22,8 @@ const copy = {
     title: 'From graphic design to product leadership',
     showEngagements: 'Show engagements',
     hideEngagements: 'Hide engagements',
-    copyright: '© 2026 Nelson Lopes. Designed with care.',
     roles: [
-      { period: '2023 — Present', title: 'Lead UX/UI Designer', company: 'KPMG', body: 'Took ownership of enterprise product design across multiple industries and regions, leading end-to-end digital products from discovery to delivery while shaping product strategy, design systems and scalable user experiences.' },
+      { period: '2023 — Present', title: 'Lead UX/UI Designer', company: 'KPMG Portugal', body: 'Took ownership of enterprise product design across multiple industries and regions, leading end-to-end digital products from discovery to delivery while shaping product strategy, design systems and scalable user experiences.' },
       { period: '2018 — 2023', title: 'Digital Designer', company: 'Deloitte Digital', body: 'Grew from delivering individual screens to owning end-to-end digital experiences for aviation, energy, automotive and insurance clients.' },
       { period: '2017 — 2018', title: 'Digital Designer', company: 'Wingman', body: 'First exposure to product thinking — designing for early-stage products where every decision had to earn its place.' },
       { period: 'Jan–Feb 2016', title: 'Trainee Motion Designer', company: 'Ogilvy', body: 'Short international placement focused on motion design fundamentals.' },
@@ -53,9 +53,8 @@ const copy = {
     title: 'Do design gráfico à liderança de produto',
     showEngagements: 'Mostrar colaborações',
     hideEngagements: 'Ocultar colaborações',
-    copyright: '© 2026 Nelson Lopes. Feito com cuidado.',
     roles: [
-      { period: '2023 — Presente', title: 'Lead UX/UI Designer', company: 'KPMG', body: 'Assumi a responsabilidade pelo design de produto empresarial em várias indústrias e regiões, liderando produtos digitais de ponta a ponta — da descoberta à entrega — enquanto moldava estratégia de produto, design systems e experiências escaláveis.' },
+      { period: '2023 — Presente', title: 'Lead UX/UI Designer', company: 'KPMG Portugal', body: 'Assumi a responsabilidade pelo design de produto empresarial em várias indústrias e regiões, liderando produtos digitais de ponta a ponta — da descoberta à entrega — enquanto moldava estratégia de produto, design systems e experiências escaláveis.' },
       { period: '2018 — 2023', title: 'Digital Designer', company: 'Deloitte Digital', body: 'Evoluí de entregar ecrãs individuais para ser responsável por experiências digitais completas para clientes de aviação, energia, automóvel e seguros.' },
       { period: '2017 — 2018', title: 'Digital Designer', company: 'Wingman', body: 'Primeiro contacto com pensamento de produto — a desenhar para produtos em fase inicial, onde cada decisão tinha de justificar o seu lugar.' },
       { period: 'Jan–Fev 2016', title: 'Trainee Motion Designer', company: 'Ogilvy', body: 'Estágio internacional de curta duração focado em fundamentos de motion design.' },
@@ -177,7 +176,7 @@ export default function Journey() {
         </div>
       </div>
 
-      <div style={{ textAlign: 'center', padding: '40px 32px', fontSize: 13, color: '#6B7086' }}>{t.copyright}</div>
+      <Footer />
     </div>
   )
 }

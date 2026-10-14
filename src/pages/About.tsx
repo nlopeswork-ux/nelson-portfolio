@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
+import Footer from '../components/Footer'
 import ChevronRight from '../components/ChevronRight'
 import ChevronDown from '../components/ChevronDown'
 import ChevronUp from '../components/ChevronUp'
@@ -143,11 +144,11 @@ const copy = {
     methodologies: 'Agile, Lean, Scrum, Waterfall, Design Thinking',
     philosophyLabel: ['DESIGN', 'PHILOSOPHY'] as [string, string],
     philosophyItems: [
-      { n: '01', text: 'Clarity over decoration.' },
-      { n: '02', text: 'Research before assumptions.' },
-      { n: '03', text: 'Systems before screens.' },
-      { n: '04', text: 'Accessibility by default.' },
-      { n: '05', text: 'Products should reduce complexity, not display it.' },
+      { n: '01', text: 'Clarity over decoration' },
+      { n: '02', text: 'Research before assumptions' },
+      { n: '03', text: 'Systems before screens' },
+      { n: '04', text: 'Accessibility by default' },
+      { n: '05', text: 'Products should reduce complexity, not display it' },
     ],
     howIWorkEyebrow: 'How I Work',
     howIWorkTitle: 'From discovery to a shipped decision',
@@ -195,7 +196,6 @@ const copy = {
     },
     certificationsEyebrow: 'Certifications',
     languages: 'Fluent in Portuguese and English, working proficiency in Spanish and French.',
-    copyright: '© 2026 Nelson Lopes. Designed with care.',
   },
   pt: {
     eyebrow: 'Sobre',
@@ -235,11 +235,11 @@ const copy = {
     methodologies: 'Agile, Lean, Scrum, Waterfall, Design Thinking',
     philosophyLabel: ['FILOSOFIA', 'DE DESIGN'] as [string, string],
     philosophyItems: [
-      { n: '01', text: 'Clareza antes da decoração.' },
-      { n: '02', text: 'Investigação antes de suposições.' },
-      { n: '03', text: 'Sistemas antes de ecrãs.' },
-      { n: '04', text: 'Acessibilidade por omissão.' },
-      { n: '05', text: 'Os produtos devem reduzir a complexidade, não exibi-la.' },
+      { n: '01', text: 'Clareza antes da decoração' },
+      { n: '02', text: 'Investigação antes de suposições' },
+      { n: '03', text: 'Sistemas antes de ecrãs' },
+      { n: '04', text: 'Acessibilidade por omissão' },
+      { n: '05', text: 'Os produtos devem reduzir a complexidade, não exibi-la' },
     ],
     howIWorkEyebrow: 'Como Trabalho',
     howIWorkTitle: 'Da descoberta a uma decisão implementada',
@@ -287,7 +287,6 @@ const copy = {
     },
     certificationsEyebrow: 'Certificações',
     languages: 'Fluente em Português e Inglês, com conhecimentos de trabalho em Espanhol e Francês.',
-    copyright: '© 2026 Nelson Lopes. Feito com cuidado.',
   },
 }
 
@@ -422,7 +421,7 @@ export default function About() {
                     aria-expanded={isOpen}
                     className="engagement-toggle"
                     onClick={() => toggle(phase.id)}
-                    style={{ marginTop: 'auto', alignSelf: 'flex-start', background: '#FFFFFF' }}
+                    style={{ marginTop: 'auto', alignSelf: 'flex-start' }}
                   >
                     {isOpen ? <>{t.showLess}<ChevronUp size={14} /></> : <>{t.learnMore}<ChevronDown size={14} /></>}
                   </button>
@@ -480,7 +479,7 @@ export default function About() {
         </div>
       </div>
 
-      <div style={{ textAlign: 'center', padding: '0 20px 40px', fontSize: 13, color: '#6B7086' }}>{t.copyright}</div>
+      <Footer />
     </div>
   )
 }

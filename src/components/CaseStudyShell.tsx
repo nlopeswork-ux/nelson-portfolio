@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Nav from './Nav'
+import Footer from './Footer'
 import Counter from './Counter'
 import ChevronLeft from './ChevronLeft'
 import { useLanguage } from '../i18n/LanguageContext'
@@ -8,12 +9,10 @@ const shellCopy = {
   en: {
     backToWork: 'Back to all work',
     confidentiality: 'Client names and identifying details have been generalized to respect confidentiality agreements. Metrics and outcomes reflect the real scope and impact of the engagement.',
-    copyright: '© 2026 Nelson Lopes. Designed with care.',
   },
   pt: {
     backToWork: 'Voltar a todo o trabalho',
     confidentiality: 'Os nomes de clientes e detalhes identificativos foram generalizados para respeitar acordos de confidencialidade. As métricas e os resultados refletem o âmbito e o impacto reais da colaboração.',
-    copyright: '© 2026 Nelson Lopes. Feito com cuidado.',
   },
 }
 
@@ -88,7 +87,7 @@ export default function CaseStudyShell({ eyebrow, title, description, meta, stat
         <p style={{ fontSize: 12, lineHeight: 1.6, color: '#A0A4B8', margin: 0 }}>{t.confidentiality}</p>
       </div>
 
-      <div style={{ textAlign: 'center', padding: '0 20px 40px', fontSize: 13, color: '#6B7086' }}>{t.copyright}</div>
+      <Footer />
     </div>
   )
 }
