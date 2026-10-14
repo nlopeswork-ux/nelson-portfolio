@@ -63,12 +63,13 @@ export default function Nav() {
     return pathname === to
   }
 
-  // Current page gets a solid filled pill; hover/focus/press states for
+  // Current page gets a light-blue filled pill (same tokens as the
+  // category badge on the Work page cards); hover/focus/press states for
   // both the active and inactive cases live in `.nav-link`'s CSS
   // pseudo-classes (index.css) — only the base/active split is inline.
   const linkStyle = (to: string): React.CSSProperties => ({
-    color: isActive(to) ? '#FFFFFF' : '#4A4F63',
-    background: isActive(to) ? 'var(--color-primary)' : 'transparent',
+    color: isActive(to) ? '#12141F' : '#4A4F63',
+    background: isActive(to) ? '#F2F6FF' : 'transparent',
     textDecoration: 'none',
     fontWeight: isActive(to) ? 600 : 500,
   })
@@ -142,8 +143,8 @@ export default function Nav() {
             aria-current={isActive(to) ? 'page' : undefined}
             style={{
               ...mobileLink,
-              color: isActive(to) ? '#FFFFFF' : '#4A4F63',
-              background: isActive(to) ? 'var(--color-primary)' : 'transparent',
+              color: isActive(to) ? '#12141F' : '#4A4F63',
+              background: isActive(to) ? '#F2F6FF' : 'transparent',
               fontWeight: isActive(to) ? 700 : 500,
             }}
           >

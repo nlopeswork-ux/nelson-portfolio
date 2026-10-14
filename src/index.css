@@ -55,12 +55,14 @@ a { color: #001A5C; text-decoration: none; }
 a:hover { color: var(--color-primary-hover); }
 
 /*
- * Pill indicator: the current page gets a solid filled pill (set inline
- * via Nav.tsx's `linkStyle`, `!important` here since that inline
- * background/color would otherwise win over these pseudo-classes
- * regardless of specificity). Inactive links get a soft tinted pill on
- * hover/focus and a slightly stronger one on press; the active link's
- * own hover/press just deepens its fill instead.
+ * Pill indicator: the current page gets a light-blue filled pill (set
+ * inline via Nav.tsx's `linkStyle`, same #F2F6FF/#12141F tokens as the
+ * category badge on the Work page cards; `!important` here since that
+ * inline background/color would otherwise win over these pseudo-classes
+ * regardless of specificity). Inactive links get a soft navy-tinted pill
+ * on hover/focus and a slightly stronger one on press; the active link's
+ * own hover/press just deepens its light-blue fill instead of inverting
+ * to a dark one.
  */
 .nav-link:hover,
 .nav-link:focus-visible {
@@ -75,13 +77,13 @@ a:hover { color: var(--color-primary-hover); }
 
 .nav-link.is-active:hover,
 .nav-link.is-active:focus-visible {
-  background: var(--color-primary-hover) !important;
-  color: #FFFFFF !important;
+  background: #E3ECFF !important;
+  color: #12141F !important;
 }
 
 .nav-link.is-active:active {
-  background: var(--color-primary-active) !important;
-  color: #FFFFFF !important;
+  background: #D3E0FF !important;
+  color: #12141F !important;
 }
 
 a:active, button:active, [role="button"]:active, .interactive-card:active {
@@ -737,11 +739,15 @@ input::placeholder { color: #A0A4B8; }
   box-shadow: 0 0 0 4px var(--color-primary-halo);
 }
 .work-filter-tab.is-active {
-  background: #12141F;
+  background: var(--color-primary);
   color: #FFFFFF;
 }
 .work-filter-tab.is-active:hover {
-  background: #12141F;
+  background: var(--color-primary-hover);
+  color: #FFFFFF;
+}
+.work-filter-tab.is-active:active {
+  background: var(--color-primary-active);
   color: #FFFFFF;
 }
 

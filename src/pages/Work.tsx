@@ -249,11 +249,11 @@ export default function Work() {
                       width: '100%',
                       height: '100%',
                       display: 'block',
-                      objectFit: 'cover',
+                      objectFit: 'contain',
                       objectPosition: 'center',
                     }}
                   />
-                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '40%', background: 'linear-gradient(to bottom, transparent, #ffffff)', pointerEvents: 'none' }} />
+                  <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '40%', background: 'linear-gradient(to bottom, transparent, #F5F7FC)', pointerEvents: 'none' }} />
                 </div>
               </div>
               <div style={{ padding: '8px 24px 24px' }}>
