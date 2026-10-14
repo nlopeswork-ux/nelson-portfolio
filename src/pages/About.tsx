@@ -85,12 +85,6 @@ const phaseTheme: Record<string, { base: string; glow: string }> = {
   deliver: { base: '#FBF8F2', glow: '#E8A33D' },
 }
 
-const skillGroupIcons: Record<string, React.ReactNode> = {
-  craft: <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z" /><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z" /><path d="M2 2l7.586 7.586" /><circle cx="11" cy="11" r="2" /></svg>,
-  research: <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" /></svg>,
-  leadership: <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" /></svg>,
-}
-
 const education = [
   { degreeKey: 'master', school: 'IADE – Creative University · 2017–2019', logo: iadeLogo },
   { degreeKey: 'bachelorGraphic', school: 'ECV – École de Création Visuelle · 2016', logo: ecvLogo },
@@ -135,11 +129,7 @@ const copy = {
     closingNote: "Technology evolves constantly. Human behaviour changes slowly. That's why I believe understanding people will always be the most valuable design skill.",
     skillsEyebrow: 'Skills & Expertise',
     skillsTitle: 'Where I add the most value',
-    skillGroups: [
-      { key: 'craft', label: 'Design Craft', items: ['Product Design', 'Design Systems', 'Visual Design'] },
-      { key: 'research', label: 'Research & Strategy', items: ['UX Research', 'Accessibility', 'Strategy'] },
-      { key: 'leadership', label: 'Leadership & Emerging Tech', items: ['Leadership', 'AI for Designers'] },
-    ],
+    skills: ['Product Design', 'UX Research', 'Design Systems', 'Accessibility', 'Strategy', 'Leadership', 'Visual Design', 'AI for Designers'],
     methodologiesLabel: 'Methodologies:',
     methodologies: 'Agile, Lean, Scrum, Waterfall, Design Thinking',
     philosophyLabel: ['DESIGN', 'PHILOSOPHY'] as [string, string],
@@ -226,11 +216,7 @@ const copy = {
     closingNote: 'A tecnologia evolui constantemente. O comportamento humano muda devagar. Por isso acredito que compreender as pessoas será sempre a competência de design mais valiosa.',
     skillsEyebrow: 'Competências e Especialização',
     skillsTitle: 'Onde acrescento mais valor',
-    skillGroups: [
-      { key: 'craft', label: 'Craft de Design', items: ['Design de Produto', 'Design Systems', 'Design Visual'] },
-      { key: 'research', label: 'Investigação e Estratégia', items: ['Investigação UX', 'Acessibilidade', 'Estratégia'] },
-      { key: 'leadership', label: 'Liderança e Tecnologia Emergente', items: ['Liderança', 'IA para Designers'] },
-    ],
+    skills: ['Design de Produto', 'Investigação UX', 'Design Systems', 'Acessibilidade', 'Estratégia', 'Liderança', 'Design Visual', 'IA para Designers'],
     methodologiesLabel: 'Metodologias:',
     methodologies: 'Agile, Lean, Scrum, Waterfall, Design Thinking',
     philosophyLabel: ['FILOSOFIA', 'DE DESIGN'] as [string, string],
@@ -378,20 +364,17 @@ export default function About() {
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
         <div style={eyebrowWithTitle}>{t.skillsEyebrow}</div>
         <h2 style={sectionTitle}>{t.skillsTitle}</h2>
-        <div className="rg-3">
-          {t.skillGroups.map(group => (
-            <div key={group.key} className="skill-group-card">
-              <div className="skill-group-header">
-                <span className="skill-group-icon">{skillGroupIcons[group.key]}</span>
-                <span className="skill-group-label">{group.label}</span>
-              </div>
-              <div className="skill-group-items">
-                {group.items.map(item => <span key={item} className="skills-card">{item}</span>)}
-              </div>
+        <div className="skills-marquee">
+          <div className="skills-marquee-track">
+            <div className="skills-marquee-group">
+              {t.skills.map(s => <span key={s} className="skills-card">{s}</span>)}
             </div>
-          ))}
+            <div className="skills-marquee-group" aria-hidden="true">
+              {t.skills.map(s => <span key={`${s}-dup`} className="skills-card">{s}</span>)}
+            </div>
+          </div>
         </div>
-        <p style={{ marginTop: 24, fontSize: 14, color: '#5A5F73' }}>
+        <p style={{ marginTop: 16, fontSize: 14, color: '#5A5F73' }}>
           <span style={{ fontWeight: 600, color: '#12141F' }}>{t.methodologiesLabel}</span> {t.methodologies}
         </p>
       </div>
