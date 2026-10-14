@@ -12,6 +12,8 @@ import CaseStudyTamkeen from './pages/CaseStudyTamkeen'
 import CaseStudyNEOT from './pages/CaseStudyNEOT'
 import CaseStudyDesignSystem from './pages/CaseStudyDesignSystem'
 import CaseStudyNeoBank from './pages/CaseStudyNeoBank'
+import CaseStudyEDPPlanetaZero from './pages/CaseStudyEDPPlanetaZero'
+import CaseStudyERARevamp from './pages/CaseStudyERARevamp'
 
 export default function App() {
   return (
@@ -27,6 +29,8 @@ export default function App() {
           <Route path="/work/neot" element={<CaseStudyNEOT />} />
           <Route path="/work/design-system" element={<CaseStudyDesignSystem />} />
           <Route path="/work/neobank" element={<CaseStudyNeoBank />} />
+          <Route path="/work/edp-planeta-zero" element={<CaseStudyEDPPlanetaZero />} />
+          <Route path="/work/era-revamp" element={<CaseStudyERARevamp />} />
           <Route path="/journey" element={<Journey />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

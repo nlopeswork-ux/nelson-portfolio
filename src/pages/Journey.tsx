@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import ChevronDown from '../components/ChevronDown'
@@ -30,12 +31,12 @@ const copy = {
       { period: '2015 — 2016', title: 'Creative Designer', company: 'Biocol Labs', body: 'Where it started — brand, packaging and editorial work that built the visual instincts everything since has drawn on.' },
     ],
     kpmgEngagements: [
-      { client: 'Global energy company', industry: 'Financial Services', period: '2026–Present', scope: 'IntelliForge SR2R — ontology-driven financial close system, 200 franchise dealers' },
-      { client: 'Government economic zone authority', industry: 'Government', period: '2025–2026', scope: 'OneRAK Portal Revamp — 3 portals unified, 18/18 services live' },
+      { client: 'Global energy company', industry: 'Financial Services', period: '2026–Present', scope: 'IntelliForge SR2R — ontology-driven financial close system, 200 franchise dealers', link: { to: '/work/intelliforge', label: 'View case study' } },
+      { client: 'Government economic zone authority', industry: 'Government', period: '2025–2026', scope: 'OneRAK Portal Revamp — 3 portals unified, 18/18 services live', link: { to: '/work/onerak', label: 'View case study' } },
       { client: 'Retail bank', industry: 'Financial Services', period: '2024–2025', scope: 'Backoffice — 1,350+ frames, 14 feature areas' },
       { client: 'Retail bank — mobile', industry: 'Financial Services', period: '2024–2025', scope: 'Mobile Banking App Redesign — 1,590+ screens, 12 core features' },
-      { client: 'National employment fund', industry: 'Government', period: '2023–present', scope: 'NEOT Mobile App — 1,000+ screens, 8 modules' },
-      { client: 'National workforce fund', industry: 'Government', period: '2023–present', scope: 'National Workforce Platform — end-to-end digital funding ecosystem' },
+      { client: 'National employment fund', industry: 'Government', period: '2023–present', scope: 'NEOT Mobile App — 1,000+ screens, 8 modules', link: { to: '/work/neot', label: 'View case study' } },
+      { client: 'National workforce fund', industry: 'Government', period: '2023–present', scope: 'National Workforce Platform — end-to-end digital funding ecosystem', link: { to: '/work/tamkeen', label: 'View case study' } },
     ],
     deloitteEngagements: [
       { client: 'Major airline', industry: 'Aviation', period: '2022–2023', scope: 'Passenger digital experience redesign' },
@@ -45,6 +46,8 @@ const copy = {
       { client: 'Energy operator', industry: 'Energy', period: '2019', scope: 'Internal digital workspace' },
       { client: 'Insurance group', industry: 'Insurance', period: '2018–2019', scope: 'Digital product design for broker platform' },
       { client: 'Automotive brand', industry: 'Automotive', period: '2018', scope: 'Dealer-facing UX design sprint' },
+      { client: 'Energy retailer', industry: 'Energy', period: '2021–2023', scope: 'Gamified loyalty app (2021–2023) and programme website (2020–2023) rewarding sustainable habits', link: { to: '/work/edp-planeta-zero', label: 'View case study' } },
+      { client: 'Real estate group', industry: 'Real Estate', period: '2021–2022', scope: 'Fully digital property website revamp with smarter search and valuation tools', link: { to: '/work/era-revamp', label: 'View case study' } },
       { client: 'Various clients', industry: 'Multiple', period: '2018–2023', scope: 'Workshop facilitation, design sprints, UX audits' },
     ],
   },
@@ -61,12 +64,12 @@ const copy = {
       { period: '2015 — 2016', title: 'Creative Designer', company: 'Biocol Labs', body: 'Onde tudo começou — trabalho de marca, packaging e editorial que construiu os instintos visuais em que tudo o resto se apoiou.' },
     ],
     kpmgEngagements: [
-      { client: 'Empresa global de energia', industry: 'Serviços Financeiros', period: '2026–Presente', scope: 'IntelliForge SR2R — sistema de fecho financeiro orientado por ontologia, 200 concessionários' },
-      { client: 'Autoridade de zona económica governamental', industry: 'Setor Público', period: '2025–2026', scope: 'OneRAK Portal Revamp — 3 portais unificados, 18/18 serviços em produção' },
+      { client: 'Empresa global de energia', industry: 'Serviços Financeiros', period: '2026–Presente', scope: 'IntelliForge SR2R — sistema de fecho financeiro orientado por ontologia, 200 concessionários', link: { to: '/work/intelliforge', label: 'Ver case study' } },
+      { client: 'Autoridade de zona económica governamental', industry: 'Setor Público', period: '2025–2026', scope: 'OneRAK Portal Revamp — 3 portais unificados, 18/18 serviços em produção', link: { to: '/work/onerak', label: 'Ver case study' } },
       { client: 'Banco de retalho', industry: 'Serviços Financeiros', period: '2024–2025', scope: 'Backoffice — mais de 1.350 ecrãs, 14 áreas funcionais' },
       { client: 'Banco de retalho — mobile', industry: 'Serviços Financeiros', period: '2024–2025', scope: 'Redesign da App de Banca Móvel — mais de 1.590 ecrãs, 12 funcionalidades principais' },
-      { client: 'Fundo nacional de emprego', industry: 'Setor Público', period: '2023–presente', scope: 'NEOT Mobile App — mais de 1.000 ecrãs, 8 módulos' },
-      { client: 'Fundo nacional de trabalho', industry: 'Setor Público', period: '2023–presente', scope: 'Plataforma Nacional de Força de Trabalho — ecossistema digital de financiamento de ponta a ponta' },
+      { client: 'Fundo nacional de emprego', industry: 'Setor Público', period: '2023–presente', scope: 'NEOT Mobile App — mais de 1.000 ecrãs, 8 módulos', link: { to: '/work/neot', label: 'Ver case study' } },
+      { client: 'Fundo nacional de trabalho', industry: 'Setor Público', period: '2023–presente', scope: 'Plataforma Nacional de Força de Trabalho — ecossistema digital de financiamento de ponta a ponta', link: { to: '/work/tamkeen', label: 'Ver case study' } },
     ],
     deloitteEngagements: [
       { client: 'Companhia aérea de referência', industry: 'Aviação', period: '2022–2023', scope: 'Redesign da experiência digital do passageiro' },
@@ -76,6 +79,8 @@ const copy = {
       { client: 'Operador de energia', industry: 'Energia', period: '2019', scope: 'Espaço de trabalho digital interno' },
       { client: 'Grupo segurador', industry: 'Seguros', period: '2018–2019', scope: 'Design de produto digital para plataforma de mediadores' },
       { client: 'Marca automóvel', industry: 'Automóvel', period: '2018', scope: 'Sprint de design UX orientado a concessionários' },
+      { client: 'Comercializadora de energia', industry: 'Energia', period: '2021–2023', scope: 'App de fidelização com gamificação (2021–2023) e website do programa (2020–2023), a premiar hábitos sustentáveis', link: { to: '/work/edp-planeta-zero', label: 'Ver case study' } },
+      { client: 'Grupo imobiliário', industry: 'Imobiliário', period: '2021–2022', scope: 'Revamp digital de website imobiliário, com pesquisa e avaliação mais inteligentes', link: { to: '/work/era-revamp', label: 'Ver case study' } },
       { client: 'Vários clientes', industry: 'Múltiplas', period: '2018–2023', scope: 'Facilitação de workshops, design sprints, auditorias de UX' },
     ],
   },
@@ -117,7 +122,15 @@ export default function Journey() {
                 {t.kpmgEngagements.map((eng, i) => (
                   <div key={i} className="timeline-eng-row" style={{ display: 'grid', gridTemplateColumns: '160px 1fr', gap: 12, fontSize: 14, padding: '10px 0', borderBottom: i < t.kpmgEngagements.length - 1 ? '1px solid #EAF1FF' : 'none' }}>
                     <div style={{ fontWeight: 600, color: '#12141F' }}>{eng.client}</div>
-                    <div style={{ color: '#5A5F73' }}>{eng.industry} · {eng.period}<br />{eng.scope}</div>
+                    <div style={{ color: '#5A5F73' }}>
+                      {eng.industry} · {eng.period}<br />{eng.scope}
+                      {'link' in eng && eng.link && (
+                        <>
+                          {' — '}
+                          <Link to={eng.link.to} style={{ color: '#002FA7', fontWeight: 600, textDecoration: 'none' }}>{eng.link.label}</Link>
+                        </>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -139,7 +152,15 @@ export default function Journey() {
                 {t.deloitteEngagements.map((eng, i) => (
                   <div key={i} className="timeline-eng-row" style={{ display: 'grid', gridTemplateColumns: '160px 1fr', gap: 12, fontSize: 14, padding: '10px 0', borderBottom: i < t.deloitteEngagements.length - 1 ? '1px solid #EAF1FF' : 'none' }}>
                     <div style={{ fontWeight: 600, color: '#12141F' }}>{eng.client}</div>
-                    <div style={{ color: '#5A5F73' }}>{eng.industry} · {eng.period}<br />{eng.scope}</div>
+                    <div style={{ color: '#5A5F73' }}>
+                      {eng.industry} · {eng.period}<br />{eng.scope}
+                      {'link' in eng && eng.link && (
+                        <>
+                          {' — '}
+                          <Link to={eng.link.to} style={{ color: '#002FA7', fontWeight: 600, textDecoration: 'none' }}>{eng.link.label}</Link>
+                        </>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
