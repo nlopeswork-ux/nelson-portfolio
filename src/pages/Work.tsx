@@ -277,7 +277,7 @@ export default function Work() {
       </div>
 
       {/* RESULTS */}
-      <div ref={list.ref} style={{ position: 'relative', padding: '24px 32px', maxWidth: 1200, margin: '0 auto', ...list.style }}>
+      <div ref={list.ref} style={{ position: 'relative', padding: '24px 32px 80px', maxWidth: 1200, margin: '0 auto', ...list.style }}>
         <div className="work-grid">
           {filtered.map(s => (
             <Link key={s.id} to={s.to} className="case-card interactive-card" style={{ display: 'block', textDecoration: 'none', borderRadius: 20, overflow: 'hidden', background: '#FFFFFF', border: '1px solid rgba(20,30,60,0.08)', boxShadow: '0 12px 32px rgba(120,150,255,0.08)', transition: 'transform 200ms ease-out, box-shadow 200ms ease-out' }}>
@@ -323,7 +323,7 @@ export default function Work() {
       </div>
 
       {/* EARLIER WORK */}
-      <div style={{ padding: '24px 32px 56px', maxWidth: 1200, margin: '0 auto' }}>
+      <div style={{ padding: '0 32px 80px', maxWidth: 1200, margin: '0 auto' }}>
         <h2 style={{ fontSize: 'clamp(22px,3vw,28px)', fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 12px' }}>{p.earlierWorkTitle}</h2>
         <p style={{ fontSize: 15, lineHeight: 1.6, color: '#5A5F73', maxWidth: 640, margin: '0 0 28px' }}>{p.earlierWorkText}</p>
         <div className="work-grid">
