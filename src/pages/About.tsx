@@ -120,19 +120,12 @@ function FunnelIcon({ size = 22 }: { size?: number }) {
   )
 }
 
-const METHOD_VISUALS: Record<string, { Icon: (p: { size?: number }) => ReactElement; accent: string; className: string }> = {
-  designThinking: { Icon: BulbIcon, accent: '#0B1640', className: 'method-card--design' },
-  waterfall: { Icon: StairsIcon, accent: '#6B7390', className: 'method-card--waterfall' },
-  agile: { Icon: RefreshIcon, accent: '#3D56A6', className: 'method-card--agile' },
-  scrum: { Icon: ColumnsIcon, accent: '#1E3A8A', className: 'method-card--scrum' },
-  lean: { Icon: FunnelIcon, accent: '#0F2EA1', className: 'method-card--lean' },
-}
-
-const phaseTheme: Record<string, { base: string; glow: string }> = {
-  discover: { base: '#F9F8FC', glow: '#F0845F' },
-  define: { base: '#F6FAF9', glow: '#4FBF93' },
-  design: { base: '#F6F7FC', glow: '#6E86D6' },
-  deliver: { base: '#FBF8F2', glow: '#E8A33D' },
+const METHOD_VISUALS: Record<string, { Icon: (p: { size?: number }) => ReactElement; accent: string }> = {
+  designThinking: { Icon: BulbIcon, accent: '#0B1640' },
+  waterfall: { Icon: StairsIcon, accent: '#6B7390' },
+  agile: { Icon: RefreshIcon, accent: '#3D56A6' },
+  scrum: { Icon: ColumnsIcon, accent: '#1E3A8A' },
+  lean: { Icon: FunnelIcon, accent: '#0F2EA1' },
 }
 
 const education = [
@@ -196,6 +189,7 @@ const copy = {
       { n: '04', text: 'Accessibility by default' },
       { n: '05', text: 'Products should reduce complexity, not display it' },
     ],
+    processNote: 'Process matters as much as craft.',
     howIWorkEyebrow: 'How I Work',
     howIWorkTitle: 'From discovery to a shipped decision',
     showLess: 'Show less',
@@ -289,6 +283,7 @@ const copy = {
       { n: '04', text: 'Acessibilidade por omissão' },
       { n: '05', text: 'Os produtos devem reduzir a complexidade, não exibi-la' },
     ],
+    processNote: 'O processo importa tanto quanto o craft.',
     howIWorkEyebrow: 'Como Trabalho',
     howIWorkTitle: 'Da descoberta a uma decisão implementada',
     showLess: 'Mostrar menos',
@@ -422,6 +417,8 @@ export default function About() {
         <p style={{ textAlign: 'center', fontSize: 17, lineHeight: 1.7, color: '#5A5F73', maxWidth: 640, margin: '0 auto' }}>{t.closingNote}</p>
       </div>
 
+      <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', maxWidth: 1200, margin: '0 auto', padding: '0 20px 56px' }}>⸻</div>
+
       {/* ── SKILLS ── */}
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
         <div style={eyebrowWithTitle}>{t.skillsEyebrow}</div>
@@ -443,7 +440,7 @@ export default function About() {
               const v = METHOD_VISUALS[m.key]
               const { Icon } = v
               return (
-                <div key={m.key} className={`method-card ${v.className}`} style={{ color: v.accent }}>
+                <div key={m.key} className="method-card" style={{ color: v.accent }}>
                   <Icon />
                   <div>
                     <div className="method-card-title">{m.title}</div>
@@ -456,6 +453,8 @@ export default function About() {
         </div>
       </div>
 
+      <p style={{ textAlign: 'center', fontSize: 15, fontStyle: 'italic', color: '#5A5F73', maxWidth: 1200, margin: '0 auto 56px', padding: '0 20px' }}>{t.processNote}</p>
+
       {/* ── HOW I WORK ── */}
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
         <div style={eyebrowWithTitle}>{t.howIWorkEyebrow}</div>
@@ -463,11 +462,8 @@ export default function About() {
         <div className="rg-phase">
           {t.workPhases.map(phase => {
             const isOpen = !!expanded[phase.id]
-            const theme = phaseTheme[phase.id]
             return (
-              <div key={phase.id} className="phase-card-v3" style={{ background: theme.base }}>
-                <div className="teaser-glow" style={{ background: theme.glow }} />
-                <div className="teaser-grain" />
+              <div key={phase.id} className="phase-card-v3">
                 <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
                   <h3 style={{ fontSize: 17, fontWeight: 700, color: '#12141F', margin: '0 0 8px' }}>{phase.name}</h3>
                   <p style={{ fontSize: 14, lineHeight: 1.6, color: '#4A4F63', margin: '0 0 12px' }}>{phase.description}</p>
@@ -498,6 +494,8 @@ export default function About() {
           })}
         </div>
       </div>
+
+      <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', maxWidth: 1200, margin: '0 auto', padding: '0 20px 56px' }}>⸻</div>
 
       {/* ── EDUCATION ── */}
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
