@@ -637,39 +637,15 @@ input::placeholder { color: #A0A4B8; }
   .phase-card-v3:hover { transform: none; }
 }
 
-/* Fixed top-right corner so it never shifts when the card grows taller on expand */
-.phase-card-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 2;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid rgba(0,47,167,0.12);
-  background: rgba(255,255,255,0.85);
-  color: #3D63E0;
-  cursor: pointer;
-}
-.phase-card-toggle:hover {
-  background: var(--color-primary-hover);
-  border-color: var(--color-primary-hover);
-  color: #FFFFFF;
-  box-shadow: 0 10px 20px rgba(42,76,184,0.16);
-}
-.phase-card-toggle:active {
-  background: var(--color-primary-active);
-  border-color: var(--color-primary-active);
-  color: #FFFFFF;
-  transform: scale(0.94);
-}
-.phase-card-toggle:focus-visible {
-  outline: 2px solid var(--color-primary);
-  outline-offset: 3px;
-  box-shadow: 0 0 0 4px var(--color-primary-halo);
+/* Pin the glow blob to the top-right corner here instead of .teaser-glow's
+   default bottom anchor — the "Learn more" toggle lives at the bottom of
+   these cards and pushes the card taller on expand, so a bottom-anchored
+   glow would hop around with it. */
+.phase-card-v3 .teaser-glow {
+  top: -70px;
+  right: -10%;
+  bottom: auto;
+  left: auto;
 }
 
 .rg-mods  { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
