@@ -392,24 +392,23 @@ export default function About() {
               <div key={phase.id} className="phase-card-v3" style={{ background: theme.base }}>
                 <div className="teaser-glow" style={{ background: theme.glow }} />
                 <div className="teaser-grain" />
-                <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
-                  <div style={{ width: 10, height: 10, borderRadius: '50%', background: '#002FA7', marginBottom: 16, flexShrink: 0 }} />
+                <button
+                  type="button"
+                  aria-expanded={isOpen}
+                  aria-label={isOpen ? t.showLess : t.learnMore}
+                  className="phase-card-toggle"
+                  onClick={() => toggle(phase.id)}
+                >
+                  {isOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
+                </button>
+                <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%', paddingRight: 40 }}>
                   <h3 style={{ fontSize: 17, fontWeight: 700, color: '#12141F', margin: '0 0 8px' }}>{phase.name}</h3>
                   <p style={{ fontSize: 14, lineHeight: 1.6, color: '#4A4F63', margin: '0 0 12px' }}>{phase.description}</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 16 }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
                     {phase.deliverables.map(d => (
                       <div key={d} style={{ fontSize: 12, color: '#6B7086' }}>· {d}</div>
                     ))}
                   </div>
-                  <button
-                    type="button"
-                    aria-expanded={isOpen}
-                    className="engagement-toggle"
-                    onClick={() => toggle(phase.id)}
-                    style={{ marginTop: 'auto', alignSelf: 'flex-start', background: '#FFFFFF' }}
-                  >
-                    {isOpen ? <>{t.showLess}<ChevronUp size={14} /></> : <>{t.learnMore}<ChevronDown size={14} /></>}
-                  </button>
                   {isOpen && (
                     <div style={{ marginTop: 16, padding: 16, background: 'rgba(255,255,255,0.6)', borderRadius: 14, borderTop: '1px solid rgba(255,255,255,0.8)' }}>
                       <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4A4F63', margin: '0 0 10px' }}>{phase.detail}</p>

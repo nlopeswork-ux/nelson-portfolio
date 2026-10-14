@@ -2,6 +2,7 @@ import { useEffect, useRef, useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import ChevronRight from '../components/ChevronRight'
+import ChevronLeft from '../components/ChevronLeft'
 import { useLanguage, type Lang } from '../i18n/LanguageContext'
 import intelliforgeImg from '../imports/IntelliForge_SR2R.png'
 import onerakImg from '../imports/OneRAK_Portal_Revamp.png'
@@ -63,6 +64,102 @@ function useFadeIn() {
   return { ref, style: { opacity: visible ? 1 : 0, transform: visible ? 'translateY(0)' : 'translateY(16px)', transition: 'opacity 600ms ease-out, transform 600ms ease-out' } }
 }
 
+function WorkFilterTabs({
+  options, value, onChange, labels, ariaLabel, scrollLeftLabel, scrollRightLabel,
+}: {
+  options: Category[]
+  value: Category
+  onChange: (next: Category) => void
+  labels: Record<Category, string>
+  ariaLabel: string
+  scrollLeftLabel: string
+  scrollRightLabel: string
+}) {
+  const trackRef = useRef<HTMLDivElement>(null)
+  const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({})
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const updateScrollState = () => {
+    const el = trackRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 4)
+    setCanScrollRight(el.scrollLeft + el.clientWidth < el.scrollWidth - 4)
+  }
+
+  useEffect(() => {
+    updateScrollState()
+    const el = trackRef.current
+    if (!el) return
+    const ro = new ResizeObserver(updateScrollState)
+    ro.observe(el)
+    window.addEventListener('resize', updateScrollState)
+    return () => { ro.disconnect(); window.removeEventListener('resize', updateScrollState) }
+  }, [options.length])
+
+  const scrollBy = (dir: 1 | -1) => {
+    const el = trackRef.current
+    if (!el) return
+    el.scrollBy({ left: dir * Math.min(el.clientWidth * 0.7, 240), behavior: 'smooth' })
+  }
+
+  const focusAndSelect = (index: number) => {
+    const next = options[(index + options.length) % options.length]
+    onChange(next)
+    tabRefs.current[next]?.focus()
+    tabRefs.current[next]?.scrollIntoView({ block: 'nearest', inline: 'nearest', behavior: 'smooth' })
+  }
+
+  const onKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, index: number) => {
+    switch (e.key) {
+      case 'ArrowRight': e.preventDefault(); focusAndSelect(index + 1); break
+      case 'ArrowLeft': e.preventDefault(); focusAndSelect(index - 1); break
+      case 'Home': e.preventDefault(); focusAndSelect(0); break
+      case 'End': e.preventDefault(); focusAndSelect(options.length - 1); break
+    }
+  }
+
+  return (
+    <div className="work-filter-wrap">
+      <div
+        className="work-filter-track"
+        role="radiogroup"
+        aria-label={ariaLabel}
+        ref={trackRef}
+        onScroll={updateScrollState}
+      >
+        {options.map((f, i) => (
+          <button
+            key={f}
+            ref={el => { tabRefs.current[f] = el }}
+            type="button"
+            role="radio"
+            aria-checked={value === f}
+            tabIndex={value === f ? 0 : -1}
+            className={`work-filter-tab${value === f ? ' is-active' : ''}`}
+            onClick={() => onChange(f)}
+            onKeyDown={e => onKeyDown(e, i)}
+          >
+            {labels[f]}
+          </button>
+        ))}
+      </div>
+      <div className={`work-filter-fade work-filter-fade-left${canScrollLeft ? ' visible' : ''}`} aria-hidden="true" />
+      <div className={`work-filter-fade work-filter-fade-right${canScrollRight ? ' visible' : ''}`} aria-hidden="true" />
+      {canScrollLeft && (
+        <button type="button" className="work-filter-scroll work-filter-scroll-left" onClick={() => scrollBy(-1)} aria-label={scrollLeftLabel}>
+          <ChevronLeft size={14} className="" />
+        </button>
+      )}
+      {canScrollRight && (
+        <button type="button" className="work-filter-scroll work-filter-scroll-right" onClick={() => scrollBy(1)} aria-label={scrollRightLabel}>
+          <ChevronRight size={14} />
+        </button>
+      )}
+    </div>
+  )
+}
+
 const pageCopy = {
   en: {
     eyebrow: 'Work',
@@ -71,6 +168,9 @@ const pageCopy = {
     readFull: 'Read the full case study',
     moreInProgress: 'More case studies in progress',
     copyright: '© 2026 Nelson Lopes. Designed with care.',
+    filterLabel: 'Filter by category',
+    scrollLeft: 'Scroll categories left',
+    scrollRight: 'Scroll categories right',
   },
   pt: {
     eyebrow: 'Trabalho',
@@ -79,6 +179,9 @@ const pageCopy = {
     readFull: 'Ver a case study completa',
     moreInProgress: 'Mais case studies em curso',
     copyright: '© 2026 Nelson Lopes. Feito com cuidado.',
+    filterLabel: 'Filtrar por categoria',
+    scrollLeft: 'Deslocar categorias para a esquerda',
+    scrollRight: 'Deslocar categorias para a direita',
   },
 }
 
@@ -111,23 +214,16 @@ export default function Work() {
       </div>
 
       {/* FILTERS */}
-      <div style={{ padding: '24px 32px 0', maxWidth: 1200, margin: '0 auto', display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-        {filterOptions.map(f => (
-          <button
-            key={f}
-            type="button"
-            className="filter-chip"
-            onClick={() => setActiveFilter(f)}
-            style={{
-              cursor: 'pointer', padding: '9px 18px', fontSize: 13, fontWeight: 600, borderRadius: 20,
-              background: activeFilter === f ? '#002FA7' : '#F5F7FC',
-              color: activeFilter === f ? '#FFFFFF' : '#4A4F63',
-              border: `1px solid ${activeFilter === f ? '#002FA7' : 'rgba(27,42,74,0.08)'}`,
-              transition: 'background 200ms ease-out, color 200ms ease-out',
-              fontFamily: "'Inter', sans-serif",
-            }}
-          >{categoryLabel[lang][f]}</button>
-        ))}
+      <div style={{ padding: '24px 32px 0', maxWidth: 1200, margin: '0 auto' }}>
+        <WorkFilterTabs
+          options={filterOptions}
+          value={activeFilter}
+          onChange={setActiveFilter}
+          labels={categoryLabel[lang]}
+          ariaLabel={p.filterLabel}
+          scrollLeftLabel={p.scrollLeft}
+          scrollRightLabel={p.scrollRight}
+        />
       </div>
 
       {/* RESULTS */}
