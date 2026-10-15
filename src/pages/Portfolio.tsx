@@ -110,10 +110,10 @@ const heroTagIcons: Record<string, React.ReactNode> = {
   layers: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#002FA7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l9 5-9 5-9-5 9-5z"/><path d="M3 13l9 5 9-5"/></svg>,
 }
 
-const teaserTheme: Record<Teaser['to'], { base: string; glow: string }> = {
-  '/work': { base: '#F6F7FC', glow: '#002FA7' },
-  '/journey': { base: '#F6F7FC', glow: '#2A4CB8' },
-  '/about': { base: '#F6F7FC', glow: '#3D63E0' },
+const teaserTheme: Record<Teaser['to'], { base: string; glow: string; opacity: number }> = {
+  '/work': { base: '#E4EAFA', glow: '#002FA7', opacity: 0.55 },
+  '/journey': { base: '#EDF1FC', glow: '#002FA7', opacity: 0.35 },
+  '/about': { base: '#F6F7FC', glow: '#002FA7', opacity: 0.18 },
 }
 
 const teaserTilts: Record<Teaser['to'], number> = {
@@ -233,7 +233,7 @@ export default function Portfolio() {
                   style={{ background: teaserTheme[to].base }}
                   aria-label={`${label} — ${sub}. ${desc}`}
                 >
-                  <div className="teaser-glow" style={{ background: teaserTheme[to].glow }} />
+                  <div className="teaser-glow" style={{ background: teaserTheme[to].glow, opacity: teaserTheme[to].opacity }} />
                   <div className="teaser-grain" />
                   <div className="teaser-label-v3" aria-hidden="true">{label}</div>
                   <div className="teaser-flip" aria-hidden="true">
