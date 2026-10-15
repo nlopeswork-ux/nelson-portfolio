@@ -111,9 +111,9 @@ const heroTagIcons: Record<string, React.ReactNode> = {
 }
 
 const teaserTheme: Record<Teaser['to'], { base: string; glow: string; opacity: number }> = {
-  '/work': { base: '#E4EAFA', glow: '#002FA7', opacity: 0.55 },
-  '/journey': { base: '#EDF1FC', glow: '#002FA7', opacity: 0.35 },
-  '/about': { base: '#F6F7FC', glow: '#002FA7', opacity: 0.18 },
+  '/work': { base: '#E9EEFB', glow: '#3D63E0', opacity: 0.26 },
+  '/journey': { base: '#EFF2FC', glow: '#3D63E0', opacity: 0.18 },
+  '/about': { base: '#F6F7FC', glow: '#3D63E0', opacity: 0.1 },
 }
 
 const teaserTilts: Record<Teaser['to'], number> = {
