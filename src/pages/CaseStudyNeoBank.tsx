@@ -1,10 +1,33 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import CaseStudyShell, { Body, DarkBox } from '../components/CaseStudyShell'
 import PrototypeCarousel, { type CarouselImage } from '../components/PrototypeCarousel'
 import ChevronLeft from '../components/ChevronLeft'
 import ChevronRight from '../components/ChevronRight'
 import { useLanguage } from '../i18n/LanguageContext'
 import neobankDemo from '../imports/neobank-demo.gif'
+
+// GIFs can't be started from code, so the file is only attached once the
+// image scrolls into view — it then plays from frame 1 and loops forever.
+function LazyGif({ src, alt, width }: { src: string; alt: string; width: number | string }) {
+  const ref = useRef<HTMLImageElement>(null)
+  const [started, setStarted] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el || started) return
+    if (typeof IntersectionObserver === 'undefined') { setStarted(true); return }
+    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStarted(true); io.disconnect() } }, { threshold: 0.4 })
+    io.observe(el)
+    return () => io.disconnect()
+  }, [started])
+  return (
+    <img
+      ref={ref}
+      src={started ? src : 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='}
+      alt={alt}
+      style={{ width, aspectRatio: '980 / 2000', flexShrink: 0, height: 'auto', display: 'block', borderRadius: 24, background: started ? undefined : '#F2F6FF' }}
+    />
+  )
+}
 
 const S = { padding: '0 20px 64px', maxWidth: 760, margin: '0 auto' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
@@ -239,7 +262,7 @@ export default function CaseStudyNeoBank() {
             <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase2Label}</div>
             <Body>{t.phase2Body}</Body>
           </div>
-          <img src={neobankDemo} alt={t.phase2Label} style={{ width: isMobile ? 'min(300px, 72vw)' : 260, flexShrink: 0, height: 'auto', display: 'block' }} />
+          <LazyGif src={neobankDemo} alt={t.phase2Label} width={isMobile ? 'min(300px, 72vw)' : 260} />
         </div>
       </div>
 
