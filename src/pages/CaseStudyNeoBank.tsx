@@ -257,12 +257,12 @@ export default function CaseStudyNeoBank() {
       </div>
 
       <div style={S}>
-        <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'center' : 'flex-start', gap: isMobile ? 24 : 40 }}>
+        <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', gap: isMobile ? 24 : 40 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase2Label}</div>
             <Body>{t.phase2Body}</Body>
           </div>
-          <LazyGif src={neobankDemo} alt={t.phase2Label} width={isMobile ? 'min(300px, 72vw)' : 260} />
+          <LazyGif src={neobankDemo} alt={t.phase2Label} width={isMobile ? 'min(240px, 60vw)' : 190} />
         </div>
       </div>
 
