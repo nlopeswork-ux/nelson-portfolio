@@ -234,13 +234,12 @@ export default function CaseStudyNeoBank() {
       </div>
 
       <div style={S}>
-        <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase2Label}</div>
-        <Body>{t.phase2Body}</Body>
-      </div>
-
-      <div style={S}>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()} preload="metadata" playsInline style={{ width: 'min(300px, 72vw)', height: 'auto', display: 'block' }}>
+        <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: isMobile ? 'center' : 'flex-start', gap: isMobile ? 24 : 40 }}>
+          <div style={{ flex: 1, minWidth: 0 }}>
+            <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase2Label}</div>
+            <Body>{t.phase2Body}</Body>
+          </div>
+          <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()} preload="metadata" playsInline style={{ width: isMobile ? 'min(300px, 72vw)' : 260, flexShrink: 0, height: 'auto', display: 'block' }}>
             <source src={neobankDemo} type="video/mp4" />
           </video>
         </div>
