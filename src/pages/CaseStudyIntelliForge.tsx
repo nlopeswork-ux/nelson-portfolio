@@ -469,7 +469,7 @@ export default function CaseStudyIntelliForge() {
         <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 32px' }}>{t.keyDecisionsIntro}</p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
           {t.keyDecisions.map(({ title, rejected, shipped, result }) => (
-            <div key={title} className="cs-decision-card" style={{ padding: 24, borderRadius: 20, background: '#F8FAFF', border: '1px solid #EAF1FF' }}>
+            <div key={title} style={{ padding: 24, borderRadius: 20, background: '#F8FAFF', border: '1px solid #EAF1FF' }}>
               <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', marginBottom: 12 }}>{title}</div>
               {rejected && (
                 <p style={{ fontSize: 14, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 10px' }}>

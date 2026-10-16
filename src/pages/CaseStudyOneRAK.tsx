@@ -449,7 +449,7 @@ export default function CaseStudyOneRAK() {
         <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 32px' }}>{t.rejectedIntro}</p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
           {t.rejectedDecisions.map(({ rejected, chosen }, i) => (
-            <div key={i} className="cs-decision-card" style={{ padding: 24, borderRadius: 20, background: '#F8FAFF', border: '1px solid #EAF1FF' }}>
+            <div key={i} style={{ padding: 24, borderRadius: 20, background: '#F8FAFF', border: '1px solid #EAF1FF' }}>
               <p style={{ fontSize: 14, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 10px' }}>
                 <strong style={{ color: '#B23A3A' }}>{t.rejectedLabel}</strong>{rejected}
               </p>
