@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import CaseStudyShell, { Body, DarkBox } from '../components/CaseStudyShell'
 import PrototypeCarousel, { type CarouselImage } from '../components/PrototypeCarousel'
 import ChevronLeft from '../components/ChevronLeft'
 import ChevronRight from '../components/ChevronRight'
 import { useLanguage } from '../i18n/LanguageContext'
+import neobankDemo from '../imports/neobank-demo.mp4'
 
 const S = { padding: '0 20px 64px', maxWidth: 760, margin: '0 auto' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
@@ -58,9 +58,6 @@ const copy = {
     ],
     phase2Label: 'Phase 2 — NeoBank: AI as the Interface',
     phase2Body: "Phase 2 asked a leadership-level question: if the assistant is capable enough to check a balance, move money and explain spending, why is it hidden behind an icon? NeoBank keeps the same information architecture and the same personas, but puts a conversational, agentic assistant on the home screen — while keeping the original dashboard and a task-based Banking Hub one tap away, for anyone who doesn't want to type or talk.",
-    conceptInProgress: 'Concept in progress',
-    conceptPlaceholder: "These AI-native screens aren't published here yet — happy to walk through the proposal in a conversation.",
-    getInTouchToSee: 'Get in touch to see it',
     whatChangedTitle: 'What Changed',
     whatChangedHeaders: ['', 'App Redesign (Phase 1)', 'NeoBank (Phase 2)'],
     whatChanged: [
@@ -127,9 +124,6 @@ const copy = {
     ],
     phase2Label: 'Fase 2 — NeoBank: a IA como Interface',
     phase2Body: 'A Fase 2 colocou uma pergunta ao nível de liderança: se o assistente é capaz de consultar um saldo, mover dinheiro e explicar despesas, porque está escondido atrás de um ícone? A NeoBank mantém a mesma arquitetura de informação e as mesmas personas, mas coloca um assistente conversacional e agêntico no ecrã principal — mantendo o dashboard original e um Banking Hub orientado a tarefas a um toque de distância, para quem não quer escrever ou falar.',
-    conceptInProgress: 'Conceito em curso',
-    conceptPlaceholder: 'Estes ecrãs nativos em IA ainda não estão publicados aqui — com todo o gosto percorro a proposta numa conversa.',
-    getInTouchToSee: 'Contacta-me para ver',
     whatChangedTitle: 'O Que Mudou',
     whatChangedHeaders: ['', 'Redesign da App (Fase 1)', 'NeoBank (Fase 2)'],
     whatChanged: [
@@ -245,20 +239,12 @@ export default function CaseStudyNeoBank() {
       </div>
 
       <div style={S}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20 }}>
-          <div style={{
-            width: 'min(280px, 68vw)', maxWidth: 280, aspectRatio: '390 / 844',
-            borderRadius: 32, border: '8px solid #12141F', overflow: 'hidden',
-            background: 'repeating-linear-gradient(135deg, #EEF1F8, #EEF1F8 10px, #E4E8F4 10px, #E4E8F4 20px)',
-            display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center',
-            gap: 8, padding: 24, textAlign: 'center',
-          }}>
-            <div style={{ fontSize: 11, fontWeight: 700, color: '#8A8FA3', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{t.conceptInProgress}</div>
-            <div style={{ fontSize: 13, fontWeight: 600, color: '#5A5F73', lineHeight: 1.5 }}>{t.conceptPlaceholder}</div>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <div style={{ width: 'min(300px, 72vw)', borderRadius: 24, overflow: 'hidden', border: '1px solid rgba(20,30,60,0.08)', boxShadow: '0 12px 32px rgba(120,150,255,0.08)', background: '#12141F' }}>
+            <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()} preload="metadata" playsInline style={{ width: '100%', height: 'auto', display: 'block' }}>
+              <source src={neobankDemo} type="video/mp4" />
+            </video>
           </div>
-          <Link to="/contact" className="secondary-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 6, padding: '10px 20px', fontSize: 13, fontWeight: 600, color: '#002FA7', textDecoration: 'none' }}>
-            {t.getInTouchToSee}<ChevronRight size={14} />
-          </Link>
         </div>
       </div>
 
