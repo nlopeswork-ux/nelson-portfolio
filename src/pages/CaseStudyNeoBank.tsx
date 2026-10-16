@@ -24,7 +24,7 @@ function LazyGif({ src, alt, width }: { src: string; alt: string; width: number 
       ref={ref}
       src={started ? src : 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='}
       alt={alt}
-      style={{ width, aspectRatio: '980 / 2000', flexShrink: 0, height: 'auto', display: 'block', borderRadius: 24, background: started ? undefined : '#F2F6FF' }}
+      style={{ width, aspectRatio: '980 / 2000', flexShrink: 0, height: 'auto', display: 'block', background: started ? undefined : '#F2F6FF' }}
     />
   )
 }
