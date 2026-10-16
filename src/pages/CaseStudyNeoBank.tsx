@@ -4,7 +4,7 @@ import PrototypeCarousel, { type CarouselImage } from '../components/PrototypeCa
 import ChevronLeft from '../components/ChevronLeft'
 import ChevronRight from '../components/ChevronRight'
 import { useLanguage } from '../i18n/LanguageContext'
-import neobankDemo from '../imports/neobank-demo.mp4'
+import neobankDemo from '../imports/neobank-demo.gif'
 
 const S = { padding: '0 20px 64px', maxWidth: 760, margin: '0 auto' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
@@ -239,9 +239,7 @@ export default function CaseStudyNeoBank() {
             <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase2Label}</div>
             <Body>{t.phase2Body}</Body>
           </div>
-          <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()} preload="metadata" playsInline style={{ width: isMobile ? 'min(300px, 72vw)' : 260, flexShrink: 0, height: 'auto', display: 'block' }}>
-            <source src={neobankDemo} type="video/mp4" />
-          </video>
+          <img src={neobankDemo} alt={t.phase2Label} style={{ width: isMobile ? 'min(300px, 72vw)' : 260, flexShrink: 0, height: 'auto', display: 'block' }} />
         </div>
       </div>
 
