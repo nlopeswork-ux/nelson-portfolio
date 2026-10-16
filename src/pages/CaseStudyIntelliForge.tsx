@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import CaseStudyShell, { Body, DarkBox, SeverityChip } from '../components/CaseStudyShell'
+import CaseStudyShell, { Body, DarkBox, SeverityChip, VideoBlock } from '../components/CaseStudyShell'
 import ChevronLeft from '../components/ChevronLeft'
 import ChevronRight from '../components/ChevronRight'
 import { useLanguage } from '../i18n/LanguageContext'
+import showcaseVideo from '../imports/inteli-showcase.mp4'
 
 const S = { padding: '0 20px 64px', maxWidth: 760, margin: '0 auto' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
@@ -25,6 +26,7 @@ const copy = {
       { value: '60–90 min', label: 'analyst time per franchise, per cycle' },
       { value: '8', label: 'decision capabilities designed and shipped' },
     ],
+    showcaseLabel: 'Prototype showcase',
     hookTitle: 'The Hook',
     hook1: "Every month, 200 third-party retail franchise dealers submit financial data to the client's Record-to-Report managed service — trial balances, account schedules, and supporting documents loaded into Microsoft Business Central. Every month, client analysts manually ingest every file, map every local dealer account code to the client's corporate Chart of Accounts, reconcile discrepancies, investigate anomalies, propose journal entries, and govern what gets posted — against a hard month-end close deadline that waits for no one.",
     hookEmphasis: "The process works. The economics don't.",
@@ -186,6 +188,7 @@ const copy = {
       { value: '60–90 min', label: 'tempo de analista por concessionário, por ciclo' },
       { value: '8', label: 'capacidades de decisão desenhadas e entregues' },
     ],
+    showcaseLabel: 'Showcase do protótipo',
     hookTitle: 'O Ponto de Partida',
     hook1: 'Todos os meses, 200 concessionários de retalho franchisados submetem dados financeiros ao serviço gerido de Record-to-Report do cliente — balancetes, mapas de contas e documentos de suporte carregados no Microsoft Business Central. Todos os meses, os analistas do cliente processam manualmente cada ficheiro, mapeiam cada código de conta local do concessionário para o Chart of Accounts corporativo do cliente, reconciliam discrepâncias, investigam anomalias, propõem lançamentos contabilísticos e governam o que é lançado — contra um prazo rígido de fecho mensal que não espera por ninguém.',
     hookEmphasis: 'O processo funciona. A economia, não.',
@@ -353,6 +356,11 @@ export default function CaseStudyIntelliForge() {
         <p style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 20px' }}>{t.hookEmphasis}</p>
         <Body>{t.hook2}</Body>
         <Body>{t.hook3}</Body>
+      </div>
+
+      {/* PROTOTYPE SHOWCASE */}
+      <div style={{ ...S, paddingBottom: 32 }}>
+        <VideoBlock src={showcaseVideo} label={t.showcaseLabel} />
       </div>
 
       {/* RESEARCH */}
