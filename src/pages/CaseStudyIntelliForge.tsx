@@ -348,7 +348,7 @@ export default function CaseStudyIntelliForge() {
     >
       {/* THE HOOK */}
       <div style={{ ...S, paddingTop: 48 }}>
-        <h2 style={H2}>{t.hookTitle}</h2>
+        <h2 className="cs-h2-mark" style={H2}>{t.hookTitle}</h2>
         <Body>{t.hook1}</Body>
         <p style={{ fontSize: 20, fontWeight: 700, color: '#12141F', margin: '0 0 20px' }}>{t.hookEmphasis}</p>
         <Body>{t.hook2}</Body>
@@ -465,11 +465,11 @@ export default function CaseStudyIntelliForge() {
 
       {/* KEY FEATURE DECISIONS */}
       <div style={S}>
-        <h2 style={H2}>{t.keyDecisionsTitle}</h2>
+        <h2 className="cs-h2-mark" style={H2}>{t.keyDecisionsTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 32px' }}>{t.keyDecisionsIntro}</p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
           {t.keyDecisions.map(({ title, rejected, shipped, result }) => (
-            <div key={title} style={{ padding: 24, borderRadius: 20, background: '#F8FAFF', border: '1px solid #EAF1FF' }}>
+            <div key={title} className="cs-decision-card" style={{ padding: 24, borderRadius: 20, background: '#F8FAFF', border: '1px solid #EAF1FF' }}>
               <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', marginBottom: 12 }}>{title}</div>
               {rejected && (
                 <p style={{ fontSize: 14, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 10px' }}>
@@ -530,7 +530,7 @@ export default function CaseStudyIntelliForge() {
 
       {/* CONCLUDING WITH IMPACT */}
       <div style={S}>
-        <h2 style={H2}>{t.impactTitle}</h2>
+        <h2 className="cs-h2-mark" style={H2}>{t.impactTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 32px' }}>{t.impactIntro}</p>
         <div className="table-scroll" style={{ marginBottom: 32 }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>

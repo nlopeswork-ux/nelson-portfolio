@@ -388,6 +388,7 @@ export default function About() {
                     boxShadow: isHovered ? '0 6px 18px rgba(20,30,60,0.08)' : 'none',
                   }}
                 >
+                  <span aria-hidden="true" className="philosophy-dot" />
                   <div style={{ fontSize: 13, fontWeight: 600, color: '#001A5C', minWidth: 24, flexShrink: 0 }}>{n}</div>
                   <div style={{ fontSize: 15, fontWeight: 600, color: '#12141F' }}>{text}</div>
                 </div>
@@ -401,6 +402,7 @@ export default function About() {
         <div style={{ textAlign: 'center', maxWidth: 900, margin: '0 auto', padding: '24px 0' }}>
           <div style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: 52, lineHeight: 1, color: '#001A5C', opacity: 0.35, marginBottom: 8 }}>"</div>
           <p style={{ fontFamily: "Georgia,'Times New Roman',serif", fontStyle: 'italic', fontSize: 'clamp(22px,3vw,34px)', lineHeight: 1.45, color: '#2A2F3A', margin: 0 }}>{t.pullQuote}</p>
+          <div aria-hidden="true" className="accent-line" style={{ margin: '24px auto 0' }} />
         </div>
 
         <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', margin: '56px 0' }}>⸻</div>

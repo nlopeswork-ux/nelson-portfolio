@@ -346,7 +346,7 @@ export default function CaseStudyNEOT() {
 
       {/* IMPACT */}
       <div style={S}>
-        <h2 style={H2}>{t.impactTitle}</h2>
+        <h2 className="cs-h2-mark" style={H2}>{t.impactTitle}</h2>
         <Body>{t.impactBody}</Body>
       </div>
 
