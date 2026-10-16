@@ -1081,14 +1081,6 @@ input::placeholder { color: #A0A4B8; }
 }
 .philosophy-row:hover .philosophy-dot { transform: scale(1.35); }
 
-/* Cards: orange hover details on case cards (border + glow). Image areas are never tinted. */
-@media (hover: hover) and (pointer: fine) {
-  .case-card:hover {
-    border-color: rgba(255, 111, 0, 0.45) !important;
-    box-shadow: 0 18px 36px rgba(255, 111, 0, 0.12);
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   .hero-bulb-halo { animation: none; }
   .philosophy-dot { transition: none; }
