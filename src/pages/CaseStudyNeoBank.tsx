@@ -240,11 +240,9 @@ export default function CaseStudyNeoBank() {
 
       <div style={S}>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <div style={{ width: 'min(300px, 72vw)', borderRadius: 24, overflow: 'hidden', border: '1px solid rgba(20,30,60,0.08)', boxShadow: '0 12px 32px rgba(120,150,255,0.08)', background: '#12141F' }}>
-            <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()} preload="metadata" playsInline style={{ width: '100%', height: 'auto', display: 'block' }}>
-              <source src={neobankDemo} type="video/mp4" />
-            </video>
-          </div>
+          <video controls controlsList="nodownload" onContextMenu={e => e.preventDefault()} preload="metadata" playsInline style={{ width: 'min(300px, 72vw)', height: 'auto', display: 'block' }}>
+            <source src={neobankDemo} type="video/mp4" />
+          </video>
         </div>
       </div>
 
