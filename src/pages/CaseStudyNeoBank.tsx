@@ -50,7 +50,6 @@ function chunkCards<T>(cards: T[], size: number): T[][] {
 
 const copy = {
   en: {
-    eyebrow: 'Case Study · Concept Exploration',
     title: 'NeoBank — Reimagining Banking Twice',
     description: 'From a research-led app redesign to an AI-native banking experience',
     meta: [
@@ -116,7 +115,6 @@ const copy = {
     closing: 'The two phases sit side by side on purpose. Phase One is the discipline of research-led redesign; Phase Two is what changes once you stop treating AI as a feature and start treating it as the product.',
   },
   pt: {
-    eyebrow: 'Case Study · Exploração de Conceito',
     title: 'NeoBank — Reimaginar a Banca Duas Vezes',
     description: 'De um redesign de app orientado por investigação a uma experiência bancária nativa em IA',
     meta: [
@@ -203,7 +201,6 @@ export default function CaseStudyNeoBank() {
 
   return (
     <CaseStudyShell
-      eyebrow={t.eyebrow}
       title={t.title}
       description={t.description}
       meta={t.meta}

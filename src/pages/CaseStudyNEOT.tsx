@@ -23,7 +23,6 @@ function chunkCards<T>(cards: T[], size: number): T[][] {
 
 const copy = {
   en: {
-    eyebrow: 'Case Study',
     title: 'NEOT Mobile App',
     description: 'A mobile-first platform that brings employment services, training programmes, financial support and career guidance into one experience for citizens.',
     meta: [
@@ -114,7 +113,6 @@ const copy = {
     ],
   },
   pt: {
-    eyebrow: 'Case Study',
     title: 'NEOT Mobile App',
     description: 'Uma plataforma mobile-first que reúne serviços de emprego, programas de formação, apoio financeiro e orientação de carreira numa única experiência para o cidadão.',
     meta: [
@@ -225,7 +223,6 @@ export default function CaseStudyNEOT() {
 
   return (
     <CaseStudyShell
-      eyebrow={t.eyebrow}
       title={t.title}
       description={t.description}
       meta={t.meta}
