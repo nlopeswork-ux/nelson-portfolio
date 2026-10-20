@@ -29,7 +29,7 @@ function LazyGif({ src, alt, width }: { src: string; alt: string; width: number 
   )
 }
 
-const S = { padding: '0 20px 64px', maxWidth: 760, margin: '0 auto' } as const
+const S = { padding: '0 0 48px' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
 const NOTE = { padding: 24, borderRadius: 20, background: '#F2F6FF', border: '1px solid #EAF1FF' } as const
 
@@ -210,7 +210,7 @@ export default function CaseStudyNeoBank() {
       stats={t.stats}
     >
       {/* HOOK */}
-      <div style={{ ...S, paddingTop: 48 }}>
+      <div style={S}>
         <Body>{t.hook}</Body>
       </div>
 

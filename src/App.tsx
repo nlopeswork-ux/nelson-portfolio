@@ -1,5 +1,6 @@
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
+import Breadcrumb from './components/Breadcrumb'
 import { LanguageProvider } from './i18n/LanguageContext'
 import Portfolio from './pages/Portfolio'
 import Work from './pages/Work'
@@ -21,6 +22,7 @@ export default function App() {
     <LanguageProvider>
       <HashRouter>
         <ScrollToTop />
+        <Breadcrumb />
         <Routes>
           <Route path="/" element={<Portfolio />} />
           <Route path="/work" element={<Work />} />

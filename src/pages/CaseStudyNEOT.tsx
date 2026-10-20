@@ -10,7 +10,7 @@ import img4 from '../imports/4My_Support.png'
 import img5 from '../imports/5Chatbot.png'
 import img6 from '../imports/6RegistrationCreate_Account.png'
 
-const S = { padding: '0 20px 64px', maxWidth: 760, margin: '0 auto' } as const
+const S = { padding: '0 0 48px' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
 
 const galleryImages = [img1, img2, img3, img4, img5, img6]
@@ -232,7 +232,7 @@ export default function CaseStudyNEOT() {
       stats={t.stats}
     >
       {/* OVERVIEW */}
-      <div style={{ ...S, paddingTop: 48 }}>
+      <div style={S}>
         <h2 style={H2}>{t.overviewTitle}</h2>
         {t.overview.map((p, i) => <Body key={i}>{p}</Body>)}
       </div>
