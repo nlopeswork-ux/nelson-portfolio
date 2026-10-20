@@ -54,11 +54,11 @@ const copy = {
     description: 'From a research-led app redesign to an AI-native banking experience',
     meta: [
       { label: 'Role', value: 'Lead Product Designer' },
-      { label: 'Client', value: 'Retail bank engagement / internal concept' },
-      { label: 'Timeline', value: '10 weeks — 6-week redesign + 4-week AI concept extension' },
-      { label: 'Team', value: 'Solo, with input from 2 engineering collaborators' },
+      { label: 'Client', value: 'Retail bank engagement / internal concept', short: 'Retail bank engagement' },
+      { label: 'Timeline', value: '10 weeks — 6-week redesign + 4-week AI concept extension', short: '10 weeks · redesign + AI concept' },
+      { label: 'Team', value: 'Solo, with input from 2 engineering collaborators', short: 'Solo · input from 2 engineers' },
       { label: 'Tools', value: 'Figma, FigJam' },
-      { label: 'Deliverable', value: '24 high-fidelity screens (Phase 1) · AI-native concept prototype (Phase 2)', span: true },
+      { label: 'Deliverable', value: '24 high-fidelity screens (Phase 1) · AI-native concept prototype (Phase 2)', short: '24 screens (Phase 1) · AI concept (Phase 2)', span: true },
     ],
     stats: [
       { value: '~8s', label: 'Hypothesis: time to first answer (down from ~20s / 4 taps)' },
@@ -119,11 +119,11 @@ const copy = {
     description: 'De um redesign de app orientado por investigação a uma experiência bancária nativa em IA',
     meta: [
       { label: 'Função', value: 'Lead Product Designer' },
-      { label: 'Cliente', value: 'Colaboração com banco de retalho / conceito interno' },
-      { label: 'Duração', value: '10 semanas — 6 semanas de redesign + 4 semanas de extensão do conceito de IA' },
-      { label: 'Equipa', value: 'Individual, com contributo de 2 colaboradores de engenharia' },
+      { label: 'Cliente', value: 'Colaboração com banco de retalho / conceito interno', short: 'Colaboração com banco de retalho' },
+      { label: 'Duração', value: '10 semanas — 6 semanas de redesign + 4 semanas de extensão do conceito de IA', short: '10 semanas · redesign + conceito de IA' },
+      { label: 'Equipa', value: 'Individual, com contributo de 2 colaboradores de engenharia', short: 'Individual · contributo de 2 engenheiros' },
       { label: 'Ferramentas', value: 'Figma, FigJam' },
-      { label: 'Entregável', value: '24 ecrãs de alta fidelidade (Fase 1) · protótipo de conceito nativo em IA (Fase 2)', span: true },
+      { label: 'Entregável', value: '24 ecrãs de alta fidelidade (Fase 1) · protótipo de conceito nativo em IA (Fase 2)', short: '24 ecrãs (Fase 1) · conceito de IA (Fase 2)', span: true },
     ],
     stats: [
       { value: '~8s', label: 'Hipótese: tempo até à primeira resposta (de ~20s / 4 toques)' },

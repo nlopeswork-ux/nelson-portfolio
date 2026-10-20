@@ -27,11 +27,11 @@ const copy = {
     description: 'A mobile-first platform that brings employment services, training programmes, financial support and career guidance into one experience for citizens.',
     meta: [
       { label: 'Role', value: 'Lead UX/UI Designer' },
-      { label: 'Client', value: 'National employment fund (Government / Employment Services)' },
+      { label: 'Client', value: 'National employment fund (Government / Employment Services)', short: 'National employment fund' },
       { label: 'Platform', value: 'Mobile App (iOS & Android)' },
       { label: 'Languages', value: 'English & Arabic (RTL), light & dark mode' },
       { label: 'Modules', value: '8 core product areas' },
-      { label: 'Tools', value: 'Figma · FigJam · Jira · Confluence · Miro · Adobe Creative Suite' },
+      { label: 'Tools', value: 'Figma · FigJam · Jira · Confluence · Miro · Adobe Creative Suite', short: 'Figma · FigJam · Jira +3' },
     ],
     stats: [
       { value: '1,000+', label: 'design screens' },
@@ -117,11 +117,11 @@ const copy = {
     description: 'Uma plataforma mobile-first que reúne serviços de emprego, programas de formação, apoio financeiro e orientação de carreira numa única experiência para o cidadão.',
     meta: [
       { label: 'Função', value: 'Lead UX/UI Designer' },
-      { label: 'Cliente', value: 'Fundo nacional de emprego (Setor Público / Serviços de Emprego)' },
+      { label: 'Cliente', value: 'Fundo nacional de emprego (Setor Público / Serviços de Emprego)', short: 'Fundo nacional de emprego' },
       { label: 'Plataforma', value: 'App Mobile (iOS e Android)' },
       { label: 'Idiomas', value: 'Inglês e Árabe (RTL), modo claro e escuro' },
       { label: 'Módulos', value: '8 áreas de produto principais' },
-      { label: 'Ferramentas', value: 'Figma · FigJam · Jira · Confluence · Miro · Adobe Creative Suite' },
+      { label: 'Ferramentas', value: 'Figma · FigJam · Jira · Confluence · Miro · Adobe Creative Suite', short: 'Figma · FigJam · Jira +3' },
     ],
     stats: [
       { value: '1,000+', label: 'ecrãs de design' },
