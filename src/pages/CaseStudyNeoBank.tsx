@@ -34,12 +34,12 @@ const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterS
 const NOTE = { padding: 24, borderRadius: 20, background: '#F2F6FF', border: '1px solid #EAF1FF' } as const
 
 const phase1Images = [
-  '/case-studies/neobank/phase1/01-homepage.png',
-  '/case-studies/neobank/phase1/02-accounts.png',
-  '/case-studies/neobank/phase1/03-transfers-light.png',
-  '/case-studies/neobank/phase1/04-transfers-dark.png',
-  '/case-studies/neobank/phase1/05-analytics.png',
-  '/case-studies/neobank/phase1/06-support.png',
+  '/case-studies/neobank/phase1/01-homepage.webp',
+  '/case-studies/neobank/phase1/02-accounts.webp',
+  '/case-studies/neobank/phase1/03-transfers-light.webp',
+  '/case-studies/neobank/phase1/04-transfers-dark.webp',
+  '/case-studies/neobank/phase1/05-analytics.webp',
+  '/case-studies/neobank/phase1/06-support.webp',
 ]
 
 function chunkCards<T>(cards: T[], size: number): T[][] {
@@ -196,7 +196,7 @@ export default function CaseStudyNeoBank() {
   }, [])
 
   const phase1Cards = t.phase1Cards.map((c, i) => ({ ...c, image: phase1Images[i] }))
-  const processImages: CarouselImage[] = t.processImages.map((p, i) => ({ ...p, src: ['/case-studies/neobank/process/01-full-board.jpg', '/case-studies/neobank/process/02-login-flows.jpg', '/case-studies/neobank/process/03-balance-flow.jpg'][i] }))
+  const processImages: CarouselImage[] = t.processImages.map((p, i) => ({ ...p, src: ['/case-studies/neobank/process/01-full-board.webp', '/case-studies/neobank/process/02-login-flows.webp', '/case-studies/neobank/process/03-balance-flow.webp'][i] }))
   const gallerySlides = chunkCards(phase1Cards, isMobile ? 1 : 3)
 
   return (

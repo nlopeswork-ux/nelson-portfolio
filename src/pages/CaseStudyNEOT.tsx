@@ -3,12 +3,12 @@ import CaseStudyShell, { Body, DarkBox } from '../components/CaseStudyShell'
 import ChevronLeft from '../components/ChevronLeft'
 import ChevronRight from '../components/ChevronRight'
 import { useLanguage } from '../i18n/LanguageContext'
-import img1 from '../imports/1RegistrationCreate_Account.png'
-import img2 from '../imports/2Home__Stippend__-_V1.png'
-import img3 from '../imports/3Payment_Request_-_Upload_documents.png'
-import img4 from '../imports/4My_Support.png'
-import img5 from '../imports/5Chatbot.png'
-import img6 from '../imports/6RegistrationCreate_Account.png'
+import img1 from '../imports/1RegistrationCreate_Account.webp'
+import img2 from '../imports/2Home__Stippend__-_V1.webp'
+import img3 from '../imports/3Payment_Request_-_Upload_documents.webp'
+import img4 from '../imports/4My_Support.webp'
+import img5 from '../imports/5Chatbot.webp'
+import img6 from '../imports/6RegistrationCreate_Account.webp'
 
 const S = { padding: '0 0 48px' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
