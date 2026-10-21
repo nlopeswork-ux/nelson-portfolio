@@ -238,7 +238,7 @@ export default function CaseStudyNEOT() {
       <div style={S}>
         <h2 style={H2}>{t.roleTitle}</h2>
         <Body>{t.roleBody}</Body>
-        <p style={{ fontSize: 15, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>
+        <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>
           <strong style={{ color: '#12141F' }}>{t.responsibilitiesLabel}</strong>
           {t.responsibilities}
         </p>
@@ -252,7 +252,7 @@ export default function CaseStudyNEOT() {
         <div style={{ padding: 24, borderRadius: 20, background: '#F2F6FF', border: '1px solid #EAF1FF' }}>
           <div style={{ fontSize: 14, fontWeight: 700, color: '#12141F', marginBottom: 10 }}>{t.briefLabel}</div>
           {t.brief.map((p, i) => <Body key={i}>{p}</Body>)}
-          <p style={{ fontSize: 15, lineHeight: 1.75, color: '#5A5F73', margin: 0 }}>{t.briefClosing}</p>
+          <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: 0 }}>{t.briefClosing}</p>
         </div>
       </div>
 
@@ -269,8 +269,8 @@ export default function CaseStudyNEOT() {
                   <div key={title} style={{ borderRadius: 16, border: '1px solid #EAF1FF', overflow: 'hidden', background: '#FFFFFF' }}>
                     <img src={image} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
                     <div style={{ padding: 16 }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: '#12141F', marginBottom: 4 }}>{title}</div>
-                      <p style={{ fontSize: 13, lineHeight: 1.6, color: '#5A5F73', margin: 0 }}>{caption}</p>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: '#12141F', marginBottom: 4 }}>{title}</div>
+                      <p style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73', margin: 0 }}>{caption}</p>
                     </div>
                   </div>
                 ))}
@@ -298,9 +298,9 @@ export default function CaseStudyNEOT() {
             <div key={n} style={{ padding: '20px 24px', borderRadius: 16, border: '1px solid #EAF1FF', background: '#FAFBFF' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
                 <div style={{ fontSize: 11, fontWeight: 700, color: '#002FA7', background: '#DCE8FF', padding: '3px 8px', borderRadius: 8 }}>{n}</div>
-                <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F' }}>{name}</div>
+                <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F' }}>{name}</div>
               </div>
-              <div style={{ fontSize: 13, lineHeight: 1.6, color: '#5A5F73' }}>{desc}</div>
+              <div style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73' }}>{desc}</div>
             </div>
           ))}
         </div>
@@ -335,7 +335,7 @@ export default function CaseStudyNEOT() {
           {t.accessibilityStats.map(({ value, label }) => (
             <div key={label} style={{ padding: 20, borderRadius: 16, background: '#F2F6FF', textAlign: 'center' }}>
               <div style={{ fontSize: 22, fontWeight: 800, color: '#002FA7' }}>{value}</div>
-              <div style={{ fontSize: 13, color: '#5A5F73', marginTop: 4 }}>{label}</div>
+              <div style={{ fontSize: 14, color: '#5A5F73', marginTop: 4 }}>{label}</div>
             </div>
           ))}
         </div>

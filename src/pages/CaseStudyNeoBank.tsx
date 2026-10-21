@@ -219,7 +219,7 @@ export default function CaseStudyNeoBank() {
       <div style={S}>
         <h2 style={H2}>{t.twoPhasesTitle}</h2>
 
-        <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase1Label}</div>
+        <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase1Label}</div>
         <Body>{t.phase1Body}</Body>
       </div>
 
@@ -232,8 +232,8 @@ export default function CaseStudyNeoBank() {
                   <div key={title} style={{ borderRadius: 16, border: '1px solid #EAF1FF', overflow: 'hidden', background: '#FFFFFF' }}>
                     <img src={image} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
                     <div style={{ padding: 16 }}>
-                      <div style={{ fontSize: 13, fontWeight: 600, color: '#12141F', marginBottom: 4 }}>{title}</div>
-                      <p style={{ fontSize: 13, lineHeight: 1.6, color: '#5A5F73', margin: 0 }}>{caption}</p>
+                      <div style={{ fontSize: 14, fontWeight: 600, color: '#12141F', marginBottom: 4 }}>{title}</div>
+                      <p style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73', margin: 0 }}>{caption}</p>
                     </div>
                   </div>
                 ))}
@@ -256,7 +256,7 @@ export default function CaseStudyNeoBank() {
       <div style={S}>
         <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', gap: isMobile ? 24 : 40 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
-            <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase2Label}</div>
+            <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase2Label}</div>
             <Body>{t.phase2Body}</Body>
           </div>
           <LazyGif src={neobankDemo} alt={t.phase2Label} width={isMobile ? 'min(240px, 60vw)' : 190} />
@@ -278,7 +278,7 @@ export default function CaseStudyNeoBank() {
             <tbody>
               {t.whatChanged.map((r, i) => (
                 <tr key={r.row} style={{ borderBottom: i < t.whatChanged.length - 1 ? '1px solid #F2F6FF' : undefined }}>
-                  <td data-label="" style={{ padding: '14px 16px', color: '#001A5C', fontWeight: 600, fontSize: 13 }}>{r.row}</td>
+                  <td data-label="" style={{ padding: '14px 16px', color: '#001A5C', fontWeight: 600, fontSize: 14 }}>{r.row}</td>
                   <td data-label={t.whatChangedHeaders[1]} style={{ padding: '14px 16px', color: '#5A5F73' }}>{r.phase1}</td>
                   <td data-label={t.whatChangedHeaders[2]} style={{ padding: '14px 16px', color: '#12141F' }}>{r.phase2}</td>
                 </tr>
@@ -323,8 +323,8 @@ export default function CaseStudyNeoBank() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           {t.validationSteps.map(({ n, title, body }) => (
             <div key={n}>
-              <div style={{ fontSize: 15, fontWeight: 700, color: '#12141F', marginBottom: 6 }}>{n}. {title}</div>
-              <p style={{ fontSize: 15, lineHeight: 1.75, color: '#5A5F73', margin: 0 }}>{body}</p>
+              <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', marginBottom: 6 }}>{n}. {title}</div>
+              <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: 0 }}>{body}</p>
             </div>
           ))}
         </div>
