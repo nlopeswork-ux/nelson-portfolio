@@ -443,7 +443,7 @@ export default function CaseStudyTamkeen() {
           <p style={{ fontSize: 15, lineHeight: 1.7, color: '#3A3F4C', margin: 0 }}>{t.processBody}</p>
         </div>
 
-        <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', marginBottom: 16 }}>{t.quickWinsTitle}</div>
+        <h3 className="cs-h3">{t.quickWinsTitle}</h3>
         <div className="rg-3" style={{ gap: 14, marginBottom: 36 }}>
           {t.quickWins.map((win, i) => (
             <div key={i} style={{ padding: '16px 18px', borderRadius: 14, background: '#F8FAFF', border: '1px solid #EAF1FF', fontSize: 13.5, lineHeight: 1.55, color: '#3A3F4C' }}>{win}</div>
