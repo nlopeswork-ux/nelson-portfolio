@@ -177,7 +177,7 @@ const copy = {
     skills: ['Product Design', 'UX Research', 'Design Systems', 'Accessibility', 'Strategy', 'Leadership', 'Visual Design', 'AI for Designers'],
     toolsEyebrow: 'Tools & Stack',
     toolGroups: [
-      { title: 'Design', tools: [{ key: 'figma', name: 'Figma' }, { key: 'sketch', name: 'Sketch' }, { key: 'adobexd', name: 'Adobe XD' }] },
+      { title: 'Design', tools: [{ key: 'figma', name: 'Figma' }, { key: 'sketch', name: 'Sketch' }, { key: 'adobexd', name: 'Adobe XD' }, { key: 'adobecreativecloud', name: 'Adobe Creative Cloud' }] },
       { title: 'Design systems', tools: [{ key: 'storybook', name: 'Storybook' }, { key: 'zeroheight', name: 'Zeroheight' }] },
       { title: 'Collaboration', tools: [{ key: 'miro', name: 'Miro' }, { key: 'jira', name: 'Jira' }, { key: 'confluence', name: 'Confluence' }, { key: 'notion', name: 'Notion' }] },
       { title: 'Research & analytics', tools: [{ key: 'maze', name: 'Maze' }, { key: 'hotjar', name: 'Hotjar' }, { key: 'googleanalytics', name: 'Google Analytics' }] },
