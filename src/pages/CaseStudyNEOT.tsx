@@ -11,7 +11,7 @@ import img5 from '../imports/5Chatbot.webp'
 import img6 from '../imports/6RegistrationCreate_Account.webp'
 
 const S = { padding: '0 0 48px' } as const
-const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: '#12141F', margin: '0 0 20px' }
+const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--ink-headline)', margin: '0 0 20px' }
 
 const galleryImages = [img1, img2, img3, img4, img5, img6]
 
