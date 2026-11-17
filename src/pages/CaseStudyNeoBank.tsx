@@ -4,27 +4,34 @@ import PrototypeCarousel, { type CarouselImage } from '../components/PrototypeCa
 import ChevronLeft from '../components/ChevronLeft'
 import ChevronRight from '../components/ChevronRight'
 import { useLanguage } from '../i18n/LanguageContext'
-import neobankDemo from '../imports/neobank-demo.gif'
+import neobankDemo from '../imports/neobank-demo.mp4'
 
-// GIFs can't be started from code, so the file is only attached once the
-// image scrolls into view — it then plays from frame 1 and loops forever.
-function LazyGif({ src, alt, width }: { src: string; alt: string; width: number | string }) {
-  const ref = useRef<HTMLImageElement>(null)
-  const [started, setStarted] = useState(false)
+// Muted looping MP4 (autoplay is only allowed for muted video). It plays while
+// on screen and pauses off screen, so it never burns CPU out of view.
+function DemoVideo({ src, label, width }: { src: string; label: string; width: number | string }) {
+  const ref = useRef<HTMLVideoElement>(null)
   useEffect(() => {
     const el = ref.current
-    if (!el || started) return
-    if (typeof IntersectionObserver === 'undefined') { setStarted(true); return }
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setStarted(true); io.disconnect() } }, { threshold: 0.4 })
+    if (!el || typeof IntersectionObserver === 'undefined') return
+    const io = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) el.play().catch(() => {})
+      else el.pause()
+    }, { threshold: 0.25 })
     io.observe(el)
     return () => io.disconnect()
-  }, [started])
+  }, [])
   return (
-    <img
+    <video
       ref={ref}
-      src={started ? src : 'data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=='}
-      alt={alt}
-      style={{ width, aspectRatio: '980 / 2000', flexShrink: 0, height: 'auto', display: 'block', background: started ? undefined : '#F2F6FF' }}
+      src={src}
+      aria-label={label}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+      disablePictureInPicture
+      style={{ width, aspectRatio: '980 / 2000', flexShrink: 0, height: 'auto', display: 'block', background: '#F2F6FF' }}
     />
   )
 }
@@ -259,7 +266,7 @@ export default function CaseStudyNeoBank() {
             <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase2Label}</div>
             <Body>{t.phase2Body}</Body>
           </div>
-          <LazyGif src={neobankDemo} alt={t.phase2Label} width={isMobile ? 'min(240px, 60vw)' : 190} />
+          <DemoVideo src={neobankDemo} label={t.phase2Label} width={isMobile ? 'min(240px, 60vw)' : 190} />
         </div>
       </div>
 
