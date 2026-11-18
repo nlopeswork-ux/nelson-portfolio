@@ -27,7 +27,7 @@ const filterOptions: Category[] = ['all', 'financial-services', 'government', 'i
 const studiesBase = [
   { id: 'intelliforge', to: '/work/intelliforge', title: 'IntelliForge SR2R', category: 'financial-services' as Category, color: 'linear-gradient(135deg, #002FA7 0%, #3D63E0 100%)', initials: 'SR2R', image: intelliforgeImg },
   { id: 'onerak', to: '/work/onerak', title: 'OneRAK Portal Revamp', category: 'government' as Category, color: 'linear-gradient(135deg, #0F4C75 0%, #1B6CA8 100%)', initials: 'GEZ', image: onerakImg },
-  { id: 'tamkeen', to: '/work/tamkeen', title: 'National Workforce Digital Platform', category: 'government' as Category, color: 'linear-gradient(135deg, #1E3A5F 0%, #2E6EA6 100%)', initials: 'NEOT', image: tamkeenImg },
+  { id: 'tamkeen', to: '/work/tamkeen', title: 'National Workforce Digital Platform', category: 'government' as Category, color: 'linear-gradient(135deg, #1E3A5F 0%, #2E6EA6 100%)', initials: 'NWP', image: tamkeenImg },
   { id: 'design-system', to: '/work/design-system', title: 'Internal Design System', category: 'internal-platform' as Category, color: 'linear-gradient(135deg, #2D2D2D 0%, #4A4A6A 100%)', initials: 'DS', image: dsImg },
   { id: 'neot', to: '/work/neot', title: 'NEOT Mobile App', category: 'government' as Category, color: 'linear-gradient(135deg, #003B6F 0%, #0055A5 100%)', initials: 'MOB', image: neotImg },
   { id: 'neobank', to: '/work/neobank', title: 'NeoBank — Reimagining Banking Twice', category: 'financial-services' as Category, color: 'linear-gradient(135deg, #002FA7 0%, #5B7FE8 100%)', initials: 'NB', image: neobankImg },
