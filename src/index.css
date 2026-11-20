@@ -1261,7 +1261,7 @@ html { scrollbar-gutter: stable; }
    Modules without an h2 (highlight boxes) stay attached to the chapter above. */
 .cs-main > div { padding-bottom: 0 !important; }
 .cs-main > div:last-child { padding-bottom: 48px !important; }
-.cs-main > div:has(h2)::before { content: '⸻'; display: block; text-align: center; font-size: 22px; line-height: 1; color: #001A5C; margin: 56px 0; }
+.cs-main > div:has(h2)::before { content: ''; display: block; width: 32px; height: 3px; border-radius: 2px; background: var(--color-accent); margin: 56px 0; font-size: 0; }
 .cs-main > div:first-child:has(h2)::before { display: none; }
 .cs-main > div:not(:has(h2)) { padding-top: 32px !important; }
 .cs-h2-mark::before { display: none; }
@@ -1556,3 +1556,9 @@ html { scrollbar-gutter: stable; }
 .cs-rows { gap: 0 40px !important; border-top: 1px solid rgba(18, 20, 31, 0.12); }
 .cs-row { padding: 18px 0; border-bottom: 1px solid rgba(18, 20, 31, 0.12); }
 @media (max-width: 760px) { .cs-decision { grid-template-columns: minmax(0, 1fr); } }
+/* Numbered list rows (stages, judgment calls, principles, decisions): hairlines instead of one card per item */
+.cs-numlist { display: flex; flex-direction: column; border-top: 1px solid rgba(18, 20, 31, 0.12); }
+.cs-numrow { display: flex; gap: 20px; padding: 18px 0; border-bottom: 1px solid rgba(18, 20, 31, 0.12); }
+
+/* Orange section bar: the one decorative divider across About and the case studies */
+.section-bar { width: 32px; height: 3px; border-radius: 2px; background: var(--color-accent); margin: 56px 0; }

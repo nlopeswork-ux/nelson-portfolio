@@ -390,6 +390,7 @@ export default function CaseStudyOneRAK() {
       description={t.description}
       meta={t.meta}
       stats={t.stats}
+      refined
     >
       {/* THE HOOK */}
       <div style={S}>
@@ -415,7 +416,7 @@ export default function CaseStudyOneRAK() {
           </div>
         </div>
 
-        <div style={{ padding: '16px 20px', borderLeft: '3px solid #C9D9FF', background: '#F8FAFF', borderRadius: '0 12px 12px 0', marginBottom: 32 }}>
+        <div style={{ padding: '2px 0 2px 20px', borderLeft: '3px solid #C9D9FF', marginBottom: 32 }}>
           <p style={{ fontSize: 16, fontStyle: 'italic', color: '#12141F', lineHeight: 1.6, margin: '0 0 6px' }}>{t.quote1}</p>
           <p style={{ fontSize: 14, color: '#5A5F73', margin: 0 }}>{t.quote1Attr}</p>
         </div>
@@ -464,7 +465,7 @@ export default function CaseStudyOneRAK() {
         <div>
           <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', marginBottom: 8 }}>{t.track4Title}</div>
           <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 12px' }}>{t.track4Body}</p>
-          <div style={{ padding: '16px 20px', borderLeft: '3px solid #C9D9FF', background: '#F8FAFF', borderRadius: '0 12px 12px 0' }}>
+          <div style={{ padding: '2px 0 2px 20px', borderLeft: '3px solid #C9D9FF' }}>
             <p style={{ fontSize: 16, fontStyle: 'italic', color: '#12141F', lineHeight: 1.6, margin: '0 0 6px' }}>{t.quote2}</p>
             <p style={{ fontSize: 14, color: '#5A5F73', margin: 0 }}>{t.quote2Attr}</p>
           </div>
@@ -562,9 +563,9 @@ export default function CaseStudyOneRAK() {
       <div style={S}>
         <h2 className="cs-h2-mark" style={H2}>{t.rejectedTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 32px' }}>{t.rejectedIntro}</p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+        <div className="cs-numlist">
           {t.rejectedDecisions.map(({ rejected, chosen }, i) => (
-            <div key={i} style={{ padding: 24, borderRadius: 20, background: '#F8FAFF', border: '1px solid #EAF1FF' }}>
+            <div key={i} className="cs-numrow" style={{ display: 'block' }}>
               <p style={{ fontSize: 14, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 10px' }}>
                 <strong style={{ color: '#B23A3A' }}>{t.rejectedLabel}</strong>{rejected}
               </p>

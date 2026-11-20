@@ -406,7 +406,7 @@ export default function About() {
           </div>
         </div>
 
-        <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', margin: '56px 0' }}>⸻</div>
+        <div className="section-bar" aria-hidden="true" />
 
         <h2 style={sectionTitle}>{t.howIThinkTitle}</h2>
         <div style={{ columns: '2 340px', columnGap: 48 }}>
@@ -445,11 +445,10 @@ export default function About() {
         <div aria-hidden="true" style={{ height: 80 }} />
 
         <div style={{ textAlign: 'center', maxWidth: 900, margin: '0 auto', padding: '24px 0' }}>
-          <div style={{ fontFamily: "Georgia,'Times New Roman',serif", fontSize: 52, lineHeight: 1, color: '#001A5C', opacity: 0.35, marginBottom: 8 }}>"</div>
           <p style={{ fontFamily: "Georgia,'Times New Roman',serif", fontStyle: 'italic', fontSize: 'clamp(22px,3vw,34px)', lineHeight: 1.45, color: '#2A2F3A', margin: 0 }}><span className="pull-quote-mark" aria-hidden="true">“</span>{t.pullQuote}<span className="pull-quote-mark" aria-hidden="true">”</span></p>
         </div>
 
-        <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', margin: '56px 0' }}>⸻</div>
+        <div className="section-bar" aria-hidden="true" />
 
         <h2 style={sectionTitle}>{t.beyondTitle}</h2>
         <div style={{ columns: '2 300px', columnGap: 40 }}>
@@ -463,7 +462,7 @@ export default function About() {
         <p style={{ textAlign: 'center', fontSize: 16, lineHeight: 1.7, color: '#5A5F73', maxWidth: 640, margin: '0 auto' }}>{t.closingNote}</p>
       </div>
 
-      <div style={{ textAlign: 'center', fontSize: 22, color: '#001A5C', maxWidth: 1200, margin: '0 auto', padding: '0 20px 56px' }}>⸻</div>
+      <div style={{ maxWidth: 1200, margin: '0 auto', padding: '0 20px 56px' }}><div className="section-bar" aria-hidden="true" style={{ margin: 0 }} /></div>
 
       {/* ── SKILLS ── */}
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>

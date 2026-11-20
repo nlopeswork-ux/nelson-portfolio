@@ -38,7 +38,7 @@ function DemoVideo({ src, label, width }: { src: string; label: string; width: n
 
 const S = { padding: '0 0 48px' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--ink-headline)', margin: '0 0 20px' }
-const NOTE = { padding: 24, borderRadius: 20, background: '#F2F6FF', border: '1px solid #EAF1FF' } as const
+const NOTE = { padding: '2px 0 2px 20px', borderLeft: '3px solid var(--color-accent)' } as const
 
 const phase1Images = [
   '/case-studies/neobank/phase1/01-homepage.webp',
@@ -212,6 +212,7 @@ export default function CaseStudyNeoBank() {
       description={t.description}
       meta={t.meta}
       stats={t.stats}
+      refined
     >
       {/* HOOK */}
       <div style={S}>
