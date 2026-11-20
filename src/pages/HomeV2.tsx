@@ -3,6 +3,7 @@ import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import ChevronRight from '../components/ChevronRight'
 import { useLanguage, type Lang } from '../i18n/LanguageContext'
+import HomeShowcase from '../components/HomeShowcase'
 import HeroShowreel from '../components/HeroShowreel'
 import intelliforgeImg from '../imports/hero.webp'
 
@@ -76,36 +77,11 @@ export default function HomeV2() {
         </div>
       </section>
 
-      {/* INDEX: three cards on one row, same surface as the Work page cards */}
-      <section className="hv2-index hv1-rows">
-        <ul>
-          {t.index.map(({ to, label, cta, meta, desc }) => (
-            <li key={to}>
-              <Link to={to} className="case-card interactive-card hv1-card">
-                <span className="hv1-card-badge">{meta}</span>
-                <span className="hv1-card-title">{label}</span>
-                <span className="hv1-card-desc">{desc}</span>
-                <span className="hv1-card-link">{cta}<ChevronRight size={15} /></span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {/* FEATURED: same contained card as v1 */}
-      <div className="hv1-feat-wrap">
-        <Link to="/work/intelliforge" className="hv1-feat" aria-label={`${t.featuredTitle}, ${t.seeCaseStudy}`}>
-          <div className="hv1-feat-copy">
-            <div className="label-with-dot" style={{ fontSize: 14, fontWeight: 500, color: '#5A5F73', marginBottom: 14 }}><span aria-hidden="true" className="label-dot" />{t.featuredLabel}</div>
-            <h2>{t.featuredTitle}</h2>
-            <p>{t.featuredDesc}</p>
-            <span className="hv1-feat-link">{t.seeCaseStudy}<ChevronRight size={16} /></span>
-          </div>
-          <div className="hv1-feat-media">
-            <img src={intelliforgeImg} alt="IntelliForge SR2R desktop preview" />
-          </div>
-        </Link>
-      </div>
+      {/* WORK / JOURNEY / ABOUT showcase */}
+      <HomeShowcase
+        items={t.index}
+        featured={{ label: t.featuredLabel, title: t.featuredTitle, desc: t.featuredDesc, img: intelliforgeImg, alt: 'IntelliForge SR2R desktop preview' }}
+      />
 
       {/* CONTACT: same centred block as v1 */}
       <div id="contact" style={{ position: 'relative', padding: '0 32px var(--section-gap)', maxWidth: 1200, margin: '0 auto' }}>

@@ -5,6 +5,7 @@ import Footer from '../components/Footer'
 import ChevronRight from '../components/ChevronRight'
 import { useLanguage, type Lang } from '../i18n/LanguageContext'
 import intelliforgeImg from '../imports/hero.webp'
+import HomeShowcase from '../components/HomeShowcase'
 import HeroShowreel from '../components/HeroShowreel'
 
 function useFadeIn() {
@@ -77,7 +78,6 @@ const copy = {
 export default function Portfolio() {
   const { lang } = useLanguage()
   const t = copy[lang as Lang]
-  const preview = useFadeIn()
   const rows = useFadeIn()
   const contact = useFadeIn()
 
@@ -115,35 +115,12 @@ export default function Portfolio() {
         </div>
       </div>
 
-      {/* AREA ROWS */}
-      <div ref={rows.ref} className="hv2-index hv1-rows" style={{ paddingTop: 0, paddingBottom: 'var(--section-gap)', ...rows.style }}>
-        <ul style={{ marginTop: 0 }}>
-          {t.rows.map(({ to, label, cta, meta, desc }) => (
-            <li key={to}>
-              <Link to={to} className="case-card interactive-card hv1-card">
-                <span className="hv1-card-badge">{meta}</span>
-                <span className="hv1-card-title">{label}</span>
-                <span className="hv1-card-desc">{desc}</span>
-                <span className="hv1-card-link">{cta}<ChevronRight size={15} /></span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-
-      {/* FEATURED WORK PREVIEW */}
-      <div ref={preview.ref} className="hv1-feat-wrap" style={preview.style}>
-        <Link to="/work/intelliforge" className="hv1-feat" aria-label={`${t.featuredTitle}, ${t.seeCaseStudy}`}>
-          <div className="hv1-feat-copy">
-            <div className="label-with-dot" style={{ fontSize: 14, fontWeight: 500, color: '#5A5F73', marginBottom: 14 }}><span aria-hidden="true" className="label-dot" />{t.featuredLabel}</div>
-            <h2>{t.featuredTitle}</h2>
-            <p>{t.featuredDesc}</p>
-            <span className="hv1-feat-link">{t.seeCaseStudy}<ChevronRight size={16} /></span>
-          </div>
-          <div className="hv1-feat-media">
-            <img src={intelliforgeImg} alt="IntelliForge SR2R desktop preview" />
-          </div>
-        </Link>
+      {/* WORK / JOURNEY / ABOUT showcase */}
+      <div ref={rows.ref} style={rows.style}>
+        <HomeShowcase
+          items={t.rows}
+          featured={{ label: t.featuredLabel, title: t.featuredTitle, desc: t.featuredDesc, img: intelliforgeImg, alt: 'IntelliForge SR2R desktop preview' }}
+        />
       </div>
 
       {/* CONTACT CTA */}
