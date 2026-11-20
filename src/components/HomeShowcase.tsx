@@ -11,9 +11,10 @@ export default function HomeShowcase({ items, featured }: { items: Item[]; featu
   return (
     <section className="hs">
       <div className="hs-work interactive-card">
+        <span className="hs-orb" aria-hidden="true" />
         <div className="hs-work-copy">
           <div className="hs-top"><span className="hs-num">01</span><span className="hs-meta">{work.meta}</span></div>
-          <span className="hs-title hs-title-xl">{work.label}<span className="hs-dot hs-dot-lg hs-dot-grow" aria-hidden="true" /></span>
+          <span className="hs-title hs-title-xl">{work.label}</span>
           <span className="hs-desc">{work.desc}</span>
           <div className="hs-actions">
             <Link to={featured.to} className="hs-cta hs-featured-link">{featured.label}: {featured.title}<ChevronRight size={15} /></Link>
@@ -28,7 +29,7 @@ export default function HomeShowcase({ items, featured }: { items: Item[]; featu
       {rest.map((it, i) => (
         <Link key={it.to} to={it.to} className="hs-side interactive-card">
           <div className="hs-top"><span className="hs-num">{`0${i + 2}`}</span><span className="hs-meta">{it.meta}</span></div>
-          <span className="hs-title">{it.label}<span className="hs-dot hs-dot-grow" aria-hidden="true" /></span>
+          <span className="hs-title">{it.label}</span>
           <span className="hs-desc">{it.desc}</span>
           <span className="hs-cta">{it.cta}<ChevronRight size={15} /></span>
         </Link>
