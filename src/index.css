@@ -1499,7 +1499,7 @@ html { scrollbar-gutter: stable; }
 /* actions reuse the site's .secondary-btn and .hs-cta link; the link only needs to sit above the stretched card link */
 .hs-featured-link { position: relative; z-index: 2; }
 /* One big graphic orange circle cropped by the card corner (replaces the small repeated dots) */
-.hs-orb { --orb: clamp(320px, 42vw, 560px); position: absolute; top: calc(var(--orb) * -0.58); right: calc(var(--orb) * -0.62); width: var(--orb); height: var(--orb); border-radius: 50%; background: var(--color-accent); pointer-events: none; transition: transform 400ms var(--ease-out-back); }
+.hs-orb { --orb: clamp(360px, 46vw, 620px); position: absolute; top: calc(var(--orb) * -0.22); right: calc(var(--orb) * -0.7); width: var(--orb); height: var(--orb); border-radius: 50%; background: var(--color-accent); pointer-events: none; transition: transform 400ms var(--ease-out-back); transform-origin: 20% 40%; }
 .hs-side { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 28px; border-radius: 20px; background: #FFFFFF; border: 1px solid rgba(20, 30, 60, 0.1); transition: transform 240ms var(--ease-out), border-color 240ms var(--ease-out), box-shadow 240ms var(--ease-out); }
 .hs-top { display: flex; align-items: center; gap: 12px; }
 .hs-num { font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.04em; color: #002FA7; }
