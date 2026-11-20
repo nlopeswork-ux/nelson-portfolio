@@ -115,7 +115,7 @@ export default function Journey() {
 
           {/* KPMG */}
           <TimelineRow period={t.roles[0].period} marker="current">
-            <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--ink-headline)', margin: '0 0 4px' }}><span className="idx" aria-hidden="true">01</span>{t.roles[0].title}</h3>
+            <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--ink-headline)', margin: '0 0 4px' }}>{t.roles[0].title}</h3>
             <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>{t.roles[0].company}</div>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 16px' }}>{t.roles[0].body}</p>
             <button type="button" aria-expanded={kpmgOpen} className="engagement-toggle" onClick={() => setKpmgOpen(o => !o)}>
@@ -145,7 +145,7 @@ export default function Journey() {
 
           {/* Deloitte */}
           <TimelineRow period={t.roles[1].period} marker="milestone">
-            <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--ink-headline)', margin: '0 0 4px' }}><span className="idx" aria-hidden="true">02</span>{t.roles[1].title}</h3>
+            <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--ink-headline)', margin: '0 0 4px' }}>{t.roles[1].title}</h3>
             <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>{t.roles[1].company}</div>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 16px' }}>{t.roles[1].body}</p>
             <button type="button" aria-expanded={deloitteOpen} className="engagement-toggle" onClick={() => setDeloitteOpen(o => !o)}>
@@ -175,7 +175,7 @@ export default function Journey() {
 
           {/* Wingman */}
           <TimelineRow period={t.roles[2].period}>
-            <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--ink-headline)', margin: '0 0 4px' }}><span className="idx" aria-hidden="true">03</span>{t.roles[2].title}</h3>
+            <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--ink-headline)', margin: '0 0 4px' }}>{t.roles[2].title}</h3>
             <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>{t.roles[2].company}</div>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>{t.roles[2].body}</p>
           </TimelineRow>
@@ -184,7 +184,7 @@ export default function Journey() {
 
           {/* Ogilvy */}
           <TimelineRow period={t.roles[3].period}>
-            <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--ink-headline)', margin: '0 0 4px' }}><span className="idx" aria-hidden="true">04</span>{t.roles[3].title}</h3>
+            <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--ink-headline)', margin: '0 0 4px' }}>{t.roles[3].title}</h3>
             <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>{t.roles[3].company}</div>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>{t.roles[3].body}</p>
           </TimelineRow>
@@ -193,7 +193,7 @@ export default function Journey() {
 
           {/* Biocol */}
           <TimelineRow period={t.roles[4].period}>
-            <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--ink-headline)', margin: '0 0 4px' }}><span className="idx" aria-hidden="true">05</span>{t.roles[4].title}</h3>
+            <h3 style={{ fontSize: 20, fontWeight: 700, color: 'var(--ink-headline)', margin: '0 0 4px' }}>{t.roles[4].title}</h3>
             <div style={{ fontSize: 15, fontWeight: 500, color: '#5A5F73', marginBottom: 12 }}>{t.roles[4].company}</div>
             <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>{t.roles[4].body}</p>
           </TimelineRow>
