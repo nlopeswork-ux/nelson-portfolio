@@ -1536,3 +1536,23 @@ html { scrollbar-gutter: stable; }
 
 /* Contact block gets room to breathe after the showcase */
 #contact { padding-top: clamp(16px, 3vw, 40px) !important; }
+
+/* ── Case study "refined" variant (opt-in): fewer boxes, numbered sections, orange section bar ── */
+.cs-main.cs-refined { counter-reset: cs-sec; }
+.cs-main.cs-refined > div:has(h2)::before { content: ''; display: block; width: 32px; height: 3px; border-radius: 2px; background: var(--color-accent); margin: 56px 0; font-size: 0; }
+.cs-main.cs-refined > div:first-child:has(h2)::before { display: none; }
+.cs-main.cs-refined > div > h2 { display: block; }
+.cs-main.cs-refined > div > h2::before { counter-increment: cs-sec; content: counter(cs-sec, decimal-leading-zero); display: block; font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #002FA7; margin-bottom: 10px; width: auto; height: auto; border-radius: 0; background: none; }
+/* Decisions: rows with hairlines instead of one card each */
+.cs-decisions { border-top: 1px solid rgba(18, 20, 31, 0.12); }
+.cs-decision { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 8px 32px; padding: 24px 0; border-bottom: 1px solid rgba(18, 20, 31, 0.12); }
+.cs-decision-title { font-size: 16px; font-weight: 700; color: #12141F; }
+.cs-decision-body p { font-size: 14px; line-height: 1.7; color: #5A5F73; margin: 0 0 10px; }
+.cs-decision-body p:last-child { margin-bottom: 0; }
+.cs-decision-body .cs-decision-result { color: #12141F; font-weight: 600; padding-left: 12px; border-left: 3px solid var(--color-accent); }
+/* The brief: a pulled passage with an orange bar, not a tinted box */
+.cs-brief { padding: 2px 0 2px 20px; border-left: 3px solid var(--color-accent); }
+/* Module list: two columns of hairline rows */
+.cs-rows { gap: 0 40px !important; border-top: 1px solid rgba(18, 20, 31, 0.12); }
+.cs-row { padding: 18px 0; border-bottom: 1px solid rgba(18, 20, 31, 0.12); }
+@media (max-width: 760px) { .cs-decision { grid-template-columns: minmax(0, 1fr); } }

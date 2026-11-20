@@ -227,6 +227,7 @@ export default function CaseStudyNEOT() {
       description={t.description}
       meta={t.meta}
       stats={t.stats}
+      refined
     >
       {/* OVERVIEW */}
       <div style={S}>
@@ -249,7 +250,7 @@ export default function CaseStudyNEOT() {
         <h2 style={H2}>{t.challengeTitle}</h2>
         <Body>{t.challengeBody}</Body>
 
-        <div style={{ padding: 24, borderRadius: 20, background: '#F2F6FF', border: '1px solid #EAF1FF' }}>
+        <div className="cs-brief">
           <div style={{ fontSize: 14, fontWeight: 700, color: '#12141F', marginBottom: 10 }}>{t.briefLabel}</div>
           {t.brief.map((p, i) => <Body key={i}>{p}</Body>)}
           <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: 0 }}>{t.briefClosing}</p>
@@ -293,11 +294,11 @@ export default function CaseStudyNEOT() {
       {/* 8 MODULES */}
       <div style={S}>
         <h2 style={H2}>{t.modulesTitle}</h2>
-        <div className="rg-2" style={{ gap: 16 }}>
+        <div className="rg-2 cs-rows">
           {t.modules.map(({ n, name, desc }) => (
-            <div key={n} style={{ padding: '20px 24px', borderRadius: 16, border: '1px solid #EAF1FF', background: '#FAFBFF' }}>
+            <div key={n} className="cs-row">
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-                <div style={{ fontSize: 11, fontWeight: 700, color: '#002FA7', background: '#DCE8FF', padding: '3px 8px', borderRadius: 8 }}>{n}</div>
+                <div style={{ fontSize: 12, fontWeight: 800, color: '#002FA7', letterSpacing: '0.04em' }}>{n}</div>
                 <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F' }}>{name}</div>
               </div>
               <div style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73' }}>{desc}</div>

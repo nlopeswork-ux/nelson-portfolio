@@ -379,6 +379,7 @@ export default function CaseStudyIntelliForge() {
       description={t.description}
       meta={t.meta}
       stats={t.stats}
+      refined
     >
       {/* THE HOOK */}
       <div style={S}>
@@ -506,19 +507,21 @@ export default function CaseStudyIntelliForge() {
       <div style={S}>
         <h2 className="cs-h2-mark" style={H2}>{t.keyDecisionsTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 32px' }}>{t.keyDecisionsIntro}</p>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 28 }}>
+        <div className="cs-decisions">
           {t.keyDecisions.map(({ title, rejected, shipped, result }) => (
-            <div key={title} style={{ padding: 24, borderRadius: 20, background: '#F8FAFF', border: '1px solid #EAF1FF' }}>
-              <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', marginBottom: 12 }}>{title}</div>
-              {rejected && (
-                <p style={{ fontSize: 14, lineHeight: 1.7, color: '#5A5F73', margin: '0 0 10px' }}>
-                  <strong style={{ color: '#B23A3A' }}>{t.rejectedLabel}</strong>{rejected}
+            <div key={title} className="cs-decision">
+              <div className="cs-decision-title">{title}</div>
+              <div className="cs-decision-body">
+                {rejected && (
+                  <p>
+                    <strong style={{ color: '#B23A3A' }}>{t.rejectedLabel}</strong>{rejected}
+                  </p>
+                )}
+                <p>
+                  <strong style={{ color: '#1F7A4D' }}>{t.shippedLabel}</strong>{shipped}
                 </p>
-              )}
-              <p style={{ fontSize: 14, lineHeight: 1.7, color: '#5A5F73', margin: result ? '0 0 10px' : 0 }}>
-                <strong style={{ color: '#1F7A4D' }}>{t.shippedLabel}</strong>{shipped}
-              </p>
-              {result && <p style={{ fontSize: 14, lineHeight: 1.7, color: '#12141F', margin: 0, fontWeight: 600 }}>{t.resultLabel}{result}</p>}
+                {result && <p className="cs-decision-result">{t.resultLabel}{result}</p>}
+              </div>
             </div>
           ))}
         </div>
