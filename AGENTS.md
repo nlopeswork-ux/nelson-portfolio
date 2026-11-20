@@ -54,8 +54,10 @@ Sober, with a few relaxed touches. **Blue is the voice** (rigor, structure, acti
   1. The section bar (`.section-bar`, 32×3px) that closes a section on About and case studies.
   2. The bar beside a "Result" line or a pulled brief/note.
   3. One graphic accent per hero-level card (the Work card circle, the hero dot), and the current step in a stepper.
-  4. Tiny moments of voice: the pull-quote marks, the footer line, the 404 dot.
+  4. Tiny moments of voice: the footer line and the 404 dot.
 - Semantic colours stay semantic: red = rejected/critical, green = shipped/positive.
+- **Index numbers (01, 02…)** use `--color-index` (`#46537F`, a desaturated slate blue, 7.5:1 on white) so they read as labels, never as actions. Use it for every ordinal: section numbers, card numbers, stepper steps, numbered rows. Use the `.idx` class for inline numbers before titles. Cards that are not ordered (Contact) show an icon instead of a number.
+- Pull quotes: one large blue opening glyph centred above the quote, no extra quote marks around the text.
 
 ### Typography
 - Large headings (H1, H2, display numbers): **Plus Jakarta Sans** (`--font-display`), weight 800, tracking `-0.025em`. Everything else: **Inter**.

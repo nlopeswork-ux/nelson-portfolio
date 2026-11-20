@@ -14,6 +14,8 @@
   /* Orange accent (logo dot). Decorative only: markers, bars, halos, hovers.
      --color-accent (#FF6F00) is 2.8:1 on white, so never use it for text.
      --color-accent-icon (3.5:1) is the minimum for arrows/icons; --color-accent-text (5.2:1) passes AA for small text. */
+  /* Index numbers (01, 02…): a desaturated slate blue so they read as labels, not actions (7.5:1 on white, AAA) */
+  --color-index: #46537F;
   --color-accent: #FF6F00;
   --color-accent-icon: #E65F00;
   --color-accent-text: #C2410C;
@@ -1482,8 +1484,6 @@ html { scrollbar-gutter: stable; }
   .hv2-actions .hv2-btn-quiet { flex: 1 1 0; text-align: center; }
 }
 
-/* Orange = the human moment: pull-quote marks and the 404 wink */
-.pull-quote-mark { color: var(--color-accent-icon); font-family: var(--font-display); font-weight: 800; }
 
 /* ── Homepage showcase: hero Work card + two lighter side cards ── */
 .hs { max-width: 1200px; margin: 0 auto; padding: 16px 32px calc(var(--section-gap) + 40px); display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); grid-template-rows: 1fr 1fr; gap: 24px; }
@@ -1507,14 +1507,15 @@ html { scrollbar-gutter: stable; }
 .hs-blob { --blob: clamp(300px, 42vw, 460px); position: absolute; left: 50%; bottom: calc(var(--blob) * -0.76); width: var(--blob); height: var(--blob); margin-left: calc(var(--blob) / -2); border-radius: 50%; background: var(--color-accent); opacity: 0.85; pointer-events: none; transition: transform 400ms var(--ease-out); }
 .hs-side { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 28px; border-radius: 20px; background: #FFFFFF; border: 1px solid rgba(20, 30, 60, 0.1); transition: transform 240ms var(--ease-out), border-color 240ms var(--ease-out), box-shadow 240ms var(--ease-out); }
 .hs-top { display: flex; align-items: center; gap: 12px; }
-.hs-num { font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.04em; color: #002FA7; }
+.hs-top > svg { flex-shrink: 0; }
+.hs-num { font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.04em; color: var(--color-index); }
 .hs-meta { font-size: 13px; color: #5A5F73; }
 .hs-title { display: inline-flex; align-items: center; gap: 10px; margin: 24px 0 12px; font-family: var(--font-display); font-size: clamp(26px, 2.6vw, 34px); font-weight: 800; letter-spacing: -0.025em; line-height: 1.05; color: var(--ink-headline); }
 .hs-title-xl { font-size: clamp(40px, 5vw, 64px); margin: 32px 0 16px; letter-spacing: -0.03em; }
 .hs-desc { font-size: 16px; line-height: 1.55; color: #5A5F73; max-width: 38ch; }
 .hs-cta { margin-top: auto; padding-top: 20px; display: inline-flex; align-items: center; gap: 4px; font-size: 15px; font-weight: 600; color: #002FA7; }
 .hs-cta svg { transition: transform 200ms var(--ease-out); }
-.hs a:focus-visible { outline: 2px solid #002FA7; outline-offset: 4px; }
+.hs a:focus-visible, a.hs-side:focus-visible { outline: 2px solid #002FA7; outline-offset: 4px; }
 .hs-cta-main:focus-visible::after { outline: 2px solid #002FA7; outline-offset: 4px; }
 .hs-cta-main:focus-visible svg, .hs-side:focus-visible .hs-cta svg { transform: translateX(3px); }
 @media (hover: hover) and (pointer: fine) {
@@ -1542,7 +1543,7 @@ html { scrollbar-gutter: stable; }
 .cs-main.cs-refined > div:has(h2)::before { content: ''; display: block; width: 32px; height: 3px; border-radius: 2px; background: var(--color-accent); margin: 56px 0; font-size: 0; }
 .cs-main.cs-refined > div:first-child:has(h2)::before { display: none; }
 .cs-main.cs-refined > div > h2 { display: block; }
-.cs-main.cs-refined > div > h2::before { counter-increment: cs-sec; content: counter(cs-sec, decimal-leading-zero); display: block; font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: #002FA7; margin-bottom: 10px; width: auto; height: auto; border-radius: 0; background: none; }
+.cs-main.cs-refined > div > h2::before { counter-increment: cs-sec; content: counter(cs-sec, decimal-leading-zero); display: block; font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.08em; color: var(--color-index); margin-bottom: 10px; width: auto; height: auto; border-radius: 0; background: none; }
 /* Decisions: rows with hairlines instead of one card each */
 .cs-decisions { display: block; }
 .cs-decision { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: 8px 32px; padding: 24px 0; border-top: 1px solid rgba(18, 20, 31, 0.12); }
@@ -1573,7 +1574,7 @@ html { scrollbar-gutter: stable; }
 .phase-stepper { margin-top: 8px; }
 .phase-steps { display: flex; gap: clamp(20px, 4vw, 48px); border-bottom: 1px solid rgba(18, 20, 31, 0.12); }
 .phase-step { position: relative; display: inline-flex; align-items: baseline; gap: 10px; padding: 14px 0 16px; background: none; border: 0; cursor: pointer; color: #5A5F73; font: inherit; transition: color 200ms var(--ease-out); }
-.phase-step-num { font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.06em; color: #002FA7; }
+.phase-step-num { font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.06em; color: var(--color-index); }
 .phase-step-name { font-family: var(--font-display); font-size: clamp(18px, 2.2vw, 24px); font-weight: 800; letter-spacing: -0.02em; }
 .phase-step::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: #002FA7; transform: scaleX(0); transform-origin: left; transition: transform 240ms var(--ease-out); }
 .phase-step.is-active { color: var(--ink-headline); }
@@ -1596,3 +1597,6 @@ html { scrollbar-gutter: stable; }
   .phase-step { border-bottom: 1px solid rgba(18, 20, 31, 0.12); }
 }
 @media (prefers-reduced-motion: reduce) { .phase-panel { animation: none; } .phase-step, .phase-step::after { transition: none; } }
+
+/* Index number used inline before titles and badges */
+.idx { font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.06em; color: var(--color-index); margin-right: 10px; vertical-align: 0.06em; }

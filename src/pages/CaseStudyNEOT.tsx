@@ -300,7 +300,7 @@ export default function CaseStudyNEOT() {
           {t.modules.map(({ n, name, desc }) => (
             <div key={n} className="cs-row">
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
-                <div style={{ fontSize: 12, fontWeight: 800, color: '#002FA7', letterSpacing: '0.04em' }}>{n}</div>
+                <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--color-index)', letterSpacing: '0.04em' }}>{n}</div>
                 <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F' }}>{name}</div>
               </div>
               <div style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73' }}>{desc}</div>
