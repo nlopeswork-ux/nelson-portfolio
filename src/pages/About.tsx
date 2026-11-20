@@ -232,6 +232,8 @@ const copy = {
     methodLink: 'See how I turned this into a repeatable agent workflow: Agentic UX Flow',
     showLess: 'Show less',
     learnMore: 'Learn more',
+    phaseQuestionLabel: 'The question',
+    phaseDeliverablesLabel: 'What comes out of it',
     workPhases: [
       {
         id: 'discover', name: 'Discover',
@@ -330,6 +332,8 @@ const copy = {
     howIWorkTitle: 'Da descoberta a uma decisão implementada',
     showLess: 'Mostrar menos',
     learnMore: 'Saber mais',
+    phaseQuestionLabel: 'A pergunta',
+    phaseDeliverablesLabel: 'O que sai daqui',
     workPhases: [
       {
         id: 'discover', name: 'Descobrir',
@@ -574,17 +578,26 @@ export default function About() {
             const phase = t.workPhases[activePhase]
             return (
               <div {...phaseSwipe} id="phase-panel" role="tabpanel" aria-labelledby={`phase-tab-${phase.id}`} className={`${phaseSwipe.className} phase-panel`} key={phase.id}>
-                <p className="phase-panel-lead">{phase.description}</p>
-                <p className="phase-panel-q">"{phase.question}"</p>
-                <p className="phase-panel-detail">{phase.detail}</p>
-                <ul className="phase-panel-list">
-                  {phase.deliverables.map(d => <li key={d}>{d}</li>)}
-                </ul>
-                <div className="phase-panel-links">
-                  <Link to={phase.proof.to} className="hs-cta">{phase.proof.label}<ChevronRight size={15} /></Link>
-                  {phase.id === 'define' && (
-                    <Link to="/work/agentic-ux-flow" className="hs-cta">{t.methodLink}<ChevronRight size={15} /></Link>
-                  )}
+                <span className="phase-panel-num" aria-hidden="true">{`0${activePhase + 1}`}</span>
+                <div className="phase-panel-main">
+                  <p className="phase-panel-lead">{phase.description}</p>
+                  <p className="phase-panel-detail">{phase.detail}</p>
+                  <div className="phase-panel-links">
+                    <Link to={phase.proof.to} className="hs-cta">{phase.proof.label}<ChevronRight size={15} /></Link>
+                    {phase.id === 'define' && (
+                      <Link to="/work/agentic-ux-flow" className="hs-cta">{t.methodLink}<ChevronRight size={15} /></Link>
+                    )}
+                  </div>
+                </div>
+                <div className="phase-panel-side">
+                  <div className="phase-label">{t.phaseQuestionLabel}</div>
+                  <p className="phase-panel-q">{phase.question}</p>
+                  <div className="phase-label">{t.phaseDeliverablesLabel}</div>
+                  <ol className="phase-panel-list">
+                    {phase.deliverables.map((d, i) => (
+                      <li key={d}><span className="idx">{`0${i + 1}`}</span>{d}</li>
+                    ))}
+                  </ol>
                 </div>
               </div>
             )
