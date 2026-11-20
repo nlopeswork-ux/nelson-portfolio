@@ -25,7 +25,7 @@ function useFadeIn() {
 
 const copy = {
   en: {
-    role: 'Lead Product Designer · Lisbon, Portugal',
+    role: 'Lead UX/UI Designer | Product Designer | AI Designer | Design Systems · Lisbon, Portugal',
     titleLine1: 'Product systems for complex,',
     titleLine2Pre: '',
     titleLine2Highlight: 'high-stakes',
@@ -49,7 +49,7 @@ const copy = {
     emailMe: 'Email me directly',
   },
   pt: {
-    role: 'Lead Product Designer · Lisboa, Portugal',
+    role: 'Lead UX/UI Designer | Product Designer | AI Designer | Design Systems · Lisboa, Portugal',
     titleLine1: 'Sistemas de produto para decisões',
     titleLine2Pre: 'complexas e de ',
     titleLine2Highlight: 'alto risco.',
@@ -93,7 +93,7 @@ export default function Portfolio() {
 
         <div className="hv1-hero-grid">
         <div className="hv1-hero-copy">
-          <div className="hero-reveal" style={{ transitionDelay: '0ms', fontSize: 14, fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#001A5C', marginBottom: 24 }}>{t.role}</div>
+          <div className="hero-reveal" style={{ transitionDelay: '0ms', fontSize: 14, fontWeight: 600, letterSpacing: '0.06em', lineHeight: 1.5, textWrap: 'balance', textTransform: 'uppercase', color: '#001A5C', marginBottom: 24 }}>{t.role}</div>
           <h1 className="hero-reveal" style={{ transitionDelay: '60ms', textWrap: 'balance', fontSize: lang === 'pt' ? 'clamp(32px,3.6vw,50px)' : 'clamp(34px,4vw,56px)', lineHeight: 1.06, fontWeight: 900, letterSpacing: '-0.04em', color: 'var(--ink-headline)', margin: '0 0 28px' }}>
             {t.titleLine1}{' '}{t.titleLine2Pre}<span style={{ whiteSpace: 'nowrap' }}><span className="hero-highlight">{t.titleLine2Highlight}</span></span>{t.titleLine2Post ? <>{' '}<span style={{ whiteSpace: 'nowrap' }}>{t.titleLine2Post.trim()}</span></> : null}
           </h1>
