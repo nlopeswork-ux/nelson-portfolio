@@ -1499,7 +1499,7 @@ html { scrollbar-gutter: stable; }
 /* actions reuse the site's .secondary-btn and .hs-cta link; the link only needs to sit above the stretched card link */
 .hs-featured-link { position: relative; z-index: 2; }
 /* One big graphic orange circle cropped by the card corner (replaces the small repeated dots) */
-.hs-orb { position: absolute; top: calc(clamp(200px, 26vw, 320px) / -2.4); right: calc(clamp(200px, 26vw, 320px) / -2.4); width: clamp(200px, 26vw, 320px); height: clamp(200px, 26vw, 320px); border-radius: 50%; background: var(--color-accent); pointer-events: none; transition: transform 400ms var(--ease-out-back); }
+.hs-orb { --orb: clamp(320px, 42vw, 560px); position: absolute; top: calc(var(--orb) * -0.58); right: calc(var(--orb) * -0.62); width: var(--orb); height: var(--orb); border-radius: 50%; background: var(--color-accent); pointer-events: none; transition: transform 400ms var(--ease-out-back); }
 .hs-side { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 28px; border-radius: 20px; background: #FFFFFF; border: 1px solid rgba(20, 30, 60, 0.1); transition: transform 240ms var(--ease-out), border-color 240ms var(--ease-out), box-shadow 240ms var(--ease-out); }
 .hs-top { display: flex; align-items: center; gap: 12px; }
 .hs-num { font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.04em; color: #002FA7; }
@@ -1509,9 +1509,6 @@ html { scrollbar-gutter: stable; }
 .hs-desc { font-size: 16px; line-height: 1.55; color: #5A5F73; max-width: 38ch; }
 .hs-cta { margin-top: auto; padding-top: 20px; display: inline-flex; align-items: center; gap: 4px; font-size: 15px; font-weight: 600; color: #002FA7; }
 .hs-cta svg { transition: transform 200ms var(--ease-out); }
-/* Orange = the human touch: a small dot that wakes up on hover */
-.hs-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--color-accent); flex-shrink: 0; }
-.hs-dot-grow { transition: transform 280ms var(--ease-out-back); }
 .hs a:focus-visible { outline: 2px solid #002FA7; outline-offset: 4px; }
 .hs-cta-main:focus-visible::after { outline: 2px solid #002FA7; outline-offset: 4px; }
 .hs-cta-main:focus-visible svg, .hs-side:focus-visible .hs-cta svg { transform: translateX(3px); }
@@ -1520,7 +1517,7 @@ html { scrollbar-gutter: stable; }
   .hs-work:hover .hs-work-media img { transform: scale(1.02); }
   .hs-side:hover { transform: translateY(-3px); border-color: rgba(0, 47, 167, 0.3); box-shadow: 0 16px 36px rgba(20, 30, 60, 0.08); }
   .hs a:hover .hs-cta svg { transform: translateX(3px); }
-  .hs-work:hover .hs-orb { transform: scale(1.08); }
+  .hs-work:hover .hs-orb { transform: scale(1.05); }
 }
 .hs-side:active, .hs-work:active { transform: scale(0.99); transition-duration: 120ms; }
 @media (max-width: 860px) {
