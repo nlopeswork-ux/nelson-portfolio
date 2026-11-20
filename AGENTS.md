@@ -52,7 +52,7 @@ Sober, with a few relaxed touches. **Blue is the voice** (rigor, structure, acti
 - Orange `--color-accent #FF6F00` is **decorative only** (2.8:1 on white): never for text. Use `--color-accent-icon` for icons/arrows and `--color-accent-text` if small orange text is unavoidable.
 - Orange appears **only** in these places, and the list is a ceiling, not a target:
   1. The section bar (`.section-bar`, 32×3px) that closes a section on About and case studies.
-  2. The bar beside a "Result" line or a pulled brief/note.
+  2. The bar beside a "Result" line or a pulled brief/note (also the question in a How I Work panel).
   3. One graphic accent per hero-level card (the Work card circle, the hero dot), and the current step in a stepper.
   4. Tiny moments of voice: the footer line and the 404 dot.
 - Semantic colours stay semantic: red = rejected/critical, green = shipped/positive.
@@ -102,7 +102,7 @@ Sober, with a few relaxed touches. **Blue is the voice** (rigor, structure, acti
 
 ### Carousels and steppers
 - Every carousel supports the **swipe gesture** (touch) and horizontal trackpad scroll, as well as arrows and dots. Use `useSwipe` from `src/components/useSwipe.ts` and spread it on the viewport; it also adds `.swipe-x` (`touch-action: pan-y`).
-- How I Work is a **stepper** (one phase open at a time, orange current step, swipe/arrow-key navigation), not a row of expandable cards. Do not add auto-rotation.
+- How I Work is a **stepper** (one phase open at a time, swipe/arrow-key navigation), not a row of expandable cards. The steps reuse the Work page filter control (`.work-filter-track` / `.work-filter-tab`); do not restyle it. No ghost numerals or decorative repeated numbers. Do not add auto-rotation.
 
 ### Images and video
 - Artwork with transparency (e.g. `hero.webp`) goes straight on the surface: no blend modes, no extra shadow or radius.

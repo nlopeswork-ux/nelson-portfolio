@@ -556,7 +556,7 @@ export default function About() {
         <div style={eyebrowWithTitle}>{t.howIWorkEyebrow}</div>
         <h2 style={sectionTitle}>{t.howIWorkTitle}</h2>
         <div className="phase-stepper">
-          <div className="phase-steps" role="tablist" aria-label={t.howIWorkTitle} onKeyDown={onStepKey}>
+          <div className="work-filter-track phase-track" role="tablist" aria-label={t.howIWorkTitle} onKeyDown={onStepKey}>
             {t.workPhases.map((phase, i) => (
               <button
                 key={phase.id}
@@ -566,11 +566,10 @@ export default function About() {
                 aria-selected={i === activePhase}
                 aria-controls="phase-panel"
                 tabIndex={i === activePhase ? 0 : -1}
-                className={`phase-step${i === activePhase ? ' is-active' : ''}`}
+                className={`work-filter-tab${i === activePhase ? ' is-active' : ''}`}
                 onClick={() => setActivePhase(i)}
               >
-                <span className="phase-step-num">{`0${i + 1}`}</span>
-                <span className="phase-step-name">{phase.name}</span>
+                <span className="phase-tab-n">{`0${i + 1}`}</span>{phase.name}
               </button>
             ))}
           </div>
@@ -578,7 +577,6 @@ export default function About() {
             const phase = t.workPhases[activePhase]
             return (
               <div {...phaseSwipe} id="phase-panel" role="tabpanel" aria-labelledby={`phase-tab-${phase.id}`} className={`${phaseSwipe.className} phase-panel`} key={phase.id}>
-                <span className="phase-panel-num" aria-hidden="true">{`0${activePhase + 1}`}</span>
                 <div className="phase-panel-main">
                   <p className="phase-panel-lead">{phase.description}</p>
                   <p className="phase-panel-detail">{phase.detail}</p>
