@@ -80,7 +80,7 @@ export default function HomeV2() {
       {/* WORK / JOURNEY / ABOUT showcase */}
       <HomeShowcase
         items={t.index}
-        featured={{ label: t.featuredLabel, title: t.featuredTitle, desc: t.featuredDesc, img: intelliforgeImg, alt: 'IntelliForge SR2R desktop preview' }}
+        featured={{ to: '/work/intelliforge', label: t.featuredLabel, title: t.featuredTitle, desc: t.featuredDesc, img: intelliforgeImg, alt: 'IntelliForge SR2R desktop preview' }}
       />
 
       {/* CONTACT: same centred block as v1 */}

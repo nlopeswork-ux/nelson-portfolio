@@ -32,7 +32,7 @@ const copy = {
     titleLine2Highlight: 'high-stakes',
     titleLine2Post: ' decisions.',
     subtitle: 'I design the decision layer beneath enterprise products: banking, insurance, government. Clarity has to survive real deadlines and real stakes.',
-    showreelLabel: 'Showreel of product work: banking app login and AI assistant, delivery console, government platforms.',
+    showreelLabel: 'Showreel of product work: banking app with an AI assistant, government licensing flows, a design system, and energy, coaching and real estate products.',
     viewWork: 'View work',
     getInTouch: 'Get in touch',
     featuredLabel: 'Featured work',
@@ -56,7 +56,7 @@ const copy = {
     titleLine2Highlight: 'alto risco.',
     titleLine2Post: '',
     subtitle: 'Desenho a camada de decisão por trás de produtos empresariais: banca, seguros, setor público. A clareza tem de sobreviver a prazos e riscos reais.',
-    showreelLabel: 'Showreel de trabalho de produto: login e assistente AI de uma app bancária, consola de operações, plataformas governamentais.',
+    showreelLabel: 'Showreel de trabalho de produto: app bancária com assistente AI, fluxos de licenciamento governamentais, um design system e produtos de energia, coaching e imobiliário.',
     viewWork: 'Ver trabalho',
     getInTouch: 'Entrar em contacto',
     featuredLabel: 'Trabalho em destaque',
@@ -119,7 +119,7 @@ export default function Portfolio() {
       <div ref={rows.ref} style={rows.style}>
         <HomeShowcase
           items={t.rows}
-          featured={{ label: t.featuredLabel, title: t.featuredTitle, desc: t.featuredDesc, img: intelliforgeImg, alt: 'IntelliForge SR2R desktop preview' }}
+          featured={{ to: '/work/intelliforge', label: t.featuredLabel, title: t.featuredTitle, desc: t.featuredDesc, img: intelliforgeImg, alt: 'IntelliForge SR2R desktop preview' }}
         />
       </div>
 
