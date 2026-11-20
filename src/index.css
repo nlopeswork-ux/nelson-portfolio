@@ -1496,8 +1496,8 @@ html { scrollbar-gutter: stable; }
 .hs-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; margin-top: 20px; }
 .hs-work .hs-cta { margin-top: 0; padding-top: 0; }
 .hs-cta-main::after { content: ""; position: absolute; inset: 0; border-radius: 28px; }
-.hs-featured-link { position: relative; z-index: 2; display: inline-flex; align-items: center; gap: 8px; padding: 8px 14px; border-radius: 999px; background: rgba(255, 255, 255, 0.8); font-size: 13px; font-weight: 600; color: #3F4559; transition: background-color 200ms var(--ease-out), color 200ms var(--ease-out); }
-.hs-featured-link svg { transition: transform 200ms var(--ease-out); }
+/* secondary action reuses the site's .secondary-btn; it only needs to sit above the stretched card link */
+.hs-featured-btn { position: relative; z-index: 2; }
 .hs-side { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 28px; border-radius: 20px; background: #FFFFFF; border: 1px solid rgba(20, 30, 60, 0.1); transition: transform 240ms var(--ease-out), border-color 240ms var(--ease-out), box-shadow 240ms var(--ease-out); }
 .hs-top { display: flex; align-items: center; gap: 12px; }
 .hs-num { font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.04em; color: #002FA7; }
@@ -1518,8 +1518,7 @@ html { scrollbar-gutter: stable; }
   .hs-work:hover { transform: translateY(-3px); box-shadow: 0 24px 48px rgba(0, 47, 167, 0.12); }
   .hs-work:hover .hs-work-media img { transform: scale(1.02); }
   .hs-side:hover { transform: translateY(-3px); border-color: rgba(0, 47, 167, 0.3); box-shadow: 0 16px 36px rgba(20, 30, 60, 0.08); }
-  .hs a:hover .hs-cta svg, .hs-featured-link:hover svg { transform: translateX(3px); }
-  .hs-featured-link:hover { background: #FFFFFF; color: #002FA7; }
+  .hs a:hover .hs-cta svg { transform: translateX(3px); }
   .hs-side:hover .hs-dot-grow { transform: scale(1.5); }
 }
 .hs-side:active, .hs-work:active { transform: scale(0.99); transition-duration: 120ms; }
