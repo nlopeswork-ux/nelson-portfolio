@@ -17,13 +17,9 @@ export default function HomeShowcase({ items, featured }: { items: Item[]; featu
           <span className="hs-desc">{work.desc}</span>
           <span className="hs-cta">{work.cta}<ChevronRight size={15} /></span>
         </div>
-        <div className="hs-work-media" aria-hidden="false">
+        <div className="hs-work-media">
+          <span className="hs-featured"><span className="hs-dot" aria-hidden="true" />{featured.label}: {featured.title}</span>
           <img src={featured.img} alt={featured.alt} />
-          <div className="hs-caption">
-            <span className="hs-caption-label"><span className="hs-dot" aria-hidden="true" />{featured.label}</span>
-            <span className="hs-caption-title">{featured.title}</span>
-            <span className="hs-caption-desc">{featured.desc}</span>
-          </div>
         </div>
       </Link>
       {rest.map((it, i) => (
