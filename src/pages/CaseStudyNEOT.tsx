@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useSwipe } from '../components/useSwipe'
 import CaseStudyShell, { Body, DarkBox } from '../components/CaseStudyShell'
 import ChevronLeft from '../components/ChevronLeft'
 import ChevronRight from '../components/ChevronRight'
@@ -220,6 +221,7 @@ export default function CaseStudyNEOT() {
 
   const galleryCards = t.galleryCards.map((c, i) => ({ ...c, image: galleryImages[i] }))
   const gallerySlides = chunkCards(galleryCards, isMobile ? 1 : 3)
+  const gallerySwipe = useSwipe(() => setGalleryIdx(i => (i - 1 + gallerySlides.length) % gallerySlides.length), () => setGalleryIdx(i => (i + 1) % gallerySlides.length))
 
   return (
     <CaseStudyShell
@@ -262,7 +264,7 @@ export default function CaseStudyNEOT() {
         <h2 style={H2}>{t.galleryTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 28px' }}>{t.galleryIntro}</p>
 
-        <div style={{ overflow: 'hidden', marginBottom: 20 }}>
+        <div {...gallerySwipe} style={{ overflow: 'hidden', marginBottom: 20 }}>
           <div style={{ display: 'flex', transform: `translateX(-${galleryIdx * 100}%)`, transition: 'transform 420ms ease-out' }}>
             {gallerySlides.map((slide, si) => (
               <div key={si} className={isMobile ? undefined : 'carousel-3'} style={{ flex: '0 0 100%' }}>

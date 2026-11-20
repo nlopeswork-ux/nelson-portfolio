@@ -1,5 +1,7 @@
 # Design critique, brand critique e motion — Portfolio Nelson Lopes
 
+> As regras que daqui resultaram estão compiladas em `AGENTS.md`, secção "Design rules". Este ficheiro fica como histórico da análise.
+
 Escopo: v1 (`Portfolio.tsx`), v2 (`HomeV2.tsx`), About, showreel (`HeroShowreel.tsx`), tokens em `src/index.css`.
 Brief de marca: sóbrio (azul `#002FA7`) com apontamentos descontraídos/divertidos (laranja `#FF6F00`).
 

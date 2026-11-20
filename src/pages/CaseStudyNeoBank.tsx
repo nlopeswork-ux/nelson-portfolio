@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { useSwipe } from '../components/useSwipe'
 import CaseStudyShell, { Body, DarkBox } from '../components/CaseStudyShell'
 import PrototypeCarousel, { type CarouselImage } from '../components/PrototypeCarousel'
 import ChevronLeft from '../components/ChevronLeft'
@@ -205,6 +206,7 @@ export default function CaseStudyNeoBank() {
   const phase1Cards = t.phase1Cards.map((c, i) => ({ ...c, image: phase1Images[i] }))
   const processImages: CarouselImage[] = t.processImages.map((p, i) => ({ ...p, src: ['/case-studies/neobank/process/01-full-board.webp', '/case-studies/neobank/process/02-login-flows.webp', '/case-studies/neobank/process/03-balance-flow.webp'][i] }))
   const gallerySlides = chunkCards(phase1Cards, isMobile ? 1 : 3)
+  const gallerySwipe = useSwipe(() => setGalleryIdx(i => (i - 1 + gallerySlides.length) % gallerySlides.length), () => setGalleryIdx(i => (i + 1) % gallerySlides.length))
 
   return (
     <CaseStudyShell
@@ -232,7 +234,7 @@ export default function CaseStudyNeoBank() {
       </div>
 
       <div style={S}>
-        <div style={{ overflow: 'hidden', marginBottom: 20 }}>
+        <div {...gallerySwipe} style={{ overflow: 'hidden', marginBottom: 20 }}>
           <div style={{ display: 'flex', transform: `translateX(-${galleryIdx * 100}%)`, transition: 'transform 420ms ease-out' }}>
             {gallerySlides.map((slide, si) => (
               <div key={si} className={isMobile ? undefined : 'carousel-3'} style={{ flex: '0 0 100%' }}>

@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import ChevronRight from '../components/ChevronRight'
-import ChevronDown from '../components/ChevronDown'
-import ChevronUp from '../components/ChevronUp'
+import { useSwipe } from '../components/useSwipe'
 import { useLanguage } from '../i18n/LanguageContext'
 import { TOOL_ICONS, ZEROHEIGHT_COLOR } from '../components/toolIcons'
 import { squarify } from '../components/treemap'
@@ -379,10 +378,16 @@ const copy = {
 export default function About() {
   const { lang } = useLanguage()
   const t = copy[lang]
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({})
+  const [activePhase, setActivePhase] = useState(0)
   const [philosophyHover, setPhilosophyHover] = useState<number | null>(null)
 
-  const toggle = (id: string) => setExpanded(e => ({ ...e, [id]: !e[id] }))
+  const phaseCount = t.workPhases.length
+  const phaseSwipe = useSwipe(() => setActivePhase(i => (i - 1 + phaseCount) % phaseCount), () => setActivePhase(i => (i + 1) % phaseCount))
+  const onStepKey = (e: React.KeyboardEvent) => {
+    if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return
+    e.preventDefault()
+    setActivePhase(i => (i + (e.key === 'ArrowRight' ? 1 : -1) + phaseCount) % phaseCount)
+  }
 
   return (
     <div style={{ position: 'relative', overflow: 'hidden', background: '#FFFFFF', minHeight: '100vh' }}>
@@ -545,44 +550,44 @@ export default function About() {
       <div style={{ position: 'relative', padding: '0 20px 80px', maxWidth: 1200, margin: '0 auto' }}>
         <div style={eyebrowWithTitle}>{t.howIWorkEyebrow}</div>
         <h2 style={sectionTitle}>{t.howIWorkTitle}</h2>
-        <div className="rg-phase">
-          {t.workPhases.map(phase => {
-            const isOpen = !!expanded[phase.id]
+        <div className="phase-stepper">
+          <div className="phase-steps" role="tablist" aria-label={t.howIWorkTitle} onKeyDown={onStepKey}>
+            {t.workPhases.map((phase, i) => (
+              <button
+                key={phase.id}
+                type="button"
+                role="tab"
+                id={`phase-tab-${phase.id}`}
+                aria-selected={i === activePhase}
+                aria-controls="phase-panel"
+                tabIndex={i === activePhase ? 0 : -1}
+                className={`phase-step${i === activePhase ? ' is-active' : ''}`}
+                onClick={() => setActivePhase(i)}
+              >
+                <span className="phase-step-num">{`0${i + 1}`}</span>
+                <span className="phase-step-name">{phase.name}</span>
+              </button>
+            ))}
+          </div>
+          {(() => {
+            const phase = t.workPhases[activePhase]
             return (
-              <div key={phase.id} className="phase-card-v3">
-                <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
-                  <h3 style={{ fontSize: 16, fontWeight: 700, color: 'var(--ink-headline)', margin: '0 0 8px' }}>{phase.name}</h3>
-                  <p style={{ fontSize: 14, lineHeight: 1.6, color: '#4A4F63', margin: '0 0 12px' }}>{phase.description}</p>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: 4, marginBottom: 16 }}>
-                    {phase.deliverables.map(d => (
-                      <div key={d} style={{ fontSize: 12, color: '#6B7086' }}>· {d}</div>
-                    ))}
-                  </div>
-                  <button
-                    type="button"
-                    aria-expanded={isOpen}
-                    className="engagement-toggle"
-                    onClick={() => toggle(phase.id)}
-                    style={{ marginTop: 'auto', alignSelf: 'flex-start' }}
-                  >
-                    {isOpen ? <>{t.showLess}<ChevronUp size={14} /></> : <>{t.learnMore}<ChevronDown size={14} /></>}
-                  </button>
-                  {isOpen && (
-                    <div style={{ marginTop: 16, padding: 16, background: 'rgba(255,255,255,0.6)', borderRadius: 14, borderTop: '1px solid rgba(255,255,255,0.8)' }}>
-                      <p style={{ fontSize: 14, lineHeight: 1.6, color: '#4A4F63', margin: '0 0 10px' }}>{phase.detail}</p>
-                      <div style={{ fontSize: 14, fontWeight: 600, color: '#12141F', fontStyle: 'italic', margin: '0 0 10px' }}>"{phase.question}"</div>
-                      <Link to={phase.proof.to} style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 14, fontWeight: 600, color: '#002FA7' }}>{phase.proof.label}<ChevronRight size={14} /></Link>
-                      {phase.id === 'define' && (
-                        <div style={{ marginTop: 8 }}>
-                          <Link to="/work/agentic-ux-flow" style={{ display: 'inline-flex', alignItems: 'center', gap: 4, fontSize: 14, fontWeight: 600, color: '#002FA7' }}>{t.methodLink}<ChevronRight size={14} /></Link>
-                        </div>
-                      )}
-                    </div>
+              <div {...phaseSwipe} id="phase-panel" role="tabpanel" aria-labelledby={`phase-tab-${phase.id}`} className={`${phaseSwipe.className} phase-panel`} key={phase.id}>
+                <p className="phase-panel-lead">{phase.description}</p>
+                <p className="phase-panel-q">"{phase.question}"</p>
+                <p className="phase-panel-detail">{phase.detail}</p>
+                <ul className="phase-panel-list">
+                  {phase.deliverables.map(d => <li key={d}>{d}</li>)}
+                </ul>
+                <div className="phase-panel-links">
+                  <Link to={phase.proof.to} className="hs-cta">{phase.proof.label}<ChevronRight size={15} /></Link>
+                  {phase.id === 'define' && (
+                    <Link to="/work/agentic-ux-flow" className="hs-cta">{t.methodLink}<ChevronRight size={15} /></Link>
                   )}
                 </div>
               </div>
             )
-          })}
+          })()}
         </div>
       </div>
 

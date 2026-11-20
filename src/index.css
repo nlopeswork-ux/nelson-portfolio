@@ -1565,3 +1565,34 @@ html { scrollbar-gutter: stable; }
 
 /* Orange section bar: the one decorative divider across About and the case studies */
 .section-bar { width: 32px; height: 3px; border-radius: 2px; background: var(--color-accent); margin: 56px 0; }
+
+/* Carousels navigable by gesture: let the browser keep vertical scroll, we take horizontal swipes */
+.swipe-x { touch-action: pan-y; overscroll-behavior-x: contain; }
+
+/* ── About › How I Work: stepper (one phase open at a time) ── */
+.phase-stepper { margin-top: 8px; }
+.phase-steps { display: flex; gap: clamp(20px, 4vw, 48px); border-bottom: 1px solid rgba(18, 20, 31, 0.12); }
+.phase-step { position: relative; display: inline-flex; align-items: baseline; gap: 10px; padding: 14px 0 16px; background: none; border: 0; cursor: pointer; color: #5A5F73; font: inherit; transition: color 200ms var(--ease-out); }
+.phase-step-num { font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: 0.06em; color: #002FA7; }
+.phase-step-name { font-family: var(--font-display); font-size: clamp(18px, 2.2vw, 24px); font-weight: 800; letter-spacing: -0.02em; }
+.phase-step::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 2px; background: #002FA7; transform: scaleX(0); transform-origin: left; transition: transform 240ms var(--ease-out); }
+.phase-step.is-active { color: var(--ink-headline); }
+.phase-step.is-active::after { transform: scaleX(1); }
+/* orange = the current step */
+.phase-step.is-active .phase-step-num::before { content: ''; display: inline-block; width: 7px; height: 7px; margin-right: 8px; border-radius: 50%; background: var(--color-accent); vertical-align: 0.08em; }
+.phase-step:focus-visible { outline: 2px solid #002FA7; outline-offset: 4px; border-radius: 4px; }
+@media (hover: hover) and (pointer: fine) { .phase-step:hover { color: var(--ink-headline); } }
+.phase-panel { padding: 32px 0 8px; max-width: 760px; animation: phaseIn 240ms var(--ease-out); }
+.phase-panel-lead { font-size: clamp(20px, 2.4vw, 26px); line-height: 1.35; font-weight: 600; letter-spacing: -0.01em; color: var(--ink-headline); margin: 0 0 12px; }
+.phase-panel-q { font-size: 16px; font-style: italic; color: #002FA7; margin: 0 0 16px; }
+.phase-panel-detail { font-size: 16px; line-height: 1.75; color: #4A4F63; margin: 0 0 20px; }
+.phase-panel-list { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; margin: 0 0 24px; padding: 0; font-size: 14px; color: #5A5F73; }
+.phase-panel-list li::before { content: '· '; }
+.phase-panel-links { display: flex; flex-wrap: wrap; gap: 8px 32px; }
+.phase-panel-links .hs-cta { margin-top: 0; padding-top: 0; }
+@keyframes phaseIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+@media (max-width: 560px) {
+  .phase-steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; border-bottom: 0; }
+  .phase-step { border-bottom: 1px solid rgba(18, 20, 31, 0.12); }
+}
+@media (prefers-reduced-motion: reduce) { .phase-panel { animation: none; } .phase-step, .phase-step::after { transition: none; } }
