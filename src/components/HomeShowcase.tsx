@@ -17,8 +17,8 @@ export default function HomeShowcase({ items, featured }: { items: Item[]; featu
           <span className="hs-desc">{work.desc}</span>
           <div className="hs-actions">
             {/* Stretched link: the whole card opens the Work page; the featured link sits above it */}
-            <Link to={work.to} className="hs-cta hs-cta-main">{work.cta}<ChevronRight size={15} /></Link>
-            <Link to={featured.to} className="secondary-btn hs-featured-btn" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '16px 32px', color: '#002FA7', fontSize: 15, fontWeight: 600 }}>{featured.label}: {featured.title}</Link>
+            <Link to={work.to} className="secondary-btn hs-cta-main" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '16px 32px', color: '#002FA7', fontSize: 15, fontWeight: 600 }}>{work.cta}</Link>
+            <Link to={featured.to} className="hs-cta hs-featured-link">{featured.label}: {featured.title}<ChevronRight size={15} /></Link>
           </div>
         </div>
         <Link to={featured.to} className="hs-work-media" tabIndex={-1} aria-hidden="true">
