@@ -80,6 +80,16 @@ Sober, with a few relaxed touches. **Blue is the voice** (rigor, structure, acti
 - Section numbers are CSS counters; do not type numbers into headings.
 - About uses eyebrow labels (not numbers) and the same section bar.
 
+### Action shapes and hierarchy
+- **Shape = role.** Rectangle with 12px radius: navigate or commit (`.primary-btn`, `.secondary-btn`). Pill (full radius): a clickable state or selection (filters, stepper steps, toggles, active nav). Circle: icon-only control (carousel arrows, back to top). Text link with chevron: lightweight navigation (`.hs-cta`).
+- **A pill always clicks.** Things that do not click (tags, severity, "+N") use an 8px radius and a quiet fill, never a pill.
+- **One primary per page**, in the place where the visitor decides. Home: "View work". Case studies: "Get in touch" in the closing block. Contact: "Send an email". 404: "View work". Pages with no decision (Work, Journey, About) have none; do not add one for symmetry.
+- A second action on the same page is a `.secondary-btn` or a text link, never a second primary. Do not repeat the same destination twice as buttons.
+- **One toggle**: `.engagement-toggle` (pill, `#F2F6FF`, 6/14px, chevron). `.cs-details-toggle` matches it. No inline-styled toggles.
+- One button size (padding 16/32, 15px/600). Never set padding, colour or radius inline on `.primary-btn` / `.secondary-btn`; a smaller variant must be added to the CSS, not to a page.
+- Round controls keep a 44px hit area (invisible padding) even when drawn at 36px.
+- Case studies and the Contact page end with `CaseEndBlock`: the homepage Work card treatment, horizontal, with two mini case cards (white bordered = they link). It replaces "next case" and "back to work" text links.
+
 ### Buttons and links (reuse, never invent)
 - Primary action: `.primary-btn` (blue fill, 12px radius, padding 16/32, 15px/600).
 - Secondary action: `.secondary-btn` (1.5px blue border, 12px radius).
