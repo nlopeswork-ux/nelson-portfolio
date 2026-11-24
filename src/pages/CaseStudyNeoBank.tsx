@@ -222,7 +222,7 @@ export default function CaseStudyNeoBank() {
       </div>
 
       <div style={S}>
-        <p style={{ fontSize: 12, lineHeight: 1.6, color: '#8A8FA3', textAlign: 'center', margin: 0 }}>{t.conceptNote}</p>
+        <p style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73', textAlign: 'center', margin: 0 }}>{t.conceptNote}</p>
       </div>
 
       {/* TWO PHASES */}
