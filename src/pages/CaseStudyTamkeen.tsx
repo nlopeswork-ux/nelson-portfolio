@@ -491,7 +491,7 @@ export default function CaseStudyTamkeen() {
                   <p style={{ fontSize: 14, lineHeight: 1.65, color: '#5A5F73', margin: link ? '0 0 10px' : 0 }}>{body}</p>
                   {link && (
                     <p style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73', margin: 0, padding: 12, borderRadius: 10, background: '#F2F6FF' }}>
-                      {t.neotLinkText}<Link to="/work/neot" style={{ color: '#001A5C', fontWeight: 600, textDecoration: 'underline' }}>{t.neotLinkLabel}</Link>.
+                      {t.neotLinkText}<Link to="/work/neot" className="text-link">{t.neotLinkLabel}</Link>.
                     </p>
                   )}
                 </div>

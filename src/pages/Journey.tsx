@@ -131,7 +131,7 @@ export default function Journey() {
                       {'link' in eng && eng.link && (
                         <>
                           {' — '}
-                          <Link to={eng.link.to} style={{ color: '#002FA7', fontWeight: 600, textDecoration: 'none' }}>{eng.link.label}</Link>
+                          <Link to={eng.link.to} className="text-link">{eng.link.label}</Link>
                         </>
                       )}
                     </div>
@@ -161,7 +161,7 @@ export default function Journey() {
                       {'link' in eng && eng.link && (
                         <>
                           {' — '}
-                          <Link to={eng.link.to} style={{ color: '#002FA7', fontWeight: 600, textDecoration: 'none' }}>{eng.link.label}</Link>
+                          <Link to={eng.link.to} className="text-link">{eng.link.label}</Link>
                         </>
                       )}
                     </div>
