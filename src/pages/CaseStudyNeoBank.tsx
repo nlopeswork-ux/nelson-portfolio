@@ -243,7 +243,7 @@ export default function CaseStudyNeoBank() {
                     <img src={image} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
                     <div style={{ padding: 16 }}>
                       <div style={{ fontSize: 14, fontWeight: 600, color: '#12141F', marginBottom: 4 }}>{title}</div>
-                      <p style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73', margin: 0 }}>{caption}</p>
+                      <p style={{ fontSize: 15, lineHeight: 1.6, color: '#5A5F73', margin: 0 }}>{caption}</p>
                     </div>
                   </div>
                 ))}

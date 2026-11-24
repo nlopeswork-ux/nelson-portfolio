@@ -253,7 +253,7 @@ export default function CaseStudyNEOT() {
         <Body>{t.challengeBody}</Body>
 
         <div className="cs-brief">
-          <div style={{ fontSize: 14, fontWeight: 700, color: '#12141F', marginBottom: 10 }}>{t.briefLabel}</div>
+          <div className="cs-label" style={{ marginBottom: 10 }}>{t.briefLabel}</div>
           {t.brief.map((p, i) => <Body key={i}>{p}</Body>)}
           <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: 0 }}>{t.briefClosing}</p>
         </div>
@@ -273,7 +273,7 @@ export default function CaseStudyNEOT() {
                     <img src={image} alt={title} style={{ width: '100%', height: 'auto', display: 'block' }} />
                     <div style={{ padding: 16 }}>
                       <div style={{ fontSize: 14, fontWeight: 600, color: '#12141F', marginBottom: 4 }}>{title}</div>
-                      <p style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73', margin: 0 }}>{caption}</p>
+                      <p style={{ fontSize: 15, lineHeight: 1.6, color: '#5A5F73', margin: 0 }}>{caption}</p>
                     </div>
                   </div>
                 ))}
@@ -302,7 +302,7 @@ export default function CaseStudyNEOT() {
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginBottom: 8 }}>
                 <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F' }}>{name}</div>
               </div>
-              <div style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73' }}>{desc}</div>
+              <div style={{ fontSize: 15, lineHeight: 1.6, color: '#5A5F73' }}>{desc}</div>
             </div>
           ))}
         </div>
