@@ -20,6 +20,8 @@ const shellCopy = {
     showDetails: 'Show full details',
     hideDetails: 'Hide full details',
     relatedTitle: 'Also worth a look',
+    depthLabel: 'Reading depth',
+    depth: { summary: 'Summary', mid: 'Intermediate', full: 'Full' },
   },
   pt: {
     backToWork: 'Voltar a todo o trabalho',
@@ -28,8 +30,14 @@ const shellCopy = {
     showDetails: 'Ver todos os detalhes',
     hideDetails: 'Ocultar detalhes',
     relatedTitle: 'Vale também a pena ver',
+    depthLabel: 'Profundidade de leitura',
+    depth: { summary: 'Resumo', mid: 'Intermédio', full: 'Completo' },
   },
 }
+
+export type Depth = 'summary' | 'mid' | 'full'
+const DEPTHS: Depth[] = ['summary', 'mid', 'full']
+const DEPTH_KEY = 'cs-depth'
 
 interface MetaItem {
   label: string
@@ -52,6 +60,8 @@ interface CaseStudyShellProps {
   accentColor?: string
   /** Opt-in editorial treatment: fewer boxes, numbered sections, orange section bar */
   refined?: boolean
+  /** Opt-in reading depth selector. Sections carry data-level="summary" | "mid" | "full"; unmarked ones always show. */
+  leveled?: boolean
   children: React.ReactNode
 }
 
@@ -73,7 +83,7 @@ function useSectionIndex(mainRef: React.RefObject<HTMLElement | null>, lockRef: 
   useEffect(() => {
     const main = mainRef.current
     if (!main) return
-    const heads = Array.from(main.querySelectorAll('h2'))
+    const heads = Array.from(main.querySelectorAll('h2')).filter(h => h.getClientRects().length > 0)
     const used = new Set<string>()
     const next = heads.map((h, i) => {
       let id = h.id || slugify(h.textContent || '') || `section-${i}`
@@ -117,7 +127,7 @@ function useSectionIndex(mainRef: React.RefObject<HTMLElement | null>, lockRef: 
   return { items, active, setActive }
 }
 
-export default function CaseStudyShell({ title, description, meta, stats, accentColor = '#002FA7', refined = false, children }: CaseStudyShellProps) {
+export default function CaseStudyShell({ title, description, meta, stats, accentColor = '#002FA7', refined = false, leveled = false, children }: CaseStudyShellProps) {
   const { lang } = useLanguage()
   const { pathname } = useLocation()
   const t = shellCopy[lang]
@@ -125,8 +135,17 @@ export default function CaseStudyShell({ title, description, meta, stats, accent
   const [tocOpen, setTocOpen] = useState(false)
   const [detailsOpen, setDetailsOpen] = useState(false)
   const lockRef = useRef(0)
-  const { items, active, setActive } = useSectionIndex(mainRef, lockRef, [lang, pathname])
+  const [depth, setDepthState] = useState<Depth>(() => {
+    try { const v = localStorage.getItem(DEPTH_KEY) as Depth | null; if (v && DEPTHS.includes(v)) return v } catch { /* storage unavailable */ }
+    return 'mid'
+  })
+  const setDepth = (d: Depth) => {
+    setDepthState(d)
+    try { localStorage.setItem(DEPTH_KEY, d) } catch { /* storage unavailable */ }
+  }
+  const { items, active, setActive } = useSectionIndex(mainRef, lockRef, [lang, pathname, leveled ? depth : ''])
   const showToc = items.length >= 2
+  const expanded = leveled ? depth === 'full' : detailsOpen
   const hasAbbr = meta.some(m => !!m.short && m.short !== m.value)
 
   const goTo = (id: string) => {
@@ -144,7 +163,7 @@ export default function CaseStudyShell({ title, description, meta, stats, accent
       <div className="cs-container cs-hero cs-hero--card">
         <div style={{ position: 'absolute', top: -160, left: -200, width: 600, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(183,204,255,0.32), transparent 70%)', filter: 'blur(70px)', animation: 'driftA 24s var(--ease-in-out) infinite', zIndex: -1 }} />
 
-        <div className={stats.length > 0 ? 'cs-herocard cs-herocard--stats' : 'cs-herocard'} data-details={detailsOpen} data-abbr={hasAbbr}>
+        <div className={stats.length > 0 ? 'cs-herocard cs-herocard--stats' : 'cs-herocard'} data-details={expanded} data-abbr={hasAbbr && !leveled}>
           <h1 style={{ fontSize: 'clamp(28px,5.5vw,56px)', fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--ink-headline)', margin: '0 0 24px', lineHeight: 1.1, maxWidth: 900 }}>{title}</h1>
           <p style={{ fontSize: 'clamp(16px,2vw,19px)', lineHeight: 1.7, color: '#5A5F73', maxWidth: 720, margin: '0 0 8px' }}>{description}</p>
 
@@ -174,7 +193,18 @@ export default function CaseStudyShell({ title, description, meta, stats, accent
             })}
           </div>
 
-          {(hasAbbr || meta.length > 3) && (
+          {leveled && (
+            <div className="cs-depth">
+              <div className="cs-label" id="cs-depth-label">{t.depthLabel}</div>
+              <div className="work-filter-track" role="radiogroup" aria-labelledby="cs-depth-label">
+                {DEPTHS.map(d => (
+                  <button key={d} type="button" role="radio" aria-checked={depth === d} className={`work-filter-tab${depth === d ? ' is-active' : ''}`} onClick={() => setDepth(d)}>{t.depth[d]}</button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {!leveled && (hasAbbr || meta.length > 3) && (
             <button type="button" className="cs-details-toggle" aria-expanded={detailsOpen} onClick={() => setDetailsOpen(o => !o)}>
               {detailsOpen ? t.hideDetails : t.showDetails}
               {detailsOpen ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
@@ -201,7 +231,7 @@ export default function CaseStudyShell({ title, description, meta, stats, accent
 
       {/* CONTENT: 9 columns of content + 3 columns of sticky sidebar */}
       <div className="cs-container cs-layout">
-        <main ref={mainRef} className={refined ? 'cs-main cs-refined' : 'cs-main'}>{children}</main>
+        <main ref={mainRef} data-depth={leveled ? depth : undefined} className={refined ? 'cs-main cs-refined' : 'cs-main'}>{children}</main>
 
         <aside className="cs-aside">
           {showToc ? (
