@@ -37,7 +37,6 @@ const shellCopy = {
 
 export type Depth = 'summary' | 'mid' | 'full'
 const DEPTHS: Depth[] = ['summary', 'mid', 'full']
-const DEPTH_KEY = 'cs-depth'
 
 interface MetaItem {
   label: string
@@ -133,14 +132,9 @@ export default function CaseStudyShell({ title, description, meta, stats, accent
   const [tocOpen, setTocOpen] = useState(false)
   const [detailsOpen, setDetailsOpen] = useState(false)
   const lockRef = useRef(0)
-  const [depth, setDepthState] = useState<Depth>(() => {
-    try { const v = localStorage.getItem(DEPTH_KEY) as Depth | null; if (v && DEPTHS.includes(v)) return v } catch { /* storage unavailable */ }
-    return 'summary'
-  })
-  const setDepth = (d: Depth) => {
-    setDepthState(d)
-    try { localStorage.setItem(DEPTH_KEY, d) } catch { /* storage unavailable */ }
-  }
+  // Every case opens on the shortest version; the choice is not remembered between cases or visits.
+  const [depth, setDepth] = useState<Depth>('summary')
+  useEffect(() => { setDepth('summary') }, [pathname])
   // Reading depth: sections carry data-level="summary" | "mid" | "full" (unmarked ones always show).
   // The selector exists only when the case has at least two distinct levels, and offers only those.
   const [levels, setLevels] = useState<Depth[]>([])
