@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { relatedCases } from './relatedCases'
 import CaseEndBlock from './CaseEndBlock'
 import { tocLabel } from './tocLabels'
@@ -60,8 +60,6 @@ interface CaseStudyShellProps {
   accentColor?: string
   /** Opt-in editorial treatment: fewer boxes, numbered sections, orange section bar */
   refined?: boolean
-  /** Opt-in reading depth selector. Sections carry data-level="summary" | "mid" | "full"; unmarked ones always show. */
-  leveled?: boolean
   children: React.ReactNode
 }
 
@@ -127,7 +125,7 @@ function useSectionIndex(mainRef: React.RefObject<HTMLElement | null>, lockRef: 
   return { items, active, setActive }
 }
 
-export default function CaseStudyShell({ title, description, meta, stats, accentColor = '#002FA7', refined = false, leveled = false, children }: CaseStudyShellProps) {
+export default function CaseStudyShell({ title, description, meta, stats, accentColor = '#002FA7', refined = false, children }: CaseStudyShellProps) {
   const { lang } = useLanguage()
   const { pathname } = useLocation()
   const t = shellCopy[lang]
@@ -143,9 +141,22 @@ export default function CaseStudyShell({ title, description, meta, stats, accent
     setDepthState(d)
     try { localStorage.setItem(DEPTH_KEY, d) } catch { /* storage unavailable */ }
   }
-  const { items, active, setActive } = useSectionIndex(mainRef, lockRef, [lang, pathname, leveled ? depth : ''])
+  // Reading depth: sections carry data-level="summary" | "mid" | "full" (unmarked ones always show).
+  // The selector exists only when the case has at least two distinct levels, and offers only those.
+  const [levels, setLevels] = useState<Depth[]>([])
+  useLayoutEffect(() => {
+    const found = new Set<string>()
+    mainRef.current?.querySelectorAll(':scope > [data-level]').forEach(el => found.add(el.getAttribute('data-level') ?? ''))
+    setLevels(DEPTHS.filter(d => found.has(d)))
+  }, [lang, pathname])
+  const leveled = levels.length >= 2
+  const rank = (d: Depth) => DEPTHS.indexOf(d)
+  // Nearest available level to the saved preference (ties go to the shorter version).
+  const current: Depth = leveled ? levels.reduce((best, l) => (Math.abs(rank(l) - rank(depth)) < Math.abs(rank(best) - rank(depth)) ? l : best), levels[0]) : depth
+  const levelName = (d: Depth) => (levels.length === 2 && d === levels[1] ? t.depth.full : t.depth[d])
+  const { items, active, setActive } = useSectionIndex(mainRef, lockRef, [lang, pathname, leveled ? current : ''])
   const showToc = items.length >= 2
-  const expanded = leveled ? depth === 'full' : detailsOpen
+  const expanded = leveled ? current === levels[levels.length - 1] : detailsOpen
   const hasAbbr = meta.some(m => !!m.short && m.short !== m.value)
 
   const goTo = (id: string) => {
@@ -167,8 +178,8 @@ export default function CaseStudyShell({ title, description, meta, stats, accent
           {leveled && (
             <div className="cs-depth">
               <div className="work-filter-track work-filter-track--white" role="radiogroup" aria-label={t.depthLabel}>
-                {DEPTHS.map(d => (
-                  <button key={d} type="button" role="radio" aria-checked={depth === d} className={`work-filter-tab${depth === d ? ' is-active' : ''}`} onClick={() => setDepth(d)}>{t.depth[d]}</button>
+                {levels.map(d => (
+                  <button key={d} type="button" role="radio" aria-checked={current === d} className={`work-filter-tab${current === d ? ' is-active' : ''}`} onClick={() => setDepth(d)}>{levelName(d)}</button>
                 ))}
               </div>
             </div>
@@ -229,7 +240,7 @@ export default function CaseStudyShell({ title, description, meta, stats, accent
 
       {/* CONTENT: 9 columns of content + 3 columns of sticky sidebar */}
       <div className="cs-container cs-layout">
-        <main ref={mainRef} data-depth={leveled ? depth : undefined} className={refined ? 'cs-main cs-refined' : 'cs-main'}>{children}</main>
+        <main ref={mainRef} data-depth={leveled ? current : undefined} className={refined ? 'cs-main cs-refined' : 'cs-main'}>{children}</main>
 
         <aside className="cs-aside">
           {showToc ? (

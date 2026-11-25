@@ -232,13 +232,13 @@ export default function CaseStudyNEOT() {
       refined
     >
       {/* OVERVIEW */}
-      <div style={S}>
+      <div data-level="summary" style={S}>
         <h2 style={H2}>{t.overviewTitle}</h2>
         {t.overview.map((p, i) => <Body key={i}>{p}</Body>)}
       </div>
 
       {/* MY ROLE */}
-      <div style={S}>
+      <div data-level="mid" style={S}>
         <h2 style={H2}>{t.roleTitle}</h2>
         <Body>{t.roleBody}</Body>
         <p style={{ fontSize: 16, lineHeight: 1.7, color: '#5A5F73', margin: 0 }}>
@@ -248,7 +248,7 @@ export default function CaseStudyNEOT() {
       </div>
 
       {/* THE CHALLENGE */}
-      <div style={S}>
+      <div data-level="summary" style={S}>
         <h2 style={H2}>{t.challengeTitle}</h2>
         <Body>{t.challengeBody}</Body>
 
@@ -260,7 +260,7 @@ export default function CaseStudyNEOT() {
       </div>
 
       {/* GALLERY */}
-      <div style={S}>
+      <div data-level="mid" style={S}>
         <h2 style={H2}>{t.galleryTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 28px' }}>{t.galleryIntro}</p>
 
@@ -294,7 +294,7 @@ export default function CaseStudyNEOT() {
       </div>
 
       {/* 8 MODULES */}
-      <div style={S}>
+      <div data-level="mid" style={S}>
         <h2 style={H2}>{t.modulesTitle}</h2>
         <div className="rg-2 cs-rows">
           {t.modules.map(({ n, name, desc }) => (
@@ -309,7 +309,7 @@ export default function CaseStudyNEOT() {
       </div>
 
       {/* RTL & BIDI */}
-      <div style={S}>
+      <div data-level="full" style={S}>
         <h2 style={H2}>{t.rtlTitle}</h2>
         <Body>{t.rtlBody}</Body>
 
@@ -321,7 +321,7 @@ export default function CaseStudyNEOT() {
       </div>
 
       {/* SCALE + PRINCIPLES */}
-      <div style={S}>
+      <div data-level="full" style={S}>
         <h2 style={H2}>{t.scaleTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 44px' }}>{t.scaleBody}</p>
         <h2 style={H2}>{t.principlesTitle}</h2>
@@ -329,7 +329,7 @@ export default function CaseStudyNEOT() {
       </div>
 
       {/* ACCESSIBILITY */}
-      <div style={S}>
+      <div data-level="full" style={S}>
         <h2 style={H2}>{t.accessibilityTitle}</h2>
         <Body>{t.accessibilityBody}</Body>
 
@@ -344,13 +344,13 @@ export default function CaseStudyNEOT() {
       </div>
 
       {/* IMPACT */}
-      <div style={S}>
+      <div data-level="summary" style={S}>
         <h2 className="cs-h2-mark" style={H2}>{t.impactTitle}</h2>
         <Body>{t.impactBody}</Body>
       </div>
 
       {/* PROJECT AT A GLANCE */}
-      <div style={S}>
+      <div data-level="summary" style={S}>
         <h2 style={H2}>{t.glanceTitle}</h2>
         <div className="table-scroll" style={{ borderRadius: 16, border: '1px solid #EAF1FF', overflow: 'hidden' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>

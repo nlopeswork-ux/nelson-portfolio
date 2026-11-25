@@ -217,23 +217,23 @@ export default function CaseStudyNeoBank() {
       refined
     >
       {/* HOOK */}
-      <div style={S}>
+      <div data-level="summary" style={S}>
         <Body>{t.hook}</Body>
       </div>
 
-      <div style={S}>
+      <div data-level="summary" style={S}>
         <p style={{ fontSize: 14, lineHeight: 1.6, color: '#5A5F73', textAlign: 'center', margin: 0 }}>{t.conceptNote}</p>
       </div>
 
       {/* TWO PHASES */}
-      <div style={S}>
+      <div data-level="summary" style={S}>
         <h2 style={H2}>{t.twoPhasesTitle}</h2>
 
         <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase1Label}</div>
         <Body>{t.phase1Body}</Body>
       </div>
 
-      <div style={S}>
+      <div data-level="summary" style={S}>
         <div {...gallerySwipe} style={{ overflow: 'hidden', marginBottom: 20 }}>
           <div style={{ display: 'flex', transform: `translateX(-${galleryIdx * 100}%)`, transition: 'transform 420ms ease-out' }}>
             {gallerySlides.map((slide, si) => (
@@ -263,7 +263,7 @@ export default function CaseStudyNeoBank() {
         </div>
       </div>
 
-      <div style={S}>
+      <div data-level="summary" style={S}>
         <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', alignItems: 'center', gap: isMobile ? 24 : 40 }}>
           <div style={{ flex: 1, minWidth: 0 }}>
             <div style={{ fontSize: 16, fontWeight: 700, color: '#12141F', margin: '0 0 6px' }}>{t.phase2Label}</div>
@@ -274,7 +274,7 @@ export default function CaseStudyNeoBank() {
       </div>
 
       {/* WHAT CHANGED */}
-      <div style={S}>
+      <div data-level="summary" style={S}>
         <h2 style={H2}>{t.whatChangedTitle}</h2>
         <div className="table-scroll" style={{ borderRadius: 16, border: '1px solid #EAF1FF', overflow: 'hidden' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14 }}>
@@ -299,7 +299,7 @@ export default function CaseStudyNeoBank() {
       </div>
 
       {/* SUCCESS METRICS */}
-      <div style={S}>
+      <div data-level="mid" style={S}>
         <h2 style={H2}>{t.hypothesesTitle}</h2>
         <div style={{ ...NOTE, marginBottom: 24 }}>
           <Body>{t.hypothesesNote}</Body>
@@ -328,7 +328,7 @@ export default function CaseStudyNeoBank() {
       </div>
 
       {/* VALIDATION */}
-      <div style={S}>
+      <div data-level="mid" style={S}>
         <h2 style={H2}>{t.validationTitle}</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
           {t.validationSteps.map(({ n, title, body }) => (
@@ -341,14 +341,14 @@ export default function CaseStudyNeoBank() {
       </div>
 
       {/* BEHIND THE PROCESS */}
-      <div style={S}>
+      <div data-level="full" style={S}>
         <h2 style={H2}>{t.processTitle}</h2>
         <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: '0 0 28px' }}>{t.processIntro}</p>
         <PrototypeCarousel images={processImages} aspectRatio="wide" />
       </div>
 
       {/* CLOSING */}
-      <div style={S}>
+      <div data-level="full" style={S}>
         <DarkBox>
           <p style={{ fontSize: 16, lineHeight: 1.75, margin: 0 }}>{t.closing}</p>
         </DarkBox>

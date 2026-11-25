@@ -344,7 +344,6 @@ export default function CaseStudyTamkeen() {
       meta={t.meta}
       stats={t.stats}
       refined
-      leveled
     >
       {/* CONTEXT */}
       <div data-level="summary" style={SW}>
