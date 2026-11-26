@@ -39,7 +39,6 @@ function DemoVideo({ src, label, width }: { src: string; label: string; width: n
 
 const S = { padding: '0 0 48px' } as const
 const H2 = { fontSize: 'clamp(20px,3vw,26px)' as const, fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--ink-headline)', margin: '0 0 20px' }
-const NOTE = { padding: '2px 0 2px 20px', borderLeft: '3px solid var(--color-accent)' } as const
 
 const phase1Images = [
   '/case-studies/neobank/phase1/01-homepage.webp',
@@ -301,7 +300,7 @@ export default function CaseStudyNeoBank() {
       {/* SUCCESS METRICS */}
       <div data-level="mid" style={S}>
         <h2 style={H2}>{t.hypothesesTitle}</h2>
-        <div style={{ ...NOTE, marginBottom: 24 }}>
+        <div className="callout">
           <Body>{t.hypothesesNote}</Body>
         </div>
 
