@@ -253,9 +253,9 @@ export default function CaseStudyNEOT() {
         <Body>{t.challengeBody}</Body>
 
         <div className="callout">
-          <div className="cs-label" style={{ marginBottom: 10 }}>{t.briefLabel}</div>
-          {t.brief.map((p, i) => <Body key={i}>{p}</Body>)}
-          <p style={{ fontSize: 16, lineHeight: 1.75, color: '#5A5F73', margin: 0 }}>{t.briefClosing}</p>
+          <div className="cs-label">{t.briefLabel}</div>
+          {t.brief.map((p, i) => <p key={i}>{p}</p>)}
+          <p>{t.briefClosing}</p>
         </div>
       </div>
 

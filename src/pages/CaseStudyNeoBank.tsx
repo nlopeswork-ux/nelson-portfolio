@@ -301,7 +301,7 @@ export default function CaseStudyNeoBank() {
       <div data-level="mid" style={S}>
         <h2 style={H2}>{t.hypothesesTitle}</h2>
         <div className="callout">
-          <Body>{t.hypothesesNote}</Body>
+          <p>{t.hypothesesNote}</p>
         </div>
 
         <div className="table-scroll" style={{ borderRadius: 16, border: '1px solid #EAF1FF', overflow: 'hidden' }}>
